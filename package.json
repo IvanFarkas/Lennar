@@ -2,6 +2,33 @@
   "name": "crema",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "lint": "eslint \"src/**/*.+(js|jsx)\"",
+    "lint:fix": "eslint --fix \"src/**/*.+(js|jsx)\"",
+    "format": "prettier --write \"src/**/*.+(js|jsx)\"",
+    "precommit": "lint-staged"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
     "@ant-design/compatible": "^1.0.8",
@@ -83,33 +110,6 @@
     "slick-carousel": "^1.8.1",
     "use-url-search-params": "^2.3.13",
     "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "lint": "eslint \"src/**/*.+(js|jsx)\"",
-    "lint:fix": "eslint --fix \"src/**/*.+(js|jsx)\"",
-    "format": "prettier --write \"src/**/*.+(js|jsx)\"",
-    "precommit": "lint-staged"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
