@@ -3,7 +3,7 @@ import {GoogleMap, KmlLayer, withGoogleMap} from 'react-google-maps';
 import '../../map.style.less';
 
 const KmlLayerExampleGoogleMap = withGoogleMap(() => (
-  <GoogleMap defaultZoom={8} defaultCenter={{lat: 41.876, lng: -87.624}}>
+  <GoogleMap defaultZoom={8} defaultCenter={{lat: 25.7824758, lng: -80.289328}}>
     <KmlLayer
       url='http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml'
       options={{preserveViewport: true}}

@@ -6,7 +6,7 @@ import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClust
 import '../../map.style.less';
 
 const MarkerClustererExampleGoogleMap = withGoogleMap((props) => (
-  <GoogleMap defaultZoom={3} defaultCenter={{lat: 25.0391667, lng: 121.525}}>
+  <GoogleMap defaultZoom={3} defaultCenter={{lat: 25.7824758, lng: -80.289328}}>
     <MarkerClusterer averageCenter enableRetinaIcons gridSize={60}>
       {props.markers.map((marker) => (
         <Marker

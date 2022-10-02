@@ -185,13 +185,13 @@ const widgetsData = {
   mateInfo: {
     facebookInfo: {
       image: '/assets/images/logo.png',
-      name: 'Crema admin',
+      name: 'Lennar',
       id: 'crema.report@gmail.com',
       desc: 'It usually begins with Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. create a natural looking block of text.',
     },
     twitterInfo: {
       image: '/assets/images/logo.png',
-      name: 'Crema admin',
+      name: 'Lennar',
       id: 'crema.report',
       desc: 'It usually begins with Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. create a natural looking block of text. ',
     },

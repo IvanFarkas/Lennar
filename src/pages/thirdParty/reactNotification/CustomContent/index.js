@@ -44,7 +44,7 @@ export default class CustomContentExample extends React.Component {
           <div className='notification-custom-image'>
             <img src='/assets/images/logo.png' alt='' />
             <span className='notification-custom-image-content'>
-              Crema Admin
+              Lennar
             </span>
           </div>
         ),

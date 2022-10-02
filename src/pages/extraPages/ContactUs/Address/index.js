@@ -11,20 +11,20 @@ const Address = () => {
           <HiOutlineLocationMarker />
         </div>
         <p>
-          795 Folsom Ave, Suite 600 <br /> San Francisco, CA 94107
+          5505 Blue Lagoon Dr. <br /> Miami, FL 33126
         </p>
       </div>
       <div className='contact-address-item'>
         <div className='avatar-icon'>
           <FiPhone />
         </div>
-        <p>(120) 456-789-123</p>
+        <p>(800) 532-6993</p>
       </div>
       <div className='contact-address-item'>
         <div className='avatar-icon'>
           <FiMail />
         </div>
-        <p>support@yourmail.com</p>
+        <p>support@lennar.com</p>
       </div>
     </div>
   );

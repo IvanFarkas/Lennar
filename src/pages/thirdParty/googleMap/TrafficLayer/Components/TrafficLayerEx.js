@@ -5,7 +5,7 @@ import '../../map.style.less';
 const TrafficLayerExampleGoogleMap = withGoogleMap(() => (
   <GoogleMap
     defaultZoom={15}
-    defaultCenter={{lat: 47.646935, lng: -122.303763}}>
+    defaultCenter={{lat: 25.7824758, lng: -80.289328}}>
     <TrafficLayer autoUpdate />
   </GoogleMap>
 ));

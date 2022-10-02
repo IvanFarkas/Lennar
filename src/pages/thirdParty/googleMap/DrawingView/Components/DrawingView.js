@@ -20,7 +20,7 @@ const google = window.google;
 const DrawingExampleGoogleMap = withGoogleMap(() => (
   <GoogleMap
     defaultZoom={15}
-    defaultCenter={new google.maps.LatLng(47.646935, -122.303763)}>
+    defaultCenter={new google.maps.LatLng(25.7824758,-80.289328)}>
     <DrawingManager
       defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}
       defaultOptions={{
