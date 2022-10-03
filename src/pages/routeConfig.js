@@ -23,11 +23,11 @@ const routesConfig = [
     type: 'group',
     children: [
       {
-        id: 'crypto',
-        title: 'Crypto',
+        id: 'dashboard',
+        title: 'Dashboard',
         messageId: 'sidebar.app.dashboard.crypto',
         icon: <BsCurrencyBitcoin />,
-        path: '/dashboards/crypto',
+        path: '/dashboards/dashboard',
       },
       {
         id: 'crm',

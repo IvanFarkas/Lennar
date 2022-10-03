@@ -8,4 +8,4 @@ export const defaultUser = {
   role: authRole.admin,
   photoURL: '/assets/images/avatar/A11.jpg',
 };
-export const initialUrl = '/dashboards/crypto'; // this url will open after login
+export const initialUrl = '/dashboards/dashboard'; // this url will open after login

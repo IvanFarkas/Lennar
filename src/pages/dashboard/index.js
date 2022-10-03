@@ -25,7 +25,7 @@ export const dashboardConfig = [
     element: <CRM />,
   },
   {
-    path: '/dashboards/crypto',
+    path: '/dashboards/dashboard',
     element: <Crypto />,
   },
   {
