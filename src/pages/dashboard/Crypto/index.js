@@ -25,7 +25,7 @@ const Crypto = () => {
 
   return (
     <>
-      <AppPageMetadata title="Crypto Dashboard" />
+      <AppPageMetadata title="Lennar Dashboard" />
       {cryptoData ? (
         <AppRowContainer>
           <Col xs={24} lg={10} key={'a'}>

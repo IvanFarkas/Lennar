@@ -384,7 +384,7 @@
   "sidebar.application": "Application",
   "sidebar.app.dashboard": "Dashboards",
   "sidebar.app.dashboard.crm": "CRM",
-  "sidebar.app.dashboard.crypto": "Crypto",
+  "sidebar.app.dashboard.crypto": "Dashboard",
   "sidebar.app.metrics": "Metrics",
   "sidebar.app.widgets": "Widgets",
   "sidebar.apps": "Apps",
@@ -729,5 +729,3 @@
   "sidebar.layout.space": "Space",
   "sidebar.components.layout": "Layout"
 }
-
-

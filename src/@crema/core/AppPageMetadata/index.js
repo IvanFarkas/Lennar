@@ -7,11 +7,13 @@ const SITE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000
 
 const FACEBOOK_APP_ID = '2885966475045549';
 
-const defaultTitle = 'Lennar Dashboard';
+// const defaultTitle = 'Lennar Dashboard';
+// const defaultSep = ' | ';
+const defaultTitle = '';
+const defaultSep = '';
 const defaultDescription = 'Lennar Decision Making Dashboard. ';
 const defaultImage = 'https://3DHDSoft.com/images/lennar/logo512.png?alt=media';
 const defaultTwitter = '@Lennar_User01';
-const defaultSep = ' | ';
 
 const AppPageMetadata = ({ children, ...rest }) => {
   const { pathname } = useLocation();
@@ -65,7 +67,7 @@ const AppPageMetadata = ({ children, ...rest }) => {
         htmlAttributes={{
           lang: 'en',
           itemscope: undefined,
-          itemtype: `http://schema.org/${rest.schema || 'Lennar Dashboard'}`,
+          itemtype: `http://schema.org/${rest.schema || 'Lennar Dashboard 7'}`,
         }}
         title={rest.title ? rest.title + defaultSep + defaultTitle : defaultTitle}
         link={[

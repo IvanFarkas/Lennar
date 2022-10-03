@@ -25,6 +25,7 @@ export const getUserFromFirebase = (user) => {
     };
   return user;
 };
+
 export const getUserFromAWS = (user) => {
   if (user)
     return {
