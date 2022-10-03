@@ -1,4 +1,29 @@
+//For Firebase Auth
+import { useFirebase, useFirebaseActions } from '../services/auth/firebase/FirebaseAuthProvider';
+import { getUserFromFirebase } from './helper/AuthHelper';
+
+export const useAuthUser = () => {
+  const { user, isAuthenticated, isLoading } = useFirebase();
+  return {
+    isLoading,
+    isAuthenticated,
+    user: getUserFromFirebase(user),
+  };
+};
+
+export const useAuthMethod = () => {
+  const { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, logout } = useFirebaseActions();
+
+  return {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    signInWithPopup,
+    logout,
+  };
+};
+
 // For Auth0
+/*
 import { useAuth0 } from '@auth0/auth0-react';
 import { useMemo } from 'react';
 import { getUserFromAuth0 } from './helper/AuthHelper';
@@ -16,6 +41,7 @@ export const useAuthMethod = () => {
   const { loginWithRedirect, logout } = useAuth0();
   return { loginWithRedirect, logout };
 };
+*/
 
 // ForJWT Auth
 /*
@@ -41,40 +67,6 @@ export const useAuthMethod = () => {
     signInUser,
     logout,
     signUpUser,
-  };
-};
-*/
-
-//For Firebase Auth
-/*
-import {
-  useFirebase,
-  useFirebaseActions,
-} from '../services/auth/firebase/FirebaseAuthProvider';
-import {getUserFromFirebase} from './helper/AuthHelper';
-
-export const useAuthUser = () => {
-  const {user, isAuthenticated, isLoading} = useFirebase();
-  return {
-    isLoading,
-    isAuthenticated,
-    user: getUserFromFirebase(user),
-  };
-};
-
-export const useAuthMethod = () => {
-  const {
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signInWithPopup,
-    logout,
-  } = useFirebaseActions();
-
-  return {
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signInWithPopup,
-    logout,
   };
 };
 */
