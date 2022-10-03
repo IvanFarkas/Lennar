@@ -1,6 +1,6 @@
 import React from 'react';
-import {Form, Button, Col, Input} from 'antd';
-import {AppRowContainer} from '../../../../@crema';
+import { Form, Button, Col, Input } from 'antd';
+import { AppRowContainer } from '../../../../@crema';
 
 const ContactUsForm = () => {
   const onFinish = (values) => {
@@ -11,31 +11,23 @@ const ContactUsForm = () => {
     <Form onFinish={onFinish}>
       <AppRowContainer gutter={16}>
         <Col xs={24}>
-          <Form.Item
-            name='fullName'
-            rules={[{required: true, message: 'Please input your Full Name!'}]}>
-            <Input placeholder='Full Name' />
+          <Form.Item name="fullName" rules={[{ required: true, message: 'Please input your Full Name!' }]}>
+            <Input placeholder="Full Name" />
           </Form.Item>
         </Col>
         <Col xs={24}>
-          <Form.Item
-            name='email'
-            rules={[
-              {required: true, message: 'Please input your e-mail address!'},
-            ]}>
-            <Input type='text' placeholder='E-mail' />
+          <Form.Item name="email" rules={[{ required: true, message: 'Please input your e-mail address!' }]}>
+            <Input type="text" placeholder="E-mail" />
           </Form.Item>
         </Col>
         <Col xs={24}>
-          <Form.Item
-            name='message'
-            rules={[{required: true, message: 'Please input your Message!'}]}>
-            <Input.TextArea rows={3} placeholder='Message Here' />
+          <Form.Item name="message" rules={[{ required: true, message: 'Please input your Message!' }]}>
+            <Input.TextArea rows={3} placeholder="Message Here" />
           </Form.Item>
         </Col>
         <Col xs={24} md={24}>
           <Form.Item shouldUpdate>
-            <Button type='primary' htmlType='submit'>
+            <Button type="primary" htmlType="submit">
               Submit
             </Button>
           </Form.Item>

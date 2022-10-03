@@ -1,9 +1,9 @@
 import React from 'react';
-import {Radio, Select, Space} from 'antd';
+import { Radio, Select, Space } from 'antd';
 
 import './selectSize.style.less';
 
-const {Option} = Select;
+const { Option } = Select;
 
 const children = [];
 for (let i = 10; i < 36; i++) {
@@ -22,38 +22,22 @@ const SeclectSize = () => {
   };
 
   return (
-    <Space direction='vertical'>
+    <Space direction="vertical">
       <Radio.Group value={size} onChange={handleSizeChange}>
-        <Radio.Button value='large'>Large</Radio.Button>
-        <Radio.Button value='default'>Default</Radio.Button>
-        <Radio.Button value='small'>Small</Radio.Button>
+        <Radio.Button value="large">Large</Radio.Button>
+        <Radio.Button value="default">Default</Radio.Button>
+        <Radio.Button value="small">Small</Radio.Button>
       </Radio.Group>
 
-      <Select
-        size={size}
-        defaultValue='a1'
-        onChange={handleChange}
-        style={{width: 200}}>
+      <Select size={size} defaultValue="a1" onChange={handleChange} style={{ width: 200 }}>
         {children}
       </Select>
 
-      <Select
-        mode='multiple'
-        size={size}
-        placeholder='Please select'
-        defaultValue={['a10', 'c12']}
-        onChange={handleChange}
-        style={{width: '100%'}}>
+      <Select mode="multiple" size={size} placeholder="Please select" defaultValue={['a10', 'c12']} onChange={handleChange} style={{ width: '100%' }}>
         {children}
       </Select>
 
-      <Select
-        mode='tags'
-        size={size}
-        placeholder='Please select'
-        defaultValue={['a10', 'c12']}
-        onChange={handleChange}
-        style={{width: '100%'}}>
+      <Select mode="tags" size={size} placeholder="Please select" defaultValue={['a10', 'c12']} onChange={handleChange} style={{ width: '100%' }}>
         {children}
       </Select>
     </Space>

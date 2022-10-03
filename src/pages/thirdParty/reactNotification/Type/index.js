@@ -1,10 +1,10 @@
 import React from 'react';
-import {store} from 'react-notifications-component';
-import {Button} from 'antd';
+import { store } from 'react-notifications-component';
+import { Button } from 'antd';
 import '../index.style.less';
 
 import notification from '../helpers/notification';
-import {getContainer, getMessage, getTitle} from '../helpers/randomize';
+import { getContainer, getMessage, getTitle } from '../helpers/randomize';
 
 export default class TypeExample extends React.Component {
   add = (type) => {
@@ -20,34 +20,34 @@ export default class TypeExample extends React.Component {
 
   render() {
     return (
-      <div className='react-notification'>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('success')}>
+      <div className="react-notification">
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('success')}>
             Success
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('default')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('default')}>
             Default
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('warning')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('warning')}>
             Warning
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('info')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('info')}>
             Info
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('danger')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('danger')}>
             Danger
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('awesome')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('awesome')}>
             Custom
           </Button>
         </div>

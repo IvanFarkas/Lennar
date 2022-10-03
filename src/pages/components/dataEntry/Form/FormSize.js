@@ -1,21 +1,10 @@
-import React, {useState} from 'react';
-import {
-  Form,
-  Input,
-  Button,
-  Radio,
-  Select,
-  Cascader,
-  DatePicker,
-  InputNumber,
-  TreeSelect,
-  Switch,
-} from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, Button, Radio, Select, Cascader, DatePicker, InputNumber, TreeSelect, Switch } from 'antd';
 
 const FormSize = () => {
   const [componentSize, setComponentSize] = useState('default');
 
-  const onFormLayoutChange = ({size}) => {
+  const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
 
@@ -27,29 +16,30 @@ const FormSize = () => {
       wrapperCol={{
         span: 16,
       }}
-      layout='horizontal'
+      layout="horizontal"
       initialValues={{
         size: componentSize,
       }}
-      style={{width: '100%'}}
+      style={{ width: '100%' }}
       onValuesChange={onFormLayoutChange}
-      size={componentSize}>
-      <Form.Item label='Form Size' name='size'>
+      size={componentSize}
+    >
+      <Form.Item label="Form Size" name="size">
         <Radio.Group>
-          <Radio.Button value='small'>Small</Radio.Button>
-          <Radio.Button value='default'>Default</Radio.Button>
-          <Radio.Button value='large'>Large</Radio.Button>
+          <Radio.Button value="small">Small</Radio.Button>
+          <Radio.Button value="default">Default</Radio.Button>
+          <Radio.Button value="large">Large</Radio.Button>
         </Radio.Group>
       </Form.Item>
-      <Form.Item label='Input'>
+      <Form.Item label="Input">
         <Input />
       </Form.Item>
-      <Form.Item label='Select'>
+      <Form.Item label="Select">
         <Select>
-          <Select.Option value='demo'>Demo</Select.Option>
+          <Select.Option value="demo">Demo</Select.Option>
         </Select>
       </Form.Item>
-      <Form.Item label='TreeSelect'>
+      <Form.Item label="TreeSelect">
         <TreeSelect
           treeData={[
             {
@@ -65,7 +55,7 @@ const FormSize = () => {
           ]}
         />
       </Form.Item>
-      <Form.Item label='Cascader'>
+      <Form.Item label="Cascader">
         <Cascader
           options={[
             {
@@ -81,16 +71,16 @@ const FormSize = () => {
           ]}
         />
       </Form.Item>
-      <Form.Item label='DatePicker'>
+      <Form.Item label="DatePicker">
         <DatePicker />
       </Form.Item>
-      <Form.Item label='InputNumber'>
+      <Form.Item label="InputNumber">
         <InputNumber />
       </Form.Item>
-      <Form.Item label='Switch' valuePropName='checked'>
+      <Form.Item label="Switch" valuePropName="checked">
         <Switch />
       </Form.Item>
-      <Form.Item label='Button'>
+      <Form.Item label="Button">
         <Button>Button</Button>
       </Form.Item>
     </Form>

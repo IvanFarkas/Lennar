@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Drawer, Button} from 'antd';
+import React, { useState } from 'react';
+import { Drawer, Button } from 'antd';
 
 const Basic = () => {
   const [visible, setVisible] = useState(false);
@@ -14,14 +14,10 @@ const Basic = () => {
 
   return (
     <>
-      <Button type='primary' onClick={showDrawer}>
+      <Button type="primary" onClick={showDrawer}>
         Open
       </Button>
-      <Drawer
-        title='Basic Drawer'
-        placement='right'
-        onClose={onClose}
-        visible={visible}>
+      <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>

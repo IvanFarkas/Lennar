@@ -1,9 +1,9 @@
 import React from 'react';
-import {Space, Collapse} from 'antd';
+import { Space, Collapse } from 'antd';
 
 import './basic.less';
 
-const {Panel} = Collapse;
+const { Panel } = Collapse;
 
 const text = `
   A dog is a type of domesticated animal.
@@ -17,15 +17,15 @@ const Basic = () => {
   };
 
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <Collapse defaultActiveKey={['1']} onChange={callback}>
-        <Panel header='This is panel header 1' key='1'>
+        <Panel header="This is panel header 1" key="1">
           <p>{text}</p>
         </Panel>
-        <Panel header='This is panel header 2' key='2'>
+        <Panel header="This is panel header 2" key="2">
           <p>{text}</p>
         </Panel>
-        <Panel header='This is panel header 3' key='3' disabled>
+        <Panel header="This is panel header 3" key="3" disabled>
           <p>{text}</p>
         </Panel>
       </Collapse>

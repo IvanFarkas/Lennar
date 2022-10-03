@@ -1,6 +1,6 @@
 import React from 'react';
-import {Space, message, Upload} from 'antd';
-import {LoadingOutlined, PlusOutlined} from '@ant-design/icons';
+import { Space, message, Upload } from 'antd';
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -26,7 +26,7 @@ class Avatar extends React.Component {
   };
   handleChange = (info) => {
     if (info.file.status === 'uploading') {
-      this.setState({loading: true});
+      this.setState({ loading: true });
       return;
     }
     if (info.file.status === 'done') {
@@ -44,21 +44,14 @@ class Avatar extends React.Component {
     const uploadButton = (
       <div>
         {this.state.loading ? <LoadingOutlined /> : <PlusOutlined />}
-        <div className='ant-upload-text'>Upload</div>
+        <div className="ant-upload-text">Upload</div>
       </div>
     );
     const imageUrl = this.state.imageUrl;
     return (
       <Space>
-        <Upload
-          name='avatar'
-          listType='picture-Space'
-          className='avatar-uploader'
-          showUploadList={false}
-          action='//jsonplaceholder.typicode.com/posts/'
-          beforeUpload={beforeUpload}
-          onChange={this.handleChange}>
-          {imageUrl ? <img src={imageUrl} alt='' /> : uploadButton}
+        <Upload name="avatar" listType="picture-Space" className="avatar-uploader" showUploadList={false} action="//jsonplaceholder.typicode.com/posts/" beforeUpload={beforeUpload} onChange={this.handleChange}>
+          {imageUrl ? <img src={imageUrl} alt="" /> : uploadButton}
         </Upload>
       </Space>
     );

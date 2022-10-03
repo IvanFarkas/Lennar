@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, message, Upload} from 'antd';
+import { Button, Space, message, Upload } from 'antd';
 import UploadOutlined from '@ant-design/icons/lib/icons/UploadOutlined';
 
 const props = {

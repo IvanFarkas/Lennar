@@ -1,7 +1,7 @@
-import {mapConfigs} from './googleMap';
-import {rechartsConfigs} from './recharts';
+import { mapConfigs } from './googleMap';
+import { rechartsConfigs } from './recharts';
 import React from 'react';
-import {calendarConfigs} from './calendar';
+import { calendarConfigs } from './calendar';
 
 const ReactColor = React.lazy(() => import('./reactColor'));
 const ReactNotification = React.lazy(() => import('./reactNotification'));

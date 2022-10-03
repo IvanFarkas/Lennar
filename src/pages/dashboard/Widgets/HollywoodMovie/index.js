@@ -5,16 +5,16 @@ import './index.style.less';
 
 const HollywoodMovie = () => {
   return (
-    <AppCard className='hollywood-card background-image' heightFull>
-      <div className='hollywood-content'>
-        <div className='hollywood-content-action'>
-          <span className='hollywood-avatar'>
-            <img src={'/assets/images/playbutton.png'} alt='play' />
+    <AppCard className="hollywood-card background-image" heightFull>
+      <div className="hollywood-content">
+        <div className="hollywood-content-action">
+          <span className="hollywood-avatar">
+            <img src={'/assets/images/playbutton.png'} alt="play" />
           </span>
         </div>
-        <div className='hollywood-footer'>
+        <div className="hollywood-footer">
           <h1>
-            <IntlMessages id='dashboard.hollywoodMovie' />
+            <IntlMessages id="dashboard.hollywoodMovie" />
           </h1>
         </div>
       </div>

@@ -1,28 +1,16 @@
 import React from 'react';
-import {Line, LineChart, ResponsiveContainer} from 'recharts';
+import { Line, LineChart, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 import './index.style.less';
 
 const RevenueGraph = (props) => {
-  const {data} = props;
+  const { data } = props;
 
   return (
-    <ResponsiveContainer width='100%' height={200}>
-      <LineChart data={data} margin={{left: 10, right: 10, bottom: 10}}>
-        <Line
-          type='monotone'
-          dataKey='revenue'
-          stroke='#0A8FDC'
-          strokeWidth={3}
-          dot={{r: 0}}
-        />
-        <Line
-          type='monotone'
-          dataKey='revenue1'
-          stroke='#49BD65'
-          strokeWidth={3}
-          dot={{r: 0}}
-        />
+    <ResponsiveContainer width="100%" height={200}>
+      <LineChart data={data} margin={{ left: 10, right: 10, bottom: 10 }}>
+        <Line type="monotone" dataKey="revenue" stroke="#0A8FDC" strokeWidth={3} dot={{ r: 0 }} />
+        <Line type="monotone" dataKey="revenue1" stroke="#49BD65" strokeWidth={3} dot={{ r: 0 }} />
         {/* <Tooltip
           labelStyle={{color: 'black'}}
           cursor={false}

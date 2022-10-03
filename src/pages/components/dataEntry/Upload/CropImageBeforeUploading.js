@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Upload} from 'antd';
+import React, { useState } from 'react';
+import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 
 const CropImageBeforeUploading = () => {
@@ -12,7 +12,7 @@ const CropImageBeforeUploading = () => {
     },
   ]);
 
-  const onChange = ({fileList: newFileList}) => {
+  const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
 
@@ -33,12 +33,7 @@ const CropImageBeforeUploading = () => {
 
   return (
     <ImgCrop rotate>
-      <Upload
-        action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
-        listType='picture-card'
-        fileList={fileList}
-        onChange={onChange}
-        onPreview={onPreview}>
+      <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" listType="picture-card" fileList={fileList} onChange={onChange} onPreview={onPreview}>
         {fileList.length < 5 && '+ Upload'}
       </Upload>
     </ImgCrop>

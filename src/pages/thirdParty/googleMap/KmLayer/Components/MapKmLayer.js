@@ -1,13 +1,10 @@
-import React, {Component} from 'react';
-import {GoogleMap, KmlLayer, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import { GoogleMap, KmlLayer, withGoogleMap } from 'react-google-maps';
 import '../../map.style.less';
 
 const KmlLayerExampleGoogleMap = withGoogleMap(() => (
-  <GoogleMap defaultZoom={8} defaultCenter={{lat: 25.7824758, lng: -80.289328}}>
-    <KmlLayer
-      url='http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml'
-      options={{preserveViewport: true}}
-    />
+  <GoogleMap defaultZoom={8} defaultCenter={{ lat: 25.7824758, lng: -80.289328 }}>
+    <KmlLayer url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml" options={{ preserveViewport: true }} />
   </GoogleMap>
 ));
 
@@ -16,13 +13,6 @@ const KmlLayerExampleGoogleMap = withGoogleMap(() => (
  */
 export default class MapKmLayer extends Component {
   render() {
-    return (
-      <KmlLayerExampleGoogleMap
-        containerElement={
-          <div className='cr-embed-responsive cr-embed-responsive-21by9' />
-        }
-        mapElement={<div className='cr-embed-responsive-item' />}
-      />
-    );
+    return <KmlLayerExampleGoogleMap containerElement={<div className="cr-embed-responsive cr-embed-responsive-21by9" />} mapElement={<div className="cr-embed-responsive-item" />} />;
   }
 }

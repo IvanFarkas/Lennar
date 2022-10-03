@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Checkbox} from 'antd';
+import { Space, Checkbox } from 'antd';
 
 const Disabled = () => {
   return (

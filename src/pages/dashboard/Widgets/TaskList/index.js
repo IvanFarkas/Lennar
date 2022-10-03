@@ -2,25 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TaskItem from './TaskItem';
 import AppCard from '../../../../@crema/core/AppCard';
-import {useIntl} from 'react-intl';
-import {List, Button} from 'antd';
-import {CloseOutlined} from '@ant-design/icons';
+import { useIntl } from 'react-intl';
+import { List, Button } from 'antd';
+import { CloseOutlined } from '@ant-design/icons';
 import './index.style.less';
 import AppScrollbar from '../../../../@crema/core/AppScrollbar';
 
-const TaskList = ({data}) => {
-  const {messages} = useIntl();
+const TaskList = ({ data }) => {
+  const { messages } = useIntl();
   return (
     <AppCard
       heightFull
-      className='no-card-space-ltr-rtl'
+      className="no-card-space-ltr-rtl"
       title={messages['dashboard.taskList']}
       extra={
-        <Button className='close-btn'>
+        <Button className="close-btn">
           <CloseOutlined />
         </Button>
-      }>
-      <AppScrollbar className='task-list-scrollbar'>
+      }
+    >
+      <AppScrollbar className="task-list-scrollbar">
         <List
           dataSource={data}
           renderItem={(item) => {

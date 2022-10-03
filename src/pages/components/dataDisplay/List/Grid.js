@@ -1,4 +1,4 @@
-import {List, Card} from 'antd';
+import { List, Card } from 'antd';
 
 const data = [
   {
@@ -19,7 +19,7 @@ import React from 'react';
 const Grid = () => {
   return (
     <List
-      grid={{gutter: 16, column: 4}}
+      grid={{ gutter: 16, column: 4 }}
       dataSource={data}
       renderItem={(item) => (
         <List.Item>

@@ -35,13 +35,13 @@ const ComparisonCard = ({
   };
 
   return (
-    <AppCard className='no-card-space comparison-card'>
-      <div className='comparison-card-info'>
-        <div className='comparison-card-content'>
+    <AppCard className="no-card-space comparison-card">
+      <div className="comparison-card-info">
+        <div className="comparison-card-content">
           <p>{text}</p>
-          <h3 style={{color: valueColor}}>{data.value}</h3>
+          <h3 style={{ color: valueColor }}>{data.value}</h3>
         </div>
-        <div className='comparison-card-graph-view'>{onGetGraph()}</div>
+        <div className="comparison-card-graph-view">{onGetGraph()}</div>
       </div>
     </AppCard>
   );

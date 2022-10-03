@@ -1,4 +1,4 @@
-import {PageHeader} from 'antd';
+import { PageHeader } from 'antd';
 
 const routes = [
   {
@@ -18,14 +18,7 @@ const routes = [
 import React from 'react';
 
 const UseWithBreadcrumbs = () => {
-  return (
-    <PageHeader
-      className='site-page-header'
-      title='Title'
-      breadcrumb={{routes}}
-      subTitle='This is a subtitle'
-    />
-  );
+  return <PageHeader className="site-page-header" title="Title" breadcrumb={{ routes }} subTitle="This is a subtitle" />;
 };
 
 export default UseWithBreadcrumbs;

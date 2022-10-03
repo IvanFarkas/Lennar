@@ -1,4 +1,4 @@
-import {Table} from 'antd';
+import { Table } from 'antd';
 
 const columns = [
   {
@@ -57,7 +57,7 @@ const columns = [
     key: '7',
     width: 150,
   },
-  {title: 'Column 8', dataIndex: 'address', key: '8'},
+  { title: 'Column 8', dataIndex: 'address', key: '8' },
   {
     title: 'Action',
     key: 'operation',
@@ -80,9 +80,7 @@ for (let i = 0; i < 100; i++) {
 import React from 'react';
 
 const FixedColumnsAndHeader = () => {
-  return (
-    <Table columns={columns} dataSource={data} scroll={{x: 1500, y: 300}} />
-  );
+  return <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />;
 };
 
 export default FixedColumnsAndHeader;

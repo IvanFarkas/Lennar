@@ -23,10 +23,7 @@ export const cleanObject = (obj) => {
 
 export const getFileName = (fullPath) => {
   if (fullPath) {
-    let startIndex =
-      fullPath.indexOf('\\') >= 0
-        ? fullPath.lastIndexOf('\\')
-        : fullPath.lastIndexOf('/');
+    let startIndex = fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/');
     let filename = fullPath.substring(startIndex);
     if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
       filename = filename.substring(1);

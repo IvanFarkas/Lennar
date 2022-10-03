@@ -1,5 +1,5 @@
 import React from 'react';
-import {Breadcrumb, Space} from 'antd';
+import { Breadcrumb, Space } from 'antd';
 
 const Basic = () => {
   return (
@@ -7,10 +7,10 @@ const Basic = () => {
       <Breadcrumb>
         <Breadcrumb.Item>Home</Breadcrumb.Item>
         <Breadcrumb.Item>
-          <a href=''>Application Center</a>
+          <a href="">Application Center</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <a href=''>Application List</a>
+          <a href="">Application List</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item>An Application</Breadcrumb.Item>
       </Breadcrumb>

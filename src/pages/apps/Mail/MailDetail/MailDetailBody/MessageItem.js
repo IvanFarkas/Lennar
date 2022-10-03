@@ -1,27 +1,21 @@
-import React, {useState} from 'react';
-import {Avatar, Popover, Tooltip} from 'antd';
+import React, { useState } from 'react';
+import { Avatar, Popover, Tooltip } from 'antd';
 import AppIconButton from '../../../../../@crema/core/AppIconButton';
 import IntlMessages from '../../../../../@crema/utility/IntlMessages';
-import {HiOutlineReply} from 'react-icons/hi';
+import { HiOutlineReply } from 'react-icons/hi';
 import AppsStarredIcon from '../../../../../@crema/core/AppsStarredIcon';
-import {RiShareForwardLine} from 'react-icons/ri';
+import { RiShareForwardLine } from 'react-icons/ri';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import ReplyMail from './ReplyMail';
-import {BiChevronDown} from 'react-icons/bi';
-import {getStringFromHtml} from '../../../../../@crema/utility/helper/StringHelper';
+import { BiChevronDown } from 'react-icons/bi';
+import { getStringFromHtml } from '../../../../../@crema/utility/helper/StringHelper';
 
-const MessageItem = ({
-  message,
-  mailLength,
-  index,
-  onSubmitMail,
-  onChangeStarred,
-}) => {
+const MessageItem = ({ message, mailLength, index, onSubmitMail, onChangeStarred }) => {
   const [isExpanded, setExpanded] = useState(mailLength === index + 1);
 
-  const [{isReply, isForward}, onSelectMethod] = useState({
+  const [{ isReply, isForward }, onSelectMethod] = useState({
     isReply: false,
     isForward: false,
   });
@@ -32,24 +26,24 @@ const MessageItem = ({
 
   const mailDescription = () => {
     return (
-      <div className='mail-description-popover-body'>
-        <div className='mail-description-item'>
-          <span className='mail-description-name'>from:</span>
+      <div className="mail-description-popover-body">
+        <div className="mail-description-item">
+          <span className="mail-description-name">from:</span>
           <span>
             <strong>{message.sender.name}</strong>
-            <span style={{fontSize: 12}}> {`<${message.sender.email}>`}</span>
+            <span style={{ fontSize: 12 }}> {`<${message.sender.email}>`}</span>
           </span>
         </div>
-        <div className='mail-description-item'>
-          <span className='mail-description-name'>reply-to:</span>
+        <div className="mail-description-item">
+          <span className="mail-description-name">reply-to:</span>
           <span>{message.to[0].email}</span>
         </div>
-        <div className='mail-description-item'>
-          <span className='mail-description-name'>date:</span>
+        <div className="mail-description-item">
+          <span className="mail-description-name">date:</span>
           <span>{onGetMailDate()}</span>
         </div>
-        <div className='mail-description-item'>
-          <span className='mail-description-name'>subject:</span>
+        <div className="mail-description-item">
+          <span className="mail-description-name">subject:</span>
           <span>how you get new orders easily</span>
         </div>
       </div>
@@ -59,20 +53,18 @@ const MessageItem = ({
   const getHeaderDescription = () => {
     if (isExpanded) {
       return (
-        <Tooltip title={message.to.map((user) => user.name)} placement='bottom'>
-          <Popover
-            placement='bottomLeft'
-            content={mailDescription}
-            trigger='click'>
+        <Tooltip title={message.to.map((user) => user.name)} placement="bottom">
+          <Popover placement="bottomLeft" content={mailDescription} trigger="click">
             <span
-              className='pointer'
+              className="pointer"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 whiteSpace: 'nowrap',
-              }}>
+              }}
+            >
               {`to ${message.to.map((user) => user.email).toString()}`}
-              <span style={{marginTop: 5, fontSize: 18}}>
+              <span style={{ marginTop: 5, fontSize: 18 }}>
                 <BiChevronDown />
               </span>
             </span>
@@ -81,9 +73,7 @@ const MessageItem = ({
       );
     } else {
       return (
-        <span
-          className='mail-detail-user-description text-truncate'
-          style={{display: 'block'}}>
+        <span className="mail-detail-user-description text-truncate" style={{ display: 'block' }}>
           {getStringFromHtml(message.description)}
         </span>
       );
@@ -91,44 +81,31 @@ const MessageItem = ({
   };
 
   return (
-    <div className='mail-detail-message-content'>
+    <div className="mail-detail-message-content">
       <div
-        className='mail-detail-body-header'
+        className="mail-detail-body-header"
         onClick={() => {
           if (mailLength !== index + 1) setExpanded(!isExpanded);
-        }}>
-        <div className='mail-detail-user'>
-          <Avatar className='mail-detail-avatar'>
-            {message.sender.name.charAt(0)}
-          </Avatar>
-          <div className='mail-detail-user-content'>
-            <div className='ant-row ant-row-middle'>
-              <h3 className='mb-0'>{message.sender.name}</h3>
-              {isExpanded ? (
-                <span className='mail-detail-breakAll'>{`<${message.sender.email}>`}</span>
-              ) : null}
+        }}
+      >
+        <div className="mail-detail-user">
+          <Avatar className="mail-detail-avatar">{message.sender.name.charAt(0)}</Avatar>
+          <div className="mail-detail-user-content">
+            <div className="ant-row ant-row-middle">
+              <h3 className="mb-0">{message.sender.name}</h3>
+              {isExpanded ? <span className="mail-detail-breakAll">{`<${message.sender.email}>`}</span> : null}
             </div>
             <div>{getHeaderDescription()}</div>
           </div>
         </div>
 
-        <div className='mail-detail-body-header-action'>
-          <span className='mail-detail-date'>
-            {onGetMailDate(message.sentOn)}
-          </span>
-          <div className='mail-detail-subject-header-action'>
-            {isExpanded ? (
-              <AppIconButton
-                title={<IntlMessages id='common.reply' />}
-                icon={<HiOutlineReply />}
-                onClick={() =>
-                  onSelectMethod({isReply: true, isForward: false})
-                }
-              />
-            ) : null}
+        <div className="mail-detail-body-header-action">
+          <span className="mail-detail-date">{onGetMailDate(message.sentOn)}</span>
+          <div className="mail-detail-subject-header-action">
+            {isExpanded ? <AppIconButton title={<IntlMessages id="common.reply" />} icon={<HiOutlineReply />} onClick={() => onSelectMethod({ isReply: true, isForward: false })} /> : null}
 
             <AppsStarredIcon
-              title={<IntlMessages id='common.starred' />}
+              title={<IntlMessages id="common.starred" />}
               item={message}
               onChange={(status, item, e) => {
                 e.stopPropagation();
@@ -136,24 +113,12 @@ const MessageItem = ({
               }}
             />
 
-            {isExpanded ? (
-              <AppIconButton
-                title={<IntlMessages id='common.forward' />}
-                icon={<RiShareForwardLine />}
-                onClick={() =>
-                  onSelectMethod({isReply: false, isForward: true})
-                }
-              />
-            ) : null}
+            {isExpanded ? <AppIconButton title={<IntlMessages id="common.forward" />} icon={<RiShareForwardLine />} onClick={() => onSelectMethod({ isReply: false, isForward: true })} /> : null}
           </div>
         </div>
       </div>
 
-      {isExpanded ? (
-        <div className='mail-detail-description'>
-          {renderHTML(message.description)}
-        </div>
-      ) : null}
+      {isExpanded ? <div className="mail-detail-description">{renderHTML(message.description)}</div> : null}
       {isReply || isForward ? (
         <ReplyMail
           isForward={isForward}

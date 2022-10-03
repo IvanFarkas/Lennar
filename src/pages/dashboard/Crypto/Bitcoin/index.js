@@ -1,17 +1,17 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import BitcoinGraph from './BitcoinGraph';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
-import {Tabs, Select} from 'antd';
+import { Tabs, Select } from 'antd';
 import './index.style.less';
 
 const Bitcoin = (props) => {
-  const {coinGraphData} = props;
+  const { coinGraphData } = props;
 
-  const {TabPane} = Tabs;
+  const { TabPane } = Tabs;
 
-  const {Option} = Select;
+  const { Option } = Select;
 
   const onGetCoinData = useCallback(
     (coin) => {
@@ -43,42 +43,39 @@ const Bitcoin = (props) => {
     setCoinType(event.target.value);
   };
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <AppCard>
-      <div className='bitcoin-header'>
-        <Select
-          value={coinType}
-          onChange={handleSelectValue}
-          className='bitcoin-select-box'>
-          <Option value='Bitcoin' className='bitcoin-select-box-option'>
+      <div className="bitcoin-header">
+        <Select value={coinType} onChange={handleSelectValue} className="bitcoin-select-box">
+          <Option value="Bitcoin" className="bitcoin-select-box-option">
             {messages['dashboard.bitcoin']}
           </Option>
-          <Option value='Litecoin' className='bitcoin-select-box-option'>
+          <Option value="Litecoin" className="bitcoin-select-box-option">
             {messages['dashboard.litecoin']}
           </Option>
-          <Option value='Ripple' className='bitcoin-select-box-option'>
+          <Option value="Ripple" className="bitcoin-select-box-option">
             {messages['dashboard.ripple']}
           </Option>
         </Select>
-        <div className='bitcoin-title'>
+        <div className="bitcoin-title">
           <h3>$7280.45</h3>
           <span>0.8%</span>
         </div>
       </div>
 
-      <Tabs className='bitcoin-tabs' defaultActiveKey='1'>
-        <TabPane tab='Yearly' key='1'>
+      <Tabs className="bitcoin-tabs" defaultActiveKey="1">
+        <TabPane tab="Yearly" key="1">
           <BitcoinGraph data={coinData.yearlyData} />
         </TabPane>
-        <TabPane tab='Monthly' key='2'>
+        <TabPane tab="Monthly" key="2">
           <BitcoinGraph data={coinData.monthlyData} />
         </TabPane>
-        <TabPane tab='Weekly' key='3'>
+        <TabPane tab="Weekly" key="3">
           <BitcoinGraph data={coinData.weeklyData} />
         </TabPane>
-        <TabPane tab='Today' key='4'>
+        <TabPane tab="Today" key="4">
           <BitcoinGraph data={coinData.dailyData} />
         </TabPane>
       </Tabs>

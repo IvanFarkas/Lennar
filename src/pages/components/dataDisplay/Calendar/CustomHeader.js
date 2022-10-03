@@ -1,4 +1,4 @@
-import {Calendar, Select, Radio, Col, Row, Typography} from 'antd';
+import { Calendar, Select, Radio, Col, Row, Typography } from 'antd';
 
 function onPanelChange(value, mode) {
   console.log(value, mode);
@@ -8,10 +8,10 @@ import React from 'react';
 
 const CustomHeader = () => {
   return (
-    <div className='site-calendar-customize-header-wrapper'>
+    <div className="site-calendar-customize-header-wrapper">
       <Calendar
         fullscreen={false}
-        headerRender={({value, type, onChange, onTypeChange}) => {
+        headerRender={({ value, type, onChange, onTypeChange }) => {
           const start = 0;
           const end = 12;
           const monthOptions = [];
@@ -26,7 +26,7 @@ const CustomHeader = () => {
 
           for (let index = start; index < end; index++) {
             monthOptions.push(
-              <Select.Option className='month-item' key={`${index}`}>
+              <Select.Option className="month-item" key={`${index}`}>
                 {months[index]}
               </Select.Option>,
             );
@@ -37,47 +37,46 @@ const CustomHeader = () => {
           const options = [];
           for (let i = year - 10; i < year + 10; i += 1) {
             options.push(
-              <Select.Option key={i} value={i} className='year-item'>
+              <Select.Option key={i} value={i} className="year-item">
                 {i}
               </Select.Option>,
             );
           }
           return (
-            <div style={{padding: 8}}>
+            <div style={{ padding: 8 }}>
               <Typography.Title level={4}>Custom header</Typography.Title>
               <Row gutter={8}>
                 <Col>
-                  <Radio.Group
-                    size='small'
-                    onChange={(e) => onTypeChange(e.target.value)}
-                    value={type}>
-                    <Radio.Button value='month'>Month</Radio.Button>
-                    <Radio.Button value='year'>Year</Radio.Button>
+                  <Radio.Group size="small" onChange={(e) => onTypeChange(e.target.value)} value={type}>
+                    <Radio.Button value="month">Month</Radio.Button>
+                    <Radio.Button value="year">Year</Radio.Button>
                   </Radio.Group>
                 </Col>
                 <Col>
                   <Select
-                    size='small'
+                    size="small"
                     dropdownMatchSelectWidth={false}
-                    className='my-year-select'
+                    className="my-year-select"
                     onChange={(newYear) => {
                       const now = value.clone().year(newYear);
                       onChange(now);
                     }}
-                    value={String(year)}>
+                    value={String(year)}
+                  >
                     {options}
                   </Select>
                 </Col>
                 <Col>
                   <Select
-                    size='small'
+                    size="small"
                     dropdownMatchSelectWidth={false}
                     value={String(month)}
                     onChange={(selectedMonth) => {
                       const newValue = value.clone();
                       newValue.month(parseInt(selectedMonth, 10));
                       onChange(newValue);
-                    }}>
+                    }}
+                  >
                     {monthOptions}
                   </Select>
                 </Col>

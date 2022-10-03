@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {CustomPicker} from 'react-color';
-import {EditableInput, Hue} from 'react-color/lib/components/common';
+import { CustomPicker } from 'react-color';
+import { EditableInput, Hue } from 'react-color/lib/components/common';
 import PropTypes from 'prop-types';
 
-export const MyPicker = ({hex, hsl, onChange}) => {
+export const MyPicker = ({ hex, hsl, onChange }) => {
   const styles = {
     hue: {
       height: 10,
@@ -28,12 +28,8 @@ export const MyPicker = ({hex, hsl, onChange}) => {
         <Hue hsl={hsl} onChange={onChange} />
       </div>
 
-      <div style={{display: 'flex'}}>
-        <EditableInput
-          style={{input: styles.input}}
-          value={hex}
-          onChange={onChange}
-        />
+      <div style={{ display: 'flex' }}>
+        <EditableInput style={{ input: styles.input }} value={hex} onChange={onChange} />
         <div style={styles.swatch} />
       </div>
     </div>

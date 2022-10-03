@@ -1,10 +1,10 @@
 import React from 'react';
-import {Space, Tooltip} from 'antd';
+import { Space, Tooltip } from 'antd';
 
 const Basic = () => {
   return (
     <Space>
-      <Tooltip title='prompt text'>
+      <Tooltip title="prompt text">
         <span>Tooltip will show when mouse enter.</span>
       </Tooltip>
     </Space>

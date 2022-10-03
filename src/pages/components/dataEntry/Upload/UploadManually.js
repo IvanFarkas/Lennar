@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button, Upload} from 'antd';
-import {UploadOutlined} from '@ant-design/icons';
+import { Button, Upload } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 class UploadManually extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class UploadManually extends React.Component {
   };
 
   handleUpload = () => {
-    const {fileList} = this.state;
+    const { fileList } = this.state;
     const formData = new FormData();
     fileList.forEach((file) => {
       formData.append('files[]', file);
@@ -42,7 +42,7 @@ class UploadManually extends React.Component {
   };
 
   render() {
-    const {uploading, fileList} = this.state;
+    const { uploading, fileList } = this.state;
     const props = {
       onRemove: (file) => {
         this.setState((state) => {
@@ -68,12 +68,7 @@ class UploadManually extends React.Component {
         <Upload {...props}>
           <Button icon={<UploadOutlined />}>Select File</Button>
         </Upload>
-        <Button
-          type='primary'
-          onClick={this.handleUpload}
-          disabled={fileList.length === 0}
-          loading={uploading}
-          style={{marginTop: 16}}>
+        <Button type="primary" onClick={this.handleUpload} disabled={fileList.length === 0} loading={uploading} style={{ marginTop: 16 }}>
           {uploading ? 'Uploading' : 'Start Upload'}
         </Button>
       </>

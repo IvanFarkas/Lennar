@@ -1,21 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
-import {Button, Input, Modal} from 'antd';
+import { Button, Input, Modal } from 'antd';
 import AppCard from '../../../../@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
-const AddNewBoard = ({
-  isModalVisible,
-  handleCancel,
-  onAddBoard,
-  selectedBoard,
-  handleOk,
-}) => {
-  const [boardName, setBoardName] = useState(() =>
-    selectedBoard ? selectedBoard.name : '',
-  );
+const AddNewBoard = ({ isModalVisible, handleCancel, onAddBoard, selectedBoard, handleOk }) => {
+  const [boardName, setBoardName] = useState(() => (selectedBoard ? selectedBoard.name : ''));
 
   const onClickAddButton = () => {
     if (boardName !== '') {
@@ -24,7 +16,7 @@ const AddNewBoard = ({
       handleCancel();
     }
   };
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <Modal
@@ -32,22 +24,15 @@ const AddNewBoard = ({
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
-      className='scrum-add-board-modal'
+      className="scrum-add-board-modal"
       footer={
-        <Button
-          type='primary'
-          className='scrum-add-board-card-footer-btn'
-          onClick={onClickAddButton}>
-          <IntlMessages id='common.add' />
+        <Button type="primary" className="scrum-add-board-card-footer-btn" onClick={onClickAddButton}>
+          <IntlMessages id="common.add" />
         </Button>
-      }>
-      <AppCard className='scrum-add-board-card'>
-        <Input
-          placeholder='Basic usage'
-          label={<IntlMessages id='scrumboard.boardTitle' />}
-          value={boardName}
-          onChange={(event) => setBoardName(event.target.value)}
-        />
+      }
+    >
+      <AppCard className="scrum-add-board-card">
+        <Input placeholder="Basic usage" label={<IntlMessages id="scrumboard.boardTitle" />} value={boardName} onChange={(event) => setBoardName(event.target.value)} />
       </AppCard>
     </Modal>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Slider} from 'antd';
+import { Space, Slider } from 'antd';
 
 const style = {
   display: 'inline-block',

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, TreeSelect} from 'antd';
+import { Space, TreeSelect } from 'antd';
 
 const treeData = [
   {
@@ -31,21 +31,13 @@ class GenerateTreeData extends React.Component {
     value: undefined,
   };
   onChange = (value) => {
-    this.setState({value});
+    this.setState({ value });
   };
 
   render() {
     return (
-      <Space style={{width: '100%'}} direction='vertical'>
-        <TreeSelect
-          style={{width: '100%'}}
-          value={this.state.value}
-          dropdownStyle={{maxHeight: 400, overflow: 'auto'}}
-          treeData={treeData}
-          placeholder='Please select'
-          treeDefaultExpandAll
-          onChange={this.onChange}
-        />
+      <Space style={{ width: '100%' }} direction="vertical">
+        <TreeSelect style={{ width: '100%' }} value={this.state.value} dropdownStyle={{ maxHeight: 400, overflow: 'auto' }} treeData={treeData} placeholder="Please select" treeDefaultExpandAll onChange={this.onChange} />
       </Space>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Space, Button, Switch} from 'antd';
+import { Input, Space, Button, Switch } from 'antd';
 
 const Focus = () => {
   const inputRef = React.useRef(null);
@@ -13,17 +13,19 @@ const Focus = () => {
   };
   return (
     <Space
-      direction='vertical'
+      direction="vertical"
       style={{
         width: '100%',
-      }}>
+      }}
+    >
       <Space wrap>
         <Button
           onClick={() => {
             inputRef.current.focus({
               cursor: 'start',
             });
-          }}>
+          }}
+        >
           Focus at first
         </Button>
         <Button
@@ -31,7 +33,8 @@ const Focus = () => {
             inputRef.current.focus({
               cursor: 'end',
             });
-          }}>
+          }}
+        >
           Focus at last
         </Button>
         <Button
@@ -39,7 +42,8 @@ const Focus = () => {
             inputRef.current.focus({
               cursor: 'all',
             });
-          }}>
+          }}
+        >
           Focus to select all
         </Button>
         <Button
@@ -47,13 +51,14 @@ const Focus = () => {
             inputRef.current.focus({
               preventScroll: true,
             });
-          }}>
+          }}
+        >
           Focus prevent scroll
         </Button>
         <Switch
           checked={input}
-          checkedChildren='Input'
-          unCheckedChildren='TextArea'
+          checkedChildren="Input"
+          unCheckedChildren="TextArea"
           onChange={() => {
             setInput(!input);
           }}

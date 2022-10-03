@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Collapse} from 'antd';
+import { Collapse } from 'antd';
 import './index.style.less';
 
-const {Panel} = Collapse;
+const { Panel } = Collapse;
 
 function callback(key) {
   console.log(key);
 }
 
-const FaqList = ({faqList}) => {
+const FaqList = ({ faqList }) => {
   console.log(faqList[0].id);
 
   return (
-    <div className='faq-list'>
+    <div className="faq-list">
       <Collapse defaultActiveKey={faqList[0].id} onChange={callback}>
         {faqList.map((item) => {
           return (

@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
-import {message} from 'antd';
+import React, { useEffect } from 'react';
+import { message } from 'antd';
 
-import {AppLoader} from '../../../@crema';
-import {useDispatch, useSelector} from 'react-redux';
-import {hideMessage} from '../../../redux/actions';
+import { AppLoader } from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { hideMessage } from '../../../redux/actions';
 
 const AppInfoView = () => {
-  const {loading, error, displayMessage} = useSelector(({common}) => common);
+  const { loading, error, displayMessage } = useSelector(({ common }) => common);
   const dispatch = useDispatch();
 
   useEffect(() => {

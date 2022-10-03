@@ -1,21 +1,16 @@
 import React from 'react';
 import AppCard from '../../../../@crema/core/AppCard';
 import LearningItem from './LearningItem';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import {List} from 'antd';
+import { List } from 'antd';
 import './index.style.less';
 
-const MyLearning = ({learningData}) => {
-  const {messages} = useIntl();
+const MyLearning = ({ learningData }) => {
+  const { messages } = useIntl();
   return (
-    <AppCard
-      className='no-card-space-ltr-rtl'
-      title={messages['academy.myLearning']}>
-      <List
-        dataSource={learningData}
-        renderItem={(data, index) => <LearningItem key={index} course={data} />}
-      />
+    <AppCard className="no-card-space-ltr-rtl" title={messages['academy.myLearning']}>
+      <List dataSource={learningData} renderItem={(data, index) => <LearningItem key={index} course={data} />} />
     </AppCard>
   );
 };

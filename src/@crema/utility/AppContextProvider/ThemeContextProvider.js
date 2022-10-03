@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
 
@@ -9,18 +9,20 @@ export const useThemeContext = () => useContext(ThemeContext);
 
 export const useThemeActionsContext = () => useContext(ThemeActionsContext);
 
-const ThemeContextProvider = ({children}) => {
+const ThemeContextProvider = ({ children }) => {
   const [themeMode, updateThemeMode] = useState(defaultConfig.themeMode);
 
   return (
     <ThemeContext.Provider
       value={{
         themeMode,
-      }}>
+      }}
+    >
       <ThemeActionsContext.Provider
         value={{
           updateThemeMode,
-        }}>
+        }}
+      >
         {children}
       </ThemeActionsContext.Provider>
     </ThemeContext.Provider>

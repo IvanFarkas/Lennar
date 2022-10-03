@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import './index.style.less';
 
 const DayTemperature = (props) => {
-  const {day} = props;
+  const { day } = props;
 
   return (
-    <div className='day-temp-item'>
+    <div className="day-temp-item">
       <p>{day.day}</p>
       <span>
-        <img src={day.image} alt='weather' />
+        <img src={day.image} alt="weather" />
       </span>
     </div>
   );

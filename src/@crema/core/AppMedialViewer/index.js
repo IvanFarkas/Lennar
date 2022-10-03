@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Modal} from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Modal } from 'antd';
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -19,37 +19,23 @@ const settings = {
 
 const renderItem = (data, index) => {
   if (data.mime_type.startsWith('image')) {
-    return (
-      <img
-        key={index}
-        src={data.url}
-        alt={data.name ? data.name : 'detail view'}
-      />
-    );
+    return <img key={index} src={data.url} alt={data.name ? data.name : 'detail view'} />;
   } else if (data.mime_type.startsWith('docs')) {
     return (
-      <div className='embed-responsive'>
-        <iframe
-          key={index}
-          src={data.url}
-          title={data.name ? data.name : 'detail view'}
-        />
+      <div className="embed-responsive">
+        <iframe key={index} src={data.url} title={data.name ? data.name : 'detail view'} />
       </div>
     );
   } else {
     return (
-      <div className='embed-responsive'>
-        <iframe
-          key={index}
-          src={data.url}
-          title={data.name ? data.name : 'detail view'}
-        />
+      <div className="embed-responsive">
+        <iframe key={index} src={data.url} title={data.name ? data.name : 'detail view'} />
       </div>
     );
   }
 };
 
-const AppMediaViewer = ({index, modalTitle, medias, onClose}) => {
+const AppMediaViewer = ({ index, modalTitle, medias, onClose }) => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -60,18 +46,11 @@ const AppMediaViewer = ({index, modalTitle, medias, onClose}) => {
   }, [index]);
 
   return (
-    <Modal
-      title={modalTitle}
-      visible={isOpen}
-      footer={null}
-      onCancel={onClose}
-      className='app-media-modal'>
-      <div className='media-viewer'>
+    <Modal title={modalTitle} visible={isOpen} footer={null} onCancel={onClose} className="app-media-modal">
+      <div className="media-viewer">
         {index >= 0 ? (
-          <div className='medial-carousel'>
-            <Slider
-              settings={{...settings, initialSlide: index}}
-              slickGoTo={index}>
+          <div className="medial-carousel">
+            <Slider settings={{ ...settings, initialSlide: index }} slickGoTo={index}>
               {medias.map((data, index) => renderItem(data, index))}
             </Slider>
           </div>

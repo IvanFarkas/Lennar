@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {
@@ -43,9 +43,9 @@ function onChange(value) {
 const Size = () => {
   return (
     <Space wrap>
-      <Cascader size='large' options={options} onChange={onChange} />
+      <Cascader size="large" options={options} onChange={onChange} />
       <Cascader options={options} onChange={onChange} />
-      <Cascader size='small' options={options} onChange={onChange} />
+      <Cascader size="small" options={options} onChange={onChange} />
     </Space>
   );
 };

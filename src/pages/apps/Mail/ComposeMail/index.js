@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import {Button, Form, Input, Modal} from 'antd';
-import {useDispatch} from 'react-redux';
-import {useLocation} from 'react-router-dom';
-import {MailOutlined} from '@ant-design/icons';
+import { Button, Form, Input, Modal } from 'antd';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { MailOutlined } from '@ant-design/icons';
 import ReactQuill from 'react-quill';
 import '../../../../shared/styles/vendors/ql-editor.css';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
-import {onComposeMail} from '../../../../redux/actions';
+import { onComposeMail } from '../../../../redux/actions';
 import AppScrollbar from '../../../../@crema/core/AppScrollbar';
 import './index.style.less';
 
@@ -18,15 +18,15 @@ export const isValidEmail = (value) => {
 };
 
 const ComposeMail = (props) => {
-  const {isComposeMail, onCloseComposeMail} = props;
+  const { isComposeMail, onCloseComposeMail } = props;
   const dispatch = useDispatch();
 
   const [isShowBcc, onShowBcc] = useState(false);
 
   const [isShowCC, onShowCC] = useState(false);
 
-  const {messages} = useIntl();
-  const {pathname} = useLocation();
+  const { messages } = useIntl();
+  const { pathname } = useLocation();
 
   const onFinish = (values) => {
     const mail = {
@@ -61,46 +61,35 @@ const ComposeMail = (props) => {
   };
 
   return (
-    <Modal
-      title={messages['mailApp.compose']}
-      visible={isComposeMail}
-      width={800}
-      onOk={isComposeMail}
-      onCancel={() => onCloseComposeMail(false)}
-      footer={false}
-      className='mail-modal'>
-      <AppScrollbar className='mail-modal-scrollbar'>
-        <Form
-          className='mail-form'
-          name='basic'
-          initialValues={{remember: true}}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}>
-          <div className='mail-modal-content'>
+    <Modal title={messages['mailApp.compose']} visible={isComposeMail} width={800} onOk={isComposeMail} onCancel={() => onCloseComposeMail(false)} footer={false} className="mail-modal">
+      <AppScrollbar className="mail-modal-scrollbar">
+        <Form className="mail-form" name="basic" initialValues={{ remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+          <div className="mail-modal-content">
             <Form.Item
-              className='mail-modal-to'
-              name='username'
+              className="mail-modal-to"
+              name="username"
               rules={[
                 {
                   required: true,
                   type: 'email',
                   message: 'Please input email!',
                 },
-              ]}>
+              ]}
+            >
               <Input
                 prefix={
-                  <span className='mail-modal-prefix'>
-                    <IntlMessages id='common.to' />
+                  <span className="mail-modal-prefix">
+                    <IntlMessages id="common.to" />
                   </span>
                 }
                 suffix={
-                  <span className='mail-modal-suffix'>
+                  <span className="mail-modal-suffix">
                     <span onClick={() => onShowCC(!isShowCC)}>
-                      <IntlMessages id='common.cc' />
+                      <IntlMessages id="common.cc" />
                     </span>
 
                     <span onClick={() => onShowBcc(!isShowBcc)}>
-                      <IntlMessages id='common.bcc' />
+                      <IntlMessages id="common.bcc" />
                     </span>
                   </span>
                 }
@@ -109,49 +98,45 @@ const ComposeMail = (props) => {
 
             {isShowCC ? (
               <Form.Item
-                name='cc'
+                name="cc"
                 rules={[
                   {
                     required: true,
                     type: 'email',
                     message: 'Please input your cc!',
                   },
-                ]}>
+                ]}
+              >
                 <Input placeholder={messages['common.cc']} />
               </Form.Item>
             ) : null}
 
             {isShowBcc ? (
               <Form.Item
-                name='bcc'
+                name="bcc"
                 rules={[
                   {
                     required: true,
                     type: 'email',
                     message: 'Please input your bcc!',
                   },
-                ]}>
+                ]}
+              >
                 <Input placeholder={messages['common.bcc']} />
               </Form.Item>
             ) : null}
-            <Form.Item
-              name='subject'
-              rules={[{required: true, message: 'Please input your Subject!'}]}>
+            <Form.Item name="subject" rules={[{ required: true, message: 'Please input your Subject!' }]}>
               <Input placeholder={messages['common.subject']} />
             </Form.Item>
 
-            <Form.Item name='content'>
-              <ReactQuill
-                theme='snow'
-                className='mail-modal-textarea'
-                placeholder={messages['common.writeContent']}
-              />
+            <Form.Item name="content">
+              <ReactQuill theme="snow" className="mail-modal-textarea" placeholder={messages['common.writeContent']} />
             </Form.Item>
           </div>
 
-          <div className='mail-modal-footer'>
-            <Button type='primary' className='mail-modal-btn' htmlType='submit'>
-              <IntlMessages id='common.send' />
+          <div className="mail-modal-footer">
+            <Button type="primary" className="mail-modal-btn" htmlType="submit">
+              <IntlMessages id="common.send" />
             </Button>
           </div>
         </Form>

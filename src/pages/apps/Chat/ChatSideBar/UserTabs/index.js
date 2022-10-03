@@ -3,43 +3,42 @@ import ConnectionList from './ConnectionList';
 import ChatList from './ChatList';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../../@crema/utility/IntlMessages';
-import {Tabs} from 'antd';
-import {BsChatSquareText} from 'react-icons/bs';
-import {BiUserPin} from 'react-icons/bi';
+import { Tabs } from 'antd';
+import { BsChatSquareText } from 'react-icons/bs';
+import { BiUserPin } from 'react-icons/bi';
 
 const tabs = [
-  {id: 333, name: <IntlMessages id='dashboard.messages' />},
-  {id: 323, name: <IntlMessages id='chatApp.contacts' />},
+  { id: 333, name: <IntlMessages id="dashboard.messages" /> },
+  { id: 323, name: <IntlMessages id="chatApp.contacts" /> },
 ];
 
-const UserTabs = ({connectionListData, chatListData, loading}) => {
-  const {TabPane} = Tabs;
+const UserTabs = ({ connectionListData, chatListData, loading }) => {
+  const { TabPane } = Tabs;
 
   return (
     <>
-      <Tabs className='chat-sidebar-tabs' defaultActiveKey='1'>
+      <Tabs className="chat-sidebar-tabs" defaultActiveKey="1">
         <TabPane
           tab={
-            <span className='chat-tab-item'>
+            <span className="chat-tab-item">
               <BsChatSquareText />
               {tabs[0].name}
             </span>
           }
-          key='1'>
+          key="1"
+        >
           <ChatList chatListData={chatListData} loading={loading} />
         </TabPane>
         <TabPane
           tab={
-            <span className='chat-tab-item'>
+            <span className="chat-tab-item">
               <BiUserPin />
               {tabs[1].name}
             </span>
           }
-          key='2'>
-          <ConnectionList
-            connectionListData={connectionListData}
-            loading={loading}
-          />
+          key="2"
+        >
+          <ConnectionList connectionListData={connectionListData} loading={loading} />
         </TabPane>
       </Tabs>
     </>

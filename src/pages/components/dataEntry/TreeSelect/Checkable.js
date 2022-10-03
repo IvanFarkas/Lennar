@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, TreeSelect} from 'antd';
+import { Space, TreeSelect } from 'antd';
 
 const SHOW_PARENT = TreeSelect.SHOW_PARENT;
 
@@ -45,7 +45,7 @@ class Checkable extends React.Component {
     value: ['0-0-0'],
   };
   onChange = (value) => {
-    this.setState({value});
+    this.setState({ value });
   };
 
   render() {
@@ -61,7 +61,7 @@ class Checkable extends React.Component {
       },
     };
     return (
-      <Space style={{width: '100%'}} direction='vertical'>
+      <Space style={{ width: '100%' }} direction="vertical">
         <TreeSelect {...tProps} />
       </Space>
     );

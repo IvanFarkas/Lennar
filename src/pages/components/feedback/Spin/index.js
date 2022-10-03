@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -23,66 +23,28 @@ class Spin extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Spin'
-          refUrl='https://ant.design/components/spin/'
-        />
+        <ComponentHeader title="Spin" refUrl="https://ant.design/components/spin/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='spin-a'>
-            <AppComponentCard
-              title='Basic'
-              description='A simple loading status.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="spin-a">
+            <AppComponentCard title="Basic" description="A simple loading status." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='spin-b'>
-            <AppComponentCard
-              title='Size'
-              description='A small Spin is used for loading text, default sized Spin for loading a card-level block, and large Spin used for loading a page.'
-              component={Size}
-              source={SizeSource}
-            />
+          <Col xs={24} lg={12} key="spin-b">
+            <AppComponentCard title="Size" description="A small Spin is used for loading text, default sized Spin for loading a card-level block, and large Spin used for loading a page." component={Size} source={SizeSource} />
           </Col>
-          <Col xs={24} lg={12} key='spin-c'>
-            <AppComponentCard
-              title='Container'
-              description='Spin in a container.'
-              component={Container}
-              source={ContainerSource}
-            />
+          <Col xs={24} lg={12} key="spin-c">
+            <AppComponentCard title="Container" description="Spin in a container." component={Container} source={ContainerSource} />
           </Col>
-          <Col xs={24} lg={12} key='spin-d'>
-            <AppComponentCard
-              title='Customize'
-              description='Customized description content.'
-              component={Customize}
-              source={CustomizeSource}
-            />
+          <Col xs={24} lg={12} key="spin-d">
+            <AppComponentCard title="Customize" description="Customized description content." component={Customize} source={CustomizeSource} />
           </Col>
-          <Col xs={24} lg={12} key='spin-e'>
-            <AppComponentCard
-              title='Embedded'
-              description='Embedding content into Spin will set it into loading state.'
-              component={Embedded}
-              source={EmbeddedSource}
-            />
+          <Col xs={24} lg={12} key="spin-e">
+            <AppComponentCard title="Embedded" description="Embedding content into Spin will set it into loading state." component={Embedded} source={EmbeddedSource} />
           </Col>
-          <Col xs={24} lg={12} key='spin-f'>
-            <AppComponentCard
-              title='Custom'
-              description='Use custom loading indicator.'
-              component={Custom}
-              source={CustomSource}
-            />
+          <Col xs={24} lg={12} key="spin-f">
+            <AppComponentCard title="Custom" description="Use custom loading indicator." component={Custom} source={CustomSource} />
           </Col>
-          <Col xs={24} lg={12} key='spin-f'>
-            <AppComponentCard
-              title='Delay'
-              description='Specifies a delay for loading state. If spinning ends during delay, loading status wont appear.'
-              component={Delay}
-              source={DelaySource}
-            />
+          <Col xs={24} lg={12} key="spin-f">
+            <AppComponentCard title="Delay" description="Specifies a delay for loading state. If spinning ends during delay, loading status wont appear." component={Delay} source={DelaySource} />
           </Col>
         </AppRowContainer>
       </>

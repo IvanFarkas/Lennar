@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Rate} from 'antd';
+import { Space, Rate } from 'antd';
 
 const ReadOnly = () => {
   return (

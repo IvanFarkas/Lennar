@@ -1,8 +1,8 @@
 import React from 'react';
-import {Button, Space, Modal} from 'antd';
+import { Button, Space, Modal } from 'antd';
 
 class Basic extends React.Component {
-  state = {visible: false};
+  state = { visible: false };
   showModal = () => {
     this.setState({
       visible: true,
@@ -24,14 +24,10 @@ class Basic extends React.Component {
   render() {
     return (
       <Space>
-        <Button type='primary' onClick={this.showModal}>
+        <Button type="primary" onClick={this.showModal}>
           Open
         </Button>
-        <Modal
-          title='Basic Modal'
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}>
+        <Modal title="Basic Modal" visible={this.state.visible} onOk={this.handleOk} onCancel={this.handleCancel}>
           <p>Some contents...</p>
           <p>Some contents...</p>
           <p>Some contents...</p>

@@ -1,10 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import {Checkbox} from 'antd';
+import { Checkbox } from 'antd';
 
-const CheckBox = ({checkedContacts, setCheckedContacts}) => {
-  const contactList = useSelector(({contactApp}) => contactApp.contactList);
+const CheckBox = ({ checkedContacts, setCheckedContacts }) => {
+  const contactList = useSelector(({ contactApp }) => contactApp.contactList);
 
   const onHandleMasterCheckbox = (event) => {
     if (event.target.checked) {
@@ -16,19 +16,8 @@ const CheckBox = ({checkedContacts, setCheckedContacts}) => {
   };
 
   return (
-    <div className='contact-header-checkbox-view'>
-      <Checkbox
-        color='primary'
-        indeterminate={
-          checkedContacts.length > 0 &&
-          checkedContacts.length < contactList.length
-        }
-        checked={
-          contactList.length > 0 &&
-          checkedContacts.length === contactList.length
-        }
-        onChange={onHandleMasterCheckbox}
-      />
+    <div className="contact-header-checkbox-view">
+      <Checkbox color="primary" indeterminate={checkedContacts.length > 0 && checkedContacts.length < contactList.length} checked={contactList.length > 0 && checkedContacts.length === contactList.length} onChange={onHandleMasterCheckbox} />
     </div>
   );
 };

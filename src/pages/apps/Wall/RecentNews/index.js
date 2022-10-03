@@ -2,25 +2,23 @@ import React from 'react';
 import AppCard from '../../../../@crema/core/AppCard';
 import AppList from '../../../../@crema/core/AppList';
 import NewsItem from './NewsItem';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import './index.style.less';
 
-const RecentNews = ({recentNews}) => {
-  const {messages} = useIntl();
+const RecentNews = ({ recentNews }) => {
+  const { messages } = useIntl();
   return (
     <AppCard
-      className='no-card-space-ltr-rtl recent-news'
+      className="no-card-space-ltr-rtl recent-news"
       title={messages['wall.recentNews']}
       actions={[
-        <span key={1} className='recent-news-link'>
+        <span key={1} className="recent-news-link">
           View More
         </span>,
-      ]}>
-      <AppList
-        data={recentNews}
-        renderItem={(item, index) => <NewsItem key={index} item={item} />}
-      />
+      ]}
+    >
+      <AppList data={recentNews} renderItem={(item, index) => <NewsItem key={index} item={item} />} />
     </AppCard>
   );
 };

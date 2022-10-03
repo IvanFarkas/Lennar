@@ -45,7 +45,7 @@ import SimpleBarReact from 'simplebar-react';
 import 'simplebar/src/simplebar.css';
 import './index.style.less';
 
-const AppScrollbar = ({children, scrollToTop, className, ...others}) => {
+const AppScrollbar = ({ children, scrollToTop, className, ...others }) => {
   console.log(scrollToTop);
   return (
     <SimpleBarReact {...others} className={className}>

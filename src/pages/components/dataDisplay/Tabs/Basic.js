@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Tabs} from 'antd';
+import { Space, Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 
@@ -9,15 +9,15 @@ const Basic = () => {
   };
 
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Tabs defaultActiveKey='1' onChange={callback}>
-        <TabPane tab='Tab 1' key='1'>
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Tabs defaultActiveKey="1" onChange={callback}>
+        <TabPane tab="Tab 1" key="1">
           Content of Tab Pane 1
         </TabPane>
-        <TabPane tab='Tab 2' key='2'>
+        <TabPane tab="Tab 2" key="2">
           Content of Tab Pane 2
         </TabPane>
-        <TabPane tab='Tab 3' key='3'>
+        <TabPane tab="Tab 3" key="3">
           Content of Tab Pane 3
         </TabPane>
       </Tabs>

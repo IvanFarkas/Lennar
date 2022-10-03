@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Transfer} from 'antd';
+import { Space, Transfer } from 'antd';
 import './index.style.less';
 
 class CustomData extends React.Component {
@@ -22,15 +22,15 @@ class CustomData extends React.Component {
       }
       mockData.push(data);
     }
-    this.setState({mockData, targetKeys});
+    this.setState({ mockData, targetKeys });
   };
   handleChange = (targetKeys, direction, moveKeys) => {
     console.log(targetKeys, direction, moveKeys);
-    this.setState({targetKeys});
+    this.setState({ targetKeys });
   };
   renderItem = (item) => {
     const customLabel = (
-      <span className='custom-item'>
+      <span className="custom-item">
         {item.title} - {item.description}
       </span>
     );
@@ -47,7 +47,7 @@ class CustomData extends React.Component {
 
   render() {
     return (
-      <Space wrap className='advance-transfer'>
+      <Space wrap className="advance-transfer">
         <Transfer
           dataSource={this.state.mockData}
           listStyle={{

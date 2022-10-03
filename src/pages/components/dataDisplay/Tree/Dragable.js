@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Tree} from 'antd';
+import { Space, Tree } from 'antd';
 
 const TreeNode = Tree.TreeNode;
 
@@ -15,7 +15,7 @@ const generateData = (_level, _preKey, _tns) => {
   const children = [];
   for (let i = 0; i < x; i++) {
     const key = `${preKey}-${i}`;
-    tns.push({title: key, key});
+    tns.push({ title: key, key });
     if (i < y) {
       children.push(key);
     }
@@ -48,8 +48,7 @@ class Dragable extends React.Component {
     const dropKey = info.node.props.eventKey;
     const dragKey = info.dragNode.props.eventKey;
     const dropPos = info.node.props.pos.split('-');
-    const dropPosition =
-      info.dropPosition - Number(dropPos[dropPos.length - 1]);
+    const dropPosition = info.dropPosition - Number(dropPos[dropPos.length - 1]);
     // const dragNodesKeys = info.dragNodesKeys;
     const loop = (data, key, callback) => {
       data.forEach((item, index, arr) => {
@@ -104,13 +103,8 @@ class Dragable extends React.Component {
         return <TreeNode key={item.key} title={item.key} />;
       });
     return (
-      <Space direction='vertical' style={{width: '100%'}}>
-        <Tree
-          className='draggable-tree'
-          defaultExpandedKeys={this.state.expandedKeys}
-          draggable
-          onDragEnter={this.onDragEnter}
-          onDrop={this.onDrop}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Tree className="draggable-tree" defaultExpandedKeys={this.state.expandedKeys} draggable onDragEnter={this.onDragEnter} onDrop={this.onDrop}>
           {loop(this.state.gData)}
         </Tree>
       </Space>

@@ -5,23 +5,14 @@ import AppScrollbar from '../AppScrollbar';
 import './index.style.less';
 
 const AppsContent = (props) => {
-  const {children, isDetailView, fullView} = props;
+  const { children, isDetailView, fullView } = props;
 
-  return (
-    <AppScrollbar
-      className={clsx(
-        'apps-content-container',
-        {isDetailView: isDetailView},
-        {fullView: fullView},
-      )}>
-      {children}
-    </AppScrollbar>
-  );
+  return <AppScrollbar className={clsx('apps-content-container', { isDetailView: isDetailView }, { fullView: fullView })}>{children}</AppScrollbar>;
 };
 
 export default AppsContent;
 
-AppsContent.defaultProps = {isDetailView: false};
+AppsContent.defaultProps = { isDetailView: false };
 
 AppsContent.propTypes = {
   children: PropTypes.node,

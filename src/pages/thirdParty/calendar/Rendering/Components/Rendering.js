@@ -1,5 +1,5 @@
 import React from 'react';
-import {Calendar, momentLocalizer} from 'react-big-calendar';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
 import events from '../../events';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -7,7 +7,7 @@ import '../../calendar.style.less';
 
 const localizer = momentLocalizer(moment);
 
-function Event({event}) {
+function Event({ event }) {
   return (
     <span>
       <strong>{event.title}</strong>
@@ -18,10 +18,10 @@ function Event({event}) {
 Event.propTypes = {
   event: PropTypes.object,
 };
-function EventAgenda({event}) {
+function EventAgenda({ event }) {
   return (
     <span>
-      <em style={{color: 'magenta'}}>{event.title}</em>
+      <em style={{ color: 'magenta' }}>{event.title}</em>
       <p>{event.desc}</p>
     </span>
   );
@@ -32,13 +32,13 @@ EventAgenda.propTypes = {
 };
 const Rendering = () => {
   return (
-    <div className='cr-app-calendar'>
+    <div className="cr-app-calendar">
       <Calendar
-        className='app-calendar'
+        className="app-calendar"
         events={events}
         localizer={localizer}
         defaultDate={new Date(2021, 10, 1)}
-        defaultView='agenda'
+        defaultView="agenda"
         components={{
           event: Event,
           agenda: {

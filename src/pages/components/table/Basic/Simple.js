@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Tag, Space} from 'antd';
+import { Table, Tag, Space } from 'antd';
 
 const columns = [
   {
@@ -42,7 +42,7 @@ const columns = [
     title: 'Action',
     key: 'action',
     render: (text, record) => (
-      <Space size='middle'>
+      <Space size="middle">
         <a>Invite {record.name}</a>
         <a>Delete</a>
       </Space>
@@ -76,7 +76,7 @@ const data = [
 
 const Simple = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <Table columns={columns} dataSource={data} />
     </Space>
   );

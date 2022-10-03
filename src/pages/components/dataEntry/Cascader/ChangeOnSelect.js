@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {

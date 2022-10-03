@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Switch} from 'antd';
+import { Space, Switch } from 'antd';
 
 const Basic = () => {
   function onChange(checked) {

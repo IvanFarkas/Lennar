@@ -1,17 +1,17 @@
 import React from 'react';
-import {Dropdown, Input, Layout, Menu} from 'antd';
+import { Dropdown, Input, Layout, Menu } from 'antd';
 import './index.style.less';
-import {FiMoreVertical} from 'react-icons/fi';
+import { FiMoreVertical } from 'react-icons/fi';
 import AppLogo from '../components/AppLogo';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppLanguageSwitcher from '../../AppLanguageSwitcher';
 import AppHeaderMessages from '../../AppHeaderMessages';
 import AppNotifications from '../../AppNotifications';
 
 const AppHeader = () => {
-  const {Header} = Layout;
-  const {Search} = Input;
-  const {messages} = useIntl();
+  const { Header } = Layout;
+  const { Search } = Input;
+  const { messages } = useIntl();
 
   const menuMobile = (
     <Menu>
@@ -22,21 +22,18 @@ const AppHeader = () => {
   );
 
   return (
-    <Header className='app-header-mini'>
+    <Header className="app-header-mini">
       <AppLogo />
 
-      <Search
-        className='header-search-mini'
-        placeholder={messages['common.searchHere']}
-      />
-      <div className='app-header-mini-sectionDesktop'>
+      <Search className="header-search-mini" placeholder={messages['common.searchHere']} />
+      <div className="app-header-mini-sectionDesktop">
         <AppLanguageSwitcher />
         <AppHeaderMessages />
         <AppNotifications />
       </div>
-      <div className='app-header-mini-section-mobile'>
+      <div className="app-header-mini-section-mobile">
         <Dropdown overlay={menuMobile} trigger={['click']}>
-          <a className='ant-dropdown-link' onClick={(e) => e.preventDefault()}>
+          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <FiMoreVertical />
           </a>
         </Dropdown>

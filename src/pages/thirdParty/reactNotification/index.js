@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 import 'react-notifications-component/dist/theme.css';
 import ComponentCard from '@crema/core/AppComponentCard';
@@ -22,11 +22,7 @@ import ReactNotification from 'react-notifications-component';
 const ReactNotificationEx = () => {
   return (
     <>
-      <ComponentHeader
-        title='React Notifications'
-        description='Delightful and highly customisable React Component to notify your users.'
-        refUrl='https://teodosii.github.io/react-notifications-component//'
-      />
+      <ComponentHeader title="React Notifications" description="Delightful and highly customisable React Component to notify your users." refUrl="https://teodosii.github.io/react-notifications-component//" />
 
       <ReactNotification
         types={[
@@ -38,53 +34,23 @@ const ReactNotificationEx = () => {
         isMobile={true}
       />
       <AppRowSimpleContainer>
-        <Col span={24} key='notification-a'>
-          <ComponentCard
-            title='Animation Entrance'
-            description='Entrance animation can be customised by specifying CSS classes'
-            component={AnimationEntrance}
-            source={AnimationEntranceSource}
-          />
+        <Col span={24} key="notification-a">
+          <ComponentCard title="Animation Entrance" description="Entrance animation can be customised by specifying CSS classes" component={AnimationEntrance} source={AnimationEntranceSource} />
         </Col>
-        <Col span={24} key='notification-b'>
-          <ComponentCard
-            title='Animation Exit'
-            description='Exit animation can be customised by specifying CSS classes'
-            component={AnimationExit}
-            source={AnimationExitSource}
-          />
+        <Col span={24} key="notification-b">
+          <ComponentCard title="Animation Exit" description="Exit animation can be customised by specifying CSS classes" component={AnimationExit} source={AnimationExitSource} />
         </Col>
-        <Col span={24} key='notification-c'>
-          <ComponentCard
-            title='Container'
-            description='Container can be set from predefined values top-left, top-right, top-center, bottom-left, bottom-right, bottom-center'
-            component={Container}
-            source={ContainerSource}
-          />
+        <Col span={24} key="notification-c">
+          <ComponentCard title="Container" description="Container can be set from predefined values top-left, top-right, top-center, bottom-left, bottom-right, bottom-center" component={Container} source={ContainerSource} />
         </Col>
-        <Col span={24} key='notification-d'>
-          <ComponentCard
-            title='Custom Content'
-            description="With react-notifications-component notification's content can be customised to suit your needs."
-            component={CustomContent}
-            source={CustomContentSource}
-          />
+        <Col span={24} key="notification-d">
+          <ComponentCard title="Custom Content" description="With react-notifications-component notification's content can be customised to suit your needs." component={CustomContent} source={CustomContentSource} />
         </Col>
-        <Col span={24} key='notification-e'>
-          <ComponentCard
-            title='Insert'
-            description='Insertion in react-notifications can be done either at the top or at the bottom of the container'
-            component={Insert}
-            source={InsertSource}
-          />
+        <Col span={24} key="notification-e">
+          <ComponentCard title="Insert" description="Insertion in react-notifications can be done either at the top or at the bottom of the container" component={Insert} source={InsertSource} />
         </Col>
-        <Col span={24} key='notification-f'>
-          <ComponentCard
-            title='Type'
-            description='Type can be set from predefined values success, default, warning, info, danger or custom to suit your needs'
-            component={Type}
-            source={TypeSource}
-          />
+        <Col span={24} key="notification-f">
+          <ComponentCard title="Type" description="Type can be set from predefined values success, default, warning, info, danger or custom to suit your needs" component={Type} source={TypeSource} />
         </Col>
       </AppRowSimpleContainer>
     </>

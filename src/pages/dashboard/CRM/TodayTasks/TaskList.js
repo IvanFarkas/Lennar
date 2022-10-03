@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import {isBreakPointDown} from '../../../../@crema/utility/Utils';
-import {List, Checkbox} from 'antd';
+import { List, Checkbox } from 'antd';
 
 // const getData = (data) => {
 //   if (isBreakPointDown('xl')) {
@@ -12,14 +12,12 @@ import {List, Checkbox} from 'antd';
 // };
 
 const TaskList = (props) => {
-  const {todayTaskData} = props;
+  const { todayTaskData } = props;
   const [taskList, handleList] = useState(todayTaskData);
 
   const handleChange = (e, task) => {
     task.isChecked = e.target.checked;
-    const list = todayTaskData.map((item) =>
-      item.id === task.id ? task : item,
-    );
+    const list = todayTaskData.map((item) => (item.id === task.id ? task : item));
     handleList(list);
   };
 
@@ -28,18 +26,8 @@ const TaskList = (props) => {
       dataSource={taskList}
       renderItem={(task) => {
         return (
-          <List.Item key={task.id} className='task-list-item item-hover'>
-            <List.Item.Meta
-              avatar={
-                <Checkbox
-                  color='primary'
-                  checked={task.isChecked}
-                  onChange={(e) => handleChange(e, task)}
-                />
-              }
-              title={task.task}
-              description={task.date}
-            />
+          <List.Item key={task.id} className="task-list-item item-hover">
+            <List.Item.Meta avatar={<Checkbox color="primary" checked={task.isChecked} onChange={(e) => handleChange(e, task)} />} title={task.task} description={task.date} />
           </List.Item>
         );
       }}

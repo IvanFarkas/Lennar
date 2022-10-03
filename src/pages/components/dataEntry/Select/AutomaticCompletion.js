@@ -1,5 +1,5 @@
 import React from 'react';
-import {Select} from 'antd';
+import { Select } from 'antd';
 
 const Option = Select.Option;
 
@@ -14,12 +14,8 @@ const AutomaticCompletion = () => {
   }
 
   return (
-    <div style={{width: '100%'}}>
-      <Select
-        mode='tags'
-        style={{width: '100%'}}
-        onChange={handleChange}
-        tokenSeparators={[',']}>
+    <div style={{ width: '100%' }}>
+      <Select mode="tags" style={{ width: '100%' }} onChange={handleChange} tokenSeparators={[',']}>
         {children}
       </Select>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, message} from 'antd';
+import { Button, Space, message } from 'antd';
 
 const success = () => {
   message.success('This is a message of success');

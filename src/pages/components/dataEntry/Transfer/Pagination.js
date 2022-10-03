@@ -1,4 +1,4 @@
-import {Transfer, Switch} from 'antd';
+import { Transfer, Switch } from 'antd';
 import React from 'react';
 
 const Pagination = () => {
@@ -33,21 +33,9 @@ const Pagination = () => {
 
   return (
     <>
-      <Transfer
-        dataSource={mockData}
-        targetKeys={targetKeys}
-        onChange={onChange}
-        render={(item) => item.title}
-        oneWay={oneWay}
-        pagination
-      />
+      <Transfer dataSource={mockData} targetKeys={targetKeys} onChange={onChange} render={(item) => item.title} oneWay={oneWay} pagination />
       <br />
-      <Switch
-        unCheckedChildren='one way'
-        checkedChildren='one way'
-        checked={oneWay}
-        onChange={setOneWay}
-      />
+      <Switch unCheckedChildren="one way" checkedChildren="one way" checked={oneWay} onChange={setOneWay} />
     </>
   );
 };

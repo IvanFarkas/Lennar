@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Table} from 'antd';
+import { Space, Table } from 'antd';
 
 const columns = [
   {
@@ -89,11 +89,7 @@ const data = [
 // rowSelection objects indicates the need for row selection
 const rowSelection = {
   onChange: (selectedRowKeys, selectedRows) => {
-    console.log(
-      `selectedRowKeys: ${selectedRowKeys}`,
-      'selectedRows: ',
-      selectedRows,
-    );
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
   },
   onSelect: (record, selected, selectedRows) => {
     console.log(record, selected, selectedRows);
@@ -105,7 +101,7 @@ const rowSelection = {
 
 const TreeData = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <Table columns={columns} rowSelection={rowSelection} dataSource={data} />
     </Space>
   );

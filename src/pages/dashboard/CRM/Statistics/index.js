@@ -3,14 +3,10 @@ import GraphTabs from './GraphTabs';
 import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
 
-export const Statistics = ({clientsData, incomeData, projectData}) => {
+export const Statistics = ({ clientsData, incomeData, projectData }) => {
   return (
     <AppCard heightFull>
-      <GraphTabs
-        clientsData={clientsData}
-        incomeData={incomeData}
-        projectData={projectData}
-      />
+      <GraphTabs clientsData={clientsData} incomeData={incomeData} projectData={projectData} />
     </AppCard>
   );
 };

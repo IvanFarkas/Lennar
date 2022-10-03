@@ -1,19 +1,19 @@
 import React from 'react';
-import {Dropdown, Input, Layout, Menu} from 'antd';
+import { Dropdown, Input, Layout, Menu } from 'antd';
 import './index.style.less';
 import AppLogo from '../components/AppLogo';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppLanguageSwitcher from '../../AppLanguageSwitcher';
 import AppHeaderMessages from '../../AppHeaderMessages';
 import AppNotifications from '../../AppNotifications';
 import PropTypes from 'prop-types';
-import {FiMoreVertical} from 'react-icons/fi';
-import {AiOutlineMenu} from 'react-icons/ai';
+import { FiMoreVertical } from 'react-icons/fi';
+import { AiOutlineMenu } from 'react-icons/ai';
 
-const AppHeader = ({isCollapsed, onToggleSidebar}) => {
-  const {Header} = Layout;
-  const {Search} = Input;
-  const {messages} = useIntl();
+const AppHeader = ({ isCollapsed, onToggleSidebar }) => {
+  const { Header } = Layout;
+  const { Search } = Input;
+  const { messages } = useIntl();
   const menuMobile = (
     <Menu>
       <AppHeaderMessages />
@@ -23,23 +23,20 @@ const AppHeader = ({isCollapsed, onToggleSidebar}) => {
   );
 
   return (
-    <Header className='app-standard-header'>
-      <a className='trigger' onClick={() => onToggleSidebar(!isCollapsed)}>
+    <Header className="app-standard-header">
+      <a className="trigger" onClick={() => onToggleSidebar(!isCollapsed)}>
         <AiOutlineMenu />
       </a>
       <AppLogo />
-      <Search
-        className='standard-header-search'
-        placeholder={messages['common.searchHere']}
-      />
-      <div className='app-standard-header-sectionDesktop'>
+      <Search className="standard-header-search" placeholder={messages['common.searchHere']} />
+      <div className="app-standard-header-sectionDesktop">
         <AppLanguageSwitcher />
         <AppHeaderMessages />
         <AppNotifications />
       </div>
-      <div className='app-standard-header-section-mobile'>
+      <div className="app-standard-header-section-mobile">
         <Dropdown overlay={menuMobile} trigger={['click']}>
-          <a className='ant-dropdown-link' onClick={(e) => e.preventDefault()}>
+          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <FiMoreVertical />
           </a>
         </Dropdown>

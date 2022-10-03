@@ -7,7 +7,7 @@ import SignInFirebase from './SigninFirebase';
 const Signin = () => {
   return (
     <AuthWrapper>
-      <AppPageMetadata title='Login' />
+      <AppPageMetadata title="Login" />
       <SignInFirebase />
     </AuthWrapper>
   );

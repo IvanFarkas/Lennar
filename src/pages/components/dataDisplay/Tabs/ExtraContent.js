@@ -1,14 +1,14 @@
 import React from 'react';
-import {Tabs, Button, Divider, Checkbox} from 'antd';
+import { Tabs, Button, Divider, Checkbox } from 'antd';
 
-const {TabPane} = Tabs;
+const { TabPane } = Tabs;
 
 const CheckboxGroup = Checkbox.Group;
 
 const operations = <Button>Extra Action</Button>;
 
 const OperationsSlot = {
-  left: <Button className='tabs-extra-demo-button'>Left Extra Action</Button>,
+  left: <Button className="tabs-extra-demo-button">Left Extra Action</Button>,
   right: <Button>Right Extra Action</Button>,
 };
 
@@ -20,22 +20,19 @@ const ExtraContent = () => {
   const slot = React.useMemo(() => {
     if (position.length === 0) return null;
 
-    return position.reduce(
-      (acc, direction) => ({...acc, [direction]: OperationsSlot[direction]}),
-      {},
-    );
+    return position.reduce((acc, direction) => ({ ...acc, [direction]: OperationsSlot[direction] }), {});
   }, [position]);
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', gap: 12}}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Tabs tabBarExtraContent={operations}>
-        <TabPane tab='Tab 1' key='1'>
+        <TabPane tab="Tab 1" key="1">
           Content of tab 1
         </TabPane>
-        <TabPane tab='Tab 2' key='2'>
+        <TabPane tab="Tab 2" key="2">
           Content of tab 2
         </TabPane>
-        <TabPane tab='Tab 3' key='3'>
+        <TabPane tab="Tab 3" key="3">
           Content of tab 3
         </TabPane>
       </Tabs>
@@ -54,13 +51,13 @@ const ExtraContent = () => {
       <br />
       <br />
       <Tabs tabBarExtraContent={slot}>
-        <TabPane tab='Tab 1' key='1'>
+        <TabPane tab="Tab 1" key="1">
           Content of tab 1
         </TabPane>
-        <TabPane tab='Tab 2' key='2'>
+        <TabPane tab="Tab 2" key="2">
           Content of tab 2
         </TabPane>
-        <TabPane tab='Tab 3' key='3'>
+        <TabPane tab="Tab 3" key="3">
           Content of tab 3
         </TabPane>
       </Tabs>

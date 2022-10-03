@@ -1,4 +1,4 @@
-import {Space, Button} from 'antd';
+import { Space, Button } from 'antd';
 
 const Demo = () => (
   <Space size={[8, 16]} wrap>

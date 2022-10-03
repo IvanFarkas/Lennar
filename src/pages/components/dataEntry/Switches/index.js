@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -19,50 +19,22 @@ class Switches extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Switches'
-          refUrl='https://ant.design/components/switches/'
-        />
+        <ComponentHeader title="Switches" refUrl="https://ant.design/components/switches/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='switch-a'>
-            <AppComponentCard
-              title='Basic'
-              description='The most basic usage.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="switch-a">
+            <AppComponentCard title="Basic" description="The most basic usage." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='switch-b'>
-            <AppComponentCard
-              title='Switch Disabled'
-              description='Disabled state of Switch.'
-              component={SwitchDisabled}
-              source={SwitchDisabledSource}
-            />
+          <Col xs={24} lg={12} key="switch-b">
+            <AppComponentCard title="Switch Disabled" description="Disabled state of Switch." component={SwitchDisabled} source={SwitchDisabledSource} />
           </Col>
-          <Col xs={24} lg={12} key='switch-c'>
-            <AppComponentCard
-              title='Switch Text Icon'
-              description='With text and icon.'
-              component={SwitchTextIcon}
-              source={SwitchTextIconSource}
-            />
+          <Col xs={24} lg={12} key="switch-c">
+            <AppComponentCard title="Switch Text Icon" description="With text and icon." component={SwitchTextIcon} source={SwitchTextIconSource} />
           </Col>
-          <Col xs={24} lg={12} key='switch-d'>
-            <AppComponentCard
-              title='Switch Two Size'
-              description='size="small" represents a small sized switch.'
-              component={SwitchSize}
-              source={SwitchSizeSource}
-            />
+          <Col xs={24} lg={12} key="switch-d">
+            <AppComponentCard title="Switch Two Size" description='size="small" represents a small sized switch.' component={SwitchSize} source={SwitchSizeSource} />
           </Col>
-          <Col xs={24} lg={12} key='switch-e'>
-            <AppComponentCard
-              title='Switch Loading'
-              description='Mark a pending state of switch.'
-              component={SwitchLoading}
-              source={SwitchLoadingSource}
-            />
+          <Col xs={24} lg={12} key="switch-e">
+            <AppComponentCard title="Switch Loading" description="Mark a pending state of switch." component={SwitchLoading} source={SwitchLoadingSource} />
           </Col>
         </AppRowContainer>
       </>

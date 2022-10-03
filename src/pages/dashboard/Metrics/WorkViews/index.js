@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
 import './index.style.less';
 
-const WorkViews = ({data}) => {
+const WorkViews = ({ data }) => {
   return (
-    <AppCard className='work-view-card' heightFull>
+    <AppCard className="work-view-card" heightFull>
       <h3>{data.views}</h3>
       <p>
-        <IntlMessages id='dashboard.workViews' />
+        <IntlMessages id="dashboard.workViews" />
       </p>
 
       <WorkViewsGraph data={data.graphData} />

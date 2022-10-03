@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Button, Space} from 'antd';
-import {PoweroffOutlined} from '@ant-design/icons';
+import React, { Component } from 'react';
+import { Button, Space } from 'antd';
+import { PoweroffOutlined } from '@ant-design/icons';
 
 class Loading extends Component {
   state = {
@@ -8,7 +8,7 @@ class Loading extends Component {
   };
 
   enterLoading = (index) => {
-    this.setState(({loadings}) => {
+    this.setState(({ loadings }) => {
       const newLoadings = [...loadings];
       newLoadings[index] = true;
 
@@ -17,7 +17,7 @@ class Loading extends Component {
       };
     });
     setTimeout(() => {
-      this.setState(({loadings}) => {
+      this.setState(({ loadings }) => {
         const newLoadings = [...loadings];
         newLoadings[index] = false;
 
@@ -29,36 +29,24 @@ class Loading extends Component {
   };
 
   render() {
-    const {loadings} = this.state;
+    const { loadings } = this.state;
     return (
-      <Space size='large' wrap>
-        <Button type='primary' loading>
+      <Space size="large" wrap>
+        <Button type="primary" loading>
           Loading
         </Button>
-        <Button type='primary' size='small' loading>
+        <Button type="primary" size="small" loading>
           Loading
         </Button>
-        <Button type='primary' icon={<PoweroffOutlined />} loading />
+        <Button type="primary" icon={<PoweroffOutlined />} loading />
         <br />
-        <Button
-          type='primary'
-          loading={loadings[0]}
-          onClick={() => this.enterLoading(0)}>
+        <Button type="primary" loading={loadings[0]} onClick={() => this.enterLoading(0)}>
           Click me!
         </Button>
-        <Button
-          type='primary'
-          icon={<PoweroffOutlined />}
-          loading={loadings[1]}
-          onClick={() => this.enterLoading(1)}>
+        <Button type="primary" icon={<PoweroffOutlined />} loading={loadings[1]} onClick={() => this.enterLoading(1)}>
           Click me!
         </Button>
-        <Button
-          type='primary'
-          icon={<PoweroffOutlined />}
-          loading={loadings[2]}
-          onClick={() => this.enterLoading(2)}
-        />
+        <Button type="primary" icon={<PoweroffOutlined />} loading={loadings[2]} onClick={() => this.enterLoading(2)} />
       </Space>
     );
   }

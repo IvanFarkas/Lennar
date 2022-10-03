@@ -1,9 +1,9 @@
 import React from 'react';
-import {store} from 'react-notifications-component';
-import {Button} from 'antd';
+import { store } from 'react-notifications-component';
+import { Button } from 'antd';
 
 import notification from '../helpers/notification';
-import {getMessage, getTitle, getType} from '../helpers/randomize';
+import { getMessage, getTitle, getType } from '../helpers/randomize';
 
 const InsertExample = () => {
   const add = (insert) => {
@@ -20,16 +20,10 @@ const InsertExample = () => {
 
   return (
     <div>
-      <Button
-        className='notification-inset-btn'
-        type='primary'
-        onClick={() => add('top')}>
+      <Button className="notification-inset-btn" type="primary" onClick={() => add('top')}>
         Top
       </Button>
-      <Button
-        className='notification-inset-btn'
-        type='primary'
-        onClick={() => add('bottom')}>
+      <Button className="notification-inset-btn" type="primary" onClick={() => add('bottom')}>
         Bottom
       </Button>
     </div>

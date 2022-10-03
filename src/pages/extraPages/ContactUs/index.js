@@ -6,13 +6,13 @@ import Address from './Address';
 import SimpleMap from './SimpleMap';
 import AppCard from '../../../@crema/core/AppCard';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import './index.style.less';
 
 const ContactUs = () => {
   return (
     <AppCard>
-      <div className='contact-simple-map'>
+      <div className="contact-simple-map">
         <SimpleMap />
       </div>
       <SendMessage sendMessage={contactUsData.sendMessage} />

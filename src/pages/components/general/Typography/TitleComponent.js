@@ -1,11 +1,11 @@
 import React from 'react';
-import {Typography, Space} from 'antd';
+import { Typography, Space } from 'antd';
 
-const {Title} = Typography;
+const { Title } = Typography;
 
 const TitleComponent = () => {
   return (
-    <Space direction='vertical'>
+    <Space direction="vertical">
       <Title>h1. Ant Design</Title>
       <Title level={2}>h2. Ant Design</Title>
       <Title level={3}>h3. Ant Design</Title>

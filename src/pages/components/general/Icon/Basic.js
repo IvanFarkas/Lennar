@@ -1,15 +1,9 @@
-import {
-  HomeOutlined,
-  SettingFilled,
-  SmileOutlined,
-  SyncOutlined,
-  LoadingOutlined,
-} from '@ant-design/icons';
+import { HomeOutlined, SettingFilled, SmileOutlined, SyncOutlined, LoadingOutlined } from '@ant-design/icons';
 import React from 'react';
 
 const Basic = () => {
   return (
-    <div style={{display: 'flex', gap: 10}}>
+    <div style={{ display: 'flex', gap: 10 }}>
       <HomeOutlined />
       <SettingFilled />
       <SmileOutlined />

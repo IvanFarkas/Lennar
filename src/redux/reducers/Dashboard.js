@@ -1,13 +1,4 @@
-import {
-  GET_ACADEMY_DATA,
-  GET_ANALYTICS_DATA,
-  GET_CRM_DATA,
-  GET_CRYPTO_DATA,
-  GET_ECOMMERCE_DATA,
-  GET_HC_DATA,
-  GET_METRICS_DATA,
-  GET_WIDGETS_DATA,
-} from '../../shared/constants/ActionTypes';
+import { GET_ACADEMY_DATA, GET_ANALYTICS_DATA, GET_CRM_DATA, GET_CRYPTO_DATA, GET_ECOMMERCE_DATA, GET_HC_DATA, GET_METRICS_DATA, GET_WIDGETS_DATA } from '../../shared/constants/ActionTypes';
 
 const initialState = {
   analyticsData: null,

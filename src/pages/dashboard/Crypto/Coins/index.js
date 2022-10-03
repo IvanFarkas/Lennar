@@ -3,51 +3,31 @@ import CoinStats from './CoinStats';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
-import {blue, purple, orange, red} from '@ant-design/colors';
+import { Col } from 'antd';
+import { blue, purple, orange, red } from '@ant-design/colors';
 import './index.style.less';
 
-const Coins = ({coinsData}) => {
+const Coins = ({ coinsData }) => {
   return (
     <>
-      <h2 className='card-outer-title text-uppercase'>
-        <IntlMessages id='dashboard.coins' />
+      <h2 className="card-outer-title text-uppercase">
+        <IntlMessages id="dashboard.coins" />
       </h2>
       <AppRowContainer>
         <Col xs={24} sm={12}>
-          <CoinStats
-            icon={'/assets/images/bitcoin.svg'}
-            bgColor={purple[4]}
-            data={coinsData.bitcoin}
-            heading={<IntlMessages id='dashboard.bitcoinPrice' />}
-          />
+          <CoinStats icon={'/assets/images/bitcoin.svg'} bgColor={purple[4]} data={coinsData.bitcoin} heading={<IntlMessages id="dashboard.bitcoinPrice" />} />
         </Col>
 
         <Col xs={24} sm={12}>
-          <CoinStats
-            icon={'/assets/images/etherium.svg'}
-            bgColor={blue[5]}
-            data={coinsData.etherium}
-            heading={<IntlMessages id='dashboard.etheriumPrice' />}
-          />
+          <CoinStats icon={'/assets/images/etherium.svg'} bgColor={blue[5]} data={coinsData.etherium} heading={<IntlMessages id="dashboard.etheriumPrice" />} />
         </Col>
 
         <Col xs={24} sm={12}>
-          <CoinStats
-            icon={'/assets/images/litcoin.svg'}
-            bgColor={orange[4]}
-            data={coinsData.liteCoin}
-            heading={<IntlMessages id='dashboard.litecoinPrice' />}
-          />
+          <CoinStats icon={'/assets/images/litcoin.svg'} bgColor={orange[4]} data={coinsData.liteCoin} heading={<IntlMessages id="dashboard.litecoinPrice" />} />
         </Col>
 
         <Col xs={24} sm={12}>
-          <CoinStats
-            icon={'/assets/images/ripple.svg'}
-            bgColor={red[4]}
-            data={coinsData.ripple}
-            heading={<IntlMessages id='dashboard.ripplePrice' />}
-          />
+          <CoinStats icon={'/assets/images/ripple.svg'} bgColor={red[4]} data={coinsData.ripple} heading={<IntlMessages id="dashboard.ripplePrice" />} />
         </Col>
       </AppRowContainer>
     </>

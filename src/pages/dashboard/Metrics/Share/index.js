@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
 import AppGrid from '../../../../@crema/core/AppGrid';
 import './index.style.less';
-import {AiFillYoutube, AiOutlineGoogle, AiOutlineTwitter} from 'react-icons/ai';
-import {FaFacebookF, FaVimeoV} from 'react-icons/fa';
-import {FiDribbble} from 'react-icons/fi';
-import {GrLinkedinOption} from 'react-icons/gr';
-import {ImTumblr} from 'react-icons/im';
+import { AiFillYoutube, AiOutlineGoogle, AiOutlineTwitter } from 'react-icons/ai';
+import { FaFacebookF, FaVimeoV } from 'react-icons/fa';
+import { FiDribbble } from 'react-icons/fi';
+import { GrLinkedinOption } from 'react-icons/gr';
+import { ImTumblr } from 'react-icons/im';
 
 const Share = (props) => {
-  const {data} = props;
+  const { data } = props;
 
   const getIconByName = (icon) => {
     switch (icon) {
@@ -35,7 +35,7 @@ const Share = (props) => {
     }
   };
   return (
-    <AppCard heightFull title='Share'>
+    <AppCard heightFull title="Share">
       <AppGrid
         data={data}
         itemPadding={5}
@@ -48,10 +48,7 @@ const Share = (props) => {
           xxl: 4,
         }}
         renderItem={(data, index) => (
-          <div
-            style={{backgroundColor: data.color}}
-            key={index}
-            className='share-badge'>
+          <div style={{ backgroundColor: data.color }} key={index} className="share-badge">
             {getIconByName(data.icon)}
             <span>{data.value}</span>
           </div>

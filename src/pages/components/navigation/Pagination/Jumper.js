@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pagination, Space} from 'antd';
+import { Pagination, Space } from 'antd';
 
 function onChange(pageNumber) {
   console.log('Page: ', pageNumber);
@@ -8,20 +8,9 @@ function onChange(pageNumber) {
 const Jumper = () => {
   return (
     <Space wrap>
-      <Pagination
-        showQuickJumper
-        defaultCurrent={2}
-        total={500}
-        onChange={onChange}
-      />
+      <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={onChange} />
       <br />
-      <Pagination
-        showQuickJumper
-        defaultCurrent={2}
-        total={500}
-        onChange={onChange}
-        disabled
-      />
+      <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={onChange} disabled />
     </Space>
   );
 };

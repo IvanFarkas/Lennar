@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Table} from 'antd';
+import { Button, Space, Table } from 'antd';
 
 const data = [
   {
@@ -41,7 +41,7 @@ class ResetFilter extends React.Component {
     });
   };
   clearFilters = () => {
-    this.setState({filteredInfo: null});
+    this.setState({ filteredInfo: null });
   };
   clearAll = () => {
     this.setState({
@@ -59,7 +59,7 @@ class ResetFilter extends React.Component {
   };
 
   render() {
-    let {sortedInfo, filteredInfo} = this.state;
+    let { sortedInfo, filteredInfo } = this.state;
     sortedInfo = sortedInfo || {};
     filteredInfo = filteredInfo || {};
     const columns = [
@@ -68,8 +68,8 @@ class ResetFilter extends React.Component {
         dataIndex: 'name',
         key: 'name',
         filters: [
-          {text: 'Joe', value: 'Joe'},
-          {text: 'Jim', value: 'Jim'},
+          { text: 'Joe', value: 'Joe' },
+          { text: 'Jim', value: 'Jim' },
         ],
         filteredValue: filteredInfo.name || null,
         onFilter: (value, record) => record.name.includes(value),
@@ -88,8 +88,8 @@ class ResetFilter extends React.Component {
         dataIndex: 'address',
         key: 'address',
         filters: [
-          {text: 'London', value: 'London'},
-          {text: 'New York', value: 'New York'},
+          { text: 'London', value: 'London' },
+          { text: 'New York', value: 'New York' },
         ],
         filteredValue: filteredInfo.address || null,
         onFilter: (value, record) => record.address.includes(value),
@@ -98,17 +98,13 @@ class ResetFilter extends React.Component {
       },
     ];
     return (
-      <Space direction='vertical' style={{width: '100%'}}>
-        <Space style={{marginBottom: 16}}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Space style={{ marginBottom: 16 }}>
           <Button onClick={this.setAgeSort}>Sort age</Button>
           <Button onClick={this.clearFilters}>Clear filters</Button>
           <Button onClick={this.clearAll}>Clear filters and sorters</Button>
         </Space>
-        <Table
-          columns={columns}
-          dataSource={data}
-          onChange={this.handleChange}
-        />
+        <Table columns={columns} dataSource={data} onChange={this.handleChange} />
       </Space>
     );
   }

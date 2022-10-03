@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux';
-import {connectRouter} from 'connected-react-router';
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import Settings from './Setting';
 import MailApp from './MailApp';
 import Common from './Common';

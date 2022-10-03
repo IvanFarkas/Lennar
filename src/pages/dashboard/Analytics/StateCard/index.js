@@ -2,7 +2,7 @@ import React from 'react';
 import StatGraphs from './StatGraphs';
 import AppCard from '../../../../@crema/core/AppCard';
 import PropTypes from 'prop-types';
-import {Button} from 'antd';
+import { Button } from 'antd';
 /*import {green, red} from '@ant-design/colors';*/
 import './index.style.less';
 
@@ -58,24 +58,24 @@ const TinyLineChart = () => {
   );
 };*/
 
-const StateCard = ({data}) => {
+const StateCard = ({ data }) => {
   console.log('log', data.growth);
   return (
-    <AppCard className='ana-state-card'>
-      <div className='ana-state-content'>
-        <div className='ana-state-row'>
-          <Button className='btn-icon'>
-            <img alt='icon' src={data.icon} />
+    <AppCard className="ana-state-card">
+      <div className="ana-state-content">
+        <div className="ana-state-row">
+          <Button className="btn-icon">
+            <img alt="icon" src={data.icon} />
           </Button>
-          <div className='ana-state-item'>
-            <div className='ana-state-header text-truncate'>
+          <div className="ana-state-item">
+            <div className="ana-state-header text-truncate">
               <h3>{data.value}</h3>
-              <span style={{color: '#49BD65'}}>+{data.growth}%</span>
+              <span style={{ color: '#49BD65' }}>+{data.growth}%</span>
             </div>
             <p>{data.type}</p>
           </div>
         </div>
-        <div className='ana-state-graphs'>
+        <div className="ana-state-graphs">
           <StatGraphs data={data.graphData} strokeColor={data.strokeColor} />
         </div>
       </div>

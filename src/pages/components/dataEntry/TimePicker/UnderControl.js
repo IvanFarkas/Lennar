@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {TimePicker} from 'antd';
+import React, { useState } from 'react';
+import { TimePicker } from 'antd';
 import PropTypes from 'prop-types';
 
 const UnderControl = () => {

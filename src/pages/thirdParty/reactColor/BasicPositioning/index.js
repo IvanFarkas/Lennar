@@ -1,12 +1,12 @@
 import React from 'react';
 
-import {BlockPicker} from 'react-color';
+import { BlockPicker } from 'react-color';
 
 export const BasicPosition = () => {
-  const handleColorChange = ({hex}) => console.log(hex);
+  const handleColorChange = ({ hex }) => console.log(hex);
 
   return (
-    <div style={{position: 'relative'}}>
+    <div style={{ position: 'relative' }}>
       <button>Pick Color</button>
 
       <div
@@ -16,8 +16,9 @@ export const BasicPosition = () => {
           left: '50%',
           transform: 'translateX(-50%)',
           marginTop: 15,
-        }}>
-        <BlockPicker color='#333' onChangeComplete={handleColorChange} />
+        }}
+      >
+        <BlockPicker color="#333" onChangeComplete={handleColorChange} />
       </div>
     </div>
   );

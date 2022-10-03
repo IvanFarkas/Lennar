@@ -1,18 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Input} from 'antd';
+import { Input } from 'antd';
 
 const AppSearch = () => {
-  const {Search} = Input;
+  const { Search } = Input;
   const onSearch = (value) => console.log(value);
-  return (
-    <Search
-      placeholder='input search text'
-      allowClear
-      onSearch={onSearch}
-      style={{width: 200}}
-    />
-  );
+  return <Search placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />;
 };
 
 export default AppSearch;

@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -37,122 +37,49 @@ class Progress extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Progress'
-          refUrl='https://ant.design/components/progress/'
-        />
+        <ComponentHeader title="Progress" refUrl="https://ant.design/components/progress/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='progress-a'>
-            <AppComponentCard
-              title='Basic'
-              description='A standard basic bar.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="progress-a">
+            <AppComponentCard title="Basic" description="A standard basic bar." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-b'>
-            <AppComponentCard
-              title='Mini Size Bar'
-              description='Appropriate for a narrow area.'
-              component={MiniSizeBar}
-              source={MiniSizeBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-b">
+            <AppComponentCard title="Mini Size Bar" description="Appropriate for a narrow area." component={MiniSizeBar} source={MiniSizeBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-c'>
-            <AppComponentCard
-              title='Success Segment'
-              description=''
-              component={SuccessSegment}
-              source={SuccessSegmentSource}
-            />
+          <Col xs={24} lg={12} key="progress-c">
+            <AppComponentCard title="Success Segment" description="" component={SuccessSegment} source={SuccessSegmentSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-d'>
-            <AppComponentCard
-              title='Dynamic Bar'
-              description='A dynamic progress bar is better.'
-              component={DynamicBar}
-              source={DynamicBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-d">
+            <AppComponentCard title="Dynamic Bar" description="A dynamic progress bar is better." component={DynamicBar} source={DynamicBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-e'>
-            <AppComponentCard
-              title='Circular Bar'
-              description='A circular progress bar.'
-              component={CircularBar}
-              source={CircularBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-e">
+            <AppComponentCard title="Circular Bar" description="A circular progress bar." component={CircularBar} source={CircularBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-f'>
-            <AppComponentCard
-              title='MiniSize Circular Bar'
-              description='A smaller circular progress bar.'
-              component={MiniSizeCircularBar}
-              source={MiniSizeCircularBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-f">
+            <AppComponentCard title="MiniSize Circular Bar" description="A smaller circular progress bar." component={MiniSizeCircularBar} source={MiniSizeCircularBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-g'>
-            <AppComponentCard
-              title='Dynamic Circular Bar'
-              description='A dynamic progress bar is better.'
-              component={DynamicCircularBar}
-              source={DynamicCircularBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-g">
+            <AppComponentCard title="Dynamic Circular Bar" description="A dynamic progress bar is better." component={DynamicCircularBar} source={DynamicCircularBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-h'>
-            <AppComponentCard
-              title='Custom Text Bar'
-              description='You can set a custom text by setting the format prop.'
-              component={CustomTextBar}
-              source={CustomTextBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-h">
+            <AppComponentCard title="Custom Text Bar" description="You can set a custom text by setting the format prop." component={CustomTextBar} source={CustomTextBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-i'>
-            <AppComponentCard
-              title='Dashboard Bar'
-              description='By setting type=dashboard, you can get a dashboard style of progress easily.'
-              component={DashboardBar}
-              source={DashboardBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-i">
+            <AppComponentCard title="Dashboard Bar" description="By setting type=dashboard, you can get a dashboard style of progress easily." component={DashboardBar} source={DashboardBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-i'>
-            <AppComponentCard
-              title='Progress Bar'
-              description='A standard progress bar.'
-              component={ProgressBar}
-              source={ProgressBarSource}
-            />
+          <Col xs={24} lg={12} key="progress-i">
+            <AppComponentCard title="Progress Bar" description="A standard progress bar." component={ProgressBar} source={ProgressBarSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-i'>
-            <AppComponentCard
-              title='Progress Bar With Success'
-              description='A standard progress bar. Doesnt support trail color when type="circle|dashboard".'
-              component={ProgressBarWithSuccess}
-              source={ProgressBarWithSuccessSource}
-            />
+          <Col xs={24} lg={12} key="progress-i">
+            <AppComponentCard title="Progress Bar With Success" description='A standard progress bar. Doesnt support trail color when type="circle|dashboard".' component={ProgressBarWithSuccess} source={ProgressBarWithSuccessSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-i'>
-            <AppComponentCard
-              title='Square Line Caps'
-              description='By setting strokeLinecap="square", you can change the linecaps from round to square.'
-              component={SquareLineCaps}
-              source={SquareLineCapsSource}
-            />
+          <Col xs={24} lg={12} key="progress-i">
+            <AppComponentCard title="Square Line Caps" description='By setting strokeLinecap="square", you can change the linecaps from round to square.' component={SquareLineCaps} source={SquareLineCapsSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-i'>
-            <AppComponentCard
-              title='Custom Line Gradient'
-              description='A package of linear-gradient. It is recommended to only pass two colors.'
-              component={CustomLineGradient}
-              source={CustomLineGradientSource}
-            />
+          <Col xs={24} lg={12} key="progress-i">
+            <AppComponentCard title="Custom Line Gradient" description="A package of linear-gradient. It is recommended to only pass two colors." component={CustomLineGradient} source={CustomLineGradientSource} />
           </Col>
-          <Col xs={24} lg={12} key='progress-i'>
-            <AppComponentCard
-              title='Progress Bar With Steps'
-              description='A progress bar with steps.'
-              component={ProgressBarWithSteps}
-              source={ProgressBarWithStepsSource}
-            />
+          <Col xs={24} lg={12} key="progress-i">
+            <AppComponentCard title="Progress Bar With Steps" description="A progress bar with steps." component={ProgressBarWithSteps} source={ProgressBarWithStepsSource} />
           </Col>
         </AppRowContainer>
       </>

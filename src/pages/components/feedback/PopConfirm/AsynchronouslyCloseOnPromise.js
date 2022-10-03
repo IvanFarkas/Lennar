@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Popconfirm} from 'antd';
+import { Button, Popconfirm } from 'antd';
 
 const AsynchronouslyCloseOnPromise = () => {
   const confirm = () =>
@@ -8,11 +8,8 @@ const AsynchronouslyCloseOnPromise = () => {
     });
 
   return (
-    <Popconfirm
-      title='Title'
-      onConfirm={confirm}
-      onVisibleChange={() => console.log('visible change')}>
-      <Button type='primary'>Open Popconfirm with Promise</Button>
+    <Popconfirm title="Title" onConfirm={confirm} onVisibleChange={() => console.log('visible change')}>
+      <Button type="primary">Open Popconfirm with Promise</Button>
     </Popconfirm>
   );
 };

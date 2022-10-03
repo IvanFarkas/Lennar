@@ -1,20 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import StatGraphs from './StatGraphs';
 import PropTypes from 'prop-types';
 import AppSelect from '../../../../../@crema/core/AppSelect';
-import {Tabs} from 'antd';
+import { Tabs } from 'antd';
 import '../index.style.less';
 import IntlMessages from '../../../../../@crema/utility/IntlMessages';
 
 const GraphTabs = (props) => {
-  const {clientsData, incomeData, projectData} = props;
+  const { clientsData, incomeData, projectData } = props;
 
   const [value, setValue] = useState(0);
 
   const [projectGraphData, setProjectGraphData] = useState(projectData);
   const [clientsGraphData, setClientsGraphData] = useState(clientsData);
   const [incomeGraphData, setIncomeGraphData] = useState(incomeData);
-  const {TabPane} = Tabs;
+  const { TabPane } = Tabs;
 
   const onSetGraphValue = (data) => {
     switch (value) {
@@ -72,36 +72,25 @@ const GraphTabs = (props) => {
   };
 
   return (
-    <div className='statistics-content'>
-      <div className='statistics-header'>
+    <div className="statistics-content">
+      <div className="statistics-header">
         <h3>
-          <IntlMessages id='dashboard.statistics' />
+          <IntlMessages id="dashboard.statistics" />
         </h3>
 
-        <div className='statistics-header-action'>
-          <AppSelect
-            menus={[2021, 2018, 2017]}
-            defaultValue={2021}
-            onChange={handleYearChange}
-          />
-          <AppSelect
-            menus={['June', 'July', 'August']}
-            defaultValue='June'
-            onChange={handleMonthChange}
-          />
+        <div className="statistics-header-action">
+          <AppSelect menus={[2021, 2018, 2017]} defaultValue={2021} onChange={handleYearChange} />
+          <AppSelect menus={['June', 'July', 'August']} defaultValue="June" onChange={handleMonthChange} />
         </div>
       </div>
-      <Tabs
-        className='statistics-tabs'
-        defaultActiveKey='1'
-        onChange={handleChange}>
-        <TabPane tab={<IntlMessages id='dashboard.project' />} key='1'>
+      <Tabs className="statistics-tabs" defaultActiveKey="1" onChange={handleChange}>
+        <TabPane tab={<IntlMessages id="dashboard.project" />} key="1">
           <StatGraphs data={projectGraphData} />
         </TabPane>
-        <TabPane tab={<IntlMessages id='dashboard.newClients' />} key='2'>
+        <TabPane tab={<IntlMessages id="dashboard.newClients" />} key="2">
           <StatGraphs data={clientsGraphData} />
         </TabPane>
-        <TabPane tab={<IntlMessages id='dashboard.income' />} key='3'>
+        <TabPane tab={<IntlMessages id="dashboard.income" />} key="3">
           <StatGraphs data={incomeGraphData} />
         </TabPane>
       </Tabs>

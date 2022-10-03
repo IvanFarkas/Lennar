@@ -1,13 +1,13 @@
 import React from 'react';
-import {useDropzone} from 'react-dropzone';
+import { useDropzone } from 'react-dropzone';
 import PropTypes from 'prop-types';
-import {IoMdAttach} from 'react-icons/io';
-import {AiOutlineDelete} from 'react-icons/ai';
+import { IoMdAttach } from 'react-icons/io';
+import { AiOutlineDelete } from 'react-icons/ai';
 import AppIconButton from '../../../../../../@crema/core/AppIconButton';
 
 const CardHeader = (props) => {
-  const {onClickDeleteIcon, board, list, onAddAttachments} = props;
-  const {getRootProps, getInputProps} = useDropzone({
+  const { onClickDeleteIcon, board, list, onAddAttachments } = props;
+  const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => {
       const files = acceptedFiles.map((file) => {
@@ -22,14 +22,14 @@ const CardHeader = (props) => {
   });
 
   return (
-    <div className='scrum-board-card-header'>
-      <h3 className='text-truncate'>
+    <div className="scrum-board-card-header">
+      <h3 className="text-truncate">
         {board.name} &gt; {list.name}
       </h3>
-      <div className='scrum-board-card-header-action'>
+      <div className="scrum-board-card-header-action">
         <AppIconButton
           icon={
-            <div {...getRootProps({className: 'dropzone'})}>
+            <div {...getRootProps({ className: 'dropzone' })}>
               <input {...getInputProps()} />
               <IoMdAttach />
             </div>

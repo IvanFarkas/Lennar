@@ -9,7 +9,7 @@ import CustomActiveShapePieChart from './Components/CustomActiveShapePieChart';
 import CustomActiveShapePieChartSource from '!raw-loader!./Components/CustomActiveShapePieChart';
 import PieChartWithPaddingAngle from './Components/PieChartWithPaddingAngle';
 import PieChartWithPaddingAngleSource from '!raw-loader!./Components/PieChartWithPaddingAngle';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 import ComponentCard from '@crema/core/AppComponentCard';
 import ComponentHeader from '@crema/core/AppComponentHeader';
@@ -18,49 +18,26 @@ import AppRowSimpleContainer from '@crema/core/AppRowContainer/AppRowSimpleConta
 const PieChart = () => {
   return (
     <>
-      <ComponentHeader
-        title='Pie Chart'
-        refUrl='http://recharts.org/en-US/api/PieChart/'
-      />
+      <ComponentHeader title="Pie Chart" refUrl="http://recharts.org/en-US/api/PieChart/" />
 
       <AppRowSimpleContainer>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Two Level Pie Chart'
-            component={TwoLevelPieChart}
-            source={TwoLevelPieChartSource}
-          />
+          <ComponentCard title="Two Level Pie Chart" component={TwoLevelPieChart} source={TwoLevelPieChartSource} />
         </Col>
 
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Straight Angle Pie Chart'
-            component={StraightAnglePieChart}
-            source={StraightAnglePieChartSource}
-          />
+          <ComponentCard title="Straight Angle Pie Chart" component={StraightAnglePieChart} source={StraightAnglePieChartSource} />
         </Col>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Custom Active Shape Pie Chart'
-            component={CustomActiveShapePieChart}
-            source={CustomActiveShapePieChartSource}
-          />
+          <ComponentCard title="Custom Active Shape Pie Chart" component={CustomActiveShapePieChart} source={CustomActiveShapePieChartSource} />
         </Col>
 
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Two Simple Pie Chart'
-            component={TwoSimplePieChart}
-            source={TwoSimplePieChartSource}
-          />
+          <ComponentCard title="Two Simple Pie Chart" component={TwoSimplePieChart} source={TwoSimplePieChartSource} />
         </Col>
 
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Pie Chart With Padding Angle'
-            component={PieChartWithPaddingAngle}
-            source={PieChartWithPaddingAngleSource}
-          />
+          <ComponentCard title="Pie Chart With Padding Angle" component={PieChartWithPaddingAngle} source={PieChartWithPaddingAngleSource} />
         </Col>
       </AppRowSimpleContainer>
     </>

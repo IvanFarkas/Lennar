@@ -1,10 +1,10 @@
 import React from 'react';
-import {Select} from 'antd';
+import { Select } from 'antd';
 import jsonp from 'fetch-jsonp';
 import querystring from 'querystring';
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 
-const {Option} = Select;
+const { Option } = Select;
 
 let timeout;
 let currentValue;
@@ -25,7 +25,7 @@ function fetch(value, callback) {
       .then((response) => response.json())
       .then((d) => {
         if (currentValue === value) {
-          const {result} = d;
+          const { result } = d;
           const data = [];
           result.forEach((r) => {
             data.push({
@@ -54,33 +54,21 @@ class SearchField extends React.Component {
 
   handleSearch = (value) => {
     if (value) {
-      fetch(value, (data) => this.setState({data}));
+      fetch(value, (data) => this.setState({ data }));
     } else {
-      this.setState({data: []});
+      this.setState({ data: [] });
     }
   };
 
   handleChange = (value) => {
-    this.setState({value});
+    this.setState({ value });
   };
 
   render() {
-    const options = this.state.data.map((d) => (
-      <Option key={d.value}>{d.text}</Option>
-    ));
+    const options = this.state.data.map((d) => <Option key={d.value}>{d.text}</Option>);
     return (
-      <div style={{width: '100%'}}>
-        <Select
-          showSearch
-          value={this.state.value}
-          placeholder={this.props.placeholder}
-          style={{width: '100%'}}
-          defaultActiveFirstOption={false}
-          showArrow={false}
-          filterOption={false}
-          onSearch={this.handleSearch}
-          onChange={this.handleChange}
-          notFoundContent={null}>
+      <div style={{ width: '100%' }}>
+        <Select showSearch value={this.state.value} placeholder={this.props.placeholder} style={{ width: '100%' }} defaultActiveFirstOption={false} showArrow={false} filterOption={false} onSearch={this.handleSearch} onChange={this.handleChange} notFoundContent={null}>
           {options}
         </Select>
       </div>

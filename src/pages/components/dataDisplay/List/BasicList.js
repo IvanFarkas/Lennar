@@ -1,5 +1,5 @@
 import React from 'react';
-import {Avatar, Space, List} from 'antd';
+import { Avatar, Space, List } from 'antd';
 
 const data = [
   {
@@ -18,19 +18,13 @@ const data = [
 
 const BasicList = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <List
-        itemLayout='horizontal'
+        itemLayout="horizontal"
         dataSource={data}
         renderItem={(item) => (
           <List.Item>
-            <List.Item.Meta
-              avatar={
-                <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
-              }
-              title={<a href='https://ant.design'>{item.title}</a>}
-              description='Ant Design, a design language for background applications, is refined by Ant UED Team'
-            />
+            <List.Item.Meta avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />} title={<a href="https://ant.design">{item.title}</a>} description="Ant Design, a design language for background applications, is refined by Ant UED Team" />
           </List.Item>
         )}
       />

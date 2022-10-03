@@ -1,13 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import Inline from '@ckeditor/ckeditor5-build-inline';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import AppInfoView from '@crema/core/AppInfoView';
-import {
-  onGetInlineData,
-  onUpdateInlineData,
-} from '../../../../redux/actions/Editors';
+import { onGetInlineData, onUpdateInlineData } from '../../../../redux/actions/Editors';
 
 let editorRef;
 const InlineEditor = () => {
@@ -21,7 +18,7 @@ const InlineEditor = () => {
       }
     };
   }, [dispatch]);
-  const data = useSelector(({editors}) => editors.inline);
+  const data = useSelector(({ editors }) => editors.inline);
 
   return (
     <div>

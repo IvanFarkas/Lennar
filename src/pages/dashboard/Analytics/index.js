@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import WelcomeCard from './WelcomeCard';
 import StateCard from './StateCard';
 import SalesState from './SalesState';
@@ -13,9 +13,9 @@ import InfoWidget from './InfoWidget';
 import PageVisits from './PageVisits';
 import OrderNTransaction from './OrderNTransaction';
 import TrafficSource from './TrafficSource';
-import {AppInfoView} from '../../../@crema';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetAnalyticsData} from '../../../redux/actions/Dashboard';
+import { AppInfoView } from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetAnalyticsData } from '../../../redux/actions/Dashboard';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
 
 const Analytics = () => {
@@ -25,14 +25,14 @@ const Analytics = () => {
     dispatch(onGetAnalyticsData());
   }, [dispatch]);
 
-  const analyticsData = useSelector(({dashboard}) => dashboard.analyticsData);
+  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
 
   return (
     <>
-      <AppPageMetadata title='Analytics Dashboard' />
+      <AppPageMetadata title="Analytics Dashboard" />
       {analyticsData ? (
         <AppRowContainer interval={120} ease={'easeInSine'}>
-          <Col xs={24} lg={12} className='mb-0' key={'a'}>
+          <Col xs={24} lg={12} className="mb-0" key={'a'}>
             <AppRowContainer interval={120}>
               <Col xs={24}>
                 <WelcomeCard data={analyticsData.welcomeCard} />
@@ -46,10 +46,7 @@ const Analytics = () => {
             </AppRowContainer>
           </Col>
           <Col xs={24} lg={12} key={'e'}>
-            <SalesState
-              salesState={analyticsData.salesState}
-              saleChartData={analyticsData.saleChartData}
-            />
+            <SalesState salesState={analyticsData.salesState} saleChartData={analyticsData.saleChartData} />
           </Col>
           <Col xs={24} lg={16} xxl={18} key={'f'}>
             <VisitorPageView data={analyticsData.visitorsPageView} />
@@ -63,7 +60,7 @@ const Analytics = () => {
           <Col xs={24} lg={12} key={'i'}>
             <EarningByCountry earningData={analyticsData.earningData} />
           </Col>
-          <Col xs={24} lg={12} className='mb-0' key={'j'}>
+          <Col xs={24} lg={12} className="mb-0" key={'j'}>
             <AppRowContainer>
               <Col xs={24}>
                 <TicketsSupport tickets={analyticsData.tickets} />
@@ -79,9 +76,7 @@ const Analytics = () => {
             <PageVisits pageVisits={analyticsData.pageVisits} />
           </Col>
           <Col xs={24} lg={18} key={'n'}>
-            <OrderNTransaction
-              transactionData={analyticsData.transactionData}
-            />
+            <OrderNTransaction transactionData={analyticsData.transactionData} />
           </Col>
           <Col xs={24} lg={6} key={'o'}>
             <TrafficSource trafficData={analyticsData.trafficData} />

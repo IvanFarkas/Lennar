@@ -1,4 +1,4 @@
-import {InputNumber, Checkbox, Space} from 'antd';
+import { InputNumber, Checkbox, Space } from 'antd';
 import React from 'react';
 const Keyboard = () => {
   const [keyboard, setKeyboard] = React.useState(true);
@@ -9,7 +9,8 @@ const Keyboard = () => {
         onChange={() => {
           setKeyboard(!keyboard);
         }}
-        checked={keyboard}>
+        checked={keyboard}
+      >
         Toggle keyboard
       </Checkbox>
     </Space>

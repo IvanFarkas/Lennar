@@ -1,8 +1,8 @@
-import {Select, Divider, Input} from 'antd';
+import { Select, Divider, Input } from 'antd';
 import React from 'react';
-import {PlusOutlined} from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 
-const {Option} = Select;
+const { Option } = Select;
 
 let index = 0;
 
@@ -20,7 +20,7 @@ class CustomDropdown extends React.Component {
 
   addItem = () => {
     console.log('addItem');
-    const {items, name} = this.state;
+    const { items, name } = this.state;
     this.setState({
       items: [...items, name || `New item ${index++}`],
       name: '',
@@ -28,21 +28,17 @@ class CustomDropdown extends React.Component {
   };
 
   render() {
-    const {items, name} = this.state;
+    const { items, name } = this.state;
     return (
       <Select
-        style={{width: 240}}
-        placeholder='custom dropdown render'
+        style={{ width: 240 }}
+        placeholder="custom dropdown render"
         dropdownRender={(menu) => (
           <div>
             {menu}
-            <Divider style={{margin: '4px 0'}} />
-            <div style={{display: 'flex', flexWrap: 'nowrap', padding: 8}}>
-              <Input
-                style={{flex: 'auto'}}
-                value={name}
-                onChange={this.onNameChange}
-              />
+            <Divider style={{ margin: '4px 0' }} />
+            <div style={{ display: 'flex', flexWrap: 'nowrap', padding: 8 }}>
+              <Input style={{ flex: 'auto' }} value={name} onChange={this.onNameChange} />
               <a
                 style={{
                   flex: 'none',
@@ -50,12 +46,14 @@ class CustomDropdown extends React.Component {
                   display: 'block',
                   cursor: 'pointer',
                 }}
-                onClick={this.addItem}>
+                onClick={this.addItem}
+              >
                 <PlusOutlined /> Add item
               </a>
             </div>
           </div>
-        )}>
+        )}
+      >
         {items.map((item) => (
           <Option key={item}>{item}</Option>
         ))}

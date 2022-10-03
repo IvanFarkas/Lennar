@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Rate} from 'antd';
+import { Space, Rate } from 'antd';
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 class Rater extends React.Component {
@@ -7,20 +7,16 @@ class Rater extends React.Component {
     value: 3,
   };
   handleChange = (value) => {
-    this.setState({value});
+    this.setState({ value });
   };
 
   render() {
-    const {value} = this.state;
+    const { value } = this.state;
     return (
       <Space>
         <span>
           <Rate tooltips={desc} onChange={this.handleChange} value={value} />
-          {value ? (
-            <span className='ant-rate-text'>{desc[value - 1]}</span>
-          ) : (
-            ''
-          )}
+          {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
         </span>
       </Space>
     );

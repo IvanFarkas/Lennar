@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
+import React, { Component } from 'react';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import simpleListData from '../../../../@crema/services/db/extraPages/dndData/simpleListData';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import PropTypes from 'prop-types';
 import '../index.style.less';
 
@@ -77,7 +77,7 @@ class MultipleDrop extends Component {
   getList = (id) => this.state[this.id2List[id]];
 
   onDragEnd = (result) => {
-    const {source, destination} = result;
+    const { source, destination } = result;
 
     // dropped outside the list
     if (!destination) {
@@ -85,26 +85,17 @@ class MultipleDrop extends Component {
     }
 
     if (source.droppableId === destination.droppableId) {
-      const items = reorder(
-        this.getList(source.droppableId),
-        source.index,
-        destination.index,
-      );
+      const items = reorder(this.getList(source.droppableId), source.index, destination.index);
 
-      let state = {items};
+      let state = { items };
 
       if (source.droppableId === 'droppable2') {
-        state = {selected: items};
+        state = { selected: items };
       }
 
       this.setState(state);
     } else {
-      const result = move(
-        this.getList(source.droppableId),
-        this.getList(destination.droppableId),
-        source,
-        destination,
-      );
+      const result = move(this.getList(source.droppableId), this.getList(destination.droppableId), source, destination);
 
       this.setState({
         items: result.droppable,
@@ -118,32 +109,18 @@ class MultipleDrop extends Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <div className='multiple-drop'>
-          <Droppable droppableId='droppable'>
+        <div className="multiple-drop">
+          <Droppable droppableId="droppable">
             {(provided, snapshot) => (
-              <div
-                className='multiple-drop-item'
-                ref={provided.innerRef}
-                style={getListStyle(snapshot.isDraggingOver)}>
+              <div className="multiple-drop-item" ref={provided.innerRef} style={getListStyle(snapshot.isDraggingOver)}>
                 {this.state.items.map((item, index) => (
-                  <Draggable
-                    key={item.id}
-                    draggableId={item.handle}
-                    index={index}>
+                  <Draggable key={item.id} draggableId={item.handle} index={index}>
                     {(provided) => (
-                      <div
-                        className='multiple-drop-list-item'
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}>
-                        <Avatar
-                          className='beautiful-dnd-avatar'
-                          alt='Remy Sharp'
-                          src={item.image}
-                        />
-                        <div className='beautiful-dnd-content'>
+                      <div className="multiple-drop-list-item" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <Avatar className="beautiful-dnd-avatar" alt="Remy Sharp" src={item.image} />
+                        <div className="beautiful-dnd-content">
                           <h3>{item.name}</h3>
-                          <p className='text-truncate'>@{item.handle}</p>
+                          <p className="text-truncate">@{item.handle}</p>
                         </div>
                       </div>
                     )}
@@ -153,32 +130,17 @@ class MultipleDrop extends Component {
               </div>
             )}
           </Droppable>
-          <Droppable droppableId='droppable2'>
+          <Droppable droppableId="droppable2">
             {(provided, snapshot) => (
-              <div
-                className='multiple-drop-item'
-                ref={provided.innerRef}
-                style={getListStyle(snapshot.isDraggingOver)}>
+              <div className="multiple-drop-item" ref={provided.innerRef} style={getListStyle(snapshot.isDraggingOver)}>
                 {this.state.selected.map((item, index) => (
                   <Draggable key={item.id} draggableId={item.id} index={index}>
                     {(provided, snapshot) => (
-                      <div
-                        className='multiple-drop-list-item'
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        style={getItemStyle(
-                          snapshot.isDragging,
-                          provided.draggableProps.style,
-                        )}>
-                        <Avatar
-                          className='beautiful-dnd-avatar'
-                          alt='Remy Sharp'
-                          src={item.image}
-                        />
-                        <div className='beautiful-dnd-content'>
+                      <div className="multiple-drop-list-item" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}>
+                        <Avatar className="beautiful-dnd-avatar" alt="Remy Sharp" src={item.image} />
+                        <div className="beautiful-dnd-content">
                           <h3>{item.name}</h3>
-                          <p className='text-truncate'>@{item.handle}</p>
+                          <p className="text-truncate">@{item.handle}</p>
                         </div>
                       </div>
                     )}

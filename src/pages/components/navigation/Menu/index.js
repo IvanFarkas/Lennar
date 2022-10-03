@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -23,66 +23,28 @@ class index extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Menu'
-          refUrl='https://ant.design/components/menu/'
-        />
+        <ComponentHeader title="Menu" refUrl="https://ant.design/components/menu/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='menu-a'>
-            <AppComponentCard
-              title='Navigation Top'
-              description='Horizontal top navigation menu.'
-              component={NavigationTop}
-              source={NavigationTopSource}
-            />
+          <Col xs={24} lg={12} key="menu-a">
+            <AppComponentCard title="Navigation Top" description="Horizontal top navigation menu." component={NavigationTop} source={NavigationTopSource} />
           </Col>
-          <Col xs={24} lg={12} key='menu-b'>
-            <AppComponentCard
-              title='Vertical Menu'
-              description='Vertical menu with inline submenus.'
-              component={VerticalMenu}
-              source={VerticalMenuSource}
-            />
+          <Col xs={24} lg={12} key="menu-b">
+            <AppComponentCard title="Vertical Menu" description="Vertical menu with inline submenus." component={VerticalMenu} source={VerticalMenuSource} />
           </Col>
-          <Col xs={24} lg={12} key='menu-c'>
-            <AppComponentCard
-              title='Menu Themes'
-              description='There are two built-in themes: light and dark. The default value is light.'
-              component={MenuThemes}
-              source={MenuThemesSource}
-            />
+          <Col xs={24} lg={12} key="menu-c">
+            <AppComponentCard title="Menu Themes" description="There are two built-in themes: light and dark. The default value is light." component={MenuThemes} source={MenuThemesSource} />
           </Col>
-          <Col xs={24} lg={12} key='menu-d'>
-            <AppComponentCard
-              title='Collapsed Menu'
-              description='Inline menu could be isCollapsed.'
-              component={CollapsedMenu}
-              source={CollapsedMenuSource}
-            />
+          <Col xs={24} lg={12} key="menu-d">
+            <AppComponentCard title="Collapsed Menu" description="Inline menu could be isCollapsed." component={CollapsedMenu} source={CollapsedMenuSource} />
           </Col>
-          <Col xs={24} lg={12} key='menu-e'>
-            <AppComponentCard
-              title='Current Sub Menu'
-              description='Click the menu and you will see that all the other menus gets isCollapsed to keep the entire menu compact.'
-              component={CurrentSubMenu}
-              source={CurrentSubMenuSource}
-            />
+          <Col xs={24} lg={12} key="menu-e">
+            <AppComponentCard title="Current Sub Menu" description="Click the menu and you will see that all the other menus gets isCollapsed to keep the entire menu compact." component={CurrentSubMenu} source={CurrentSubMenuSource} />
           </Col>
-          <Col xs={24} lg={12} key='menu-f'>
-            <AppComponentCard
-              title='Switch Menu'
-              description='Show the dynamic switching mode (between inline and vertical).'
-              component={SwitchMenu}
-              source={SwitchMenuSource}
-            />
+          <Col xs={24} lg={12} key="menu-f">
+            <AppComponentCard title="Switch Menu" description="Show the dynamic switching mode (between inline and vertical)." component={SwitchMenu} source={SwitchMenuSource} />
           </Col>
-          <Col xs={24} lg={12} key='menu-f'>
-            <AppComponentCard
-              title='Inline Menu'
-              description='Vertical menu with inline submenus.'
-              component={InlineMenu}
-              source={InlineMenuSource}
-            />
+          <Col xs={24} lg={12} key="menu-f">
+            <AppComponentCard title="Inline Menu" description="Vertical menu with inline submenus." component={InlineMenu} source={InlineMenuSource} />
           </Col>
         </AppRowContainer>
       </>

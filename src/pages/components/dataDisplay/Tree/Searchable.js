@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Input, Tree} from 'antd';
+import { Space, Input, Tree } from 'antd';
 
 const TreeNode = Tree.TreeNode;
 const Search = Input.Search;
@@ -16,7 +16,7 @@ const generateData = (_level, _preKey, _tns) => {
   const children = [];
   for (let i = 0; i < x; i++) {
     const key = `${preKey}-${i}`;
-    tns.push({title: key, key});
+    tns.push({ title: key, key });
     if (i < y) {
       children.push(key);
     }
@@ -37,7 +37,7 @@ const generateList = (data) => {
   for (let i = 0; i < data.length; i++) {
     const node = data[i];
     const key = node.key;
-    dataList.push({key, title: key});
+    dataList.push({ key, title: key });
     if (node.children) {
       generateList(node.children, node.key);
     }
@@ -90,7 +90,7 @@ class Searchable extends React.Component {
   };
 
   render() {
-    const {searchValue, expandedKeys, autoExpandParent} = this.state;
+    const { searchValue, expandedKeys, autoExpandParent } = this.state;
     const loop = (data) =>
       data.map((item) => {
         const index = item.key.indexOf(searchValue);
@@ -100,7 +100,7 @@ class Searchable extends React.Component {
           index > -1 ? (
             <span>
               {beforeStr}
-              <span style={{color: '#f50'}}>{searchValue}</span>
+              <span style={{ color: '#f50' }}>{searchValue}</span>
               {afterStr}
             </span>
           ) : (
@@ -116,16 +116,9 @@ class Searchable extends React.Component {
         return <TreeNode key={item.key} title={title} />;
       });
     return (
-      <Space direction='vertical' style={{width: '100%'}}>
-        <Search
-          style={{marginBottom: 8}}
-          placeholder='Search'
-          onChange={this.onChange}
-        />
-        <Tree
-          onExpand={this.onExpand}
-          expandedKeys={expandedKeys}
-          autoExpandParent={autoExpandParent}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Search style={{ marginBottom: 8 }} placeholder="Search" onChange={this.onChange} />
+        <Tree onExpand={this.onExpand} expandedKeys={expandedKeys} autoExpandParent={autoExpandParent}>
           {loop(gData)}
         </Tree>
       </Space>

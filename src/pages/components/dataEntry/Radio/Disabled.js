@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Radio} from 'antd';
+import { Button, Space, Radio } from 'antd';
 
 class Disabled extends React.Component {
   state = {
@@ -21,10 +21,7 @@ class Disabled extends React.Component {
           Disabled
         </Radio>
         <br />
-        <Button
-          type='primary'
-          onClick={this.toggleDisabled}
-          style={{marginTop: 16}}>
+        <Button type="primary" onClick={this.toggleDisabled} style={{ marginTop: 16 }}>
           Toggle disabled
         </Button>
       </Space>

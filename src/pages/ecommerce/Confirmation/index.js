@@ -1,8 +1,8 @@
 import React from 'react';
 import OrderPlaced from './OrderPlaced';
 import AddressInfo from './AddressInfo';
-import {addresses} from '../../../@crema/services/db/ecommerce/ecommerceData';
-import {useSelector} from 'react-redux';
+import { addresses } from '../../../@crema/services/db/ecommerce/ecommerceData';
+import { useSelector } from 'react-redux';
 import ItemsList from './ItemsList';
 import AppAnimateGroup from '../../../@crema/core/AppAnimateGroup';
 import './index.style.less';
@@ -18,11 +18,11 @@ export const getTotalPrice = (cartItems) => {
 };
 
 const Confirmation = () => {
-  const {cartItems} = useSelector(({ecommerce}) => ecommerce);
+  const { cartItems } = useSelector(({ ecommerce }) => ecommerce);
   return (
-    <AppAnimateGroup type='bottom'>
-      <AppPageMetadata title='Order Confirmation' />
-      <div className='confirmation-view' key={'wrap'}>
+    <AppAnimateGroup type="bottom">
+      <AppPageMetadata title="Order Confirmation" />
+      <div className="confirmation-view" key={'wrap'}>
         <OrderPlaced cartItems={cartItems} />
         <AddressInfo address={addresses[0]} />
         <ItemsList cartItems={cartItems} />

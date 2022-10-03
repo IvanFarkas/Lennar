@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {AutoComplete} from 'antd';
+import { AutoComplete } from 'antd';
 
-const {Option} = AutoComplete;
+const { Option } = AutoComplete;
 
 const Customized = () => {
   const [result, setResult] = useState([]);
@@ -13,9 +13,7 @@ const Customized = () => {
     if (!value || value.indexOf('@') >= 0) {
       res = [];
     } else {
-      res = ['gmail.com', '163.com', 'qq.com'].map(
-        (domain) => `${value}@${domain}`,
-      );
+      res = ['gmail.com', '163.com', 'qq.com'].map((domain) => `${value}@${domain}`);
     }
 
     setResult(res);
@@ -27,7 +25,8 @@ const Customized = () => {
         width: 200,
       }}
       onSearch={handleSearch}
-      placeholder='input here'>
+      placeholder="input here"
+    >
       {result.map((email) => (
         <Option key={email} value={email}>
           {email}

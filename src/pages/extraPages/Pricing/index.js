@@ -1,6 +1,6 @@
 import React from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import PackageTwo from './PackageTwo';
 import pricingData from '../../../@crema/services/db/extraPages/pricing';
 import PackageOne from './PackageOne';

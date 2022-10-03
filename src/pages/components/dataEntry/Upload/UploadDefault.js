@@ -1,10 +1,10 @@
 import React from 'react';
-import {Button, Space, Upload} from 'antd';
+import { Button, Space, Upload } from 'antd';
 import UploadOutlined from '@ant-design/icons/lib/icons/UploadOutlined';
 
 const props = {
   action: '//jsonplaceholder.typicode.com/posts/',
-  onChange({file, fileList}) {
+  onChange({ file, fileList }) {
     if (file.status !== 'uploading') {
       console.log(file, fileList);
     }

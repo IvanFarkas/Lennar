@@ -1,28 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Card} from 'antd';
+import { Card } from 'antd';
 import clsx from 'clsx';
 import './index.style.less';
 
-const AppCard = ({
-  title,
-  extra,
-  children,
-  cover,
-  className,
-  actions,
-  heightFull,
-  ...rest
-}) => {
+const AppCard = ({ title, extra, children, cover, className, actions, heightFull, ...rest }) => {
   return (
-    <Card
-      className={clsx('card', {heightFull: heightFull}, className)}
-      title={title}
-      extra={extra ? extra : null}
-      cover={cover}
-      actions={actions}
-      bordered={false}
-      {...rest}>
+    <Card className={clsx('card', { heightFull: heightFull }, className)} title={title} extra={extra ? extra : null} cover={cover} actions={actions} bordered={false} {...rest}>
       {children}
     </Card>
   );

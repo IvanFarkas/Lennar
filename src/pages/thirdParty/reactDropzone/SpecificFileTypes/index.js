@@ -1,11 +1,10 @@
 import React from 'react';
-import {useDropzone} from 'react-dropzone';
+import { useDropzone } from 'react-dropzone';
 
 const SpecificFileTypes = () => {
-  const {acceptedFiles, rejectedFiles, getRootProps, getInputProps} =
-    useDropzone({
-      accept: 'image/jpeg, image/png',
-    });
+  const { acceptedFiles, rejectedFiles, getRootProps, getInputProps } = useDropzone({
+    accept: 'image/jpeg, image/png',
+  });
 
   const acceptedFilesItems =
     acceptedFiles &&
@@ -24,8 +23,8 @@ const SpecificFileTypes = () => {
     ));
 
   return (
-    <section className='container'>
-      <div {...getRootProps({className: 'dropzone'})}>
+    <section className="container">
+      <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <p>Drag n drop some files here, or click to select files</p>
         <em>(Only *.jpeg and *.png images will be accepted)</em>

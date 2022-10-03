@@ -1,8 +1,8 @@
 import React from 'react';
-import {Modal, Button} from 'antd';
+import { Modal, Button } from 'antd';
 
 class CustomizeFooterButtons extends React.Component {
-  state = {visible: false};
+  state = { visible: false };
 
   showModal = () => {
     this.setState({
@@ -27,16 +27,10 @@ class CustomizeFooterButtons extends React.Component {
   render() {
     return (
       <>
-        <Button type='primary' onClick={this.showModal}>
+        <Button type="primary" onClick={this.showModal}>
           Open Modal with customized button props
         </Button>
-        <Modal
-          title='Basic Modal'
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-          okButtonProps={{disabled: true}}
-          cancelButtonProps={{disabled: true}}>
+        <Modal title="Basic Modal" visible={this.state.visible} onOk={this.handleOk} onCancel={this.handleCancel} okButtonProps={{ disabled: true }} cancelButtonProps={{ disabled: true }}>
           <p>Some contents...</p>
           <p>Some contents...</p>
           <p>Some contents...</p>

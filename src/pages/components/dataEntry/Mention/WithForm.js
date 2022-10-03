@@ -1,6 +1,6 @@
-import {Mentions, Form, Button} from 'antd';
+import { Mentions, Form, Button } from 'antd';
 import React from 'react';
-const {Option, getMentions} = Mentions;
+const { Option, getMentions } = Mentions;
 
 const WithForm = () => {
   const [form] = Form.useForm();
@@ -27,10 +27,10 @@ const WithForm = () => {
   };
 
   return (
-    <Form form={form} layout='horizontal' onFinish={onFinish}>
+    <Form form={form} layout="horizontal" onFinish={onFinish}>
       <Form.Item
-        name='coders'
-        label='Top coders'
+        name="coders"
+        label="Top coders"
         labelCol={{
           span: 6,
         }}
@@ -41,16 +41,17 @@ const WithForm = () => {
           {
             validator: checkMention,
           },
-        ]}>
+        ]}
+      >
         <Mentions rows={1}>
-          <Option value='afc163'>afc163</Option>
-          <Option value='zombieJ'>zombieJ</Option>
-          <Option value='yesmeck'>yesmeck</Option>
+          <Option value="afc163">afc163</Option>
+          <Option value="zombieJ">zombieJ</Option>
+          <Option value="yesmeck">yesmeck</Option>
         </Mentions>
       </Form.Item>
       <Form.Item
-        name='bio'
-        label='Bio'
+        name="bio"
+        label="Bio"
         labelCol={{
           span: 6,
         }}
@@ -61,23 +62,25 @@ const WithForm = () => {
           {
             required: true,
           },
-        ]}>
-        <Mentions rows={3} placeholder='You can use @ to ref user here'>
-          <Option value='afc163'>afc163</Option>
-          <Option value='zombieJ'>zombieJ</Option>
-          <Option value='yesmeck'>yesmeck</Option>
+        ]}
+      >
+        <Mentions rows={3} placeholder="You can use @ to ref user here">
+          <Option value="afc163">afc163</Option>
+          <Option value="zombieJ">zombieJ</Option>
+          <Option value="yesmeck">yesmeck</Option>
         </Mentions>
       </Form.Item>
       <Form.Item
         wrapperCol={{
           span: 14,
           offset: 6,
-        }}>
-        <Button htmlType='submit' type='primary'>
+        }}
+      >
+        <Button htmlType="submit" type="primary">
           Submit
         </Button>
         &nbsp;&nbsp;&nbsp;
-        <Button htmlType='button' onClick={onReset}>
+        <Button htmlType="button" onClick={onReset}>
           Reset
         </Button>
       </Form.Item>

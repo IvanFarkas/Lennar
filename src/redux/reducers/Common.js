@@ -1,12 +1,4 @@
-import {
-  FETCH_ERROR,
-  FETCH_START,
-  FETCH_SUCCESS,
-  HIDE_MESSAGE,
-  SHOW_MESSAGE,
-  TOGGLE_APP_DRAWER,
-  UPDATING_CONTENT,
-} from '../../shared/constants/ActionTypes';
+import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, HIDE_MESSAGE, SHOW_MESSAGE, TOGGLE_APP_DRAWER, UPDATING_CONTENT } from '../../shared/constants/ActionTypes';
 
 const INIT_STATE = {
   error: '',
@@ -19,10 +11,10 @@ const INIT_STATE = {
 const commonReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case FETCH_START: {
-      return {...state, error: '', displayMessage: '', loading: true};
+      return { ...state, error: '', displayMessage: '', loading: true };
     }
     case UPDATING_CONTENT: {
-      return {...state, error: '', displayMessage: '', updatingContent: true};
+      return { ...state, error: '', displayMessage: '', updatingContent: true };
     }
     case FETCH_SUCCESS: {
       return {

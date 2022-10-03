@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pagination} from 'antd';
+import { Pagination } from 'antd';
 
 class Controlled extends React.Component {
   state = {
@@ -14,13 +14,7 @@ class Controlled extends React.Component {
   };
 
   render() {
-    return (
-      <Pagination
-        current={this.state.current}
-        onChange={this.onChange}
-        total={50}
-      />
-    );
+    return <Pagination current={this.state.current} onChange={this.onChange} total={50} />;
   }
 }
 

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Alert, Calendar, Space} from 'antd';
+import React, { useState } from 'react';
+import { Alert, Calendar, Space } from 'antd';
 import moment from 'moment';
 
 const SelectableCalendar = () => {
@@ -15,17 +15,9 @@ const SelectableCalendar = () => {
   };
 
   return (
-    <Space direction='vertical'>
-      <Alert
-        message={`You selected date: ${
-          selectedValue && selectedValue.format('YYYY-MM-DD')
-        }`}
-      />
-      <Calendar
-        value={value}
-        onSelect={onSelect}
-        onPanelChange={onPanelChange}
-      />
+    <Space direction="vertical">
+      <Alert message={`You selected date: ${selectedValue && selectedValue.format('YYYY-MM-DD')}`} />
+      <Calendar value={value} onSelect={onSelect} onPanelChange={onPanelChange} />
     </Space>
   );
 };

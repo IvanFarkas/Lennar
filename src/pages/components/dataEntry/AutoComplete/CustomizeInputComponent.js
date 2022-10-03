@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {AutoComplete, Input} from 'antd';
+import React, { useState } from 'react';
+import { AutoComplete, Input } from 'antd';
 
-const {TextArea} = Input;
+const { TextArea } = Input;
 const CustomizeInputComponent = () => {
   const [options, setOptions] = useState([]);
 
@@ -38,10 +38,11 @@ const CustomizeInputComponent = () => {
         width: 200,
       }}
       onSelect={onSelect}
-      onSearch={handleSearch}>
+      onSearch={handleSearch}
+    >
       <TextArea
-        placeholder='input here'
-        className='custom'
+        placeholder="input here"
+        className="custom"
         style={{
           height: 50,
         }}

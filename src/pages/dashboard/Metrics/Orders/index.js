@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import OrdersGraph from './OrdersGraph';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
 import AppSelect from '../../../../@crema/core/AppSelect';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import './index.style.less';
 
-const Orders = ({data}) => {
+const Orders = ({ data }) => {
   const [graphData, setGraphData] = useState(data.graphData.dataTwo);
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   const handleWeekChange = (value) => {
     switch (value) {
@@ -31,30 +31,21 @@ const Orders = ({data}) => {
     <AppCard
       heightFull
       title={messages['common.orders']}
-      extra={
-        <AppSelect
-          menus={[
-            messages['dashboard.thisWeek'],
-            messages['dashboard.lastWeeks'],
-            messages['dashboard.lastMonth'],
-          ]}
-          defaultValue={messages['dashboard.thisWeek']}
-          onChange={handleWeekChange}
-        />
-      }
-      className='orders-card'
+      extra={<AppSelect menus={[messages['dashboard.thisWeek'], messages['dashboard.lastWeeks'], messages['dashboard.lastMonth']]} defaultValue={messages['dashboard.thisWeek']} onChange={handleWeekChange} />}
+      className="orders-card"
       actions={[
-        <div key={1} className='orders-footer'>
+        <div key={1} className="orders-footer">
           <p>
-            <IntlMessages id='common.revenue' />
+            <IntlMessages id="common.revenue" />
             <span>{data.revenue}</span>
           </p>
           <p>
-            <IntlMessages id='common.orders' />
+            <IntlMessages id="common.orders" />
             <span>{data.orders}</span>
           </p>
         </div>,
-      ]}>
+      ]}
+    >
       <OrdersGraph data={graphData} />
     </AppCard>
   );

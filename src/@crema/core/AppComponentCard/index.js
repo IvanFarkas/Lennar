@@ -4,25 +4,10 @@ import AppAnimateGroup from '../AppAnimateGroup';
 import './index.style.less';
 import ComponentCardWithoutAnim from './ComponentCardWithoutAnim';
 
-const AppComponentCard = ({
-  title,
-  description,
-  className,
-  maxHeight,
-  component,
-  source,
-}) => {
+const AppComponentCard = ({ title, description, className, maxHeight, component, source }) => {
   return (
-    <AppAnimateGroup type='bottom' interval={100} duration={450}>
-      <ComponentCardWithoutAnim
-        title={title}
-        description={description}
-        className={className}
-        maxHeight={maxHeight}
-        component={component}
-        source={source}
-        key={'card'}
-      />
+    <AppAnimateGroup type="bottom" interval={100} duration={450}>
+      <ComponentCardWithoutAnim title={title} description={description} className={className} maxHeight={maxHeight} component={component} source={source} key={'card'} />
     </AppAnimateGroup>
   );
 };

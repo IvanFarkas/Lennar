@@ -1,6 +1,6 @@
-import {Table, Typography} from 'antd';
+import { Table, Typography } from 'antd';
 
-const {Text} = Typography;
+const { Text } = Typography;
 
 const columns = [
   {
@@ -80,7 +80,7 @@ const Summary = () => {
           let totalBorrow = 0;
           let totalRepayment = 0;
 
-          pageData.forEach(({borrow, repayment}) => {
+          pageData.forEach(({ borrow, repayment }) => {
             totalBorrow += borrow;
             totalRepayment += repayment;
           });
@@ -90,7 +90,7 @@ const Summary = () => {
               <Table.Summary.Row>
                 <Table.Summary.Cell>Total</Table.Summary.Cell>
                 <Table.Summary.Cell>
-                  <Text type='danger'>{totalBorrow}</Text>
+                  <Text type="danger">{totalBorrow}</Text>
                 </Table.Summary.Cell>
                 <Table.Summary.Cell>
                   <Text>{totalRepayment}</Text>
@@ -99,7 +99,7 @@ const Summary = () => {
               <Table.Summary.Row>
                 <Table.Summary.Cell>Balance</Table.Summary.Cell>
                 <Table.Summary.Cell colSpan={2}>
-                  <Text type='danger'>{totalBorrow - totalRepayment}</Text>
+                  <Text type="danger">{totalBorrow - totalRepayment}</Text>
                 </Table.Summary.Cell>
               </Table.Summary.Row>
             </>
@@ -113,15 +113,13 @@ const Summary = () => {
         columns={fixedColumns}
         dataSource={fixedData}
         pagination={false}
-        scroll={{x: 2000, y: 500}}
+        scroll={{ x: 2000, y: 500 }}
         bordered
         summary={() => (
           <Table.Summary fixed>
             <Table.Summary.Row>
               <Table.Summary.Cell index={0}>Summary</Table.Summary.Cell>
-              <Table.Summary.Cell index={1}>
-                This is a summary content
-              </Table.Summary.Cell>
+              <Table.Summary.Cell index={1}>This is a summary content</Table.Summary.Cell>
             </Table.Summary.Row>
           </Table.Summary>
         )}

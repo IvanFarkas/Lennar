@@ -2,8 +2,7 @@ const ecommerceData = [
   {
     id: 1001,
     title: "Mens's Exclusive Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '80.00',
     mrp: '120',
     discount: '25',
@@ -31,8 +30,7 @@ const ecommerceData = [
   {
     id: 1002,
     title: "Limited Edition Men's Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '100.00',
     mrp: '125',
     discount: '20',
@@ -60,8 +58,7 @@ const ecommerceData = [
   {
     id: 1003,
     title: 'Unisex Special Watch',
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '70.00',
     mrp: '100',
     discount: '30',
@@ -89,8 +86,7 @@ const ecommerceData = [
   {
     id: 1004,
     title: "Special Female's Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '65.00',
     mrp: '100',
     discount: '35',
@@ -118,8 +114,7 @@ const ecommerceData = [
   {
     id: 1005,
     title: "Mens's Exclusive Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '80.00',
     mrp: '120',
     discount: '25',
@@ -147,8 +142,7 @@ const ecommerceData = [
   {
     id: 1006,
     title: "Limited Edition Men's Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '100.00',
     mrp: '125',
     discount: '20',
@@ -176,8 +170,7 @@ const ecommerceData = [
   {
     id: 1007,
     title: 'Unisex Special Watch',
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '70.00',
     mrp: '100',
     discount: '30',
@@ -205,8 +198,7 @@ const ecommerceData = [
   {
     id: 1008,
     title: "Special Female's Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '65.00',
     mrp: '100',
     discount: '35',
@@ -234,8 +226,7 @@ const ecommerceData = [
   {
     id: 1009,
     title: "Mens's Exclusive Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '80.00',
     mrp: '120',
     discount: '25',
@@ -263,8 +254,7 @@ const ecommerceData = [
   {
     id: 1010,
     title: "Limited Edition Men's Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '100.00',
     mrp: '125',
     discount: '20',
@@ -292,8 +282,7 @@ const ecommerceData = [
   {
     id: 1011,
     title: 'Unisex Special Watch',
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '70.00',
     mrp: '100',
     discount: '30',
@@ -321,8 +310,7 @@ const ecommerceData = [
   {
     id: 1012,
     title: "Special Female's Watch",
-    description:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
+    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters',
     price: '65.00',
     mrp: '100',
     discount: '35',

@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {Button, Form, Input, Radio} from 'antd';
+import React, { useState } from 'react';
+import { Button, Form, Input, Radio } from 'antd';
 
 const FormLayout = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState('horizontal');
 
-  const onFormLayoutChange = ({layout}) => {
+  const onFormLayoutChange = ({ layout }) => {
     setFormLayout(layout);
   };
 
@@ -38,23 +38,24 @@ const FormLayout = () => {
         initialValues={{
           layout: formLayout,
         }}
-        style={{maxWidth: 600, width: '100%'}}
-        onValuesChange={onFormLayoutChange}>
-        <Form.Item label='Form Layout' name='layout'>
+        style={{ maxWidth: 600, width: '100%' }}
+        onValuesChange={onFormLayoutChange}
+      >
+        <Form.Item label="Form Layout" name="layout">
           <Radio.Group value={formLayout}>
-            <Radio.Button value='horizontal'>Horizontal</Radio.Button>
-            <Radio.Button value='vertical'>Vertical</Radio.Button>
-            <Radio.Button value='inline'>Inline</Radio.Button>
+            <Radio.Button value="horizontal">Horizontal</Radio.Button>
+            <Radio.Button value="vertical">Vertical</Radio.Button>
+            <Radio.Button value="inline">Inline</Radio.Button>
           </Radio.Group>
         </Form.Item>
-        <Form.Item label='Field A'>
-          <Input placeholder='input placeholder' />
+        <Form.Item label="Field A">
+          <Input placeholder="input placeholder" />
         </Form.Item>
-        <Form.Item label='Field B'>
-          <Input placeholder='input placeholder' />
+        <Form.Item label="Field B">
+          <Input placeholder="input placeholder" />
         </Form.Item>
         <Form.Item {...buttonItemLayout}>
-          <Button type='primary'>Submit</Button>
+          <Button type="primary">Submit</Button>
         </Form.Item>
       </Form>
     </>

@@ -1,18 +1,4 @@
-import {
-  CREATE_NEW_TASK,
-  GET_TASK_DETAIL,
-  GET_TASK_LIST,
-  GET_TODO_FOLDER_LIST,
-  GET_TODO_LABEL_LIST,
-  GET_TODO_PRIORITY_LIST,
-  GET_TODO_STAFF_LIST,
-  GET_TODO_STATUS_LIST,
-  TOGGLE_TODO_DRAWER,
-  UPDATE_TASK_DETAIL,
-  UPDATE_TASK_FOLDER,
-  UPDATE_TASK_LABEL,
-  UPDATE_TASK_STARRED_STATUS,
-} from '../../shared/constants/ActionTypes';
+import { CREATE_NEW_TASK, GET_TASK_DETAIL, GET_TASK_LIST, GET_TODO_FOLDER_LIST, GET_TODO_LABEL_LIST, GET_TODO_PRIORITY_LIST, GET_TODO_STAFF_LIST, GET_TODO_STATUS_LIST, TOGGLE_TODO_DRAWER, UPDATE_TASK_DETAIL, UPDATE_TASK_FOLDER, UPDATE_TASK_LABEL, UPDATE_TASK_STARRED_STATUS } from '../../shared/constants/ActionTypes';
 
 const initialState = {
   taskList: [],
@@ -90,9 +76,7 @@ const todoReducer = (state = initialState, action) => {
       let taskIds = action.payload.map((task) => task.id);
       const updatedList = state.taskList.map((task) => {
         if (taskIds.includes(task.id)) {
-          return action.payload.find(
-            (selectedTask) => selectedTask.id === task.id,
-          );
+          return action.payload.find((selectedTask) => selectedTask.id === task.id);
         } else {
           return task;
         }
@@ -107,21 +91,13 @@ const todoReducer = (state = initialState, action) => {
       let taskIds = action.payload.data.map((task) => task.id);
       const updatedList = state.taskList.map((task) => {
         if (taskIds.includes(task.id)) {
-          return action.payload.data.find(
-            (selectedTask) => selectedTask.id === task.id,
-          );
+          return action.payload.data.find((selectedTask) => selectedTask.id === task.id);
         } else {
           return task;
         }
       });
-      const filteredList =
-        action.payload.folderName === 'starred'
-          ? updatedList.filter((item) => item.isStarred)
-          : updatedList;
-      const total =
-        action.payload.folderName === 'starred'
-          ? state.totalTasks - action.payload.data.length
-          : state.totalTasks;
+      const filteredList = action.payload.folderName === 'starred' ? updatedList.filter((item) => item.isStarred) : updatedList;
+      const total = action.payload.folderName === 'starred' ? state.totalTasks - action.payload.data.length : state.totalTasks;
       return {
         ...state,
         taskList: filteredList,

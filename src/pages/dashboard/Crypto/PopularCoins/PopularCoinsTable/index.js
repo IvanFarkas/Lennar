@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppTableContainer from '../../../../../@crema/core/AppTableContainer';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import '../index.style.less';
-import {red} from '@ant-design/colors';
+import { red } from '@ant-design/colors';
 
 const columns = [
   {
@@ -17,12 +17,9 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (name) => (
-      <div className='popular-coin-user-info'>
-        <Avatar
-          src={name.image}
-          style={{backgroundColor: name.image ? name.color : red[5]}}
-        />
-        <div className='popular-coin-user-info-content'>
+      <div className="popular-coin-user-info">
+        <Avatar src={name.image} style={{ backgroundColor: name.image ? name.color : red[5] }} />
+        <div className="popular-coin-user-info-content">
           <h3>{name.title}</h3>
         </div>
       </div>
@@ -46,16 +43,9 @@ const columns = [
 ];
 
 const PopularCoinsTable = (props) => {
-  const {popularCoins} = props;
+  const { popularCoins } = props;
 
-  return (
-    <AppTableContainer
-      hoverColor
-      className='popular-coin-table'
-      data={popularCoins}
-      columns={columns}
-    />
-  );
+  return <AppTableContainer hoverColor className="popular-coin-table" data={popularCoins} columns={columns} />;
 };
 
 export default PopularCoinsTable;

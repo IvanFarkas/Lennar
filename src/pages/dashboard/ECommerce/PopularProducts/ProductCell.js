@@ -1,18 +1,18 @@
 import React from 'react';
-import {Avatar, List} from 'antd';
+import { Avatar, List } from 'antd';
 import PropTypes from 'prop-types';
 
-const ProductCell = ({data}) => {
+const ProductCell = ({ data }) => {
   return (
-    <List.Item key={data.id} className='product-cell item-hover'>
-      <Avatar variant='rounded' alt='' src={data.icon} />
+    <List.Item key={data.id} className="product-cell item-hover">
+      <Avatar variant="rounded" alt="" src={data.icon} />
 
-      <div className='product-cellContent'>
+      <div className="product-cellContent">
         <h3>{data.name}</h3>
         <p>{data.description}</p>
-        <p className='price'>
+        <p className="price">
           ${data.price}
-          <span style={{textDecoration: 'line-through'}}>${data.mrp}</span>
+          <span style={{ textDecoration: 'line-through' }}>${data.mrp}</span>
         </p>
       </div>
     </List.Item>

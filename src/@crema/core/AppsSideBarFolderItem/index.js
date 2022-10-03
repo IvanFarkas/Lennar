@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {NavLink} from 'react-router-dom';
-import {
-  FaRegCheckCircle,
-  FaRegEnvelope,
-  FaRegEnvelopeOpen,
-  FaRegStar,
-} from 'react-icons/fa';
-import {BiArchiveIn, BiCalendarMinus, BiUser} from 'react-icons/bi';
-import {AiOutlineDelete, AiOutlineSchedule} from 'react-icons/ai';
-import {FiInfo, FiRefreshCw} from 'react-icons/fi';
+import { NavLink } from 'react-router-dom';
+import { FaRegCheckCircle, FaRegEnvelope, FaRegEnvelopeOpen, FaRegStar } from 'react-icons/fa';
+import { BiArchiveIn, BiCalendarMinus, BiUser } from 'react-icons/bi';
+import { AiOutlineDelete, AiOutlineSchedule } from 'react-icons/ai';
+import { FiInfo, FiRefreshCw } from 'react-icons/fi';
 
 import './index.style.less';
 
@@ -40,12 +35,12 @@ const getIconByName = (iconName) => {
   }
 };
 
-const AppsSideBarFolderItem = ({item, path}) => {
+const AppsSideBarFolderItem = ({ item, path }) => {
   return (
-    <div key={item.id} className='list-item'>
+    <div key={item.id} className="list-item">
       <NavLink to={path}>
-        <span className='list-item-icon'>{getIconByName(item.icon)}</span>
-        <span className='list-item-text'>{item.name}</span>
+        <span className="list-item-icon">{getIconByName(item.icon)}</span>
+        <span className="list-item-text">{item.name}</span>
       </NavLink>
     </div>
   );

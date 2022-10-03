@@ -1,4 +1,4 @@
-import {Table} from 'antd';
+import { Table } from 'antd';
 import reqwest from 'reqwest';
 
 const columns = [
@@ -13,8 +13,8 @@ const columns = [
     title: 'Gender',
     dataIndex: 'gender',
     filters: [
-      {text: 'Male', value: 'male'},
-      {text: 'Female', value: 'female'},
+      { text: 'Male', value: 'male' },
+      { text: 'Female', value: 'female' },
     ],
     width: '20%',
   },
@@ -41,8 +41,8 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const {pagination} = this.state;
-    this.fetch({pagination});
+    const { pagination } = this.state;
+    this.fetch({ pagination });
   }
 
   handleTableChange = (pagination, filters, sorter) => {
@@ -55,7 +55,7 @@ class App extends React.Component {
   };
 
   fetch = (params = {}) => {
-    this.setState({loading: true});
+    this.setState({ loading: true });
     reqwest({
       url: 'https://randomuser.me/api',
       method: 'get',
@@ -77,17 +77,8 @@ class App extends React.Component {
   };
 
   render() {
-    const {data, pagination, loading} = this.state;
-    return (
-      <Table
-        columns={columns}
-        rowKey={(record) => record.login.uuid}
-        dataSource={data}
-        pagination={pagination}
-        loading={loading}
-        onChange={this.handleTableChange}
-      />
-    );
+    const { data, pagination, loading } = this.state;
+    return <Table columns={columns} rowKey={(record) => record.login.uuid} dataSource={data} pagination={pagination} loading={loading} onChange={this.handleTableChange} />;
   }
 }
 

@@ -8,7 +8,7 @@ let chatData = chatList;
 mock.onGet('/api/chatApp/connections').reply(200, connectionData);
 
 mock.onGet('/api/chatApp/connection/messages').reply((config) => {
-  const {id} = config.params;
+  const { id } = config.params;
   const response = chatData.find((chat) => chat.channelId === parseInt(id));
   if (response) {
     return [200, response];
@@ -17,16 +17,12 @@ mock.onGet('/api/chatApp/connection/messages').reply((config) => {
 });
 
 mock.onPost('/api/chatApp/message').reply((request) => {
-  const {channelId, message} = JSON.parse(request.data);
+  const { channelId, message } = JSON.parse(request.data);
   const id = (Math.random() * 10000).toFixed();
-  const data = {...message, id};
-  let user = connectionData.find(
-    (connection) => connection.channelId === channelId,
-  );
-  user = {...user, lastMessage: data};
-  connectionData = connectionData.map((item) =>
-    item.channelId === user.channelId ? user : item,
-  );
+  const data = { ...message, id };
+  let user = connectionData.find((connection) => connection.channelId === channelId);
+  user = { ...user, lastMessage: data };
+  connectionData = connectionData.map((item) => (item.channelId === user.channelId ? user : item));
   let userMessages = chatData.find((chat) => chat.channelId === channelId);
   if (userMessages) {
     userMessages.messageData = userMessages.messageData.concat(data);
@@ -37,69 +33,50 @@ mock.onPost('/api/chatApp/message').reply((request) => {
     };
     chatData = chatData.concat(userMessages);
   }
-  return [200, {user, userMessages}];
+  return [200, { user, userMessages }];
 });
 
 mock.onPost('/api/chatApp/clearChat').reply((request) => {
-  const {channelId} = JSON.parse(request.data);
-  let user = connectionData.find(
-    (connection) => connection.channelId === channelId,
-  );
-  user = {...user, lastMessage: null};
+  const { channelId } = JSON.parse(request.data);
+  let user = connectionData.find((connection) => connection.channelId === channelId);
+  user = { ...user, lastMessage: null };
 
-  return [200, {user, userMessages: []}];
+  return [200, { user, userMessages: [] }];
 });
 
 mock.onPut('/api/chatApp/message').reply((request) => {
-  const {channelId, message} = JSON.parse(request.data);
-  let user = connectionData.find(
-    (connection) => connection.channelId === channelId,
-  );
+  const { channelId, message } = JSON.parse(request.data);
+  let user = connectionData.find((connection) => connection.channelId === channelId);
   if (user.lastMessage.id === message.id) {
-    user = {...user, lastMessage: message};
-    connectionData = connectionData.map((item) =>
-      item.channelId === user.channelId ? user : item,
-    );
+    user = { ...user, lastMessage: message };
+    connectionData = connectionData.map((item) => (item.channelId === user.channelId ? user : item));
   }
   let userMessages = chatData.find((chat) => chat.channelId === channelId);
 
-  userMessages.messageData = userMessages.messageData.map((item) =>
-    item.id === message.id ? message : item,
-  );
-  return [200, {user, userMessages}];
+  userMessages.messageData = userMessages.messageData.map((item) => (item.id === message.id ? message : item));
+  return [200, { user, userMessages }];
 });
 
 mock.onPost('/api/chatApp/delete/message').reply((request) => {
-  const {channelId, messageId} = JSON.parse(request.data);
+  const { channelId, messageId } = JSON.parse(request.data);
   let userMessages = chatData.find((chat) => chat.channelId === channelId);
-  userMessages.messageData = userMessages.messageData.filter(
-    (item) => item.id !== messageId,
-  );
-  let user = connectionData.find(
-    (connection) => connection.channelId === channelId,
-  );
+  userMessages.messageData = userMessages.messageData.filter((item) => item.id !== messageId);
+  let user = connectionData.find((connection) => connection.channelId === channelId);
   if (user.lastMessage.id === messageId) {
     user = {
       ...user,
-      lastMessage:
-        userMessages.messageData[userMessages.messageData.length - 1],
+      lastMessage: userMessages.messageData[userMessages.messageData.length - 1],
     };
-    connectionData = connectionData.map((item) =>
-      item.id === user.id ? user : item,
-    );
+    connectionData = connectionData.map((item) => (item.id === user.id ? user : item));
   }
-  return [200, {user, userMessages}];
+  return [200, { user, userMessages }];
 });
 
 mock.onPost('/api/chatApp/delete/user/messages').reply((request) => {
-  const {channelId} = JSON.parse(request.data);
+  const { channelId } = JSON.parse(request.data);
   chatData = chatData.filter((chat) => chat.channelId !== channelId);
-  let user = connectionData.find(
-    (connection) => connection.channelId === channelId,
-  );
+  let user = connectionData.find((connection) => connection.channelId === channelId);
   delete user.lastMessage;
-  connectionData = connectionData.map((item) =>
-    item.id === user.id ? user : item,
-  );
+  connectionData = connectionData.map((item) => (item.id === user.id ? user : item));
   return [200, user];
 });

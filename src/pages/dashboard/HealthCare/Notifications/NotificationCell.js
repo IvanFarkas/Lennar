@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {List} from 'antd';
+import { List } from 'antd';
 import './index.style.less';
 
-const NotificationCell = ({notification}) => {
+const NotificationCell = ({ notification }) => {
   return (
-    <List.Item className='hc-notification-cell item-hover'>
+    <List.Item className="hc-notification-cell item-hover">
       <span
-        className='dot'
+        className="dot"
         style={{
           backgroundColor: notification.color,
         }}
       />
-      <div className='hc-notification-content'>
+      <div className="hc-notification-content">
         <h5>{notification.title}</h5>
         <p>{notification.time}</p>
       </div>

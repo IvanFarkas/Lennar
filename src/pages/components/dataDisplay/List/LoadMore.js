@@ -1,5 +1,5 @@
 import React from 'react';
-import {List, Avatar, Button, Skeleton} from 'antd';
+import { List, Avatar, Button, Skeleton } from 'antd';
 import reqwest from 'reqwest';
 
 const count = 3;
@@ -65,7 +65,7 @@ class LoadMore extends React.Component {
   };
 
   render() {
-    const {initLoading, loading, list} = this.state;
+    const { initLoading, loading, list } = this.state;
     const loadMore =
       !initLoading && !loading ? (
         <div
@@ -74,31 +74,24 @@ class LoadMore extends React.Component {
             marginTop: 12,
             height: 32,
             lineHeight: '32px',
-          }}>
+          }}
+        >
           <Button onClick={this.onLoadMore}>loading more</Button>
         </div>
       ) : null;
 
     return (
       <List
-        className='demo-loadmore-list'
+        className="demo-loadmore-list"
         loading={initLoading}
-        itemLayout='horizontal'
+        itemLayout="horizontal"
         loadMore={loadMore}
         dataSource={list}
         renderItem={(item) =>
           console.log(item) || (
-            <List.Item
-              actions={[
-                <a key='list-loadmore-edit'>edit</a>,
-                <a key='list-loadmore-more'>more</a>,
-              ]}>
+            <List.Item actions={[<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}>
               <Skeleton avatar title={false} loading={item.loading} active>
-                <List.Item.Meta
-                  avatar={<Avatar src={item.picture.large} />}
-                  title={<a href='https://ant.design'>{item.name.last}</a>}
-                  description='Ant Design, a design language for background applications, is refined by Ant UED Team'
-                />
+                <List.Item.Meta avatar={<Avatar src={item.picture.large} />} title={<a href="https://ant.design">{item.name.last}</a>} description="Ant Design, a design language for background applications, is refined by Ant UED Team" />
                 <div>content</div>
               </Skeleton>
             </List.Item>

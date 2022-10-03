@@ -1,14 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import SimpleBarReact from 'simplebar-react';
-import {
-  getConnectionMessages,
-  onClearChatHistory,
-  onDeleteConversation,
-  onDeleteMessage,
-  onEditMessage,
-  onSendMessage,
-} from '../../../../../redux/actions/ChatApp';
+import { getConnectionMessages, onClearChatHistory, onDeleteConversation, onDeleteMessage, onEditMessage, onSendMessage } from '../../../../../redux/actions/ChatApp';
 import AddNewMessage from './AddNewMessage';
 import MessagesList from './MessagesList';
 import moment from 'moment';
@@ -17,19 +10,19 @@ import PropTypes from 'prop-types';
 import IntlMessages from '../../../../../@crema/utility/IntlMessages';
 import AppsHeader from '../../../../../@crema/core/AppsContainer/AppsHeader';
 import AppsFooter from '../../../../../@crema/core/AppsContainer/AppsFooter';
-import {MessageType} from '../../../../../@crema/services/db/apps/chat/connectionList';
-import {useAuthUser} from '../../../../../@crema/utility/AuthHooks';
+import { MessageType } from '../../../../../@crema/services/db/apps/chat/connectionList';
+import { useAuthUser } from '../../../../../@crema/utility/AuthHooks';
 
-const MessagesScreen = ({selectedUser, loading}) => {
+const MessagesScreen = ({ selectedUser, loading }) => {
   const [message, setMessage] = useState('');
   const [isEdit, setIsEdit] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
   const [selectedMessage, setSelectedMessage] = useState(null);
-  const {userMessages} = useSelector(({chatApp}) => chatApp);
+  const { userMessages } = useSelector(({ chatApp }) => chatApp);
 
   const dispatch = useDispatch();
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
 
   let _scrollBarRef = useRef(null);
   useEffect(() => {
@@ -99,15 +92,9 @@ const MessagesScreen = ({selectedUser, loading}) => {
   };
 
   return (
-    <div className='message-screen'>
+    <div className="message-screen">
       <AppsHeader>
-        <Header
-          isChecked={isChecked}
-          onChangeStarred={onChangeStarred}
-          selectedUser={selectedUser}
-          deleteConversation={deleteConversation}
-          clearChatHistory={clearChatHistory}
-        />
+        <Header isChecked={isChecked} onChangeStarred={onChangeStarred} selectedUser={selectedUser} deleteConversation={deleteConversation} clearChatHistory={clearChatHistory} />
       </AppsHeader>
 
       {userMessages && user ? (
@@ -115,30 +102,20 @@ const MessagesScreen = ({selectedUser, loading}) => {
           ref={(ref) => {
             _scrollBarRef = ref;
           }}
-          className='message-screen-scrollbar'>
-          <MessagesList
-            userMessages={userMessages}
-            authUser={user}
-            selectedUser={selectedUser}
-            onClickEditMessage={onClickEditMessage}
-            deleteMessage={deleteMessage}
-            loading={loading}
-          />
+          className="message-screen-scrollbar"
+        >
+          <MessagesList userMessages={userMessages} authUser={user} selectedUser={selectedUser} onClickEditMessage={onClickEditMessage} deleteMessage={deleteMessage} loading={loading} />
         </SimpleBarReact>
       ) : (
-        <div className='scroll-chat-no-main'>
-          <span className='noMessage'>
-            <IntlMessages id='chatApp.sayHi' /> {selectedUser.name}
+        <div className="scroll-chat-no-main">
+          <span className="noMessage">
+            <IntlMessages id="chatApp.sayHi" /> {selectedUser.name}
           </span>
         </div>
       )}
 
-      <AppsFooter className='message-apps-footer'>
-        <AddNewMessage
-          currentMessage={message}
-          sendFileMessage={sendFileMessage}
-          onSendMessage={onSend}
-        />
+      <AppsFooter className="message-apps-footer">
+        <AddNewMessage currentMessage={message} sendFileMessage={sendFileMessage} onSendMessage={onSend} />
       </AppsFooter>
     </div>
   );

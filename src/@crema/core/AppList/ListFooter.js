@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Progress} from 'antd';
+import { Progress } from 'antd';
 import './index.style.less';
 
-const ListFooter = ({loading, footerText}) => {
+const ListFooter = ({ loading, footerText }) => {
   return loading ? (
-    <div className='loader-progress'>
+    <div className="loader-progress">
       <Progress percent={30} />
       <span>Loading...</span>
     </div>
   ) : (
-    <div className='list-footer'>
+    <div className="list-footer">
       <p>{footerText}</p>
     </div>
   );

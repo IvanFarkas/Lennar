@@ -1,4 +1,4 @@
-import {Radio} from 'antd';
+import { Radio } from 'antd';
 import React from 'react';
 const RadioGroup = () => {
   const [value, setValue] = React.useState(1);

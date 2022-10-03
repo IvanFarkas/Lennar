@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Modal} from 'antd';
+import { Button, Space, Modal } from 'antd';
 
 class Asynchronously extends React.Component {
   state = {
@@ -32,18 +32,13 @@ class Asynchronously extends React.Component {
   };
 
   render() {
-    const {visible, confirmLoading, ModalText} = this.state;
+    const { visible, confirmLoading, ModalText } = this.state;
     return (
       <Space>
-        <Button type='primary' onClick={this.showModal}>
+        <Button type="primary" onClick={this.showModal}>
           Open
         </Button>
-        <Modal
-          title='Title'
-          visible={visible}
-          onOk={this.handleOk}
-          confirmLoading={confirmLoading}
-          onCancel={this.handleCancel}>
+        <Modal title="Title" visible={visible} onOk={this.handleOk} confirmLoading={confirmLoading} onCancel={this.handleCancel}>
           <p>{ModalText}</p>
         </Modal>
       </Space>

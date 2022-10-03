@@ -77,7 +77,7 @@ const events = [
 
 const ReactImageTimeline = () => {
   return (
-    <div className='timeline-image'>
+    <div className="timeline-image">
       <Timeline events={events} />
     </div>
   );

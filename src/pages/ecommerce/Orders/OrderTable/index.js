@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AppTableContainer from '../../../../@crema/core/AppTableContainer';
 import OrderActions from './OrderActions';
 
-const OrderTable = ({orderData, loading}) => {
+const OrderTable = ({ orderData, loading }) => {
   const getPaymentStatusColor = (status) => {
     switch (status) {
       case 'Pending': {
@@ -23,7 +23,7 @@ const OrderTable = ({orderData, loading}) => {
       title: 'Order ID',
       dataIndex: 'id',
       key: 'id',
-      render: (id) => <span className='order-id'>{id}</span>,
+      render: (id) => <span className="order-id">{id}</span>,
     },
     {
       title: 'Product',
@@ -56,11 +56,12 @@ const OrderTable = ({orderData, loading}) => {
       key: 'status',
       render: (status) => (
         <span
-          className='badge'
+          className="badge"
           style={{
             color: getPaymentStatusColor(status),
             backgroundColor: getPaymentStatusColor(status) + '44',
-          }}>
+          }}
+        >
           {status}
         </span>
       ),
@@ -74,16 +75,7 @@ const OrderTable = ({orderData, loading}) => {
       render: () => <OrderActions />,
     },
   ];
-  return (
-    <AppTableContainer
-      className='order-table'
-      hoverColor
-      data={orderData}
-      loading={loading}
-      columns={columns}
-      scroll={{x: 'auto'}}
-    />
-  );
+  return <AppTableContainer className="order-table" hoverColor data={orderData} loading={loading} columns={columns} scroll={{ x: 'auto' }} />;
 };
 
 export default OrderTable;

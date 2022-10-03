@@ -7,15 +7,9 @@ const ResetPassword = React.lazy(() => import('./UserPages/ResetPassword'));
 const UnlockScreen = React.lazy(() => import('./UserPages/UnlockScreen'));
 const StyledSignin = React.lazy(() => import('./StyledUserPages/Signin'));
 const StyledSignup = React.lazy(() => import('./StyledUserPages/Signup'));
-const StyledForgetPassword = React.lazy(() =>
-  import('./StyledUserPages/ForgetPassword'),
-);
-const StyledResetPassword = React.lazy(() =>
-  import('./StyledUserPages/ResetPassword'),
-);
-const StyledUnlockScreen = React.lazy(() =>
-  import('./StyledUserPages/UnlockScreen'),
-);
+const StyledForgetPassword = React.lazy(() => import('./StyledUserPages/ForgetPassword'));
+const StyledResetPassword = React.lazy(() => import('./StyledUserPages/ResetPassword'));
+const StyledUnlockScreen = React.lazy(() => import('./StyledUserPages/UnlockScreen'));
 export const userPagesConfig = [
   {
     path: '/extra-pages/user/sign-in-1',

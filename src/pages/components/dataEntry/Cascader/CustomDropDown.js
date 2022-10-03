@@ -1,4 +1,4 @@
-import {Cascader, Divider} from 'antd';
+import { Cascader, Divider } from 'antd';
 
 const options = [
   {
@@ -39,8 +39,8 @@ function dropdownRender(menus) {
   return (
     <div>
       {menus}
-      <Divider style={{margin: 0}} />
-      <div style={{padding: 8}}>The footer is not very short.</div>
+      <Divider style={{ margin: 0 }} />
+      <div style={{ padding: 8 }}>The footer is not very short.</div>
     </div>
   );
 }
@@ -48,13 +48,7 @@ function dropdownRender(menus) {
 import React from 'react';
 
 const CustomDropDown = () => {
-  return (
-    <Cascader
-      options={options}
-      dropdownRender={dropdownRender}
-      placeholder='Please select'
-    />
-  );
+  return <Cascader options={options} dropdownRender={dropdownRender} placeholder="Please select" />;
 };
 
 export default CustomDropDown;

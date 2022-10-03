@@ -1,17 +1,11 @@
-import {useEffect, useState} from 'react';
-import {isEmpty} from './GlobalHelper';
+import { useEffect, useState } from 'react';
+import { isEmpty } from './GlobalHelper';
 import jwtAxios from './../services/auth/jwt-auth/jwt-api';
-import {API_FAILED} from '../../shared/constants/SystemMessages';
-import {isRequestSuccessful} from './Utils';
-import {fetchError} from '../../redux/actions';
+import { API_FAILED } from '../../shared/constants/SystemMessages';
+import { isRequestSuccessful } from './Utils';
+import { fetchError } from '../../redux/actions';
 
-export const useGetDataApi = (
-  url,
-  initialData = [],
-  params = {},
-  noPagination = false,
-  reverse = false,
-) => {
+export const useGetDataApi = (url, initialData = [], params = {}, noPagination = false, reverse = false) => {
   const [page, setPage] = useState(1);
 
   const [initialUrl, updateInitialUrl] = useState(url);
@@ -58,12 +52,7 @@ export const useGetDataApi = (
     let didCancel = false;
 
     const fetchData = () => {
-      if (
-        page === 1 &&
-        ((Array.isArray(apiData) && apiData.length === 0) ||
-          !Array.isArray(apiData)) &&
-        !isResetRequired
-      ) {
+      if (page === 1 && ((Array.isArray(apiData) && apiData.length === 0) || !Array.isArray(apiData)) && !isResetRequired) {
         setLoading(true);
       }
       if (queryParams.skipReset) {
@@ -71,35 +60,25 @@ export const useGetDataApi = (
       }
       let params = {};
       if (keywords || !isEmpty(queryParams)) {
-        params = {search: keywords, ...queryParams};
+        params = { search: keywords, ...queryParams };
       }
       if (Array.isArray(apiData) && !noPagination) {
-        params = {...queryParams, page, search: keywords};
+        params = { ...queryParams, page, search: keywords };
       }
       console.log('Called: ', initialUrl, params);
       jwtAxios
-        .get(initialUrl, {params})
-        .then(({data}) => {
+        .get(initialUrl, { params })
+        .then(({ data }) => {
           if (!didCancel) {
             if (isRequestSuccessful(data.status)) {
-              console.log(
-                'Success: ',
-                initialUrl,
-                keywords,
-                queryParams,
-                data.result,
-              );
+              console.log('Success: ', initialUrl, keywords, queryParams, data.result);
               if (Array.isArray(initialData)) {
                 checkHasMoreRecord(data.result);
                 setLoadingMore(false);
                 setRefreshing(false);
                 setResetRequired(false);
                 let resData = isResetRequired ? initialData : apiData;
-                console.log(
-                  'isResetRequired, apiData:  ',
-                  isResetRequired,
-                  apiData,
-                );
+                console.log('isResetRequired, apiData:  ', isResetRequired, apiData);
                 if (reverse) {
                   resData = [...data.result].concat([...resData]);
                   console.log('reverse: ', resData);
@@ -114,12 +93,7 @@ export const useGetDataApi = (
               }
               setLoading(false);
             } else {
-              console.log(
-                'Failed : ',
-                initialUrl,
-                queryParams,
-                data.result.error,
-              );
+              console.log('Failed : ', initialUrl, queryParams, data.result.error);
               setLoading(false);
               fetchError(data.error);
             }
@@ -161,12 +135,7 @@ export const useGetDataApi = (
   ];
 };
 
-export const useOptionDataApi = (
-  initialUrl,
-  initialData = [],
-  params = {},
-  noPagination,
-) => {
+export const useOptionDataApi = (initialUrl, initialData = [], params = {}, noPagination) => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [isLoadingMore, setLoadingMore] = useState(false);
@@ -208,31 +177,20 @@ export const useOptionDataApi = (
     };
 
     const fetchData = () => {
-      if (
-        page === 1 &&
-        ((Array.isArray(apiData) && apiData.length === 0) ||
-          !Array.isArray(apiData)) &&
-        !isResetRequired
-      ) {
+      if (page === 1 && ((Array.isArray(apiData) && apiData.length === 0) || !Array.isArray(apiData)) && !isResetRequired) {
         setLoading(true);
       }
       let params = {};
       if (keywords || !isEmpty(queryParams)) {
-        params = {keywords: keywords, ...queryParams};
+        params = { keywords: keywords, ...queryParams };
       }
       jwtAxios
-        .options(updatedUrl(), {params})
-        .then(({data}) => {
+        .options(updatedUrl(), { params })
+        .then(({ data }) => {
           console.log('data: ', data);
           if (!didCancel) {
             if (isRequestSuccessful(data.status)) {
-              console.log(
-                'Success: ',
-                updatedUrl(),
-                keywords,
-                queryParams,
-                data.result,
-              );
+              console.log('Success: ', updatedUrl(), keywords, queryParams, data.result);
               if (Array.isArray(initialData)) {
                 setLoadingMore(false);
                 setRefreshing(false);
@@ -269,7 +227,7 @@ export const useOptionDataApi = (
     };
   }, [page, keywords, queryParams, refreshing]);
   return [
-    {loading, apiData, page, isLoadingMore, refreshing},
+    { loading, apiData, page, isLoadingMore, refreshing },
     {
       setPage,
       setData,
@@ -282,19 +240,14 @@ export const useOptionDataApi = (
   ];
 };
 
-export const postDataApi = (
-  url,
-  payload,
-  infoViewContext,
-  isHideLoader = false,
-) => {
-  const {fetchStart, fetchSuccess, fetchError} = infoViewContext;
+export const postDataApi = (url, payload, infoViewContext, isHideLoader = false) => {
+  const { fetchStart, fetchSuccess, fetchError } = infoViewContext;
   return new Promise((resolve) => {
     console.log('Called: ', url, payload);
     if (!isHideLoader) fetchStart();
     jwtAxios
       .post(url, payload)
-      .then(({data}) => {
+      .then(({ data }) => {
         if (isRequestSuccessful(data.status)) {
           console.log('Success: ', url, data.result);
           fetchSuccess();
@@ -312,19 +265,14 @@ export const postDataApi = (
   });
 };
 
-export const putDataApi = (
-  url,
-  payload,
-  infoViewContext,
-  isHideLoader = false,
-) => {
-  const {fetchStart, fetchSuccess, fetchError} = infoViewContext;
+export const putDataApi = (url, payload, infoViewContext, isHideLoader = false) => {
+  const { fetchStart, fetchSuccess, fetchError } = infoViewContext;
   return new Promise((resolve) => {
     console.log('Called: ', url, payload);
     if (!isHideLoader) fetchStart();
     jwtAxios
       .put(url, payload)
-      .then(({data}) => {
+      .then(({ data }) => {
         if (isRequestSuccessful(data.status)) {
           console.log('Success: ', url, data.result);
           fetchSuccess();
@@ -343,13 +291,13 @@ export const putDataApi = (
 };
 
 export const getDataApi = (url, infoViewContext, isHideLoader = false) => {
-  const {fetchStart, fetchSuccess, fetchError} = infoViewContext;
+  const { fetchStart, fetchSuccess, fetchError } = infoViewContext;
   return new Promise((resolve) => {
     console.log('Called: ', url, jwtAxios.defaults.headers.common);
     if (!isHideLoader) fetchStart();
     jwtAxios
       .get(url)
-      .then(({data}) => {
+      .then(({ data }) => {
         if (isRequestSuccessful(data.status)) {
           console.log('Success: ', url, data.result);
           fetchSuccess();
@@ -368,13 +316,13 @@ export const getDataApi = (url, infoViewContext, isHideLoader = false) => {
 };
 
 export const deleteDataApi = (url, infoViewContext, isHideLoader = false) => {
-  const {fetchStart, fetchSuccess, fetchError} = infoViewContext;
+  const { fetchStart, fetchSuccess, fetchError } = infoViewContext;
   return new Promise((resolve) => {
     console.log('Called: ', url);
     if (!isHideLoader) fetchStart();
     jwtAxios
       .delete(url)
-      .then(({data}) => {
+      .then(({ data }) => {
         if (isRequestSuccessful(data.status)) {
           console.log('Success: ', url, data.result);
           fetchSuccess();

@@ -1,4 +1,4 @@
-import {TreeSelect} from 'antd';
+import { TreeSelect } from 'antd';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,9 +6,9 @@ class AsynchronousLoading extends React.Component {
   state = {
     value: undefined,
     treeData: [
-      {id: 1, pId: 0, value: '1', title: 'Expand to load'},
-      {id: 2, pId: 0, value: '2', title: 'Expand to load'},
-      {id: 3, pId: 0, value: '3', title: 'Tree Node', isLeaf: true},
+      { id: 1, pId: 0, value: '1', title: 'Expand to load' },
+      { id: 2, pId: 0, value: '2', title: 'Expand to load' },
+      { id: 3, pId: 0, value: '3', title: 'Tree Node', isLeaf: true },
     ],
   };
 
@@ -23,15 +23,11 @@ class AsynchronousLoading extends React.Component {
     };
   };
 
-  onLoadData = ({id}) =>
+  onLoadData = ({ id }) =>
     new Promise((resolve) => {
       setTimeout(() => {
         this.setState({
-          treeData: this.state.treeData.concat([
-            this.genTreeNode(id, false),
-            this.genTreeNode(id, true),
-            this.genTreeNode(id, true),
-          ]),
+          treeData: this.state.treeData.concat([this.genTreeNode(id, false), this.genTreeNode(id, true), this.genTreeNode(id, true)]),
         });
         resolve();
       }, 300);
@@ -39,23 +35,12 @@ class AsynchronousLoading extends React.Component {
 
   onChange = (value) => {
     console.log(value);
-    this.setState({value});
+    this.setState({ value });
   };
 
   render() {
-    const {treeData} = this.state;
-    return (
-      <TreeSelect
-        treeDataSimpleMode
-        style={{width: '100%'}}
-        value={this.state.value}
-        dropdownStyle={{maxHeight: 400, overflow: 'auto'}}
-        placeholder='Please select'
-        onChange={this.onChange}
-        loadData={this.onLoadData}
-        treeData={treeData}
-      />
-    );
+    const { treeData } = this.state;
+    return <TreeSelect treeDataSimpleMode style={{ width: '100%' }} value={this.state.value} dropdownStyle={{ maxHeight: 400, overflow: 'auto' }} placeholder="Please select" onChange={this.onChange} loadData={this.onLoadData} treeData={treeData} />;
   }
 }
 export default AsynchronousLoading;

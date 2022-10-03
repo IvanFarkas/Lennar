@@ -1,22 +1,18 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import MailsList from './MailsList';
 import MailDetail from './MailDetail';
-import {
-  onGetConnectionList,
-  onGetFolderList,
-  onGetLabelList,
-} from '../../../redux/actions/MailApp';
-import {useDispatch} from 'react-redux';
+import { onGetConnectionList, onGetFolderList, onGetLabelList } from '../../../redux/actions/MailApp';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import AppsContainer from '../../../@crema/core/AppsContainer';
 import MailSidebar from './MailSideBar';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Mail = () => {
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(onGetLabelList());
@@ -38,12 +34,10 @@ const Mail = () => {
     }
   };
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
-    <AppsContainer
-      title={messages['mailApp.mail']}
-      sidebarContent={<MailSidebar />}>
-      <AppPageMetadata title='Mail App' />
+    <AppsContainer title={messages['mailApp.mail']} sidebarContent={<MailSidebar />}>
+      <AppPageMetadata title="Mail App" />
       {onGetMainComponent()}
     </AppsContainer>
   );

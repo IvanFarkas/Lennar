@@ -1,43 +1,21 @@
-import React, {useEffect, useState} from 'react';
-import {useBottomScrollListener} from 'react-bottom-scroll-listener';
+import React, { useEffect, useState } from 'react';
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 import PropTypes from 'prop-types';
 import AppAnimateGroup from '../AppAnimateGroup';
 import './index.style.less';
-import {Grid} from 'antd';
-const {useBreakpoint} = Grid;
+import { Grid } from 'antd';
+const { useBreakpoint } = Grid;
 const getEmptyContainer = (ListEmptyComponent) => {
-  if (ListEmptyComponent)
-    return React.isValidElement(ListEmptyComponent) ? (
-      ListEmptyComponent
-    ) : (
-      <ListEmptyComponent />
-    );
+  if (ListEmptyComponent) return React.isValidElement(ListEmptyComponent) ? ListEmptyComponent : <ListEmptyComponent />;
   return null;
 };
 
 const getFooterContainer = (ListFooterComponent) => {
-  if (ListFooterComponent)
-    return React.isValidElement(ListFooterComponent) ? (
-      ListFooterComponent
-    ) : (
-      <ListFooterComponent />
-    );
+  if (ListFooterComponent) return React.isValidElement(ListFooterComponent) ? ListFooterComponent : <ListFooterComponent />;
   return null;
 };
 
-const GridView = ({
-  column,
-  responsive,
-  itemPadding,
-  renderItem,
-  onEndReached,
-  data,
-  containerStyle,
-  border,
-  ListFooterComponent,
-  ListEmptyComponent,
-  ...rest
-}) => {
+const GridView = ({ column, responsive, itemPadding, renderItem, onEndReached, data, containerStyle, border, ListFooterComponent, ListEmptyComponent, ...rest }) => {
   const [displayColumn, setColumn] = useState(column);
 
   const width = useBreakpoint();
@@ -53,32 +31,11 @@ const GridView = ({
     const getColumnCount = () => {
       if (responsive) {
         if (width.xxl) {
-          return (
-            responsive.xxl ||
-            responsive.xl ||
-            responsive.lg ||
-            responsive.md ||
-            responsive.sm ||
-            responsive.xs ||
-            column
-          );
+          return responsive.xxl || responsive.xl || responsive.lg || responsive.md || responsive.sm || responsive.xs || column;
         } else if (width.xl) {
-          return (
-            responsive.xl ||
-            responsive.lg ||
-            responsive.md ||
-            responsive.sm ||
-            responsive.xs ||
-            column
-          );
+          return responsive.xl || responsive.lg || responsive.md || responsive.sm || responsive.xs || column;
         } else if (width.lg) {
-          return (
-            responsive.lg ||
-            responsive.md ||
-            responsive.sm ||
-            responsive.xs ||
-            column
-          );
+          return responsive.lg || responsive.md || responsive.sm || responsive.xs || column;
         } else if (width.md) {
           return responsive.md || responsive.sm || responsive.xs || column;
         } else if (width.sm) {
@@ -105,7 +62,7 @@ const GridView = ({
   }
   useBottomScrollListener(onEndReached, 200);
   return (
-    <div className='grid-container'>
+    <div className="grid-container">
       <AppAnimateGroup
         animateStyle={{
           marginLeft: -itemPadding,
@@ -115,17 +72,19 @@ const GridView = ({
           height: 'auto',
           ...style,
         }}
-        {...rest}>
+        {...rest}
+      >
         {data.length > 0
           ? data.map((item, index) => (
               <div
                 key={'grid-' + index}
-                className='grid-column-count'
+                className="grid-column-count"
                 style={{
                   maxWidth: `${100 / displayColumn}%`,
                   flexBasis: `${100 / displayColumn}%`,
                   padding: itemPadding,
-                }}>
+                }}
+              >
                 {renderItem(item, index)}
               </div>
             ))

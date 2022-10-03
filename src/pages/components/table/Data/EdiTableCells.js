@@ -1,10 +1,10 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
-import {Button, Form, Input, Popconfirm, Table} from 'antd';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { Button, Form, Input, Popconfirm, Table } from 'antd';
 import PropTypes from 'prop-types';
 
 const EditableContext = React.createContext(null);
 
-const EditableRow = ({...props}) => {
+const EditableRow = ({ ...props }) => {
   const [form] = Form.useForm();
   return (
     <Form form={form} component={false}>
@@ -15,15 +15,7 @@ const EditableRow = ({...props}) => {
   );
 };
 
-const EditableCell = ({
-  title,
-  editable,
-  children,
-  dataIndex,
-  record,
-  handleSave,
-  ...restProps
-}) => {
+const EditableCell = ({ title, editable, children, dataIndex, record, handleSave, ...restProps }) => {
   const [editing, setEditing] = useState(false);
   const inputRef = useRef(null);
   const form = useContext(EditableContext);
@@ -44,7 +36,7 @@ const EditableCell = ({
     try {
       const values = await form.validateFields();
       toggleEdit();
-      handleSave({...record, ...values});
+      handleSave({ ...record, ...values });
     } catch (errInfo) {
       console.log('Save failed:', errInfo);
     }
@@ -64,16 +56,18 @@ const EditableCell = ({
             required: true,
             message: `${title} is required.`,
           },
-        ]}>
+        ]}
+      >
         <Input ref={inputRef} onPressEnter={save} onBlur={save} />
       </Form.Item>
     ) : (
       <div
-        className='editable-cell-value-wrap'
+        className="editable-cell-value-wrap"
         style={{
           paddingRight: 24,
         }}
-        onClick={toggleEdit}>
+        onClick={toggleEdit}
+      >
         {children}
       </div>
     );
@@ -105,9 +99,7 @@ class EditableTable extends React.Component {
         dataIndex: 'operation',
         render: (_, record) =>
           this.state.dataSource.length >= 1 ? (
-            <Popconfirm
-              title='Sure to delete?'
-              onConfirm={() => this.handleDelete(record.key)}>
+            <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
               <a>Delete</a>
             </Popconfirm>
           ) : null,
@@ -139,7 +131,7 @@ class EditableTable extends React.Component {
     });
   };
   handleAdd = () => {
-    const {count, dataSource} = this.state;
+    const { count, dataSource } = this.state;
     const newData = {
       key: count,
       name: `Edward King ${count}`,
@@ -155,14 +147,14 @@ class EditableTable extends React.Component {
     const newData = [...this.state.dataSource];
     const index = newData.findIndex((item) => row.key === item.key);
     const item = newData[index];
-    newData.splice(index, 1, {...item, ...row});
+    newData.splice(index, 1, { ...item, ...row });
     this.setState({
       dataSource: newData,
     });
   };
 
   render() {
-    const {dataSource} = this.state;
+    const { dataSource } = this.state;
     const components = {
       body: {
         row: EditableRow,
@@ -189,19 +181,14 @@ class EditableTable extends React.Component {
       <div>
         <Button
           onClick={this.handleAdd}
-          type='primary'
+          type="primary"
           style={{
             marginBottom: 16,
-          }}>
+          }}
+        >
           Add a row
         </Button>
-        <Table
-          components={components}
-          rowClassName={() => 'editable-row'}
-          bordered
-          dataSource={dataSource}
-          columns={columns}
-        />
+        <Table components={components} rowClassName={() => 'editable-row'} bordered dataSource={dataSource} columns={columns} />
       </div>
     );
   }

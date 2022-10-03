@@ -1,20 +1,20 @@
 import React from 'react';
-import {Button, Space} from 'antd';
+import { Button, Space } from 'antd';
 
 const DangerButton = () => {
   return (
     <Space wrap>
-      <Button type='primary' danger>
+      <Button type="primary" danger>
         Primary
       </Button>
       <Button danger>Default</Button>
-      <Button type='dashed' danger>
+      <Button type="dashed" danger>
         Dashed
       </Button>
-      <Button type='text' danger>
+      <Button type="text" danger>
         Text
       </Button>
-      <Button type='link' danger>
+      <Button type="link" danger>
         Link
       </Button>
     </Space>

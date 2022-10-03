@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import {Button, Modal, Form, Input, Radio} from 'antd';
+import React, { useState } from 'react';
+import { Button, Modal, Form, Input, Radio } from 'antd';
 import PropTypes from 'prop-types';
 
-const CollectionCreateForm = ({visible, onCreate, onCancel}) => {
+const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
   return (
     <Modal
       visible={visible}
-      title='Create a new collection'
-      okText='Create'
-      cancelText='Cancel'
+      title="Create a new collection"
+      okText="Create"
+      cancelText="Cancel"
       onCancel={onCancel}
       onOk={() => {
         form
@@ -21,34 +21,35 @@ const CollectionCreateForm = ({visible, onCreate, onCancel}) => {
           .catch((info) => {
             console.log('Validate Failed:', info);
           });
-      }}>
+      }}
+    >
       <Form
         form={form}
-        layout='vertical'
-        name='form_in_modal'
+        layout="vertical"
+        name="form_in_modal"
         initialValues={{
           modifier: 'public',
-        }}>
+        }}
+      >
         <Form.Item
-          name='title'
-          label='Title'
+          name="title"
+          label="Title"
           rules={[
             {
               required: true,
               message: 'Please input the title of collection!',
             },
-          ]}>
+          ]}
+        >
           <Input />
         </Form.Item>
-        <Form.Item name='description' label='Description'>
-          <Input type='textarea' />
+        <Form.Item name="description" label="Description">
+          <Input type="textarea" />
         </Form.Item>
-        <Form.Item
-          name='modifier'
-          className='collection-create-form_last-form-item'>
+        <Form.Item name="modifier" className="collection-create-form_last-form-item">
           <Radio.Group>
-            <Radio value='public'>Public</Radio>
-            <Radio value='private'>Private</Radio>
+            <Radio value="public">Public</Radio>
+            <Radio value="private">Private</Radio>
           </Radio.Group>
         </Form.Item>
       </Form>
@@ -67,10 +68,11 @@ const FormInModalToCreate = () => {
   return (
     <div>
       <Button
-        type='primary'
+        type="primary"
         onClick={() => {
           setVisible(true);
-        }}>
+        }}
+      >
         New Collection
       </Button>
       <CollectionCreateForm

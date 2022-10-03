@@ -1,23 +1,20 @@
-import React, {useEffect} from 'react';
-import {Layout} from 'antd';
-import {useUrlSearchParams} from 'use-url-search-params';
+import React, { useEffect } from 'react';
+import { Layout } from 'antd';
+import { useUrlSearchParams } from 'use-url-search-params';
 import './layout.style.less';
-import {AppContentView} from '../../index';
+import { AppContentView } from '../../index';
 import Layouts from './Layouts';
-import {LayoutType} from '../../../shared/constants/AppEnums';
+import { LayoutType } from '../../../shared/constants/AppEnums';
 import AppScrollbar from '../AppScrollbar';
-import {
-  useLayoutActionsContext,
-  useLayoutContext,
-} from '../../utility/AppContextProvider/LayoutContextProvider';
-import {useAuthUser} from '../../utility/AuthHooks';
-import {useSidebarActionsContext} from '../../utility/AppContextProvider/SidebarContextProvider';
+import { useLayoutActionsContext, useLayoutContext } from '../../utility/AppContextProvider/LayoutContextProvider';
+import { useAuthUser } from '../../utility/AuthHooks';
+import { useSidebarActionsContext } from '../../utility/AppContextProvider/SidebarContextProvider';
 
 const AppLayout = () => {
-  const {isAuthenticated} = useAuthUser();
-  const {navStyle, layoutType} = useLayoutContext();
-  const {updateNavStyle} = useLayoutActionsContext();
-  const {updateMenuStyle, setSidebarBgImage} = useSidebarActionsContext();
+  const { isAuthenticated } = useAuthUser();
+  const { navStyle, layoutType } = useLayoutContext();
+  const { updateNavStyle } = useLayoutActionsContext();
+  const { updateMenuStyle, setSidebarBgImage } = useSidebarActionsContext();
   const [params] = useUrlSearchParams();
 
   const AppLayout = Layouts[navStyle];
@@ -46,8 +43,8 @@ const AppLayout = () => {
       {isAuthenticated ? (
         <AppLayout />
       ) : (
-        <Layout className='auth'>
-          <AppScrollbar className='main-auth-scrollbar'>
+        <Layout className="auth">
+          <AppScrollbar className="main-auth-scrollbar">
             <AppContentView />
           </AppScrollbar>
         </Layout>

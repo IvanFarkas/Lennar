@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import WallPaper from './WallPaper';
 import HollywoodMovie from './HollywoodMovie';
 import TemperatureCard from './TemperatureCard';
@@ -22,14 +22,14 @@ import Colors from './Colors';
 import Reviews from './Reviews';
 import AddTags from './AddTags';
 import CremaCard from './CremaCard';
-import {blue, geekblue} from '@ant-design/colors';
-import {TwitterOutlined} from '@ant-design/icons';
+import { blue, geekblue } from '@ant-design/colors';
+import { TwitterOutlined } from '@ant-design/icons';
 import Formats from './Formats';
 import Price from './Price';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetWidgetsData} from '../../../redux/actions/Dashboard';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetWidgetsData } from '../../../redux/actions/Dashboard';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
-import {FaFacebookF} from 'react-icons/fa';
+import { FaFacebookF } from 'react-icons/fa';
 
 const Widgets = () => {
   const dispatch = useDispatch();
@@ -38,15 +38,15 @@ const Widgets = () => {
     dispatch(onGetWidgetsData());
   }, [dispatch]);
 
-  const widgetsData = useSelector(({dashboard}) => dashboard.widgetsData);
+  const widgetsData = useSelector(({ dashboard }) => dashboard.widgetsData);
 
   return (
     <>
-      <AppPageMetadata title='Widgets' />
+      <AppPageMetadata title="Widgets" />
       {widgetsData ? (
         <>
-          <h2 className='card-outer-title'>
-            <IntlMessages id='dashboard.widgets' />
+          <h2 className="card-outer-title">
+            <IntlMessages id="dashboard.widgets" />
           </h2>
 
           <AppRowContainer>
@@ -109,26 +109,18 @@ const Widgets = () => {
                 <Col xs={24} key={'t'}>
                   <AddTags data={widgetsData.tagsList} />
                 </Col>
-                <Col xs={24} className='mb-0' key={'u'}>
+                <Col xs={24} className="mb-0" key={'u'}>
                   <Price />
                 </Col>
               </AppRowContainer>
             </Col>
 
             <Col xs={24} lg={8} key={'v'}>
-              <CremaCard
-                data={widgetsData.mateInfo.facebookInfo}
-                bgColor={geekblue[6]}
-                icon={<FaFacebookF />}
-              />
+              <CremaCard data={widgetsData.mateInfo.facebookInfo} bgColor={geekblue[6]} icon={<FaFacebookF />} />
             </Col>
 
             <Col xs={24} lg={8} key={'w'}>
-              <CremaCard
-                data={widgetsData.mateInfo.twitterInfo}
-                bgColor={blue[6]}
-                icon={<TwitterOutlined />}
-              />
+              <CremaCard data={widgetsData.mateInfo.twitterInfo} bgColor={blue[6]} icon={<TwitterOutlined />} />
             </Col>
 
             <Col xs={24} lg={8} key={'x'}>

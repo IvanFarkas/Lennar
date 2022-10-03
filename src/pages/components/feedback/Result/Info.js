@@ -1,12 +1,12 @@
-import {Result, Button} from 'antd';
+import { Result, Button } from 'antd';
 import React from 'react';
 
 const Info = () => {
   return (
     <Result
-      title='Your operation has been executed'
+      title="Your operation has been executed"
       extra={
-        <Button type='primary' key='console'>
+        <Button type="primary" key="console">
           Go Console
         </Button>
       }

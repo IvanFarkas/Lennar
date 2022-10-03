@@ -3,19 +3,19 @@ import messages from '../../services/db/messages/messages';
 import MessageItem from './MessageItem';
 import IntlMessages from '../../utility/IntlMessages';
 
-import {Button, Dropdown, List, Menu} from 'antd';
+import { Button, Dropdown, List, Menu } from 'antd';
 import AppScrollbar from '../AppScrollbar';
 import './index.style.less';
-import {AiOutlineMail} from 'react-icons/ai';
+import { AiOutlineMail } from 'react-icons/ai';
 
 const AppHeaderMessages = () => {
   const menu = (
-    <Menu className='header-message'>
-      <Menu.Item className='header'>
-        <IntlMessages id='dashboard.messages' />({messages.length})
+    <Menu className="header-message">
+      <Menu.Item className="header">
+        <IntlMessages id="dashboard.messages" />({messages.length})
       </Menu.Item>
       <Menu.Item>
-        <AppScrollbar className='header-message-scroll-submenu'>
+        <AppScrollbar className="header-message-scroll-submenu">
           <List
             dataSource={messages}
             renderItem={(item) => {
@@ -25,8 +25,8 @@ const AppHeaderMessages = () => {
         </AppScrollbar>
       </Menu.Item>
       <Menu.Item>
-        <Button className='header-message-btn' type='primary'>
-          <IntlMessages id='common.viewAll' />
+        <Button className="header-message-btn" type="primary">
+          <IntlMessages id="common.viewAll" />
         </Button>
       </Menu.Item>
     </Menu>
@@ -35,12 +35,12 @@ const AppHeaderMessages = () => {
   return (
     <>
       <Dropdown overlay={menu} trigger={['click']}>
-        <a className='header-message-link' onClick={(e) => e.preventDefault()}>
-          <span className='header-message-icon'>
+        <a className="header-message-link" onClick={(e) => e.preventDefault()}>
+          <span className="header-message-icon">
             <AiOutlineMail />
           </span>
-          <span className='header-message-link-text'>
-            <IntlMessages id='dashboard.messages' />
+          <span className="header-message-link-text">
+            <IntlMessages id="dashboard.messages" />
           </span>
         </a>
       </Dropdown>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, message, Popconfirm} from 'antd';
+import { Space, message, Popconfirm } from 'antd';
 
 const Basic = () => {
   function confirm(e) {
@@ -14,13 +14,8 @@ const Basic = () => {
 
   return (
     <Space>
-      <Popconfirm
-        title='Are you sure delete this task?'
-        onConfirm={confirm}
-        onCancel={cancel}
-        okText='Yes'
-        cancelText='No'>
-        <a href='#'>Delete</a>
+      <Popconfirm title="Are you sure delete this task?" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
+        <a href="#">Delete</a>
       </Popconfirm>
     </Space>
   );

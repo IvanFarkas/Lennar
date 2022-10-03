@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 import ComponentCard from '@crema/core/AppComponentCard';
 import ComponentHeader from '@crema/core/AppComponentHeader';
@@ -26,71 +26,35 @@ import YouTubeSource from '!raw-loader!./YouTube';
 const ReactPlayer = () => {
   return (
     <>
-      <ComponentHeader
-        title='ReactPlayer'
-        description='A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.'
-        refUrl='https://cookpete.com/react-player/'
-      />
+      <ComponentHeader title="ReactPlayer" description="A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion." refUrl="https://cookpete.com/react-player/" />
 
       <AppRowSimpleContainer>
-        <Col xs={24} xl={12} key='player-a'>
-          <ComponentCard
-            title='YouTube'
-            component={YouTube}
-            source={YouTubeSource}
-          />
+        <Col xs={24} xl={12} key="player-a">
+          <ComponentCard title="YouTube" component={YouTube} source={YouTubeSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-b'>
-          <ComponentCard
-            title='Facebook'
-            component={Facebook}
-            source={FacebookSource}
-          />
+        <Col xs={24} xl={12} key="player-b">
+          <ComponentCard title="Facebook" component={Facebook} source={FacebookSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-c'>
-          <ComponentCard title='Vimeo' component={Vimeo} source={VimeoSource} />
+        <Col xs={24} xl={12} key="player-c">
+          <ComponentCard title="Vimeo" component={Vimeo} source={VimeoSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-d'>
-          <ComponentCard
-            title='Daily Motion'
-            component={DailyMotion}
-            source={DailyMotionSource}
-          />
+        <Col xs={24} xl={12} key="player-d">
+          <ComponentCard title="Daily Motion" component={DailyMotion} source={DailyMotionSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-e'>
-          <ComponentCard
-            title='Sound Cloud'
-            component={SoundCloud}
-            source={SoundCloudSource}
-          />
+        <Col xs={24} xl={12} key="player-e">
+          <ComponentCard title="Sound Cloud" component={SoundCloud} source={SoundCloudSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-f'>
-          <ComponentCard
-            title='Streamable'
-            component={Streamable}
-            source={StreamableSource}
-          />
+        <Col xs={24} xl={12} key="player-f">
+          <ComponentCard title="Streamable" component={Streamable} source={StreamableSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-g'>
-          <ComponentCard
-            title='Twitch'
-            component={Twitch}
-            source={TwitchSource}
-          />
+        <Col xs={24} xl={12} key="player-g">
+          <ComponentCard title="Twitch" component={Twitch} source={TwitchSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-h'>
-          <ComponentCard
-            title='Wistia'
-            component={Wistia}
-            source={WistiaSource}
-          />
+        <Col xs={24} xl={12} key="player-h">
+          <ComponentCard title="Wistia" component={Wistia} source={WistiaSource} />
         </Col>
-        <Col xs={24} xl={12} key='player-i'>
-          <ComponentCard
-            title='Mixcloud'
-            component={Mixcloud}
-            source={MixcloudSource}
-          />
+        <Col xs={24} xl={12} key="player-i">
+          <ComponentCard title="Mixcloud" component={Mixcloud} source={MixcloudSource} />
         </Col>
       </AppRowSimpleContainer>
     </>

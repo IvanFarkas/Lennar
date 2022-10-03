@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-} from 'recharts';
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 
 const data = [
   {
@@ -73,7 +66,7 @@ const data = [
 
 const SaleStaticChart = () => {
   return (
-    <ResponsiveContainer width='100%' height={280}>
+    <ResponsiveContainer width="100%" height={280}>
       <BarChart
         data={data}
         margin={{
@@ -81,16 +74,13 @@ const SaleStaticChart = () => {
           right: 0,
           left: 0,
           bottom: 0,
-        }}>
-        <CartesianGrid
-          strokeDasharray='3 1'
-          horizontal={true}
-          vertical={false}
-        />
-        <XAxis dataKey='month' />
-        <Tooltip labelStyle={{color: 'black'}} />
-        <Bar dataKey='return' fill='#F44D50' barSize={8} />
-        <Bar dataKey='order' fill='#0A8FDC' barSize={8} />
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 1" horizontal={true} vertical={false} />
+        <XAxis dataKey="month" />
+        <Tooltip labelStyle={{ color: 'black' }} />
+        <Bar dataKey="return" fill="#F44D50" barSize={8} />
+        <Bar dataKey="order" fill="#0A8FDC" barSize={8} />
       </BarChart>
     </ResponsiveContainer>
   );

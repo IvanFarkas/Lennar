@@ -1,5 +1,5 @@
 import React from 'react';
-import {RoutePermittedRole} from '../../shared/constants/AppEnums';
+import { RoutePermittedRole } from '../../shared/constants/AppEnums';
 
 const Products = React.lazy(() => import('./Products'));
 const ProductDetail = React.lazy(() => import('./ProductDetail'));
@@ -19,10 +19,7 @@ export const ecommerceConfig = [
   },
   {
     permittedRole: RoutePermittedRole.user,
-    path: [
-      '/apps/ecommerce/product_detail/',
-      '/apps/ecommerce/product_detail/:id',
-    ],
+    path: ['/apps/ecommerce/product_detail/', '/apps/ecommerce/product_detail/:id'],
     element: <ProductDetail />,
   },
   {

@@ -4,14 +4,15 @@ import AppAnimateGroup from '../../@crema/core/AppAnimateGroup';
 
 const MenuLevel = () => {
   return (
-    <AppAnimateGroup type='bottom'>
+    <AppAnimateGroup type="bottom">
       <div
         style={{
           fontSize: 20,
           alignItems: 'center',
           justifyContent: 'center',
-        }}>
-        <InjectMassage id='sidebar.multiLevel' />
+        }}
+      >
+        <InjectMassage id="sidebar.multiLevel" />
       </div>
     </AppAnimateGroup>
   );

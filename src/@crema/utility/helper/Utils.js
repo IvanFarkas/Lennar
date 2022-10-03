@@ -1,4 +1,4 @@
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
 export const getBreakPointsValue = (valueSet, breakpoint) => {
   if (typeof valueSet === 'number') return valueSet;
@@ -12,9 +12,7 @@ export const getBreakPointsValue = (valueSet, breakpoint) => {
     case 'lg':
       return valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs;
     default:
-      return (
-        valueSet.xl || valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs
-      );
+      return valueSet.xl || valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs;
   }
 };
 
@@ -48,7 +46,7 @@ export const multiPropsFilter = (products, filters, stringKey = 'title') => {
 // 'intl' service singleton reference
 let intl;
 
-export function IntlGlobalProvider({children}) {
+export function IntlGlobalProvider({ children }) {
   intl = useIntl();
   // Keep the 'intl' service reference
   return children;

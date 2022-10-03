@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
+import React, { useState } from 'react';
+import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
 
 import eventsData from '../../events';
@@ -12,7 +12,7 @@ const DragAndDropCalendar = withDragAndDrop(Calendar);
 const Dnd = () => {
   const [events, setEvents] = useState(eventsData);
 
-  const moveEvent = ({event, start, end, isAllDay: droppedOnAllDaySlot}) => {
+  const moveEvent = ({ event, start, end, isAllDay: droppedOnAllDaySlot }) => {
     const idx = events.indexOf(event);
     let allDay = event.allDay;
 
@@ -22,7 +22,7 @@ const Dnd = () => {
       allDay = false;
     }
 
-    const updatedEvent = {...event, start, end, allDay};
+    const updatedEvent = { ...event, start, end, allDay };
 
     const nextEvents = [...events];
     nextEvents.splice(idx, 1, updatedEvent);
@@ -30,11 +30,9 @@ const Dnd = () => {
     setEvents(nextEvents);
   };
 
-  const resizeEvent = ({event, start, end}) => {
+  const resizeEvent = ({ event, start, end }) => {
     const nextEvents = events.map((existingEvent) => {
-      return existingEvent.id === event.id
-        ? {...existingEvent, start, end}
-        : existingEvent;
+      return existingEvent.id === event.id ? { ...existingEvent, start, end } : existingEvent;
     });
 
     setEvents(nextEvents);
@@ -55,21 +53,7 @@ const Dnd = () => {
     setEvents(events.concat([hour]));
   };
 
-  return (
-    <DragAndDropCalendar
-      className='app-calendar'
-      selectable
-      localizer={momentLocalizer(moment)}
-      events={events}
-      onEventDrop={moveEvent}
-      resizable
-      onEventResize={resizeEvent}
-      onSelectSlot={newEvent}
-      onDragStart={console.log}
-      defaultView={Views.MONTH}
-      defaultDate={new Date(2021, 10, 12)}
-    />
-  );
+  return <DragAndDropCalendar className="app-calendar" selectable localizer={momentLocalizer(moment)} events={events} onEventDrop={moveEvent} resizable onEventResize={resizeEvent} onSelectSlot={newEvent} onDragStart={console.log} defaultView={Views.MONTH} defaultDate={new Date(2021, 10, 12)} />;
 };
 
 export default Dnd;

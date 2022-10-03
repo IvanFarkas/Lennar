@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {authRole} from '../../shared/constants/AppEnums';
+import { authRole } from '../../shared/constants/AppEnums';
 
 export const createRoutes = (routeConfigs) => {
   let allRoutes = [];
@@ -13,10 +13,8 @@ export const setRoutes = (config) => {
   let routes = [...config.routes];
   if (config.auth) {
     routes = routes.map((route) => {
-      let auth = route.auth
-        ? [...config.auth, ...route.auth]
-        : [...config.auth];
-      return {...route, auth};
+      let auth = route.auth ? [...config.auth, ...route.auth] : [...config.auth];
+      return { ...route, auth };
     });
   }
 
@@ -35,9 +33,7 @@ export const getBreakPointsValue = (valueSet, breakpoint) => {
     case 'lg':
       return valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs;
     default:
-      return (
-        valueSet.xl || valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs
-      );
+      return valueSet.xl || valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs;
   }
 };
 
@@ -68,11 +64,7 @@ export const multiPropsFilter = (products, filters, stringKey = 'title') => {
   });
 };
 
-export const getCustomDateTime = (
-  value = 0,
-  unit = 'days',
-  format = 'YYYY-MM-DD',
-) => {
+export const getCustomDateTime = (value = 0, unit = 'days', format = 'YYYY-MM-DD') => {
   if (value === 0) {
     return moment().format(format);
   } else {

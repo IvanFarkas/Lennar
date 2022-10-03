@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -17,42 +17,19 @@ class Tooltip extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Tooltip'
-          refUrl='https://ant.design/components/tooltip/'
-        />
+        <ComponentHeader title="Tooltip" refUrl="https://ant.design/components/tooltip/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='tooltip-a'>
-            <AppComponentCard
-              title='Basic'
-              description='The simplest usage.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="tooltip-a">
+            <AppComponentCard title="Basic" description="The simplest usage." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='tooltip-b'>
-            <AppComponentCard
-              title='ArrowPoint'
-              description='By specifying arrowPointAtCenter prop, the arrow will point to the center of the target element.'
-              component={ArrowPoint}
-              source={ArrowPointSource}
-            />
+          <Col xs={24} lg={12} key="tooltip-b">
+            <AppComponentCard title="ArrowPoint" description="By specifying arrowPointAtCenter prop, the arrow will point to the center of the target element." component={ArrowPoint} source={ArrowPointSource} />
           </Col>
-          <Col xs={24} lg={12} key='tooltip-c'>
-            <AppComponentCard
-              title='Placement'
-              description='There are 12 placement options available.'
-              component={Placement}
-              source={PlacementSource}
-            />
+          <Col xs={24} lg={12} key="tooltip-c">
+            <AppComponentCard title="Placement" description="There are 12 placement options available." component={Placement} source={PlacementSource} />
           </Col>
-          <Col xs={24} lg={12} key='tooltip-c'>
-            <AppComponentCard
-              title='ColorfulTooltip'
-              description='We preset a series of colorful Tooltip styles for use in different situations.'
-              component={ColorfulTooltip}
-              source={ColorfulTooltipSource}
-            />
+          <Col xs={24} lg={12} key="tooltip-c">
+            <AppComponentCard title="ColorfulTooltip" description="We preset a series of colorful Tooltip styles for use in different situations." component={ColorfulTooltip} source={ColorfulTooltipSource} />
           </Col>
         </AppRowContainer>
       </>

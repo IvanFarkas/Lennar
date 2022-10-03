@@ -5,7 +5,7 @@ import ListEmptyResult from '../../../../../@crema/core/AppList/ListEmptyResult'
 import PropTypes from 'prop-types';
 import './index.style.less';
 
-const ProductGrid = ({ecommerceList, loading}) => (
+const ProductGrid = ({ ecommerceList, loading }) => (
   <AppGrid
     itemPadding={8}
     delay={200}
@@ -16,9 +16,7 @@ const ProductGrid = ({ecommerceList, loading}) => (
     }}
     data={ecommerceList}
     renderItem={(item) => <GridItem item={item} key={item.id} />}
-    ListEmptyComponent={
-      <ListEmptyResult content='No product found' loading={loading} />
-    }
+    ListEmptyComponent={<ListEmptyResult content="No product found" loading={loading} />}
   />
 );
 export default ProductGrid;

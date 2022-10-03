@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Pagination} from 'antd';
+import { Space, Pagination } from 'antd';
 
 const Basic = () => {
   return (

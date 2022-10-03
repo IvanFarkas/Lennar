@@ -1,5 +1,5 @@
 import React from 'react';
-import {BackTop} from 'antd';
+import { BackTop } from 'antd';
 
 const style = {
   height: 40,
@@ -14,7 +14,7 @@ const style = {
 
 const Custom = () => {
   return (
-    <div style={{height: '600vh', padding: 8, width: '100%'}}>
+    <div style={{ height: '600vh', padding: 8, width: '100%' }}>
       <div>Scroll to bottom</div>
       <div>Scroll to bottom</div>
       <div>Scroll to bottom</div>

@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import TotalBalance from './TotalBalance';
 import Coins from './Coins';
 import Bitcoin from './Bitcoin';
@@ -9,9 +9,9 @@ import BtcVolumeCurrency from './BtcVolumeCurrency';
 import PopularCoins from './PopularCoins';
 import LatestNews from './LatestNews';
 import CryptoMarketActivity from './CryptoMarketActivity';
-import {AppInfoView} from '../../../@crema';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetCryptoData} from '../../../redux/actions/Dashboard';
+import { AppInfoView } from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetCryptoData } from '../../../redux/actions/Dashboard';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
 
 const Crypto = () => {
@@ -21,17 +21,17 @@ const Crypto = () => {
     dispatch(onGetCryptoData());
   }, [dispatch]);
 
-  const cryptoData = useSelector(({dashboard}) => dashboard.cryptoData);
+  const cryptoData = useSelector(({ dashboard }) => dashboard.cryptoData);
 
   return (
     <>
-      <AppPageMetadata title='Crypto Dashboard' />
+      <AppPageMetadata title="Crypto Dashboard" />
       {cryptoData ? (
         <AppRowContainer>
           <Col xs={24} lg={10} key={'a'}>
             <TotalBalance totalBalanceData={cryptoData.totalBalanceData} />
           </Col>
-          <Col xs={24} lg={14} className='mb-0' key={'b'}>
+          <Col xs={24} lg={14} className="mb-0" key={'b'}>
             <Coins coinsData={cryptoData.coinsData} />
           </Col>
           <Col xs={24} lg={16} key={'c'}>
@@ -50,9 +50,7 @@ const Crypto = () => {
             <LatestNews newsData={cryptoData.newsData} />
           </Col>
           <Col xs={24} lg={12} key={'h'}>
-            <CryptoMarketActivity
-              marketGraphData={cryptoData.marketGraphData}
-            />
+            <CryptoMarketActivity marketGraphData={cryptoData.marketGraphData} />
           </Col>
         </AppRowContainer>
       ) : null}

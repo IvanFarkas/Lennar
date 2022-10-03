@@ -1,9 +1,29 @@
+// For Auth0
+import { useAuth0 } from '@auth0/auth0-react';
+import { useMemo } from 'react';
+import { getUserFromAuth0 } from './helper/AuthHelper';
+
+export const useAuthUser = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  return {
+    isLoading,
+    isAuthenticated,
+    user: useMemo(() => getUserFromAuth0(user), []),
+  };
+};
+
+export const useAuthMethod = () => {
+  const { loginWithRedirect, logout } = useAuth0();
+  return { loginWithRedirect, logout };
+};
+
 // ForJWT Auth
-/*import { getUserFromJwtAuth } from "./helper/AuthHelper";
+/*
+import { getUserFromJwtAuth } from './helper/AuthHelper';
 import {
   useJWTAuth,
   useJWTAuthActions,
-} from "../services/auth/jwt-auth/JWTAuthProvider";
+} from '../services/auth/jwt-auth/JWTAuthProvider';
 
 export const useAuthUser = () => {
   const { user, isAuthenticated, isLoading } = useJWTAuth();
@@ -22,8 +42,11 @@ export const useAuthMethod = () => {
     logout,
     signUpUser,
   };
-};*/
+};
+*/
+
 //For Firebase Auth
+/*
 import {
   useFirebase,
   useFirebaseActions,
@@ -54,9 +77,10 @@ export const useAuthMethod = () => {
     logout,
   };
 };
+*/
 
-/*
 // For AWS Auth
+/*
 import {getUserFromAWS} from './helper/AuthHelper';
 import {
   useAwsCognito,
@@ -86,25 +110,5 @@ export const useAuthMethod = () => {
     confirmCognitoUserSignup,
     logout,
   };
-};*/
-/*
-
-//For Auth0
-import { useAuth0 } from "@auth0/auth0-react";
-import { useMemo } from "react";
-import { getUserFromAuth0 } from "./helper/AuthHelper";
-
-export const useAuthUser = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  return {
-    isLoading,
-    isAuthenticated,
-    user: useMemo(() => getUserFromAuth0(user), []),
-  };
-};
-
-export const useAuthMethod = () => {
-  const { loginWithRedirect, logout } = useAuth0();
-  return { loginWithRedirect, logout };
 };
 */

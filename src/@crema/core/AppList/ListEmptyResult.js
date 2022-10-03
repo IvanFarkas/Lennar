@@ -1,18 +1,10 @@
 import React from 'react';
-import {Button, Progress} from 'antd';
+import { Button, Progress } from 'antd';
 import clsx from 'clsx';
 import IntlMessages from '../../utility/IntlMessages';
 import PropTypes from 'prop-types';
 
-const ListEmptyResult = ({
-  loader,
-  placeholder,
-  loading,
-  title,
-  actionTitle,
-  content,
-  onClick,
-}) => {
+const ListEmptyResult = ({ loader, placeholder, loading, title, actionTitle, content, onClick }) => {
   if (loading || loader) {
     return (
       <React.Fragment>
@@ -28,15 +20,12 @@ const ListEmptyResult = ({
     );
   } else {
     return (
-      <div className='empty-list-container'>
+      <div className="empty-list-container">
         {title ? <h4>{title}</h4> : null}
         <p>{content}</p>
 
         {actionTitle ? (
-          <Button
-            type='primary'
-            style={{marginTop: 30, minWidth: 150}}
-            onClick={onClick}>
+          <Button type="primary" style={{ marginTop: 30, minWidth: 150 }} onClick={onClick}>
             {actionTitle}
           </Button>
         ) : null}
@@ -48,7 +37,7 @@ const ListEmptyResult = ({
 export default ListEmptyResult;
 
 ListEmptyResult.defaultProps = {
-  title: <IntlMessages id='common.noRecordFound' />,
+  title: <IntlMessages id="common.noRecordFound" />,
   description: '',
 };
 

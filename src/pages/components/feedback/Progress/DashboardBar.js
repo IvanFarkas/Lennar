@@ -1,10 +1,10 @@
 import React from 'react';
-import {Space, Progress} from 'antd';
+import { Space, Progress } from 'antd';
 
 const DashboardBar = () => {
   return (
     <Space>
-      <Progress type='dashboard' percent={75} />
+      <Progress type="dashboard" percent={75} />
     </Space>
   );
 };

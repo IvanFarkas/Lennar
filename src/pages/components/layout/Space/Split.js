@@ -1,8 +1,8 @@
-import {Space, Typography, Divider} from 'antd';
+import { Space, Typography, Divider } from 'antd';
 
 function SpaceSplit() {
   return (
-    <Space split={<Divider type='vertical' />}>
+    <Space split={<Divider type="vertical" />}>
       <Typography.Link>Link</Typography.Link>
       <Typography.Link>Link</Typography.Link>
       <Typography.Link>Link</Typography.Link>

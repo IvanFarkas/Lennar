@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {Modal} from 'antd';
+import React, { useState } from 'react';
+import { Modal } from 'antd';
 import PropTypes from 'prop-types';
 import TaskDetailBody from '../../TaskDetail/TaskDetailBody';
 
-const ViewEditTodo = ({taskList, toDoId, showModal}) => {
+const ViewEditTodo = ({ taskList, toDoId, showModal }) => {
   const [isModalVisible, setIsModalVisible] = useState(showModal);
   const handleOk = () => {
     setIsModalVisible(false);
@@ -16,12 +16,7 @@ const ViewEditTodo = ({taskList, toDoId, showModal}) => {
     setIsModalVisible(false);
   };
   return (
-    <Modal
-      className='task-calender-modal'
-      visible={isModalVisible}
-      onOk={handleOk}
-      onCancel={handleCancel}
-      width={800}>
+    <Modal className="task-calender-modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} width={800}>
       <TaskDetailBody selectedTask={todo} />
     </Modal>
   );

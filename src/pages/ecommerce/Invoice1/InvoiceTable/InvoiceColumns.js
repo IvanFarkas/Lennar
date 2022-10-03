@@ -7,8 +7,8 @@ const InvoiceColumns = [
       <>
         <h6>{item.itemTitle}</h6>
         {item.desc ? (
-          <p className='invoice-truncate-view'>
-            <span className='text-truncate'>{item.desc}</span>
+          <p className="invoice-truncate-view">
+            <span className="text-truncate">{item.desc}</span>
           </p>
         ) : null}
       </>

@@ -1,4 +1,4 @@
-import {blue, green, grey, red} from '@ant-design/colors';
+import { blue, green, grey, red } from '@ant-design/colors';
 
 export const labelList = [
   {

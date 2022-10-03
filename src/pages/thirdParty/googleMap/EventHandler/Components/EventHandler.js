@@ -1,15 +1,11 @@
-import React, {Component} from 'react';
-import {GoogleMap, InfoWindow, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import { GoogleMap, InfoWindow, withGoogleMap } from 'react-google-maps';
 import '../../map.style.less';
 
 const google = window.google;
 
 const GettingPropertiesExampleGoogleMap = withGoogleMap((props) => (
-  <GoogleMap
-    ref={props.onMapMounted}
-    onZoomChanged={props.onZoomChanged}
-    defaultCenter={props.center}
-    zoom={props.zoom}>
+  <GoogleMap ref={props.onMapMounted} onZoomChanged={props.onZoomChanged} defaultCenter={props.center} zoom={props.zoom}>
     <InfoWindow defaultPosition={props.center}>
       <div>{props.content}</div>
     </InfoWindow>
@@ -47,18 +43,6 @@ export default class EventHandler extends Component {
   }
 
   render() {
-    return (
-      <GettingPropertiesExampleGoogleMap
-        containerElement={
-          <div className='cr-embed-responsive cr-embed-responsive-21by9' />
-        }
-        mapElement={<div className='cr-embed-responsive-item' />}
-        onMapMounted={this.handleMapMounted}
-        onZoomChanged={this.handleZoomChanged}
-        center={new google.maps.LatLng(47.646935, -122.303763)}
-        zoom={this.state.zoom}
-        content={this.state.content}
-      />
-    );
+    return <GettingPropertiesExampleGoogleMap containerElement={<div className="cr-embed-responsive cr-embed-responsive-21by9" />} mapElement={<div className="cr-embed-responsive-item" />} onMapMounted={this.handleMapMounted} onZoomChanged={this.handleZoomChanged} center={new google.maps.LatLng(47.646935, -122.303763)} zoom={this.state.zoom} content={this.state.content} />;
   }
 }

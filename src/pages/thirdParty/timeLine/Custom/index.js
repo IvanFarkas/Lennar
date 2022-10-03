@@ -6,8 +6,8 @@ import './index.style.less';
 const Timeline = () => {
   return (
     data.length > 0 && (
-      <div className='timeline-custom'>
-        <div className='timeline-container'>
+      <div className="timeline-custom">
+        <div className="timeline-container">
           {data.map((data, idx) => (
             <TimelineItem data={data} key={idx} />
           ))}

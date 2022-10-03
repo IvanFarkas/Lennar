@@ -1,20 +1,17 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import Balloon from '@ckeditor/ckeditor5-build-balloon/build/ckeditor';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import AppInfoView from '@crema/core/AppInfoView';
-import {
-  onGetBalloonData,
-  onUpdateBalloonData,
-} from '../../../../redux/actions/Editors';
+import { onGetBalloonData, onUpdateBalloonData } from '../../../../redux/actions/Editors';
 
 const BalloonEditor = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(onGetBalloonData());
   }, [dispatch]);
-  const data = useSelector(({editors}) => editors.balloon);
+  const data = useSelector(({ editors }) => editors.balloon);
 
   return (
     <div>

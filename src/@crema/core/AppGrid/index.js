@@ -3,20 +3,8 @@ import GridView from './GridView';
 import PropTypes from 'prop-types';
 import GridFooter from './GridFooter';
 
-const AppGrid = ({footerProps, ...rest}) => {
-  return (
-    <GridView
-      {...rest}
-      ListFooterComponent={
-        footerProps ? (
-          <GridFooter
-            loading={footerProps.loading}
-            footerText={footerProps.footerText}
-          />
-        ) : null
-      }
-    />
-  );
+const AppGrid = ({ footerProps, ...rest }) => {
+  return <GridView {...rest} ListFooterComponent={footerProps ? <GridFooter loading={footerProps.loading} footerText={footerProps.footerText} /> : null} />;
 };
 
 export default AppGrid;

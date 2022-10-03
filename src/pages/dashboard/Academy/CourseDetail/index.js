@@ -5,20 +5,20 @@ import PropTypes from 'prop-types';
 import AppMenu from '../../../../@crema/core/AppMenu';
 import './index.style.less';
 
-const CourseDetail = ({course}) => {
+const CourseDetail = ({ course }) => {
   const getTitle = () => (
-    <div className='course-detail-header'>
-      <img className='course-detail-thumb' alt='' src={course.thumb} />
-      <div className='course-detail-header-info'>
-        <h3 className='text-truncate'>{course.title}</h3>
-        <p className='mb-0 text-truncate'>{course.level}</p>
+    <div className="course-detail-header">
+      <img className="course-detail-thumb" alt="" src={course.thumb} />
+      <div className="course-detail-header-info">
+        <h3 className="text-truncate">{course.title}</h3>
+        <p className="mb-0 text-truncate">{course.level}</p>
       </div>
     </div>
   );
 
   return (
     <AppCard title={getTitle()} extra={<AppMenu />}>
-      <div className='course-detail-content'>
+      <div className="course-detail-content">
         <div>
           <h4>{course.coveredDuration}</h4>
           <p>Lecture of</p>

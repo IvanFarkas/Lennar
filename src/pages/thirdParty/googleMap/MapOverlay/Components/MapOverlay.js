@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Button} from 'antd';
-import {GoogleMap, OverlayView, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import { Button } from 'antd';
+import { GoogleMap, OverlayView, withGoogleMap } from 'react-google-maps';
 import '../../map.style.less';
 
 const STYLES = {
@@ -15,15 +15,13 @@ const STYLES = {
 };
 
 function getPixelPositionOffset(width, height) {
-  return {x: -(width / 2), y: -(height / 2)};
+  return { x: -(width / 2), y: -(height / 2) };
 }
 
 const OverlayViewExampleGoogleMap = withGoogleMap((props) => (
-  <GoogleMap
-    defaultZoom={15}
-    defaultCenter={{lat: 25.7824758, lng: -80.289328}}>
+  <GoogleMap defaultZoom={15} defaultCenter={{ lat: 25.7824758, lng: -80.289328 }}>
     <OverlayView
-      position={{lat: 25.7824758, lng: -80.289328}}
+      position={{ lat: 25.7824758, lng: -80.289328 }}
       /*
        * An alternative to specifying position is specifying bounds.
        * bounds can either be an instance of google.maps.LatLngBounds
@@ -50,7 +48,7 @@ const OverlayViewExampleGoogleMap = withGoogleMap((props) => (
     >
       <div style={STYLES.overlayView}>
         <h1>OverlayView</h1>
-        <Button type='primary' onClick={props.onClick}>
+        <Button type="primary" onClick={props.onClick}>
           I have been clicked {props.count} time{props.count === 1 ? `` : `s`}
         </Button>
       </div>
@@ -69,19 +67,10 @@ export default class MapOverlay extends Component {
   handleClick = this.handleClick.bind(this);
 
   handleClick() {
-    this.setState({count: this.state.count + 1});
+    this.setState({ count: this.state.count + 1 });
   }
 
   render() {
-    return (
-      <OverlayViewExampleGoogleMap
-        containerElement={
-          <div className='cr-embed-responsive cr-embed-responsive-21by9' />
-        }
-        mapElement={<div className='cr-embed-responsive-item' />}
-        count={this.state.count}
-        onClick={this.handleClick}
-      />
-    );
+    return <OverlayViewExampleGoogleMap containerElement={<div className="cr-embed-responsive cr-embed-responsive-21by9" />} mapElement={<div className="cr-embed-responsive-item" />} count={this.state.count} onClick={this.handleClick} />;
   }
 }

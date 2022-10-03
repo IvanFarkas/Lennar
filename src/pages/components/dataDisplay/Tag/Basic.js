@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Tag} from 'antd';
+import { Space, Tag } from 'antd';
 
 const Basic = () => {
   function log(e) {
@@ -14,7 +14,7 @@ const Basic = () => {
     <Space wrap>
       <Tag>Tag 1</Tag>
       <Tag>
-        <a href='https://github.com/ant-design/ant-design/issues/1862'>Link</a>
+        <a href="https://github.com/ant-design/ant-design/issues/1862">Link</a>
       </Tag>
       <Tag closable onClose={log}>
         Tag 2

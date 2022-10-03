@@ -1,23 +1,23 @@
-import {Button, Form, Input} from 'antd';
-import {MinusCircleOutlined, PlusOutlined} from '@ant-design/icons';
+import { Button, Form, Input } from 'antd';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import React from 'react';
 import './dynamicFormItem.style.less';
 
 const formItemLayout = {
   labelCol: {
-    xs: {span: 24},
-    sm: {span: 4},
+    xs: { span: 24 },
+    sm: { span: 4 },
   },
   wrapperCol: {
-    xs: {span: 24},
-    sm: {span: 20},
+    xs: { span: 24 },
+    sm: { span: 20 },
   },
 };
 
 const formItemLayoutWithOutLabel = {
   wrapperCol: {
-    xs: {span: 24, offset: 0},
-    sm: {span: 20, offset: 4},
+    xs: { span: 24, offset: 0 },
+    sm: { span: 20, offset: 4 },
   },
 };
 
@@ -27,13 +27,9 @@ const DynamicFormItem = () => {
   };
 
   return (
-    <Form
-      className='dynamic-form'
-      name='dynamic_form_item'
-      {...formItemLayoutWithOutLabel}
-      onFinish={onFinish}>
+    <Form className="dynamic-form" name="dynamic_form_item" {...formItemLayoutWithOutLabel} onFinish={onFinish}>
       <Form.List
-        name='names'
+        name="names"
         rules={[
           {
             validator: async (_, names) => {
@@ -42,15 +38,12 @@ const DynamicFormItem = () => {
               }
             },
           },
-        ]}>
-        {(fields, {add, remove}, {errors}) => (
+        ]}
+      >
+        {(fields, { add, remove }, { errors }) => (
           <>
             {fields.map((field, index) => (
-              <Form.Item
-                {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                label={index === 0 ? 'Passengers' : ''}
-                required={false}
-                key={field.key}>
+              <Form.Item {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)} label={index === 0 ? 'Passengers' : ''} required={false} key={field.key}>
                 <Form.Item
                   {...field}
                   validateTrigger={['onChange', 'onBlur']}
@@ -58,36 +51,28 @@ const DynamicFormItem = () => {
                     {
                       required: true,
                       whitespace: true,
-                      message:
-                        "Please input passenger's name or delete this field.",
+                      message: "Please input passenger's name or delete this field.",
                     },
                   ]}
-                  noStyle>
-                  <Input placeholder='passenger name' style={{width: '60%'}} />
+                  noStyle
+                >
+                  <Input placeholder="passenger name" style={{ width: '60%' }} />
                 </Form.Item>
-                {fields.length > 1 ? (
-                  <MinusCircleOutlined
-                    className='dynamic-delete-button'
-                    onClick={() => remove(field.name)}
-                  />
-                ) : null}
+                {fields.length > 1 ? <MinusCircleOutlined className="dynamic-delete-button" onClick={() => remove(field.name)} /> : null}
               </Form.Item>
             ))}
             <Form.Item>
-              <Button
-                type='dashed'
-                onClick={() => add()}
-                style={{width: '60%'}}
-                icon={<PlusOutlined />}>
+              <Button type="dashed" onClick={() => add()} style={{ width: '60%' }} icon={<PlusOutlined />}>
                 Add field
               </Button>
               <Button
-                type='dashed'
+                type="dashed"
                 onClick={() => {
                   add('The head item', 0);
                 }}
-                style={{width: '60%', marginTop: '20px'}}
-                icon={<PlusOutlined />}>
+                style={{ width: '60%', marginTop: '20px' }}
+                icon={<PlusOutlined />}
+              >
                 Add field at head
               </Button>
               <Form.ErrorList errors={errors} />
@@ -96,7 +81,7 @@ const DynamicFormItem = () => {
         )}
       </Form.List>
       <Form.Item>
-        <Button type='primary' htmlType='submit'>
+        <Button type="primary" htmlType="submit">
           Submit
         </Button>
       </Form.Item>

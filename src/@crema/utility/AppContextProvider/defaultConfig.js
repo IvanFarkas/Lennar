@@ -1,12 +1,4 @@
-import {
-  FooterType,
-  LayoutType,
-  MenuStyle,
-  NavStyle,
-  ThemeDirection,
-  ThemeMode,
-  ThemeStyle,
-} from '../../../shared/constants/AppEnums';
+import { FooterType, LayoutType, MenuStyle, NavStyle, ThemeDirection, ThemeMode, ThemeStyle } from '../../../shared/constants/AppEnums';
 
 export const DarkSidebar = {
   sidebarBgColor: '#313541',

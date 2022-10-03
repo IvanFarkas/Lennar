@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Tooltip} from 'antd';
-import {MdLabelOutline} from 'react-icons/md';
+import { Tooltip } from 'antd';
+import { MdLabelOutline } from 'react-icons/md';
 
-const Labels = ({labels}) => {
+const Labels = ({ labels }) => {
   return (
-    <div className='todo-list-item-label-group'>
+    <div className="todo-list-item-label-group">
       {labels.map((label) => {
         return (
-          <Tooltip title={label.name} placement='top' key={label.id}>
-            <span
-              className='todo-list-item-label-group-item'
-              style={{color: label.color}}>
+          <Tooltip title={label.name} placement="top" key={label.id}>
+            <span className="todo-list-item-label-group-item" style={{ color: label.color }}>
               <MdLabelOutline />
             </span>
           </Tooltip>

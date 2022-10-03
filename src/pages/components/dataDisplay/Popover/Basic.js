@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Popover} from 'antd';
+import { Button, Space, Popover } from 'antd';
 
 const content = (
   <div>
@@ -11,8 +11,8 @@ const content = (
 const Basic = () => {
   return (
     <Space>
-      <Popover content={content} title='Title'>
-        <Button type='primary'>Hover me</Button>
+      <Popover content={content} title="Title">
+        <Button type="primary">Hover me</Button>
       </Popover>
     </Space>
   );

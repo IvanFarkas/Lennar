@@ -1,18 +1,18 @@
-import {Radio, Space, Table, Tag} from 'antd';
+import { Radio, Space, Table, Tag } from 'antd';
 import React from 'react';
 
 const topOptions = [
-  {label: 'topLeft', value: 'topLeft'},
-  {label: 'topCenter', value: 'topCenter'},
-  {label: 'topRight', value: 'topRight'},
-  {label: 'none', value: 'none'},
+  { label: 'topLeft', value: 'topLeft' },
+  { label: 'topCenter', value: 'topCenter' },
+  { label: 'topRight', value: 'topRight' },
+  { label: 'none', value: 'none' },
 ];
 
 const bottomOptions = [
-  {label: 'bottomLeft', value: 'bottomLeft'},
-  {label: 'bottomCenter', value: 'bottomCenter'},
-  {label: 'bottomRight', value: 'bottomRight'},
-  {label: 'none', value: 'none'},
+  { label: 'bottomLeft', value: 'bottomLeft' },
+  { label: 'bottomCenter', value: 'bottomCenter' },
+  { label: 'bottomRight', value: 'bottomRight' },
+  { label: 'none', value: 'none' },
 ];
 
 const columns = [
@@ -56,7 +56,7 @@ const columns = [
     title: 'Action',
     key: 'action',
     render: (text, record) => (
-      <Space size='middle'>
+      <Space size="middle">
         <a>Invite {record.name}</a>
         <a>Delete</a>
       </Space>
@@ -99,27 +99,23 @@ class Demo extends React.Component {
       <div>
         <div>
           <Radio.Group
-            style={{marginBottom: 10}}
+            style={{ marginBottom: 10 }}
             options={topOptions}
             value={this.state.top}
             onChange={(e) => {
-              this.setState({top: e.target.value});
+              this.setState({ top: e.target.value });
             }}
           />
         </div>
         <Radio.Group
-          style={{marginBottom: 10}}
+          style={{ marginBottom: 10 }}
           options={bottomOptions}
           value={this.state.bottom}
           onChange={(e) => {
-            this.setState({bottom: e.target.value});
+            this.setState({ bottom: e.target.value });
           }}
         />
-        <Table
-          columns={columns}
-          pagination={{position: [this.state.top, this.state.bottom]}}
-          dataSource={data}
-        />
+        <Table columns={columns} pagination={{ position: [this.state.top, this.state.bottom] }} dataSource={data} />
       </div>
     );
   }

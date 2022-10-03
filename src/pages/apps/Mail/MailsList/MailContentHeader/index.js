@@ -1,19 +1,19 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import CheckedMailActions from './CheckedMailActions';
 import AppsPagination from '../../../../../@crema/core/AppsPagination';
-import {Checkbox, Input} from 'antd';
+import { Checkbox, Input } from 'antd';
 import '../index.style.less';
 import MoreOptions from './MoreOptions';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
 const MailContentHeader = (props) => {
-  const {path, checkedMails, setCheckedMails, page, onChange} = props;
+  const { path, checkedMails, setCheckedMails, page, onChange } = props;
 
-  const mailList = useSelector(({mailApp}) => mailApp.mailList);
+  const mailList = useSelector(({ mailApp }) => mailApp.mailList);
 
-  const totalMails = useSelector(({mailApp}) => mailApp.totalMails);
+  const totalMails = useSelector(({ mailApp }) => mailApp.totalMails);
 
   const onHandleMasterCheckbox = (event) => {
     if (event.target.checked) {
@@ -24,53 +24,27 @@ const MailContentHeader = (props) => {
     }
   };
 
-  const {Search} = Input;
+  const { Search } = Input;
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <>
-      <div className='mail-content-header'>
-        <Checkbox
-          color='primary'
-          className='mail-content-header-checkbox'
-          indeterminate={
-            checkedMails.length > 0 && checkedMails.length < mailList.length
-          }
-          checked={
-            mailList.length > 0 && checkedMails.length === mailList.length
-          }
-          onChange={onHandleMasterCheckbox}
-        />
+      <div className="mail-content-header">
+        <Checkbox color="primary" className="mail-content-header-checkbox" indeterminate={checkedMails.length > 0 && checkedMails.length < mailList.length} checked={mailList.length > 0 && checkedMails.length === mailList.length} onChange={onHandleMasterCheckbox} />
 
         <Search
-          className='mail-search'
+          className="mail-search"
           placeholder={messages['common.searchHere']}
           // value={filterText}
           // onChange={(event) => onSetFilterText(event.target.value)}
         />
 
-        {checkedMails.length > 0 ? (
-          <CheckedMailActions
-            checkedMails={checkedMails}
-            setCheckedMails={setCheckedMails}
-          />
-        ) : null}
+        {checkedMails.length > 0 ? <CheckedMailActions checkedMails={checkedMails} setCheckedMails={setCheckedMails} /> : null}
 
-        <MoreOptions
-          checkedMails={checkedMails}
-          setCheckedMails={setCheckedMails}
-          path={path}
-        />
+        <MoreOptions checkedMails={checkedMails} setCheckedMails={setCheckedMails} path={path} />
       </div>
-      {mailList.length > 0 ? (
-        <AppsPagination
-          className='mail-content-header-pagination'
-          count={totalMails}
-          page={page}
-          onChange={onChange}
-        />
-      ) : null}
+      {mailList.length > 0 ? <AppsPagination className="mail-content-header-pagination" count={totalMails} page={page} onChange={onChange} /> : null}
     </>
   );
 };

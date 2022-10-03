@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -54,171 +54,76 @@ import HandleFormDateManuallySource from '!raw-loader!./HandleFormDateManually';
 const Form = () => {
   return (
     <>
-      <ComponentHeader
-        title='Form'
-        refUrl='https://ant.design/components/form/'
-      />
+      <ComponentHeader title="Form" refUrl="https://ant.design/components/form/" />
       <AppRowContainer>
-        <Col xs={24} xxl={12} key='form-a'>
-          <AppComponentCard
-            title='Basic'
-            component={Basic}
-            source={BasicSource}
-          />
+        <Col xs={24} xxl={12} key="form-a">
+          <AppComponentCard title="Basic" component={Basic} source={BasicSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-b'>
-          <AppComponentCard
-            title='Horizontal Login Form'
-            component={HorizontalLoginForm}
-            source={HorizontalLoginFormSource}
-          />
+        <Col xs={24} xxl={12} key="form-b">
+          <AppComponentCard title="Horizontal Login Form" component={HorizontalLoginForm} source={HorizontalLoginFormSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-c'>
-          <AppComponentCard
-            title='Registration'
-            component={Registration}
-            source={RegistrationSource}
-          />
+        <Col xs={24} xxl={12} key="form-c">
+          <AppComponentCard title="Registration" component={Registration} source={RegistrationSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-d'>
-          <AppComponentCard
-            title='Time Related Controls'
-            component={TimeRelatedControls}
-            source={TimeRelatedControlsSource}
-          />
+        <Col xs={24} xxl={12} key="form-d">
+          <AppComponentCard title="Time Related Controls" component={TimeRelatedControls} source={TimeRelatedControlsSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-e'>
-          <AppComponentCard
-            title='Dynamic Form Item'
-            component={DynamicFormItem}
-            source={DynamicFormItemSource}
-          />
+        <Col xs={24} xxl={12} key="form-e">
+          <AppComponentCard title="Dynamic Form Item" component={DynamicFormItem} source={DynamicFormItemSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-f'>
-          <AppComponentCard
-            title='Advanced Search'
-            component={AdvancedSearch}
-            source={AdvancedSearchSource}
-          />
+        <Col xs={24} xxl={12} key="form-f">
+          <AppComponentCard title="Advanced Search" component={AdvancedSearch} source={AdvancedSearchSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-g'>
-          <AppComponentCard
-            title='Customized Form Controls'
-            component={CustomizedFormControls}
-            source={CustomizedFormControlsSource}
-          />
+        <Col xs={24} xxl={12} key="form-g">
+          <AppComponentCard title="Customized Form Controls" component={CustomizedFormControls} source={CustomizedFormControlsSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-h'>
-          <AppComponentCard
-            title='Coordinated Controls'
-            component={CoordinatedControls}
-            source={CoordinatedControlsSource}
-          />
+        <Col xs={24} xxl={12} key="form-h">
+          <AppComponentCard title="Coordinated Controls" component={CoordinatedControls} source={CoordinatedControlsSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-i'>
-          <AppComponentCard
-            title='Form Layout'
-            component={FormLayout}
-            source={FormLayoutSource}
-          />
+        <Col xs={24} xxl={12} key="form-i">
+          <AppComponentCard title="Form Layout" component={FormLayout} source={FormLayoutSource} />
         </Col>
-        <Col xs={24} xxl={12} key='form-j'>
-          <AppComponentCard
-            title='Dynamic Rules'
-            component={DynamicRules}
-            source={DynamicRulesSource}
-          />
+        <Col xs={24} xxl={12} key="form-j">
+          <AppComponentCard title="Dynamic Rules" component={DynamicRules} source={DynamicRulesSource} />
         </Col>
-        <Col span={24} key='form-k'>
-          <AppComponentCard
-            title='Store Form Data'
-            component={StoreFormData}
-            source={StoreFormDataSource}
-          />
+        <Col span={24} key="form-k">
+          <AppComponentCard title="Store Form Data" component={StoreFormData} source={StoreFormDataSource} />
         </Col>
-        <Col span={24} key='form-l'>
-          <AppComponentCard
-            title='Customized Validation'
-            component={CustomizedValidation}
-            source={CustomizedValidationSource}
-          />
+        <Col span={24} key="form-l">
+          <AppComponentCard title="Customized Validation" component={CustomizedValidation} source={CustomizedValidationSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Other Form Controls'
-            component={OtherFormControls}
-            source={OtherFormControlsSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Other Form Controls" component={OtherFormControls} source={OtherFormControlsSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Form Methods'
-            component={FormMethods}
-            source={FormMethodsSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Form Methods" component={FormMethods} source={FormMethodsSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Required Style'
-            component={RequiredStyle}
-            source={RequiredStyleSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Required Style" component={RequiredStyle} source={RequiredStyleSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Form Size'
-            component={FormSize}
-            source={FormSizeSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Form Size" component={FormSize} source={FormSizeSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='No Block Rule'
-            component={NoBlockRule}
-            source={NoBlockRuleSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="No Block Rule" component={NoBlockRule} source={NoBlockRuleSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Complex Dynamic Form Item'
-            component={ComplexDynamicFormItem}
-            source={ComplexDynamicFormItemSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Complex Dynamic Form Item" component={ComplexDynamicFormItem} source={ComplexDynamicFormItemSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Complex Form Control'
-            component={ComplexFormControl}
-            source={ComplexFormControlSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Complex Form Control" component={ComplexFormControl} source={ComplexFormControlSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='Inline Login Form'
-            component={InlineLoginForm}
-            source={InlineLoginFormSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="Inline Login Form" component={InlineLoginForm} source={InlineLoginFormSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='LoginForm'
-            component={LoginForm}
-            source={LoginFormSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="LoginForm" component={LoginForm} source={LoginFormSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='FormInModalToCreate'
-            component={FormInModalToCreate}
-            source={FormInModalToCreateSource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="FormInModalToCreate" component={FormInModalToCreate} source={FormInModalToCreateSource} />
         </Col>
-        <Col span={24} key='form-m'>
-          <AppComponentCard
-            title='HandleFormDateManually'
-            component={HandleFormDateManually}
-            source={HandleFormDateManuallySource}
-          />
+        <Col span={24} key="form-m">
+          <AppComponentCard title="HandleFormDateManually" component={HandleFormDateManually} source={HandleFormDateManuallySource} />
         </Col>
       </AppRowContainer>
     </>

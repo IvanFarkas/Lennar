@@ -1,5 +1,5 @@
 import React from 'react';
-import {RoutePermittedRole} from '../../shared/constants/AppEnums';
+import { RoutePermittedRole } from '../../shared/constants/AppEnums';
 
 const HealthCare = React.lazy(() => import('./HealthCare'));
 const ECommerce = React.lazy(() => import('./ECommerce'));

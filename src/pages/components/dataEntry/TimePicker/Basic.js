@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, TimePicker} from 'antd';
+import { Space, TimePicker } from 'antd';
 
 class Basic extends React.Component {
   state = {
@@ -8,7 +8,7 @@ class Basic extends React.Component {
 
   onChange = (time) => {
     console.log(time);
-    this.setState({value: time});
+    this.setState({ value: time });
   };
 
   render() {

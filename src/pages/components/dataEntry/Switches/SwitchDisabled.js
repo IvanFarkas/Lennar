@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Switch} from 'antd';
+import { Button, Space, Switch } from 'antd';
 
 const SwitchDisabled = () => {
   const [disabled, setDisabled] = React.useState(true);
@@ -12,7 +12,7 @@ const SwitchDisabled = () => {
     <Space>
       <Switch disabled={disabled} defaultChecked />
       <br />
-      <Button type='primary' onClick={toggle}>
+      <Button type="primary" onClick={toggle}>
         Toggle disabled
       </Button>
     </Space>

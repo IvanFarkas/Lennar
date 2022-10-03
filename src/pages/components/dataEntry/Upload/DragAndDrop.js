@@ -1,14 +1,14 @@
-import {Upload, message} from 'antd';
-import {InboxOutlined} from '@ant-design/icons';
+import { Upload, message } from 'antd';
+import { InboxOutlined } from '@ant-design/icons';
 
-const {Dragger} = Upload;
+const { Dragger } = Upload;
 
 const props = {
   name: 'file',
   multiple: true,
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   onChange(info) {
-    const {status} = info.file;
+    const { status } = info.file;
     if (status !== 'uploading') {
       console.log(info.file, info.fileList);
     }
@@ -27,16 +27,11 @@ import React from 'react';
 const DragAndDrop = () => {
   return (
     <Dragger {...props}>
-      <p className='ant-upload-drag-icon'>
+      <p className="ant-upload-drag-icon">
         <InboxOutlined />
       </p>
-      <p className='ant-upload-text'>
-        Click or drag file to this area to upload
-      </p>
-      <p className='ant-upload-hint'>
-        Support for a single or bulk upload. Strictly prohibit from uploading
-        company data or other band files
-      </p>
+      <p className="ant-upload-text">Click or drag file to this area to upload</p>
+      <p className="ant-upload-hint">Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
     </Dragger>
   );
 };

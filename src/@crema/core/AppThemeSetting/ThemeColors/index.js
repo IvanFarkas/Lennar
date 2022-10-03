@@ -2,16 +2,13 @@ import React from 'react';
 import IntlMessages from '../../../utility/IntlMessages';
 import themeColorSets from '../../../../shared/constants/ColorSets';
 import CustomColorCell from '../CustomColorCell';
-import {
-  useThemeActionsContext,
-  useThemeContext,
-} from '../../../utility/AppContextProvider/ThemeContextProvider';
+import { useThemeActionsContext, useThemeContext } from '../../../utility/AppContextProvider/ThemeContextProvider';
 import AppGrid from '../../AppGrid';
 
 const ThemeColors = () => {
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
 
-  const {updateTheme} = useThemeActionsContext();
+  const { updateTheme } = useThemeActionsContext();
 
   const updateThemeColors = () => {
     // theme.palette.primary.main = colorSet.primary.main;
@@ -19,12 +16,12 @@ const ThemeColors = () => {
     // theme.palette.background = colorSet.background;
     // theme.palette.mode = colorSet.mode;
     // theme.palette.text = colorSet.text;
-    updateTheme({...theme});
+    updateTheme({ ...theme });
   };
   return (
-    <div className='theme-color-setting'>
-      <h4 className='theme-color-setting-title'>
-        <IntlMessages id='customizer.themeColors' />
+    <div className="theme-color-setting">
+      <h4 className="theme-color-setting-title">
+        <IntlMessages id="customizer.themeColors" />
       </h4>
       <AppGrid
         data={themeColorSets}
@@ -33,13 +30,7 @@ const ThemeColors = () => {
           xs: 1,
           sm: 2,
         }}
-        renderItem={(colorSet, index) => (
-          <CustomColorCell
-            key={index}
-            updateThemeColors={updateThemeColors}
-            themeColorSet={colorSet}
-          />
-        )}
+        renderItem={(colorSet, index) => <CustomColorCell key={index} updateThemeColors={updateThemeColors} themeColorSet={colorSet} />}
       />
     </div>
   );

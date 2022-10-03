@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Carousel} from 'antd';
+import { Space, Carousel } from 'antd';
 
 const contentStyle = {
   height: '160px',
@@ -11,8 +11,8 @@ const contentStyle = {
 
 const FadeIn = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Carousel effect='fade'>
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Carousel effect="fade">
         <div>
           <h3 style={contentStyle}>1</h3>
         </div>

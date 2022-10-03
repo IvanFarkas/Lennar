@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {
@@ -48,12 +48,7 @@ function displayRender(label) {
 const Hover = () => {
   return (
     <Space>
-      <Cascader
-        options={options}
-        expandTrigger='hover'
-        displayRender={displayRender}
-        onChange={onChange}
-      />
+      <Cascader options={options} expandTrigger="hover" displayRender={displayRender} onChange={onChange} />
     </Space>
   );
 };

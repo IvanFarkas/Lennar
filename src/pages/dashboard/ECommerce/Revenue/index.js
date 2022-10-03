@@ -1,27 +1,24 @@
 import React from 'react';
 import AppCard from '../../../../@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppCircularProgress from '../../../../@crema/core/AppCircularProgress';
 import './index.style.less';
 
 const Revenue = () => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
-    <AppCard
-      className='revenue-card'
-      title={messages['eCommerce.revenue']}
-      heightFull>
-      <div className='revCirProgressView'>
+    <AppCard className="revenue-card" title={messages['eCommerce.revenue']} heightFull>
+      <div className="revCirProgressView">
         <AppCircularProgress
-          className='appCircularProgress'
-          strokeColor='#0A8FDC'
+          className="appCircularProgress"
+          strokeColor="#0A8FDC"
           percent={70}
           strokeWidth={5}
           format={() => (
-            <div className='revCirProgressContent'>
-              <div className='ant-row'>
-                <span className='dollar-icon'>$</span>
+            <div className="revCirProgressContent">
+              <div className="ant-row">
+                <span className="dollar-icon">$</span>
                 <h3>600</h3>
               </div>
               <p>Sales</p>
@@ -29,7 +26,7 @@ const Revenue = () => {
           )}
         />
       </div>
-      <div className='revCirProgressContentBottom'>
+      <div className="revCirProgressContentBottom">
         <div>
           <p>$ 2,000</p>
           <span>Target</span>

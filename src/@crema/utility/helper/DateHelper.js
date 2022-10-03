@@ -1,10 +1,6 @@
 import moment from 'moment';
 
-export const getFormattedDateTime = (
-  value = 0,
-  unit = 'days',
-  format = 'YYYY-MM-DD',
-) => {
+export const getFormattedDateTime = (value = 0, unit = 'days', format = 'YYYY-MM-DD') => {
   if (value === 0) {
     return moment().format(format);
   } else {

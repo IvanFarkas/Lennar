@@ -1,8 +1,8 @@
 import React from 'react';
-import {useDropzone} from 'react-dropzone';
+import { useDropzone } from 'react-dropzone';
 
 const Basic = () => {
-  const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
   const files = acceptedFiles.map((file) => (
     <li key={file.path}>
@@ -11,8 +11,8 @@ const Basic = () => {
   ));
 
   return (
-    <section className='container'>
-      <div {...getRootProps({className: 'dropzone'})}>
+    <section className="container">
+      <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <p>Drag n drop some files here, or click to select files</p>
       </div>

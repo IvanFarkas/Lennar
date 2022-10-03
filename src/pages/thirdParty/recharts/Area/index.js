@@ -9,7 +9,7 @@ import AreaChartConnectNulls from './Components/AreaChartConnectNulls';
 import AreaChartConnectNullsSource from '!raw-loader!./Components/AreaChartConnectNulls';
 import SynchronizedAreaChart from './Components/SynchronizedAreaChart';
 import SynchronizedAreaChartSource from '!raw-loader!./Components/SynchronizedAreaChart';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 import ComponentCard from '@crema/core/AppComponentCard';
 import ComponentHeader from '@crema/core/AppComponentHeader';
@@ -18,47 +18,23 @@ import AppRowSimpleContainer from '@crema/core/AppRowContainer/AppRowSimpleConta
 const AreaChart = () => {
   return (
     <>
-      <ComponentHeader
-        title='Area Chart'
-        description='All svg elements can be added into the AreaChart component, such as defs, linearGradient, etc.'
-        refUrl='http://recharts.org/en-US/api/AreaChart/'
-      />
+      <ComponentHeader title="Area Chart" description="All svg elements can be added into the AreaChart component, such as defs, linearGradient, etc." refUrl="http://recharts.org/en-US/api/AreaChart/" />
 
       <AppRowSimpleContainer>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Simple modal'
-            component={SimpleAreaChart}
-            source={SimpleAreaChartSource}
-          />
+          <ComponentCard title="Simple modal" component={SimpleAreaChart} source={SimpleAreaChartSource} />
         </Col>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Stacked Area Chart'
-            component={StackedAreaChart}
-            source={StackedAreaChartSource}
-          />
+          <ComponentCard title="Stacked Area Chart" component={StackedAreaChart} source={StackedAreaChartSource} />
         </Col>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='AreaChart Connect Nulls'
-            component={AreaChartConnectNulls}
-            source={AreaChartConnectNullsSource}
-          />
+          <ComponentCard title="AreaChart Connect Nulls" component={AreaChartConnectNulls} source={AreaChartConnectNullsSource} />
         </Col>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Synchronized Area Chart'
-            component={SynchronizedAreaChart}
-            source={SynchronizedAreaChartSource}
-          />
+          <ComponentCard title="Synchronized Area Chart" component={SynchronizedAreaChart} source={SynchronizedAreaChartSource} />
         </Col>
         <Col xs={24} xl={12}>
-          <ComponentCard
-            title='Percent Area Chart'
-            component={PercentAreaChart}
-            source={PercentAreaChartSource}
-          />
+          <ComponentCard title="Percent Area Chart" component={PercentAreaChart} source={PercentAreaChartSource} />
         </Col>
       </AppRowSimpleContainer>
     </>

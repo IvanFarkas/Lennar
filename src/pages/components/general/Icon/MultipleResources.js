@@ -1,4 +1,4 @@
-import {createFromIconfontCN} from '@ant-design/icons';
+import { createFromIconfontCN } from '@ant-design/icons';
 
 const IconFont = createFromIconfontCN({
   scriptUrl: [
@@ -11,11 +11,11 @@ import React from 'react';
 
 const MultipleResources = () => {
   return (
-    <div style={{display: 'flex', gap: 10}}>
-      <IconFont type='icon-javascript' />
-      <IconFont type='icon-java' />
-      <IconFont type='icon-shoppingcart' />
-      <IconFont type='icon-python' />
+    <div style={{ display: 'flex', gap: 10 }}>
+      <IconFont type="icon-javascript" />
+      <IconFont type="icon-java" />
+      <IconFont type="icon-shoppingcart" />
+      <IconFont type="icon-python" />
     </div>
   );
 };

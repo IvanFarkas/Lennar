@@ -1,23 +1,13 @@
 import React from 'react';
-import {Modal} from 'antd';
+import { Modal } from 'antd';
 
 import PropTypes from 'prop-types';
 import './index.style.less';
 
-const AppConfirmationModal = ({
-  open,
-  onDeny,
-  onConfirm,
-  paragraph,
-  modalTitle,
-}) => {
+const AppConfirmationModal = ({ open, onDeny, onConfirm, paragraph, modalTitle }) => {
   return (
-    <Modal
-      title={modalTitle}
-      visible={open}
-      onOk={onConfirm}
-      onCancel={() => onDeny(false)}>
-      <p className='para-text'>{paragraph}</p>
+    <Modal title={modalTitle} visible={open} onOk={onConfirm} onCancel={() => onDeny(false)}>
+      <p className="para-text">{paragraph}</p>
     </Modal>
   );
 };

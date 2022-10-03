@@ -1,4 +1,4 @@
-import {authRole, AuthType} from './AppEnums';
+import { authRole, AuthType } from './AppEnums';
 
 export const defaultUser = {
   displayName: 'John Alex',

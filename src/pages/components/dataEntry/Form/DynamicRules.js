@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Button, Checkbox, Form, Input, Space} from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Button, Checkbox, Form, Input, Space } from 'antd';
 
 const formItemLayout = {
   labelCol: {
@@ -40,31 +40,33 @@ const DynamicRules = () => {
   };
 
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Form form={form} name='dynamic_rule'>
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Form form={form} name="dynamic_rule">
         <Form.Item
           {...formItemLayout}
-          name='username'
-          label='Name'
+          name="username"
+          label="Name"
           rules={[
             {
               required: true,
               message: 'Please input your name',
             },
-          ]}>
-          <Input placeholder='Please input your name' />
+          ]}
+        >
+          <Input placeholder="Please input your name" />
         </Form.Item>
         <Form.Item
           {...formItemLayout}
-          name='nickname'
-          label='Nickname'
+          name="nickname"
+          label="Nickname"
           rules={[
             {
               required: checkNick,
               message: 'Please input your nickname',
             },
-          ]}>
-          <Input placeholder='Please input your nickname' />
+          ]}
+        >
+          <Input placeholder="Please input your nickname" />
         </Form.Item>
         <Form.Item {...formTailLayout}>
           <Checkbox checked={checkNick} onChange={onCheckboxChange}>
@@ -72,7 +74,7 @@ const DynamicRules = () => {
           </Checkbox>
         </Form.Item>
         <Form.Item {...formTailLayout}>
-          <Button type='primary' onClick={onCheck}>
+          <Button type="primary" onClick={onCheck}>
             Check
           </Button>
         </Form.Item>

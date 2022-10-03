@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Input, Tag, Tooltip} from 'antd';
+import { Space, Input, Tag, Tooltip } from 'antd';
 import PlusOutlined from '@ant-design/icons/lib/icons/PlusOutlined';
 
 class Dynamic extends React.Component {
@@ -12,15 +12,15 @@ class Dynamic extends React.Component {
   handleClose = (removedTag) => {
     const tags = this.state.tags.filter((tag) => tag !== removedTag);
     console.log(tags);
-    this.setState({tags});
+    this.setState({ tags });
   };
 
   showInput = () => {
-    this.setState({inputVisible: true}, () => this.input.focus());
+    this.setState({ inputVisible: true }, () => this.input.focus());
   };
 
   handleInputChange = (e) => {
-    this.setState({inputValue: e.target.value});
+    this.setState({ inputValue: e.target.value });
   };
 
   handleInputConfirm = () => {
@@ -41,16 +41,13 @@ class Dynamic extends React.Component {
   saveInputRef = (input) => (this.input = input);
 
   render() {
-    const {tags, inputVisible, inputValue} = this.state;
+    const { tags, inputVisible, inputValue } = this.state;
     return (
       <Space wrap>
         {tags.map((tag, index) => {
           const isLongTag = tag.length > 20;
           const tagElem = (
-            <Tag
-              key={tag}
-              closable={index !== 0}
-              afterClose={() => this.handleClose(tag)}>
+            <Tag key={tag} closable={index !== 0} afterClose={() => this.handleClose(tag)}>
               {isLongTag ? `${tag.slice(0, 20)}...` : tag}
             </Tag>
           );
@@ -62,22 +59,9 @@ class Dynamic extends React.Component {
             tagElem
           );
         })}
-        {inputVisible && (
-          <Input
-            ref={this.saveInputRef}
-            type='text'
-            size='small'
-            style={{width: 78}}
-            value={inputValue}
-            onChange={this.handleInputChange}
-            onBlur={this.handleInputConfirm}
-            onPressEnter={this.handleInputConfirm}
-          />
-        )}
+        {inputVisible && <Input ref={this.saveInputRef} type="text" size="small" style={{ width: 78 }} value={inputValue} onChange={this.handleInputChange} onBlur={this.handleInputConfirm} onPressEnter={this.handleInputConfirm} />}
         {!inputVisible && (
-          <Tag
-            onClick={this.showInput}
-            style={{background: '#fff', borderStyle: 'dashed'}}>
+          <Tag onClick={this.showInput} style={{ background: '#fff', borderStyle: 'dashed' }}>
             <PlusOutlined /> New Tag
           </Tag>
         )}

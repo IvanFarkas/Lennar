@@ -48,8 +48,8 @@ const settings = {
 
 const SimilarProduct = () => {
   return (
-    <div className='similar-product-slide-view'>
-      <Slider className='slick-slider-global' {...settings}>
+    <div className="similar-product-slide-view">
+      <Slider className="slick-slider-global" {...settings}>
         {ecommerce.map((item, index) => (
           <GridItem key={index} item={item} />
         ))}

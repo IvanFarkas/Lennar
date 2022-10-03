@@ -1,7 +1,7 @@
 import moment from 'moment';
-import {DatePicker, Space} from 'antd';
+import { DatePicker, Space } from 'antd';
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 function range(start, end) {
   const result = [];
@@ -43,26 +43,18 @@ import React from 'react';
 
 const DisabledDateTime = () => {
   return (
-    <Space direction='vertical' size={12}>
-      <DatePicker
-        format='YYYY-MM-DD HH:mm:ss'
-        disabledDate={disabledDate}
-        disabledTime={disabledDateTime}
-        showTime={{defaultValue: moment('00:00:00', 'HH:mm:ss')}}
-      />
-      <DatePicker picker='month' disabledDate={disabledDate} />
+    <Space direction="vertical" size={12}>
+      <DatePicker format="YYYY-MM-DD HH:mm:ss" disabledDate={disabledDate} disabledTime={disabledDateTime} showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }} />
+      <DatePicker picker="month" disabledDate={disabledDate} />
       <RangePicker disabledDate={disabledDate} />
       <RangePicker
         disabledDate={disabledDate}
         disabledTime={disabledRangeTime}
         showTime={{
           hideDisabledOptions: true,
-          defaultValue: [
-            moment('00:00:00', 'HH:mm:ss'),
-            moment('11:59:59', 'HH:mm:ss'),
-          ],
+          defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],
         }}
-        format='YYYY-MM-DD HH:mm:ss'
+        format="YYYY-MM-DD HH:mm:ss"
       />
     </Space>
   );

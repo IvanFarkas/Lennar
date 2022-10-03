@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Space, Input, Tooltip} from 'antd';
+import React, { Component } from 'react';
+import { Space, Input, Tooltip } from 'antd';
 import PropTypes from 'prop-types';
 
 function formatNumber(value) {
@@ -20,7 +20,7 @@ function formatNumber(value) {
 
 class NumericInput extends Component {
   onChange = (e) => {
-    const {value} = e.target;
+    const { value } = e.target;
     const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/;
     if ((!isNaN(value) && reg.test(value)) || value === '' || value === '-') {
       this.props.onChange(value);
@@ -28,9 +28,9 @@ class NumericInput extends Component {
   };
   // '.' at the end or only '-' in the input box.
   onBlur = () => {
-    const {value, onBlur, onChange} = this.props;
+    const { value, onBlur, onChange } = this.props;
     if (value.charAt(value.length - 1) === '.' || value === '-') {
-      onChange({value: value.slice(0, -1)});
+      onChange({ value: value.slice(0, -1) });
     }
     if (onBlur) {
       onBlur();
@@ -38,27 +38,11 @@ class NumericInput extends Component {
   };
 
   render() {
-    const {value} = this.props;
-    const title = value ? (
-      <span className='numeric-input-title'>
-        {value !== '-' ? formatNumber(value) : '-'}
-      </span>
-    ) : (
-      'Input a number'
-    );
+    const { value } = this.props;
+    const title = value ? <span className="numeric-input-title">{value !== '-' ? formatNumber(value) : '-'}</span> : 'Input a number';
     return (
-      <Tooltip
-        trigger={['focus']}
-        title={title}
-        placement='topLeft'
-        overlayClassName='numeric-input'>
-        <Input
-          {...this.props}
-          onChange={this.onChange}
-          onBlur={this.onBlur}
-          placeholder='Input a number'
-          maxLength={25}
-        />
+      <Tooltip trigger={['focus']} title={title} placement="topLeft" overlayClassName="numeric-input">
+        <Input {...this.props} onChange={this.onChange} onBlur={this.onBlur} placeholder="Input a number" maxLength={25} />
       </Tooltip>
     );
   }
@@ -71,22 +55,18 @@ NumericInput.propTypes = {
 };
 class NumericInputDemo extends Component {
   onChange = (value) => {
-    this.setState({value});
+    this.setState({ value });
   };
 
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = { value: '' };
   }
 
   render() {
     return (
       <Space>
-        <NumericInput
-          style={{width: 120}}
-          value={this.state.value}
-          onChange={this.onChange}
-        />
+        <NumericInput style={{ width: 120 }} value={this.state.value} onChange={this.onChange} />
       </Space>
     );
   }

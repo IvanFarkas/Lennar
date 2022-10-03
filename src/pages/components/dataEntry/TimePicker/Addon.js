@@ -1,14 +1,14 @@
 import React from 'react';
-import {Button, Space, TimePicker} from 'antd';
+import { Button, Space, TimePicker } from 'antd';
 
 class Addon extends React.Component {
-  state = {open: false};
+  state = { open: false };
 
   handleOpenChange = (open) => {
-    this.setState({open});
+    this.setState({ open });
   };
 
-  handleClose = () => this.setState({open: false});
+  handleClose = () => this.setState({ open: false });
 
   render() {
     return (
@@ -17,7 +17,7 @@ class Addon extends React.Component {
           open={this.state.open}
           onOpenChange={this.handleOpenChange}
           addon={() => (
-            <Button size='small' type='primary' onClick={this.handleClose}>
+            <Button size="small" type="primary" onClick={this.handleClose}>
               Ok
             </Button>
           )}

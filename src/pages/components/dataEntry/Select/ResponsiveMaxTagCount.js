@@ -1,4 +1,4 @@
-import {Select, Space} from 'antd';
+import { Select, Space } from 'antd';
 import React from 'react';
 
 const options = [];
@@ -28,10 +28,11 @@ const ResponsiveMaxTagCount = () => {
   };
   return (
     <Space
-      direction='vertical'
+      direction="vertical"
       style={{
         width: '100%',
-      }}>
+      }}
+    >
       <Select {...selectProps} />
       <Select {...selectProps} disabled />
     </Space>

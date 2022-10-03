@@ -1,4 +1,4 @@
-import {Table, Tooltip} from 'antd';
+import { Table, Tooltip } from 'antd';
 
 const columns = [
   {
@@ -22,7 +22,7 @@ const columns = [
       showTitle: false,
     },
     render: (address) => (
-      <Tooltip placement='topLeft' title={address}>
+      <Tooltip placement="topLeft" title={address}>
         {address}
       </Tooltip>
     ),
@@ -35,7 +35,7 @@ const columns = [
       showTitle: false,
     },
     render: (address) => (
-      <Tooltip placement='topLeft' title={address}>
+      <Tooltip placement="topLeft" title={address}>
         {address}
       </Tooltip>
     ),
@@ -48,7 +48,7 @@ const columns = [
       showTitle: false,
     },
     render: (address) => (
-      <Tooltip placement='topLeft' title={address}>
+      <Tooltip placement="topLeft" title={address}>
         {address}
       </Tooltip>
     ),
@@ -61,7 +61,7 @@ const columns = [
       showTitle: false,
     },
     render: (address) => (
-      <Tooltip placement='topLeft' title={address}>
+      <Tooltip placement="topLeft" title={address}>
         {address}
       </Tooltip>
     ),

@@ -1,11 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useLocation} from 'react-router-dom';
-import {
-  onDeleteContacts,
-  onGetContactList,
-  onUpdateStarredStatus,
-} from '../../../../redux/actions';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { onDeleteContacts, onGetContactList, onUpdateStarredStatus } from '../../../../redux/actions';
 import ContactHeader from './ContactHeader';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import CreateContact from '../CreateContact';
@@ -20,11 +16,11 @@ import ConfirmationModal from '../../../../@crema/core/AppConfirmationModal';
 
 const ContactListing = () => {
   const dispatch = useDispatch();
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
-  const {contactList} = useSelector(({contactApp}) => contactApp);
+  const { contactList } = useSelector(({ contactApp }) => contactApp);
 
-  const {totalContacts} = useSelector(({contactApp}) => contactApp);
+  const { totalContacts } = useSelector(({ contactApp }) => contactApp);
 
   const [filterText, onSetFilterText] = useState('');
 
@@ -44,7 +40,7 @@ const ContactListing = () => {
 
   const [selectedContact, setSelectedContact] = useState(null);
 
-  const loading = useSelector(({common}) => common.loading);
+  const loading = useSelector(({ common }) => common.loading);
 
   useEffect(() => {
     setPage(0);
@@ -52,9 +48,7 @@ const ContactListing = () => {
 
   useEffect(() => {
     const path = pathname.split('/');
-    dispatch(
-      onGetContactList(path[path.length - 2], path[path.length - 1], page),
-    );
+    dispatch(onGetContactList(path[path.length - 2], path[path.length - 1], page));
   }, [pathname, pageView, page, dispatch]);
 
   const handleAddContactOpen = () => {
@@ -87,18 +81,14 @@ const ContactListing = () => {
     if (checked) {
       setCheckedContacts(checkedContacts.concat(id));
     } else {
-      setCheckedContacts(
-        checkedContacts.filter((contactId) => contactId !== id),
-      );
+      setCheckedContacts(checkedContacts.filter((contactId) => contactId !== id));
     }
   };
 
   const onChangeStarred = (status, contact) => {
     const selectedIdList = [contact.id];
     const path = pathname.split('/');
-    dispatch(
-      onUpdateStarredStatus(selectedIdList, status, path[path.length - 1]),
-    );
+    dispatch(onUpdateStarredStatus(selectedIdList, status, path[path.length - 1]));
   };
 
   const onUpdateContact = (contact) => {
@@ -110,22 +100,13 @@ const ContactListing = () => {
     if (filterText === '') {
       return contactList;
     } else {
-      return contactList.filter((contact) =>
-        contact.name.toUpperCase().includes(filterText.toUpperCase()),
-      );
+      return contactList.filter((contact) => contact.name.toUpperCase().includes(filterText.toUpperCase()));
     }
   };
 
   const onDeleteSelectedContacts = () => {
     const path = pathname.split('/');
-    dispatch(
-      onDeleteContacts(
-        path[path.length - 2],
-        path[path.length - 1],
-        toDeleteContacts,
-        page,
-      ),
-    );
+    dispatch(onDeleteContacts(path[path.length - 2], path[path.length - 1], toDeleteContacts, page));
     setDeleteDialogOpen(false);
     setCheckedContacts([]);
   };
@@ -140,70 +121,23 @@ const ContactListing = () => {
   return (
     <>
       <AppsHeader>
-        <ContactHeader
-          checkedContacts={checkedContacts}
-          setCheckedContacts={setCheckedContacts}
-          filterText={filterText}
-          onSelectContactsForDelete={onSelectContactsForDelete}
-          onSetFilterText={onSetFilterText}
-          onChange={onChange}
-          page={page}
-          onChangePageView={onChangePageView}
-          pageView={pageView}
-        />
+        <ContactHeader checkedContacts={checkedContacts} setCheckedContacts={setCheckedContacts} filterText={filterText} onSelectContactsForDelete={onSelectContactsForDelete} onSetFilterText={onSetFilterText} onChange={onChange} page={page} onChangePageView={onChangePageView} pageView={pageView} />
       </AppsHeader>
       <AppsContent>
-        <ContactViewContent
-          list={list}
-          loading={loading}
-          pageView={pageView}
-          handleAddContactOpen={handleAddContactOpen}
-          onChangeCheckedContacts={onChangeCheckedContacts}
-          onChangeStarred={onChangeStarred}
-          checkedContacts={checkedContacts}
-          onSelectContactsForDelete={onSelectContactsForDelete}
-          onViewContactDetail={onViewContactDetail}
-          onOpenEditContact={onOpenEditContact}
-        />
+        <ContactViewContent list={list} loading={loading} pageView={pageView} handleAddContactOpen={handleAddContactOpen} onChangeCheckedContacts={onChangeCheckedContacts} onChangeStarred={onChangeStarred} checkedContacts={checkedContacts} onSelectContactsForDelete={onSelectContactsForDelete} onViewContactDetail={onViewContactDetail} onOpenEditContact={onOpenEditContact} />
       </AppsContent>
 
       {contactList.length > 0 ? (
-        <AppsFooter className='contact-footer'>
-          <AppsPagination
-            count={totalContacts}
-            page={page}
-            onChange={onChange}
-          />
+        <AppsFooter className="contact-footer">
+          <AppsPagination count={totalContacts} page={page} onChange={onChange} />
         </AppsFooter>
       ) : null}
 
-      {isAddContact ? (
-        <CreateContact
-          isAddContact={isAddContact}
-          handleAddContactClose={handleAddContactClose}
-          selectContact={selectedContact}
-          onUpdateContact={onUpdateContact}
-        />
-      ) : null}
+      {isAddContact ? <CreateContact isAddContact={isAddContact} handleAddContactClose={handleAddContactClose} selectContact={selectedContact} onUpdateContact={onUpdateContact} /> : null}
 
-      {isShowDetail ? (
-        <ContactDetail
-          selectedContact={selectedContact}
-          isShowDetail={isShowDetail}
-          onShowDetail={onShowDetail}
-          onSelectContactsForDelete={onSelectContactsForDelete}
-          onOpenEditContact={onOpenEditContact}
-        />
-      ) : null}
+      {isShowDetail ? <ContactDetail selectedContact={selectedContact} isShowDetail={isShowDetail} onShowDetail={onShowDetail} onSelectContactsForDelete={onSelectContactsForDelete} onOpenEditContact={onOpenEditContact} /> : null}
 
-      {isDeleteDialogOpen ? (
-        <ConfirmationModal
-          open={isDeleteDialogOpen}
-          onDeny={setDeleteDialogOpen}
-          onConfirm={onDeleteSelectedContacts}
-          modalTitle={<IntlMessages id='common.deleteItem' />}
-        />
-      ) : null}
+      {isDeleteDialogOpen ? <ConfirmationModal open={isDeleteDialogOpen} onDeny={setDeleteDialogOpen} onConfirm={onDeleteSelectedContacts} modalTitle={<IntlMessages id="common.deleteItem" />} /> : null}
     </>
   );
 };

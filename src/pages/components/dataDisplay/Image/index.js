@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -20,59 +20,26 @@ import CustomPreviewImageSource from '!raw-loader!./CustomPreviewImage';
 const Image = () => {
   return (
     <>
-      <ComponentHeader
-        title='Image'
-        refUrl='https://ant.design/components/image/'
-      />
+      <ComponentHeader title="Image" refUrl="https://ant.design/components/image/" />
       <AppRowContainer>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Basic Usage'
-            description='Click the image to zoom in.'
-            component={BasicUsage}
-            source={BasicUsageSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Basic Usage" description="Click the image to zoom in." component={BasicUsage} source={BasicUsageSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='ProgressiveLoading'
-            description='Progressive when large image loading.'
-            component={ProgressiveLoading}
-            source={ProgressiveLoadingSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="ProgressiveLoading" description="Progressive when large image loading." component={ProgressiveLoading} source={ProgressiveLoadingSource} />
         </Col>
 
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Fault Tolerant'
-            description='Load failed to display image placeholder.'
-            component={FaultTolerant}
-            source={FaultTolerantSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Fault Tolerant" description="Load failed to display image placeholder." component={FaultTolerant} source={FaultTolerantSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='MultipleImagePreview'
-            description='Click the left and right switch buttons to preview multiple images.'
-            component={MultipleImagePreview}
-            source={MultipleImagePreviewSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="MultipleImagePreview" description="Click the left and right switch buttons to preview multiple images." component={MultipleImagePreview} source={MultipleImagePreviewSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='CustomPreviewImage'
-            description='You can set different preview image.'
-            component={CustomPreviewImage}
-            source={CustomPreviewImageSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="CustomPreviewImage" description="You can set different preview image." component={CustomPreviewImage} source={CustomPreviewImageSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Preview From One Image'
-            description='Preview a collection from one image.'
-            component={PreviewFromOneImage}
-            source={PreviewFromOneImageSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Preview From One Image" description="Preview a collection from one image." component={PreviewFromOneImage} source={PreviewFromOneImageSource} />
         </Col>
       </AppRowContainer>
     </>

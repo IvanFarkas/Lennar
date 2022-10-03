@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Upload} from 'antd';
+import { Button, Space, Upload } from 'antd';
 import UploadOutlined from '@ant-design/icons/lib/icons/UploadOutlined';
 
 class CompleteControl extends React.Component {
@@ -37,7 +37,7 @@ class CompleteControl extends React.Component {
       return true;
     });
 
-    this.setState({fileList});
+    this.setState({ fileList });
   };
 
   render() {

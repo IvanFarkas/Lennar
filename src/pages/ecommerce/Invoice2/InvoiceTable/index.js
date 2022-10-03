@@ -6,13 +6,7 @@ import '../../Invoice1/index.style.less';
 import '../index.style.less';
 
 const InvoiceTable = () => {
-  return (
-    <AppTableContainer
-      className='invoice-table'
-      data={invoiceData.products}
-      columns={InvoiceColumns}
-    />
-  );
+  return <AppTableContainer className="invoice-table" data={invoiceData.products} columns={InvoiceColumns} />;
 };
 
 export default InvoiceTable;

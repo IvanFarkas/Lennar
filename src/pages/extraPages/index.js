@@ -1,5 +1,5 @@
 import React from 'react';
-import {RoutePermittedRole} from '../../shared/constants/AppEnums';
+import { RoutePermittedRole } from '../../shared/constants/AppEnums';
 
 const UserProfile = React.lazy(() => import('../profile/UserProfile'));
 const AboutUs = React.lazy(() => import('./AboutUs'));

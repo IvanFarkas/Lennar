@@ -1,7 +1,7 @@
 import React from 'react';
-import {Select} from 'antd';
+import { Select } from 'antd';
 
-const {Option} = Select;
+const { Option } = Select;
 
 const children = [];
 for (let i = 10; i < 36; i++) {
@@ -14,12 +14,8 @@ const SelectTag = () => {
   }
 
   return (
-    <div style={{width: '100%'}}>
-      <Select
-        mode='tags'
-        style={{width: '100%'}}
-        placeholder='Tags Mode'
-        onChange={handleChange}>
+    <div style={{ width: '100%' }}>
+      <Select mode="tags" style={{ width: '100%' }} placeholder="Tags Mode" onChange={handleChange}>
         {children}
       </Select>
     </div>

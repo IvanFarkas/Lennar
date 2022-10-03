@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -12,26 +12,13 @@ import CustomSource from '!raw-loader!./Custom';
 const BackTop = () => {
   return (
     <>
-      <ComponentHeader
-        title='Back Top'
-        refUrl='https://ant.design/components/back-top/'
-      />
+      <ComponentHeader title="Back Top" refUrl="https://ant.design/components/back-top/" />
       <AppRowContainer>
-        <Col xs={24} lg={12} key='back-a'>
-          <AppComponentCard
-            title='Basic'
-            description='The most basic usage.'
-            component={Basic}
-            source={BasicSource}
-          />
+        <Col xs={24} lg={12} key="back-a">
+          <AppComponentCard title="Basic" description="The most basic usage." component={Basic} source={BasicSource} />
         </Col>
-        <Col xs={24} lg={12} key='back-b'>
-          <AppComponentCard
-            title='Custom'
-            description='You can customize the style of the button, just note the size limit: no more than 40px * 40px.'
-            component={Custom}
-            source={CustomSource}
-          />
+        <Col xs={24} lg={12} key="back-b">
+          <AppComponentCard title="Custom" description="You can customize the style of the button, just note the size limit: no more than 40px * 40px." component={Custom} source={CustomSource} />
         </Col>
       </AppRowContainer>
     </>

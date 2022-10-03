@@ -1,11 +1,11 @@
 import React from 'react';
-import {Space, DatePicker} from 'antd';
+import { Space, DatePicker } from 'antd';
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 const CustomizedDateRendering = () => {
   return (
-    <Space direction='vertical' size={12}>
+    <Space direction="vertical" size={12}>
       <DatePicker
         dateRender={(current) => {
           const style = {};
@@ -14,7 +14,7 @@ const CustomizedDateRendering = () => {
             style.borderRadius = '50%';
           }
           return (
-            <div className='ant-picker-cell-inner' style={style}>
+            <div className="ant-picker-cell-inner" style={style}>
               {current.date()}
             </div>
           );
@@ -28,7 +28,7 @@ const CustomizedDateRendering = () => {
             style.borderRadius = '50%';
           }
           return (
-            <div className='ant-picker-cell-inner' style={style}>
+            <div className="ant-picker-cell-inner" style={style}>
               {current.date()}
             </div>
           );

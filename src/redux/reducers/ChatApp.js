@@ -1,13 +1,4 @@
-import {
-  ADD_NEW_MESSAGE,
-  DELETE_MESSAGE,
-  DELETE_USER_MESSAGES,
-  EDIT_MESSAGE,
-  GET_CONNECTIONS_LIST,
-  GET_USER_MESSAGES,
-  SELECT_USER,
-  TOGGLE_CHAT_DRAWER,
-} from '../../shared/constants/ActionTypes';
+import { ADD_NEW_MESSAGE, DELETE_MESSAGE, DELETE_USER_MESSAGES, EDIT_MESSAGE, GET_CONNECTIONS_LIST, GET_USER_MESSAGES, SELECT_USER, TOGGLE_CHAT_DRAWER } from '../../shared/constants/ActionTypes';
 
 const initialState = {
   connectionList: [],
@@ -39,11 +30,7 @@ const chatReducer = (state = initialState, action) => {
     case ADD_NEW_MESSAGE: {
       return {
         ...state,
-        connectionList: state.connectionList.map((item) =>
-          item.id === action.payload.data.user.id
-            ? action.payload.data.user
-            : item,
-        ),
+        connectionList: state.connectionList.map((item) => (item.id === action.payload.data.user.id ? action.payload.data.user : item)),
         userMessages: action.payload.data.userMessages,
       };
     }
@@ -51,11 +38,7 @@ const chatReducer = (state = initialState, action) => {
     case EDIT_MESSAGE: {
       return {
         ...state,
-        connectionList: state.connectionList.map((item) =>
-          item.id === action.payload.data.user.id
-            ? action.payload.data.user
-            : item,
-        ),
+        connectionList: state.connectionList.map((item) => (item.id === action.payload.data.user.id ? action.payload.data.user : item)),
         userMessages: action.payload.data.userMessages,
       };
     }
@@ -63,9 +46,7 @@ const chatReducer = (state = initialState, action) => {
     case DELETE_MESSAGE: {
       return {
         ...state,
-        connectionList: state.connectionList.map((item) =>
-          item.id === action.payload.user.id ? action.payload.user : item,
-        ),
+        connectionList: state.connectionList.map((item) => (item.id === action.payload.user.id ? action.payload.user : item)),
         userMessages: action.payload.userMessages,
       };
     }
@@ -73,9 +54,7 @@ const chatReducer = (state = initialState, action) => {
     case DELETE_USER_MESSAGES: {
       return {
         ...state,
-        connectionList: state.connectionList.map((item) =>
-          item.id === action.payload.id ? action.payload : item,
-        ),
+        connectionList: state.connectionList.map((item) => (item.id === action.payload.id ? action.payload : item)),
         userMessages: null,
         selectedUser: null,
       };
@@ -85,11 +64,7 @@ const chatReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedUser: action.payload,
-        userMessages:
-          state.selectedUser &&
-          state.selectedUser.channelId === action.payload.channelId
-            ? state.userMessages
-            : null,
+        userMessages: state.selectedUser && state.selectedUser.channelId === action.payload.channelId ? state.userMessages : null,
       };
     }
 

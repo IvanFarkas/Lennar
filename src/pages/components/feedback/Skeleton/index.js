@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -20,59 +20,26 @@ class Skeleton extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Skeleton'
-          refUrl='https://ant.design/components/skeleton/'
-        />
+        <ComponentHeader title="Skeleton" refUrl="https://ant.design/components/skeleton/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='Basic'
-              description='Show successful results.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="Basic" description="Show successful results." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='ComplexCombination'
-              description='Complex combination with avatar and multiple paragraphs.'
-              component={ComplexCombination}
-              source={ComplexCombinationSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="ComplexCombination" description="Complex combination with avatar and multiple paragraphs." component={ComplexCombination} source={ComplexCombinationSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='ActiveAnimation'
-              description='Display active animation.'
-              component={ActiveAnimation}
-              source={ActiveAnimationSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="ActiveAnimation" description="Display active animation." component={ActiveAnimation} source={ActiveAnimationSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='ContainsSubComponent'
-              description='Skeleton contains sub component.'
-              component={ContainsSubComponent}
-              source={ContainsSubComponentSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="ContainsSubComponent" description="Skeleton contains sub component." component={ContainsSubComponent} source={ContainsSubComponentSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='Button-Avatar-Input-Image'
-              description='Skeleton Button, Avatar, Input and Image.'
-              component={ButtonAavtarInputImage}
-              source={ButtonAavtarInputImageSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="Button-Avatar-Input-Image" description="Skeleton Button, Avatar, Input and Image." component={ButtonAavtarInputImage} source={ButtonAavtarInputImageSource} />
           </Col>
 
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='ListIcon'
-              description='Skeleton contains sub component.'
-              component={ListIcon}
-              source={ListIconSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="ListIcon" description="Skeleton contains sub component." component={ListIcon} source={ListIconSource} />
           </Col>
         </AppRowContainer>
       </>

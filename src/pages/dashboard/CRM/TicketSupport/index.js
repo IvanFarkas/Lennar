@@ -2,17 +2,14 @@ import React from 'react';
 import TicketSupportTable from './TicketSupportTable';
 import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
 const TicketSupport = (props) => {
-  const {ticketSupportData} = props;
-  const {messages} = useIntl();
+  const { ticketSupportData } = props;
+  const { messages } = useIntl();
 
   return (
-    <AppCard
-      className='no-card-space-ltr-rtl'
-      title={messages['dashboard.latestTicketSupport']}
-      extra={<a href='#'>{messages['common.viewAll']}</a>}>
+    <AppCard className="no-card-space-ltr-rtl" title={messages['dashboard.latestTicketSupport']} extra={<a href="#">{messages['common.viewAll']}</a>}>
       <TicketSupportTable ticketSupportData={ticketSupportData} />
     </AppCard>
   );

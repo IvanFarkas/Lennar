@@ -3,28 +3,15 @@ import PropTypes from 'prop-types';
 import StatGraphs from './StatGraphs';
 import AppCard from '../../../../@crema/core/AppCard';
 import AppSelect from '../../../../@crema/core/AppSelect';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
-const HospitalActivity = ({data}) => {
+const HospitalActivity = ({ data }) => {
   const handleSelectionType = (data) => {
     console.log('data: ', data);
   };
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
-    <AppCard
-      heightFull
-      title={messages['healthCare.hospitalActivity']}
-      extra={
-        <AppSelect
-          menus={[
-            messages['dashboard.thisWeek'],
-            messages['dashboard.lastWeeks'],
-            messages['dashboard.lastMonth'],
-          ]}
-          defaultValue={messages['dashboard.thisWeek']}
-          onChange={handleSelectionType}
-        />
-      }>
+    <AppCard heightFull title={messages['healthCare.hospitalActivity']} extra={<AppSelect menus={[messages['dashboard.thisWeek'], messages['dashboard.lastWeeks'], messages['dashboard.lastMonth']]} defaultValue={messages['dashboard.thisWeek']} onChange={handleSelectionType} />}>
       <StatGraphs data={data} />
     </AppCard>
   );

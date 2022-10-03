@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {
@@ -50,11 +50,7 @@ const CustomRender = () => {
       if (i === labels.length - 1) {
         return (
           <span key={option.value}>
-            {label} (
-            <a onClick={(e) => handleAreaClick(e, label, option)}>
-              {option.code}
-            </a>
-            )
+            {label} (<a onClick={(e) => handleAreaClick(e, label, option)}>{option.code}</a>)
           </span>
         );
       }
@@ -62,12 +58,7 @@ const CustomRender = () => {
     });
   return (
     <Space>
-      <Cascader
-        options={options}
-        defaultValue={['zhejiang', 'hangzhou', 'xihu']}
-        displayRender={displayRender}
-        style={{width: '100%'}}
-      />
+      <Cascader options={options} defaultValue={['zhejiang', 'hangzhou', 'xihu']} displayRender={displayRender} style={{ width: '100%' }} />
     </Space>
   );
 };

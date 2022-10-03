@@ -1,5 +1,5 @@
-import {Rate} from 'antd';
-import {FrownOutlined, MehOutlined, SmileOutlined} from '@ant-design/icons';
+import { Rate } from 'antd';
+import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
 
 const customIcons = {
   1: <FrownOutlined />,
@@ -14,9 +14,9 @@ import React from 'react';
 const CustomizeCharacter = () => {
   return (
     <>
-      <Rate defaultValue={2} character={({index}) => index + 1} />
+      <Rate defaultValue={2} character={({ index }) => index + 1} />
       <br />
-      <Rate defaultValue={3} character={({index}) => customIcons[index + 1]} />
+      <Rate defaultValue={3} character={({ index }) => customIcons[index + 1]} />
     </>
   );
 };

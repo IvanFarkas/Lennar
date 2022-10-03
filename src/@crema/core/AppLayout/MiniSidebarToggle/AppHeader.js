@@ -1,19 +1,19 @@
 import React from 'react';
-import {Dropdown, Input, Layout, Menu} from 'antd';
+import { Dropdown, Input, Layout, Menu } from 'antd';
 import './index.style.less';
-import {AiOutlineMenuFold, AiOutlineMenuUnfold} from 'react-icons/ai';
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import AppLogo from '../components/AppLogo';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppLanguageSwitcher from '../../AppLanguageSwitcher';
 import AppHeaderMessages from '../../AppHeaderMessages';
 import AppNotifications from '../../AppNotifications';
-import {FiMoreVertical} from 'react-icons/fi';
+import { FiMoreVertical } from 'react-icons/fi';
 
-const AppHeader = ({isCollapsed, onToggleSidebar}) => {
-  const {Header} = Layout;
-  const {Search} = Input;
-  const {messages} = useIntl();
+const AppHeader = ({ isCollapsed, onToggleSidebar }) => {
+  const { Header } = Layout;
+  const { Search } = Input;
+  const { messages } = useIntl();
 
   const menuMobile = (
     <Menu>
@@ -24,28 +24,22 @@ const AppHeader = ({isCollapsed, onToggleSidebar}) => {
   );
 
   return (
-    <Header className='app-header-mini-sidebar'>
-      {React.createElement(
-        isCollapsed ? AiOutlineMenuUnfold : AiOutlineMenuFold,
-        {
-          className: 'trigger',
-          onClick: onToggleSidebar,
-        },
-      )}
+    <Header className="app-header-mini-sidebar">
+      {React.createElement(isCollapsed ? AiOutlineMenuUnfold : AiOutlineMenuFold, {
+        className: 'trigger',
+        onClick: onToggleSidebar,
+      })}
       <AppLogo />
 
-      <Search
-        className='header-search-mini-sidebar'
-        placeholder={messages['common.searchHere']}
-      />
-      <div className='app-header-mini-sidebar-sectionDesktop'>
+      <Search className="header-search-mini-sidebar" placeholder={messages['common.searchHere']} />
+      <div className="app-header-mini-sidebar-sectionDesktop">
         <AppLanguageSwitcher />
         <AppHeaderMessages />
         <AppNotifications />
       </div>
-      <div className='app-header-mini-sidebar-section-mobile'>
+      <div className="app-header-mini-sidebar-section-mobile">
         <Dropdown overlay={menuMobile} trigger={['click']}>
-          <a className='ant-dropdown-link' onClick={(e) => e.preventDefault()}>
+          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <FiMoreVertical />
           </a>
         </Dropdown>

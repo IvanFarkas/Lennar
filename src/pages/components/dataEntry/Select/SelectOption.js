@@ -1,7 +1,7 @@
 import React from 'react';
-import {Space, Select} from 'antd';
+import { Space, Select } from 'antd';
 
-const {Option, OptGroup} = Select;
+const { Option, OptGroup } = Select;
 
 const SelectOption = () => {
   function handleChange(value) {
@@ -10,13 +10,13 @@ const SelectOption = () => {
 
   return (
     <Space>
-      <Select defaultValue='lucy' style={{width: 200}} onChange={handleChange}>
-        <OptGroup label='Manager'>
-          <Option value='jack'>Jack</Option>
-          <Option value='lucy'>Lucy</Option>
+      <Select defaultValue="lucy" style={{ width: 200 }} onChange={handleChange}>
+        <OptGroup label="Manager">
+          <Option value="jack">Jack</Option>
+          <Option value="lucy">Lucy</Option>
         </OptGroup>
-        <OptGroup label='Engineer'>
-          <Option value='Yiminghe'>yiminghe</Option>
+        <OptGroup label="Engineer">
+          <Option value="Yiminghe">yiminghe</Option>
         </OptGroup>
       </Select>
     </Space>

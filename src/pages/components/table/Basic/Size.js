@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Table} from 'antd';
+import { Space, Table } from 'antd';
 
 const columns = [
   {
@@ -38,12 +38,12 @@ const data = [
 
 const Size = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <div>
         <h4>Middle size table</h4>
-        <Table columns={columns} dataSource={data} size='middle' />
+        <Table columns={columns} dataSource={data} size="middle" />
         <h4>Small size table</h4>
-        <Table columns={columns} dataSource={data} size='small' />
+        <Table columns={columns} dataSource={data} size="small" />
       </div>
     </Space>
   );

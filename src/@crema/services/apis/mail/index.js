@@ -35,9 +35,7 @@ mock.onGet('/api/mailApp/folder/mail/List').reply((config) => {
     if (params.name === 'starred') {
       folderMailList = mailList.filter((mail) => mail.isStarred);
     } else {
-      const folderId = folderList.find(
-        (folder) => folder.alias === params.name,
-      ).id;
+      const folderId = folderList.find((folder) => folder.alias === params.name).id;
       folderMailList = mailList.filter((mail) => mail.folderValue === folderId);
     }
   } else if (params.type === 'label') {
@@ -46,13 +44,10 @@ mock.onGet('/api/mailApp/folder/mail/List').reply((config) => {
   }
   const index = params.page * 15;
   const total = folderMailList.length;
-  const list =
-    folderMailList.length > 15
-      ? folderMailList.slice(index, index + 15)
-      : folderMailList;
+  const list = folderMailList.length > 15 ? folderMailList.slice(index, index + 15) : folderMailList;
 
   console.log('**********', index, total, list, folderMailList);
-  return [200, {list, total}];
+  return [200, { list, total }];
 });
 
 mock.onPut('/api/mailApp/update/mails').reply((request) => {
@@ -61,7 +56,7 @@ mock.onPut('/api/mailApp/update/mails').reply((request) => {
 });
 
 mock.onPut('/api/mailApp/update/starred').reply((request) => {
-  const {mailIds, status} = JSON.parse(request.data);
+  const { mailIds, status } = JSON.parse(request.data);
   mailList = mailList.map((mail) => {
     if (mailIds.includes(mail.id)) {
       mail.isStarred = !!status;
@@ -75,7 +70,7 @@ mock.onPut('/api/mailApp/update/starred').reply((request) => {
 });
 
 mock.onPut('/api/mailApp/update/folder').reply((request) => {
-  const {mailIds, type} = JSON.parse(request.data);
+  const { mailIds, type } = JSON.parse(request.data);
   mailList = mailList.map((mail) => {
     if (mailIds.includes(mail.id)) {
       mail.folderValue = type;
@@ -88,7 +83,7 @@ mock.onPut('/api/mailApp/update/folder').reply((request) => {
 });
 
 mock.onPut('/api/mailApp/update/label').reply((request) => {
-  const {mailIds, type} = JSON.parse(request.data);
+  const { mailIds, type } = JSON.parse(request.data);
   mailList = mailList.map((mail) => {
     if (mailIds.includes(mail.id)) {
       mail.label = type;
@@ -102,13 +97,13 @@ mock.onPut('/api/mailApp/update/label').reply((request) => {
 });
 
 mock.onPut('/api/mailApp/mail/').reply((request) => {
-  const {mail} = JSON.parse(request.data);
+  const { mail } = JSON.parse(request.data);
   mailList = mailList.map((item) => (item.id === mail.id ? mail : item));
   return [200, mail];
 });
 
 mock.onPut('/api/mailApp/update/read').reply((request) => {
-  const {mailIds, status} = JSON.parse(request.data);
+  const { mailIds, status } = JSON.parse(request.data);
   mailList = mailList.map((mail) => {
     if (mailIds.includes(mail.id)) {
       mail.isRead = status;
@@ -122,7 +117,7 @@ mock.onPut('/api/mailApp/update/read').reply((request) => {
 });
 
 mock.onPost('/api/mailApp/compose').reply((request) => {
-  const {mail} = JSON.parse(request.data);
+  const { mail } = JSON.parse(request.data);
   mailList = [mail, ...mailList];
   return [200, mail];
 });

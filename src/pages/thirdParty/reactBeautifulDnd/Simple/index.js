@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import simpleListData from '../../../../@crema/services/db/extraPages/dndData/simpleListData';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import '../index.style.less';
 
 // a little function to help us with reordering the result
@@ -49,11 +49,7 @@ class Simple extends Component {
       return;
     }
 
-    const items = reorder(
-      this.state.items,
-      result.source.index,
-      result.destination.index,
-    );
+    const items = reorder(this.state.items, result.source.index, result.destination.index);
 
     this.setState({
       items,
@@ -65,39 +61,27 @@ class Simple extends Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Droppable droppableId='droppable'>
+        <Droppable droppableId="droppable">
           {(droppableProvided, droppableSnapshot) => (
-            <div className='simple-dnd'>
+            <div className="simple-dnd">
               <div
-                className='simple-dnd-item'
+                className="simple-dnd-item"
                 ref={droppableProvided.innerRef}
-                style={getListStyle(
-                  droppableSnapshot.isDraggingOver,
-                  this.props.overflow,
-                )}
+                style={getListStyle(droppableSnapshot.isDraggingOver, this.props.overflow)}
                 onScroll={
                   () => {}
                   // eslint-disable-next-line no-console
-                }>
+                }
+              >
                 {this.state.items.map((item, index) => (
-                  <Draggable
-                    key={item.id}
-                    draggableId={item.handle}
-                    index={index}>
+                  <Draggable key={item.id} draggableId={item.handle} index={index}>
                     {(draggableProvided) => (
-                      <div
-                        ref={draggableProvided.innerRef}
-                        {...draggableProvided.draggableProps}
-                        {...draggableProvided.dragHandleProps}>
-                        <div className='simple-dnd-list-item'>
-                          <Avatar
-                            className='beautiful-dnd-avatar'
-                            alt='Remy Sharp'
-                            src={item.image}
-                          />
-                          <div className='beautiful-dnd-content'>
+                      <div ref={draggableProvided.innerRef} {...draggableProvided.draggableProps} {...draggableProvided.dragHandleProps}>
+                        <div className="simple-dnd-list-item">
+                          <Avatar className="beautiful-dnd-avatar" alt="Remy Sharp" src={item.image} />
+                          <div className="beautiful-dnd-content">
                             <h3>{item.name}</h3>
-                            <p className='text-truncate'>@{item.handle}</p>
+                            <p className="text-truncate">@{item.handle}</p>
                           </div>
                         </div>
                       </div>

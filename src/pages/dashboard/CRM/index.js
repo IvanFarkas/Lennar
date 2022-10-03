@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import QuickStats from './QuickStats';
 import TotalRevenue from './TotalRevenue';
 import MonthlyEarning from './MonthlyEarning';
@@ -12,9 +12,9 @@ import WebTraffic from './WebTraffic';
 import Reviews from './Reviews';
 import TicketSupport from './TicketSupport';
 import Statistics from './Statistics';
-import {AppInfoView} from '../../../@crema';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetCrmData} from '../../../redux/actions/Dashboard';
+import { AppInfoView } from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetCrmData } from '../../../redux/actions/Dashboard';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
 
 const CRM = () => {
@@ -24,25 +24,21 @@ const CRM = () => {
     dispatch(onGetCrmData());
   }, [dispatch]);
 
-  const crmData = useSelector(({dashboard}) => dashboard.crmData);
+  const crmData = useSelector(({ dashboard }) => dashboard.crmData);
 
   return (
     <>
-      <AppPageMetadata title='CRM Dashboard' />
+      <AppPageMetadata title="CRM Dashboard" />
       {crmData ? (
         <AppRowContainer delay={150}>
           <Col xs={24} lg={10} key={'b'}>
             <TotalRevenue revenueData={crmData.revenueData} />
           </Col>
-          <Col xs={24} lg={14} className='mb-0' key={'a'}>
+          <Col xs={24} lg={14} className="mb-0" key={'a'}>
             <QuickStats quickStatsData={crmData.quickStatsData} />
           </Col>
           <Col xs={24} lg={16} key={'c'}>
-            <Statistics
-              clientsData={crmData.statisticsGraph.clientsData}
-              incomeData={crmData.statisticsGraph.incomeData}
-              projectData={crmData.statisticsGraph.projectData}
-            />
+            <Statistics clientsData={crmData.statisticsGraph.clientsData} incomeData={crmData.statisticsGraph.incomeData} projectData={crmData.statisticsGraph.projectData} />
           </Col>
           <Col xs={24} lg={8} key={'d'}>
             <MonthlyEarning earningGraphData={crmData.earningGraphData} />

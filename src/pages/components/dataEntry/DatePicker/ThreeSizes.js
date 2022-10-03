@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {Space, DatePicker, Radio} from 'antd';
+import React, { Component } from 'react';
+import { Space, DatePicker, Radio } from 'antd';
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 class ThreeSizes extends Component {
   state = {
@@ -9,22 +9,22 @@ class ThreeSizes extends Component {
   };
 
   handleSizeChange = (e) => {
-    this.setState({size: e.target.value});
+    this.setState({ size: e.target.value });
   };
 
   render() {
-    const {size} = this.state;
+    const { size } = this.state;
     return (
-      <Space direction='vertical' size={12}>
+      <Space direction="vertical" size={12}>
         <Radio.Group value={size} onChange={this.handleSizeChange}>
-          <Radio.Button value='large'>Large</Radio.Button>
-          <Radio.Button value='default'>Default</Radio.Button>
-          <Radio.Button value='small'>Small</Radio.Button>
+          <Radio.Button value="large">Large</Radio.Button>
+          <Radio.Button value="default">Default</Radio.Button>
+          <Radio.Button value="small">Small</Radio.Button>
         </Radio.Group>
         <DatePicker size={size} />
-        <DatePicker size={size} picker='month' />
+        <DatePicker size={size} picker="month" />
         <RangePicker size={size} />
-        <DatePicker size={size} picker='week' />
+        <DatePicker size={size} picker="week" />
       </Space>
     );
   }

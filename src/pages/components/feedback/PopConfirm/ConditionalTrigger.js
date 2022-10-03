@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, message, Popconfirm, Switch} from 'antd';
+import { Space, message, Popconfirm, Switch } from 'antd';
 
 class ConditionalTrigger extends React.Component {
   state = {
@@ -7,19 +7,19 @@ class ConditionalTrigger extends React.Component {
     condition: true, // Whether meet the condition, if not show popconfirm.
   };
   changeCondition = (value) => {
-    this.setState({condition: value});
+    this.setState({ condition: value });
   };
   confirm = () => {
-    this.setState({visible: false});
+    this.setState({ visible: false });
     message.success('Next step.');
   };
   cancel = () => {
-    this.setState({visible: false});
+    this.setState({ visible: false });
     message.error('Click on cancel.');
   };
   handleVisibleChange = (visible) => {
     if (!visible) {
-      this.setState({visible});
+      this.setState({ visible });
       return;
     }
     // Determining condition before show the popconfirm.
@@ -27,22 +27,15 @@ class ConditionalTrigger extends React.Component {
     if (this.state.condition) {
       this.confirm(); // next step
     } else {
-      this.setState({visible}); // show the popconfirm
+      this.setState({ visible }); // show the popconfirm
     }
   };
 
   render() {
     return (
       <Space wrap>
-        <Popconfirm
-          title='Are you sure delete this task?'
-          visible={this.state.visible}
-          onVisibleChange={this.handleVisibleChange}
-          onConfirm={this.confirm}
-          onCancel={this.cancel}
-          okText='Yes'
-          cancelText='No'>
-          <a href='#'>Delete a task</a>
+        <Popconfirm title="Are you sure delete this task?" visible={this.state.visible} onVisibleChange={this.handleVisibleChange} onConfirm={this.confirm} onCancel={this.cancel} okText="Yes" cancelText="No">
+          <a href="#">Delete a task</a>
         </Popconfirm>
         Whether directly execute：
         <Switch defaultChecked onChange={this.changeCondition} />

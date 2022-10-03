@@ -1,6 +1,6 @@
 import React from 'react';
-import {AutoComplete, Space, Input} from 'antd';
-import {UserOutlined} from '@ant-design/icons';
+import { AutoComplete, Space, Input } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 const renderTitle = (title) => (
   <span>
@@ -9,9 +9,10 @@ const renderTitle = (title) => (
       style={{
         float: 'right',
       }}
-      href='https://www.google.com/search?q=antd'
-      target='_blank'
-      rel='noopener noreferrer'>
+      href="https://www.google.com/search?q=antd"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       more
     </a>
   </span>
@@ -24,7 +25,8 @@ const renderItem = (title, count) => ({
       style={{
         display: 'flex',
         justifyContent: 'space-between',
-      }}>
+      }}
+    >
       {title}
       <span>
         <UserOutlined /> {count}
@@ -36,17 +38,11 @@ const renderItem = (title, count) => ({
 const options = [
   {
     label: renderTitle('Libraries'),
-    options: [
-      renderItem('AntDesign', 10000),
-      renderItem('AntDesign UI', 10600),
-    ],
+    options: [renderItem('AntDesign', 10000), renderItem('AntDesign UI', 10600)],
   },
   {
     label: renderTitle('Solutions'),
-    options: [
-      renderItem('AntDesign UI FAQ', 60100),
-      renderItem('AntDesign FAQ', 30010),
-    ],
+    options: [renderItem('AntDesign UI FAQ', 60100), renderItem('AntDesign FAQ', 30010)],
   },
   {
     label: renderTitle('Articles'),
@@ -58,13 +54,14 @@ const LookupPatterns = () => {
   return (
     <Space>
       <AutoComplete
-        dropdownClassName='certain-category-search-dropdown'
+        dropdownClassName="certain-category-search-dropdown"
         dropdownMatchSelectWidth={500}
         style={{
           width: 250,
         }}
-        options={options}>
-        <Input.Search size='large' placeholder='input here' />
+        options={options}
+      >
+        <Input.Search size="large" placeholder="input here" />
       </AutoComplete>
     </Space>
   );

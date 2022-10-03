@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Cascader} from 'antd';
+import React, { Component } from 'react';
+import { Cascader } from 'antd';
 
 const options = [
   {
@@ -41,7 +41,7 @@ class CustomTrigger extends Component {
         {this.state.text}
         &nbsp;
         <Cascader options={options} onChange={this.onChange}>
-          <a href='#'>Change city</a>
+          <a href="#">Change city</a>
         </Cascader>
       </span>
     );

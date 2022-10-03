@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Badge, Calendar} from 'antd';
+import React, { useState } from 'react';
+import { Badge, Calendar } from 'antd';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import ViewEditTodo from './ViewEditTodo';
@@ -9,9 +9,7 @@ import './index.style.less';
 const getListData = (value, data) => {
   let listData = [];
   data.map((task) => {
-    if (
-      value.format('MM-DD-YYYY') === moment(task.startDate).format('MM-DD-YYYY')
-    ) {
+    if (value.format('MM-DD-YYYY') === moment(task.startDate).format('MM-DD-YYYY')) {
       listData = listData.concat({
         color: task.priority ? task.priority.color : '#7c7c7c',
         title: task.title,
@@ -23,7 +21,7 @@ const getListData = (value, data) => {
   return listData || [];
 };
 
-const TaskCalender = ({taskList}) => {
+const TaskCalender = ({ taskList }) => {
   const [isViewTodo, setIsViewToDo] = useState(false);
   const [toDoId, setToDoId] = useState('');
   const [isAddTaskOpen, setAddTaskOpen] = useState(false);
@@ -56,7 +54,7 @@ const TaskCalender = ({taskList}) => {
   const dateCellRender = (value) => {
     const listData = getListData(value, taskList);
     return (
-      <ul className='events'>
+      <ul className="events">
         {listData.map((item) => (
           <li key={item.title}>
             <Badge
@@ -85,21 +83,8 @@ const TaskCalender = ({taskList}) => {
         value={selectedDate}
         onPanelChange={onPanelChange}
       />
-      {isViewTodo ? (
-        <ViewEditTodo
-          toDoId={toDoId}
-          taskList={taskList}
-          showModal={isViewTodo}
-        />
-      ) : null}
-      {isAddTaskOpen ? (
-        <AddNewTask
-          selectedDate={selectedDate}
-          onOpenAddTask={onOpenAddTask}
-          onCloseAddTask={onCloseAddTask}
-          isAddTaskOpen={isAddTaskOpen}
-        />
-      ) : null}
+      {isViewTodo ? <ViewEditTodo toDoId={toDoId} taskList={taskList} showModal={isViewTodo} /> : null}
+      {isAddTaskOpen ? <AddNewTask selectedDate={selectedDate} onOpenAddTask={onOpenAddTask} onCloseAddTask={onCloseAddTask} isAddTaskOpen={isAddTaskOpen} /> : null}
     </>
   );
 };

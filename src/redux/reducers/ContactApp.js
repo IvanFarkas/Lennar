@@ -1,15 +1,4 @@
-import {
-  CREATE_NEW_CONTACT,
-  DELETE_CONTACT,
-  GET_CONTACT_DETAIL,
-  GET_CONTACT_FOLDER_LIST,
-  GET_CONTACT_LABEL_LIST,
-  GET_CONTACT_LIST,
-  TOGGLE_CONTACT_DRAWER,
-  UPDATE_CONTACT_DETAIL,
-  UPDATE_CONTACT_LABEL,
-  UPDATE_CONTACT_STARRED_STATUS,
-} from '../../shared/constants/ActionTypes';
+import { CREATE_NEW_CONTACT, DELETE_CONTACT, GET_CONTACT_DETAIL, GET_CONTACT_FOLDER_LIST, GET_CONTACT_LABEL_LIST, GET_CONTACT_LIST, TOGGLE_CONTACT_DRAWER, UPDATE_CONTACT_DETAIL, UPDATE_CONTACT_LABEL, UPDATE_CONTACT_STARRED_STATUS } from '../../shared/constants/ActionTypes';
 
 const initialState = {
   contactList: [],
@@ -68,19 +57,12 @@ const contactReducer = (state = initialState, action) => {
       let contactIds = action.payload.data.map((contact) => contact.id);
       const updatedList = state.contactList.map((contact) => {
         if (contactIds.includes(contact.id)) {
-          return action.payload.data.find(
-            (selectedContact) => selectedContact.id === contact.id,
-          );
+          return action.payload.data.find((selectedContact) => selectedContact.id === contact.id);
         } else {
           return contact;
         }
       });
-      const filteredList =
-        action.payload.labelName === 'label'
-          ? updatedList.filter(
-              (item) => item.label !== action.payload.labelType,
-            )
-          : updatedList;
+      const filteredList = action.payload.labelName === 'label' ? updatedList.filter((item) => item.label !== action.payload.labelType) : updatedList;
       const total = filteredList.length;
       return {
         ...state,
@@ -93,21 +75,13 @@ const contactReducer = (state = initialState, action) => {
       let contactIds = action.payload.data.map((contact) => contact.id);
       const updatedList = state.contactList.map((contact) => {
         if (contactIds.includes(contact.id)) {
-          return action.payload.data.find(
-            (selectedContact) => selectedContact.id === contact.id,
-          );
+          return action.payload.data.find((selectedContact) => selectedContact.id === contact.id);
         } else {
           return contact;
         }
       });
-      const filteredList =
-        action.payload.folderName === 'starred'
-          ? updatedList.filter((item) => item.isStarred)
-          : updatedList;
-      const total =
-        action.payload.folderName === 'starred'
-          ? state.totalContacts - action.payload.data.length
-          : state.totalContacts;
+      const filteredList = action.payload.folderName === 'starred' ? updatedList.filter((item) => item.isStarred) : updatedList;
+      const total = action.payload.folderName === 'starred' ? state.totalContacts - action.payload.data.length : state.totalContacts;
       return {
         ...state,
         contactList: filteredList,
@@ -125,9 +99,7 @@ const contactReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedContact: action.payload,
-        contactList: state.contactList.map((contact) =>
-          contact.id === action.payload.id ? action.payload : contact,
-        ),
+        contactList: state.contactList.map((contact) => (contact.id === action.payload.id ? action.payload : contact)),
       };
 
     default:

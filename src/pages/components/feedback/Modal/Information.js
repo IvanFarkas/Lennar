@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Modal} from 'antd';
+import { Button, Space, Modal } from 'antd';
 
 const Information = () => {
   function info() {

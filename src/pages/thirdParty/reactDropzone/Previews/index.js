@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { useEffect, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 
 const thumbsContainer = {
   display: 'flex',
@@ -34,7 +34,7 @@ const img = {
 
 const Previews = () => {
   const [files, setFiles] = useState([]);
-  const {getRootProps, getInputProps} = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => {
       setFiles(
@@ -50,7 +50,7 @@ const Previews = () => {
   const thumbs = files.map((file) => (
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>
-        <img alt='preview' src={file.preview} style={img} />
+        <img alt="preview" src={file.preview} style={img} />
       </div>
     </div>
   ));
@@ -64,8 +64,8 @@ const Previews = () => {
   );
 
   return (
-    <section className='container'>
-      <div {...getRootProps({className: 'dropzone'})}>
+    <section className="container">
+      <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <p>Drag n drop some files here, or click to select files</p>
       </div>

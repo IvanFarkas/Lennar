@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import GeneralStats from './GeneralStats';
 import CourseCategories from './CourseCategories';
 import MyProfile from './MyProfile';
@@ -16,9 +16,9 @@ import StudentRankings from './StudentRankings';
 import PromoCard from './PromoCard';
 import AverageGrades from './AverageGrades';
 import RelatedCourses from './RelatedCourses';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetAcademyData} from '../../../redux/actions/Dashboard';
-import {AppInfoView} from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetAcademyData } from '../../../redux/actions/Dashboard';
+import { AppInfoView } from '../../../@crema';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
 
 const Academy = () => {
@@ -28,11 +28,11 @@ const Academy = () => {
     dispatch(onGetAcademyData());
   }, [dispatch]);
 
-  const {academyData} = useSelector(({dashboard}) => dashboard);
+  const { academyData } = useSelector(({ dashboard }) => dashboard);
 
   return (
     <>
-      <AppPageMetadata title='Academy Dashboard' />
+      <AppPageMetadata title="Academy Dashboard" />
       {academyData ? (
         <AppRowContainer>
           {academyData.academicStats.map((item, index) => (
@@ -46,22 +46,17 @@ const Academy = () => {
             </Col>
           ))}
 
-          <Col xs={24} className='mb-0' key={'c'}>
+          <Col xs={24} className="mb-0" key={'c'}>
             <AppRowContainer>
               <Col xs={24} sm={12} lg={6}>
                 <MyProfile profile={academyData.profile} />
               </Col>
 
-              <Col
-                xs={24}
-                sm={12}
-                lg={6}
-                key={'d'}
-                className='aca-notification-root'>
+              <Col xs={24} sm={12} lg={6} key={'d'} className="aca-notification-root">
                 <Notifications notifications={academyData.notifications} />
               </Col>
 
-              <Col xs={24} sm={24} lg={12} className='my-course-root' key={'e'}>
+              <Col xs={24} sm={24} lg={12} className="my-course-root" key={'e'}>
                 <MyCourses courses={academyData.courses} />
               </Col>
             </AppRowContainer>
@@ -77,7 +72,7 @@ const Academy = () => {
             <VideoPromo videoPromo={academyData.videoPromo} />
           </Col>
 
-          <Col xs={24} sm={24} lg={14} xxl={12} className='mb-0' key={'h'}>
+          <Col xs={24} sm={24} lg={14} xxl={12} className="mb-0" key={'h'}>
             <AppRowContainer>
               <Col xs={24}>
                 <MyLearning learningData={academyData.learningData} />

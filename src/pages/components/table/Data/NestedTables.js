@@ -1,5 +1,5 @@
-import {Table, Badge, Menu, Dropdown, Space} from 'antd';
-import {DownOutlined} from '@ant-design/icons';
+import { Table, Badge, Menu, Dropdown, Space } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 
 const menu = (
   <Menu>
@@ -11,25 +11,25 @@ const menu = (
 function NestedTable() {
   const expandedRowRender = () => {
     const columns = [
-      {title: 'Date', dataIndex: 'date', key: 'date'},
-      {title: 'Name', dataIndex: 'name', key: 'name'},
+      { title: 'Date', dataIndex: 'date', key: 'date' },
+      { title: 'Name', dataIndex: 'name', key: 'name' },
       {
         title: 'Status',
         key: 'state',
         render: () => (
           <span>
-            <Badge status='success' />
+            <Badge status="success" />
             Finished
           </span>
         ),
       },
-      {title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum'},
+      { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
       {
         title: 'Action',
         dataIndex: 'operation',
         key: 'operation',
         render: () => (
-          <Space size='middle'>
+          <Space size="middle">
             <a>Pause</a>
             <a>Stop</a>
             <Dropdown overlay={menu}>
@@ -55,13 +55,13 @@ function NestedTable() {
   };
 
   const columns = [
-    {title: 'Name', dataIndex: 'name', key: 'name'},
-    {title: 'Platform', dataIndex: 'platform', key: 'platform'},
-    {title: 'Version', dataIndex: 'version', key: 'version'},
-    {title: 'Upgraded', dataIndex: 'upgradeNum', key: 'upgradeNum'},
-    {title: 'Creator', dataIndex: 'creator', key: 'creator'},
-    {title: 'Date', dataIndex: 'createdAt', key: 'createdAt'},
-    {title: 'Action', key: 'operation', render: () => <a>Publish</a>},
+    { title: 'Name', dataIndex: 'name', key: 'name' },
+    { title: 'Platform', dataIndex: 'platform', key: 'platform' },
+    { title: 'Version', dataIndex: 'version', key: 'version' },
+    { title: 'Upgraded', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+    { title: 'Creator', dataIndex: 'creator', key: 'creator' },
+    { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
+    { title: 'Action', key: 'operation', render: () => <a>Publish</a> },
   ];
 
   const data = [];
@@ -77,14 +77,7 @@ function NestedTable() {
     });
   }
 
-  return (
-    <Table
-      className='components-table-demo-nested'
-      columns={columns}
-      expandable={{expandedRowRender}}
-      dataSource={data}
-    />
-  );
+  return <Table className="components-table-demo-nested" columns={columns} expandable={{ expandedRowRender }} dataSource={data} />;
 }
 
 import React from 'react';

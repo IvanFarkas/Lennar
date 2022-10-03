@@ -1,6 +1,6 @@
 import React from 'react';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 const productInfo = [
   {
@@ -76,13 +76,13 @@ const productInfo = [
 ];
 const ProductInfo = () => {
   return (
-    <div className='product-detail-specification'>
-      <h3 className='product-detail-item-title'>Product Details</h3>
+    <div className="product-detail-specification">
+      <h3 className="product-detail-item-title">Product Details</h3>
       <AppRowContainer>
         {productInfo.map((data) => (
           <>
             <Col xs={8}>
-              <p className='text-secondary'>{data.title}</p>
+              <p className="text-secondary">{data.title}</p>
             </Col>
             <Col xs={16}>
               <p> {data.desc}</p>

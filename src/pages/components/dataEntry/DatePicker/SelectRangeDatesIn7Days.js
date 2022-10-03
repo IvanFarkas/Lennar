@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {DatePicker} from 'antd';
+import React, { useState } from 'react';
+import { DatePicker } from 'antd';
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 const SelectRangeDatesIn7Days = () => {
   const [dates, setDates] = useState([]);
@@ -25,15 +25,7 @@ const SelectRangeDatesIn7Days = () => {
     }
   };
 
-  return (
-    <RangePicker
-      value={hackValue || value}
-      disabledDate={disabledDate}
-      onCalendarChange={(val) => setDates(val)}
-      onChange={(val) => setValue(val)}
-      onOpenChange={onOpenChange}
-    />
-  );
+  return <RangePicker value={hackValue || value} disabledDate={disabledDate} onCalendarChange={(val) => setDates(val)} onChange={(val) => setValue(val)} onOpenChange={onOpenChange} />;
 };
 
 export default SelectRangeDatesIn7Days;

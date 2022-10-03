@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Tooltip} from 'antd';
+import { Tooltip } from 'antd';
 
-const Labels = ({labels}) => {
+const Labels = ({ labels }) => {
   return (
-    <div className='scrum-board-label-flex'>
+    <div className="scrum-board-label-flex">
       {labels.map((label) => {
         return (
-          <Tooltip title={label.name} placement='top' key={label.id}>
-            <span
-              className='scrum-board-label'
-              key={label.id}
-              style={{backgroundColor: label.color}}
-            />
+          <Tooltip title={label.name} placement="top" key={label.id}>
+            <span className="scrum-board-label" key={label.id} style={{ backgroundColor: label.color }} />
           </Tooltip>
         );
       })}

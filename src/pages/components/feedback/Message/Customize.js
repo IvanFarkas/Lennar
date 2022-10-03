@@ -1,11 +1,8 @@
 import React from 'react';
-import {Button, Space, message} from 'antd';
+import { Button, Space, message } from 'antd';
 
 const success = () => {
-  message.success(
-    'This is a prompt message for success, and it will disappear in 10 seconds',
-    10,
-  );
+  message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
 };
 
 const Customize = () => {

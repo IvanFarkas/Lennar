@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Transfer} from 'antd';
+import { Button, Space, Transfer } from 'antd';
 import './index.style.less';
 
 class Advance extends React.Component {
@@ -22,17 +22,14 @@ class Advance extends React.Component {
       }
       mockData.push(data);
     }
-    this.setState({mockData, targetKeys});
+    this.setState({ mockData, targetKeys });
   };
   handleChange = (targetKeys) => {
-    this.setState({targetKeys});
+    this.setState({ targetKeys });
   };
   renderFooter = () => {
     return (
-      <Button
-        size='small'
-        style={{float: 'right', margin: 5}}
-        onClick={this.getMock}>
+      <Button size="small" style={{ float: 'right', margin: 5 }} onClick={this.getMock}>
         reload
       </Button>
     );
@@ -44,7 +41,7 @@ class Advance extends React.Component {
 
   render() {
     return (
-      <Space wrap className='advance-transfer'>
+      <Space wrap className="advance-transfer">
         <Transfer
           dataSource={this.state.mockData}
           showSearch

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Tree} from 'antd';
-import {DownOutlined} from '@ant-design/icons';
+import { Tree } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 
 class CustomizeCollapse extends React.Component {
   onSelect = (selectedKeys, info) => {

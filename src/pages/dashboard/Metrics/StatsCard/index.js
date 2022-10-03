@@ -1,17 +1,13 @@
 import React from 'react';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
 import './index.style.less';
 
-const StatsCard = ({icon, bgColor, text, value}) => {
+const StatsCard = ({ icon, bgColor, text, value }) => {
   return (
-    <AppCard heightFull className='metrics-stats-card'>
-      <Avatar
-        className='metrics-stats-avatar'
-        src={<img src={icon} alt='' />}
-        style={{backgroundColor: bgColor}}
-      />
+    <AppCard heightFull className="metrics-stats-card">
+      <Avatar className="metrics-stats-avatar" src={<img src={icon} alt="" />} style={{ backgroundColor: bgColor }} />
       <p>{text}</p>
       <h3>{value}</h3>
     </AppCard>

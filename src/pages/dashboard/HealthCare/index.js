@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import DrCard from './DrCard';
 import healthCareData from '../../../@crema/services/db/dashboard/healthCare';
 import HospitalActivity from './HospitalActivity';
@@ -17,9 +17,9 @@ import NewPatients from './NewPatients';
 import CancelVisits from './CancelVisits';
 import RecentPatients from './RecentPatients';
 import InfoWidget from './InfoWidget';
-import {AppInfoView} from '../../../@crema';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetHCData} from '../../../redux/actions/Dashboard';
+import { AppInfoView } from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetHCData } from '../../../redux/actions/Dashboard';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
 
 const HealthCare = () => {
@@ -29,11 +29,11 @@ const HealthCare = () => {
     dispatch(onGetHCData());
   }, [dispatch]);
 
-  const {healthCare} = useSelector(({dashboard}) => dashboard);
+  const { healthCare } = useSelector(({ dashboard }) => dashboard);
 
   return (
     <>
-      <AppPageMetadata title='Health Care Dashboard' />
+      <AppPageMetadata title="Health Care Dashboard" />
       {healthCare ? (
         <AppRowContainer>
           {healthCareData.salesState.map((data, index) => (
@@ -47,7 +47,7 @@ const HealthCare = () => {
           <Col xs={24} sm={12} lg={6} key={'c'}>
             <ProfileCard />
           </Col>
-          <Col xs={24} sm={12} lg={6} className='mb-0' key={'d'}>
+          <Col xs={24} sm={12} lg={6} className="mb-0" key={'d'}>
             <AppRowContainer>
               {healthCareData.appointmentCards.map((data, index) => (
                 <Col xs={24} key={'e' + index}>
@@ -65,7 +65,7 @@ const HealthCare = () => {
           <Col xs={24} sm={12} lg={6} key={'h'}>
             <HeartRate data={healthCareData.temperatureCard} />
           </Col>
-          <Col xs={24} sm={12} lg={6} className='mb-0' key={'i'}>
+          <Col xs={24} sm={12} lg={6} className="mb-0" key={'i'}>
             <AppRowContainer>
               {healthCareData.doses.map((data, index) => (
                 <Col xs={24} key={'j' + index}>
@@ -100,7 +100,7 @@ const HealthCare = () => {
           <Col xs={24} sm={24} lg={16} key={'r'}>
             <RecentPatients recentPatients={healthCareData.recentPatients} />
           </Col>
-          <Col xs={24} sm={24} lg={8} className='mb-0' key={'s'}>
+          <Col xs={24} sm={24} lg={8} className="mb-0" key={'s'}>
             <AppRowContainer>
               {healthCareData.bloodCard.map((data, index) => (
                 <Col xs={24} sm={12} key={'t' + index}>

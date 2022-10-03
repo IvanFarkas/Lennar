@@ -4,25 +4,25 @@ import PropTypes from 'prop-types';
 import UserSocialMediaInfo from './UserSocialMediaInfo';
 
 const ListItem = (props) => {
-  const {user} = props;
+  const { user } = props;
 
   return (
-    <div className='user-flat-list-item'>
-      <div className='user-flat-list-item-inner'>
-        <div className='user-flat-list-item-thumb'>
-          <img src={user.image} alt='user' />
+    <div className="user-flat-list-item">
+      <div className="user-flat-list-item-inner">
+        <div className="user-flat-list-item-thumb">
+          <img src={user.image} alt="user" />
         </div>
 
-        <div className='user-flat-list-item-content'>
+        <div className="user-flat-list-item-content">
           <h3>
             <span>{user.name}</span>
             <span>
-              <IntlMessages id='common.in' />
+              <IntlMessages id="common.in" />
             </span>
-            <span className='user-des'>{user.topic}</span>
+            <span className="user-des">{user.topic}</span>
           </h3>
 
-          <p className='user-flat-list-item-para'>{user.information}</p>
+          <p className="user-flat-list-item-para">{user.information}</p>
 
           <UserSocialMediaInfo user={user} />
         </div>

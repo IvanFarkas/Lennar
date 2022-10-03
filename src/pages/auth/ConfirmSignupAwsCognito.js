@@ -1,23 +1,23 @@
-import React, {useState} from 'react';
-import {Button} from 'antd';
+import React, { useState } from 'react';
+import { Button } from 'antd';
 import IntlMessages from '../../@crema/utility/IntlMessages';
 import ReactCodeInput from 'react-code-input';
 import './AuthWrapper.style.less';
-import {useNavigate, useLocation} from 'react-router-dom';
-import {fetchError} from '../../redux/actions';
-import {useIntl} from 'react-intl';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { fetchError } from '../../redux/actions';
+import { useIntl } from 'react-intl';
 import AppPageMetadata from '../../@crema/core/AppPageMetadata';
 import AuthWrapper from './AuthWrapper';
-import {useAuthMethod} from '../../@crema/utility/AuthHooks';
+import { useAuthMethod } from '../../@crema/utility/AuthHooks';
 
 const ConfirmSignupAwsCognito = () => {
-  const {confirmCognitoUserSignup} = useAuthMethod();
+  const { confirmCognitoUserSignup } = useAuthMethod();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   const handleSubmit = () => {
-    const {email} = location.state || {};
+    const { email } = location.state || {};
     if (email && pin.length === 6) {
       confirmCognitoUserSignup(email, pin);
     } else if (!email) {
@@ -31,26 +31,21 @@ const ConfirmSignupAwsCognito = () => {
 
   return (
     <AuthWrapper>
-      <AppPageMetadata title='Confirm Signup' />
+      <AppPageMetadata title="Confirm Signup" />
 
-      <div className='auth-recon-content'>
-        <div className='confirm-content'>
+      <div className="auth-recon-content">
+        <div className="confirm-content">
           <p>
-            <IntlMessages id='common.verificationMessage' />
+            <IntlMessages id="common.verificationMessage" />
           </p>
         </div>
 
-        <div className='confirm-code-input'>
-          <ReactCodeInput
-            type='password'
-            value={pin}
-            fields={6}
-            onChange={(value) => setPin(value)}
-          />
+        <div className="confirm-code-input">
+          <ReactCodeInput type="password" value={pin} fields={6} onChange={(value) => setPin(value)} />
         </div>
 
-        <Button type='primary' className='confirm-btn' onClick={handleSubmit}>
-          <IntlMessages id='common.submit' />
+        <Button type="primary" className="confirm-btn" onClick={handleSubmit}>
+          <IntlMessages id="common.submit" />
         </Button>
       </div>
     </AuthWrapper>

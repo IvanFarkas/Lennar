@@ -1,14 +1,14 @@
-import {Result, Button} from 'antd';
+import { Result, Button } from 'antd';
 
 import React from 'react';
 
 const Warning = () => {
   return (
     <Result
-      status='warning'
-      title='There are some problems with your operation.'
+      status="warning"
+      title="There are some problems with your operation."
       extra={
-        <Button type='primary' key='console'>
+        <Button type="primary" key="console">
           Go Console
         </Button>
       }

@@ -1,18 +1,4 @@
-import {
-  CHANGE_READ_STATUS,
-  COMPOSE_MAIL,
-  GET_CONNECTION_LIST,
-  GET_FOLDER_LIST,
-  GET_LABEL_LIST,
-  GET_MAIL_DETAIL,
-  GET_MAIL_LIST,
-  NULLIFY_MAIL,
-  TOGGLE_MAIL_DRAWER,
-  UPDATE_MAIL_FOLDER,
-  UPDATE_MAIL_LABEL,
-  UPDATE_STARRED_STATUS,
-  UPDATED_MAIL_DETAIL,
-} from '../../shared/constants/ActionTypes';
+import { CHANGE_READ_STATUS, COMPOSE_MAIL, GET_CONNECTION_LIST, GET_FOLDER_LIST, GET_LABEL_LIST, GET_MAIL_DETAIL, GET_MAIL_LIST, NULLIFY_MAIL, TOGGLE_MAIL_DRAWER, UPDATE_MAIL_FOLDER, UPDATE_MAIL_LABEL, UPDATE_STARRED_STATUS, UPDATED_MAIL_DETAIL } from '../../shared/constants/ActionTypes';
 
 const initialState = {
   mailList: [],
@@ -61,10 +47,7 @@ const mailReducer = (state = initialState, action) => {
       const path = action.payload.pathname.split('/');
       let newMailList;
       let newTotalMails;
-      if (
-        path[path.length - 2] === 'folder' &&
-        path[path.length - 1] === 'sent'
-      ) {
+      if (path[path.length - 2] === 'folder' && path[path.length - 1] === 'sent') {
         newMailList = [action.payload.data, ...state.mailList];
         newTotalMails = state.totalMails + 1;
       } else {
@@ -79,9 +62,7 @@ const mailReducer = (state = initialState, action) => {
     }
 
     case UPDATE_MAIL_FOLDER: {
-      const updatedList = state.mailList.filter(
-        (mail) => !action.payload.includes(mail.id),
-      );
+      const updatedList = state.mailList.filter((mail) => !action.payload.includes(mail.id));
       return {
         ...state,
         mailList: updatedList,
@@ -93,9 +74,7 @@ const mailReducer = (state = initialState, action) => {
       let mailIds = action.payload.map((mail) => mail.id);
       const updatedList = state.mailList.map((mail) => {
         if (mailIds.includes(mail.id)) {
-          return action.payload.find(
-            (selectedMail) => selectedMail.id === mail.id,
-          );
+          return action.payload.find((selectedMail) => selectedMail.id === mail.id);
         } else {
           return mail;
         }
@@ -110,9 +89,7 @@ const mailReducer = (state = initialState, action) => {
       let mailIds = action.payload.map((mail) => mail.id);
       const updatedList = state.mailList.map((mail) => {
         if (mailIds.includes(mail.id)) {
-          return action.payload.find(
-            (selectedMail) => selectedMail.id === mail.id,
-          );
+          return action.payload.find((selectedMail) => selectedMail.id === mail.id);
         } else {
           return mail;
         }
@@ -127,21 +104,13 @@ const mailReducer = (state = initialState, action) => {
       let mailIds = action.payload.data.map((mail) => mail.id);
       const updatedList = state.mailList.map((mail) => {
         if (mailIds.includes(mail.id)) {
-          return action.payload.data.find(
-            (selectedMail) => selectedMail.id === mail.id,
-          );
+          return action.payload.data.find((selectedMail) => selectedMail.id === mail.id);
         } else {
           return mail;
         }
       });
-      const filteredList =
-        action.payload.folderName === 'starred'
-          ? updatedList.filter((item) => item.isStarred)
-          : updatedList;
-      const total =
-        action.payload.folderName === 'starred'
-          ? state.totalMails - action.payload.data.length
-          : state.totalMails;
+      const filteredList = action.payload.folderName === 'starred' ? updatedList.filter((item) => item.isStarred) : updatedList;
+      const total = action.payload.folderName === 'starred' ? state.totalMails - action.payload.data.length : state.totalMails;
       return {
         ...state,
         mailList: filteredList,

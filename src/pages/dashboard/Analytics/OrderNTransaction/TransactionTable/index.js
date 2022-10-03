@@ -4,7 +4,7 @@ import AppTableContainer from '../../../../../@crema/core/AppTableContainer';
 import '../index.style.less';
 import AppMenu from '../../../../../@crema/core/AppMenu';
 
-const TransactionTable = ({transactionData}) => {
+const TransactionTable = ({ transactionData }) => {
   const getPaymentTypeColor = (paymentType) => {
     switch (paymentType) {
       case 'COD': {
@@ -37,7 +37,7 @@ const TransactionTable = ({transactionData}) => {
       title: 'OrderID',
       dataIndex: 'id',
       key: 'id',
-      render: (id) => <span className='order-id'>{id}</span>,
+      render: (id) => <span className="order-id">{id}</span>,
     },
     {
       title: 'Customer',
@@ -57,7 +57,8 @@ const TransactionTable = ({transactionData}) => {
         <span
           style={{
             color: getPaymentTypeColor(paymentType),
-          }}>
+          }}
+        >
           {paymentType}
         </span>
       ),
@@ -72,7 +73,8 @@ const TransactionTable = ({transactionData}) => {
             color: getPaymentStatusColor(status),
             backgroundColor: getPaymentStatusColor(status) + '44',
           }}
-          className='badge'>
+          className="badge"
+        >
           {status}
         </span>
       ),
@@ -86,14 +88,7 @@ const TransactionTable = ({transactionData}) => {
     },
   ];
 
-  return (
-    <AppTableContainer
-      className='order-transaction-table'
-      hoverColor
-      data={transactionData}
-      columns={columns}
-    />
-  );
+  return <AppTableContainer className="order-transaction-table" hoverColor data={transactionData} columns={columns} />;
 };
 
 export default TransactionTable;

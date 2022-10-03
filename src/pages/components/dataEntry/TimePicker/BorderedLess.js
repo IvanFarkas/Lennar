@@ -1,6 +1,6 @@
-import {TimePicker} from 'antd';
+import { TimePicker } from 'antd';
 
-const {RangePicker} = TimePicker;
+const { RangePicker } = TimePicker;
 
 import React from 'react';
 

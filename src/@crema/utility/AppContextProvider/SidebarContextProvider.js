@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
 
@@ -9,22 +9,12 @@ export const useSidebarContext = () => useContext(SidebarContext);
 
 export const useSidebarActionsContext = () => useContext(SidebarActionsContext);
 
-const SidebarContextProvider = ({children}) => {
-  const [menuStyle, updateMenuStyle] = useState(
-    defaultConfig.sidebar.menuStyle,
-  );
-  const [sidebarColorSet, updateSidebarColorSet] = useState(
-    defaultConfig.sidebar.colorSet,
-  );
-  const [isSidebarBgImage, setSidebarBgImage] = useState(
-    defaultConfig.sidebar.isSidebarBgImage,
-  );
-  const [sidebarBgImage, updateSidebarBgImage] = useState(
-    defaultConfig.sidebar.sidebarBgImage,
-  );
-  const [sidebarMenuSelectedColor, updateSidebarMenuSelectedColor] = useState(
-    defaultConfig.sidebar.sidebarMenuSelectedColor,
-  );
+const SidebarContextProvider = ({ children }) => {
+  const [menuStyle, updateMenuStyle] = useState(defaultConfig.sidebar.menuStyle);
+  const [sidebarColorSet, updateSidebarColorSet] = useState(defaultConfig.sidebar.colorSet);
+  const [isSidebarBgImage, setSidebarBgImage] = useState(defaultConfig.sidebar.isSidebarBgImage);
+  const [sidebarBgImage, updateSidebarBgImage] = useState(defaultConfig.sidebar.sidebarBgImage);
+  const [sidebarMenuSelectedColor, updateSidebarMenuSelectedColor] = useState(defaultConfig.sidebar.sidebarMenuSelectedColor);
 
   return (
     <SidebarContext.Provider
@@ -34,7 +24,8 @@ const SidebarContextProvider = ({children}) => {
         isSidebarBgImage,
         sidebarBgImage,
         sidebarMenuSelectedColor,
-      }}>
+      }}
+    >
       <SidebarActionsContext.Provider
         value={{
           updateMenuStyle,
@@ -42,7 +33,8 @@ const SidebarContextProvider = ({children}) => {
           setSidebarBgImage,
           updateSidebarBgImage,
           updateSidebarMenuSelectedColor,
-        }}>
+        }}
+      >
         {children}
       </SidebarActionsContext.Provider>
     </SidebarContext.Provider>

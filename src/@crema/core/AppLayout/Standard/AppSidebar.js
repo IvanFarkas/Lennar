@@ -5,11 +5,11 @@ import UserInfo from '../components/UserInfo';
 import AppScrollbar from '../../AppScrollbar';
 import clsx from 'clsx';
 import AppVerticalMenu from '../components/AppVerticalNav';
-import {useSidebarContext} from '../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../utility/AppContextProvider/SidebarContextProvider';
 import MainSidebar from '../components/MainSidebar';
 
-const AppSidebar = ({isCollapsed}) => {
-  const {isSidebarBgImage} = useSidebarContext();
+const AppSidebar = ({ isCollapsed }) => {
+  const { isSidebarBgImage } = useSidebarContext();
 
   return (
     <MainSidebar
@@ -17,12 +17,11 @@ const AppSidebar = ({isCollapsed}) => {
         'standard-sidebar-img-background': isSidebarBgImage,
       })}
       collapsible
-      breakpoint='xl'
-      collapsed={isCollapsed}>
+      breakpoint="xl"
+      collapsed={isCollapsed}
+    >
       <UserInfo hasColor />
-      <AppScrollbar
-        className='app-standard-sidebar-scrollbar'
-        scrollToTop={false}>
+      <AppScrollbar className="app-standard-sidebar-scrollbar" scrollToTop={false}>
         <AppVerticalMenu />
       </AppScrollbar>
     </MainSidebar>

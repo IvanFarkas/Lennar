@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // In firefox, setTimeout with duration 0 too short for browser notice the changes in dom
@@ -44,18 +44,18 @@ class Expand extends Component {
   getClientHeight = () => this.refWrapper.scrollHeight;
 
   getDefaultExpandStyle = () => {
-    const {status} = this.state;
+    const { status } = this.state;
 
     switch (status) {
       case PHASE.OPENING:
       case PHASE.CLOSE:
       case PHASE.CLOSED:
-        return {height: 0, opacity: 0, overflow: 'hidden'};
+        return { height: 0, opacity: 0, overflow: 'hidden' };
       case PHASE.OPENED:
       case PHASE.CLOSING:
-        return {height: this.getClientHeight(), opacity: 1, overflow: 'hidden'};
+        return { height: this.getClientHeight(), opacity: 1, overflow: 'hidden' };
       default:
-        return {height: 'auto', opacity: 1, overflow: 'unset'};
+        return { height: 'auto', opacity: 1, overflow: 'unset' };
     }
   };
 
@@ -64,8 +64,7 @@ class Expand extends Component {
     ...this.props.styles[GROUP[this.state.status]],
   });
 
-  getTransition = (attribute) =>
-    `${attribute} ${this.props.duration}ms ${this.props.easing}`;
+  getTransition = (attribute) => `${attribute} ${this.props.duration}ms ${this.props.easing}`;
 
   getStyle() {
     const transition = this.props.transitions.map(this.getTransition).join(',');
@@ -76,7 +75,7 @@ class Expand extends Component {
     };
   }
 
-  updateStatus = (status) => this.setState({status});
+  updateStatus = (status) => this.setState({ status });
 
   delay = (fn, time) => {
     this.timeout = setTimeout(fn, time);
@@ -89,7 +88,7 @@ class Expand extends Component {
   };
 
   transit = (entering, entered, enter) => {
-    const {duration} = this.props;
+    const { duration } = this.props;
 
     this.updateStatus(entering);
 
@@ -117,7 +116,7 @@ class Expand extends Component {
   };
 
   render() {
-    const {className, children, tag: Tag} = this.props;
+    const { className, children, tag: Tag } = this.props;
 
     const childProps = {
       className,

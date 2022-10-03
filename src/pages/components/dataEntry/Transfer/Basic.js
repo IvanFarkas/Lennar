@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Transfer} from 'antd';
+import { Space, Transfer } from 'antd';
 import './index.style.less';
 
 const mockData = [];
@@ -12,9 +12,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const targetKeys = mockData
-  .filter((item) => +item.key % 3 > 1)
-  .map((item) => item.key);
+const targetKeys = mockData.filter((item) => +item.key % 3 > 1).map((item) => item.key);
 
 class Basic extends React.Component {
   state = {
@@ -23,7 +21,7 @@ class Basic extends React.Component {
   };
 
   handleChange = (nextTargetKeys, direction, moveKeys) => {
-    this.setState({targetKeys: nextTargetKeys});
+    this.setState({ targetKeys: nextTargetKeys });
 
     console.log('targetKeys: ', targetKeys);
     console.log('direction: ', direction);
@@ -48,16 +46,7 @@ class Basic extends React.Component {
     const state = this.state;
     return (
       <Space wrap>
-        <Transfer
-          dataSource={mockData}
-          titles={['Source', 'Target']}
-          targetKeys={state.targetKeys}
-          selectedKeys={state.selectedKeys}
-          onChange={this.handleChange}
-          onSelectChange={this.handleSelectChange}
-          onScroll={this.handleScroll}
-          render={(item) => item.title}
-        />
+        <Transfer dataSource={mockData} titles={['Source', 'Target']} targetKeys={state.targetKeys} selectedKeys={state.selectedKeys} onChange={this.handleChange} onSelectChange={this.handleSelectChange} onScroll={this.handleScroll} render={(item) => item.title} />
       </Space>
     );
   }

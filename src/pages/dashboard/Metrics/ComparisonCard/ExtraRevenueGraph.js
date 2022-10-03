@@ -1,10 +1,10 @@
 import React from 'react';
-import {Area, AreaChart, ResponsiveContainer} from 'recharts';
+import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-const ExtraRevenueGraph = ({data}) => {
+const ExtraRevenueGraph = ({ data }) => {
   return (
-    <ResponsiveContainer height={200} width='100%'>
+    <ResponsiveContainer height={200} width="100%">
       <AreaChart
         width={500}
         height={100}
@@ -14,14 +14,9 @@ const ExtraRevenueGraph = ({data}) => {
           right: 0,
           left: 0,
           bottom: 0,
-        }}>
-        <Area
-          type='monotone'
-          dataKey='revenue'
-          stroke='#4C51BF'
-          fill='#4C51BF'
-          strokeWidth={4}
-        />
+        }}
+      >
+        <Area type="monotone" dataKey="revenue" stroke="#4C51BF" fill="#4C51BF" strokeWidth={4} />
       </AreaChart>
     </ResponsiveContainer>
   );

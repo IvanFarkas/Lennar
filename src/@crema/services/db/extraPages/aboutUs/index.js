@@ -1,29 +1,29 @@
 import React from 'react';
-import {EditOutlined, CameraOutlined, SearchOutlined} from '@ant-design/icons';
+import { EditOutlined, CameraOutlined, SearchOutlined } from '@ant-design/icons';
 import IntlMessages from '../../../../utility/IntlMessages';
-import {blue, cyan, red} from '@ant-design/colors';
+import { blue, cyan, red } from '@ant-design/colors';
 
 export const aboutUsData = [
   {
     alias: 'branding',
-    title: <IntlMessages id='extra.branding' />,
+    title: <IntlMessages id="extra.branding" />,
     avatarColor: cyan[7],
     icon: <EditOutlined />,
-    content: <IntlMessages id='extra.brandingContent' />,
+    content: <IntlMessages id="extra.brandingContent" />,
   },
   {
     alias: 'photography',
-    title: <IntlMessages id='extra.photography' />,
+    title: <IntlMessages id="extra.photography" />,
     avatarColor: red[5],
     icon: <CameraOutlined />,
-    content: <IntlMessages id='extra.brandingContent' />,
+    content: <IntlMessages id="extra.brandingContent" />,
   },
   {
     alias: 'seo',
-    title: <IntlMessages id='extra.seo' />,
+    title: <IntlMessages id="extra.seo" />,
     avatarColor: blue[5],
     icon: <SearchOutlined />,
-    content: <IntlMessages id='extra.brandingContent' />,
+    content: <IntlMessages id="extra.brandingContent" />,
   },
 ];
 

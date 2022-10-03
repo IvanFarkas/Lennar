@@ -1,19 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import {useDropzone} from 'react-dropzone';
-import {PaperClipOutlined, SendOutlined} from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
+import { PaperClipOutlined, SendOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
-import {useIntl} from 'react-intl';
-import {MessageType} from '../../../../../@crema/services/db/apps/chat/connectionList';
-import {Button, Input} from 'antd';
-import {generateUniqueID} from '../../../../../@crema/utility/Utils';
+import { useIntl } from 'react-intl';
+import { MessageType } from '../../../../../@crema/services/db/apps/chat/connectionList';
+import { Button, Input } from 'antd';
+import { generateUniqueID } from '../../../../../@crema/utility/Utils';
 
-const AddNewMessage = ({
-  sendFileMessage,
-  onSendMessage,
-  currentMessage = '',
-}) => {
+const AddNewMessage = ({ sendFileMessage, onSendMessage, currentMessage = '' }) => {
   const [message, setMessage] = useState(currentMessage);
-  const {getRootProps, getInputProps} = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     multiple: true,
     onDrop: (acceptedFiles) => {
       sendFileMessage({
@@ -49,16 +45,17 @@ const AddNewMessage = ({
     }
   };
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
-    <div className='add-new-message'>
-      <div className='add-new-message-action add-new-message-action-first'>
+    <div className="add-new-message">
+      <div className="add-new-message-action add-new-message-action-first">
         {message === '' ? (
           <Button
             {...getRootProps({
               className: 'message-btn dropzone',
-            })}>
+            })}
+          >
             <input {...getInputProps()} />
             <PaperClipOutlined />
           </Button>
@@ -73,8 +70,8 @@ const AddNewMessage = ({
         onKeyPress={onKeyPress}
       />
 
-      <div className='add-new-message-action'>
-        <Button className='message-btn' onClick={onClickSendMessage}>
+      <div className="add-new-message-action">
+        <Button className="message-btn" onClick={onClickSendMessage}>
           <SendOutlined />
         </Button>
       </div>

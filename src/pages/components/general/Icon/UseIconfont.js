@@ -1,4 +1,4 @@
-import {createFromIconfontCN} from '@ant-design/icons';
+import { createFromIconfontCN } from '@ant-design/icons';
 import React from 'react';
 
 const IconFont = createFromIconfontCN({
@@ -7,10 +7,10 @@ const IconFont = createFromIconfontCN({
 
 const UseIconfont = () => {
   return (
-    <div style={{display: 'flex', gap: 10}}>
-      <IconFont type='icon-tuichu' />
-      <IconFont type='icon-facebook' />
-      <IconFont type='icon-twitter' />
+    <div style={{ display: 'flex', gap: 10 }}>
+      <IconFont type="icon-tuichu" />
+      <IconFont type="icon-facebook" />
+      <IconFont type="icon-twitter" />
     </div>
   );
 };

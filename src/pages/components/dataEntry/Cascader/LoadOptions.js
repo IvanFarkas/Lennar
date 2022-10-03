@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {Cascader} from 'antd';
+import { Cascader } from 'antd';
 
 const optionLists = [
   {
@@ -43,14 +43,7 @@ const LoadOptions = () => {
     }, 1000);
   };
 
-  return (
-    <Cascader
-      options={options}
-      loadData={loadData}
-      onChange={onChange}
-      changeOnSelect
-    />
-  );
+  return <Cascader options={options} loadData={loadData} onChange={onChange} changeOnSelect />;
 };
 
 export default LoadOptions;

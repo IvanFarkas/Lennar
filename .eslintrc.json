@@ -8,18 +8,32 @@
       "jsx": true //Enable JSX
     }
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
   "plugins": ["prettier", "react"],
   "rules": {
     // add rules
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/display-name": "off",
-    "prettier/prettier": "warn", //A warning will pop up when the prettier setting is not met
+    "prettier/prettier": [
+      "warn",
+      {
+        "printWidth": 400,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "htmlWhitespaceSensitivity": "css",
+        "insertPragma": false,
+        "jsxBracketSameLine": false,
+        "jsxSingleQuote": false,
+        "proseWrap": "always",
+        "requirePragma": false
+      }
+    ], //A warning will pop up when the prettier setting is not met
     "react/react-in-jsx-scope": "off" // You must use the import React rule to close jsx files
   },
   "env": {

@@ -1,25 +1,24 @@
-import React, {useCallback, useRef, useState} from 'react';
-import {Table} from 'antd';
-import {DndProvider, useDrag, useDrop} from 'react-dnd';
-import {HTML5Backend} from 'react-dnd-html5-backend';
+import React, { useCallback, useRef, useState } from 'react';
+import { Table } from 'antd';
+import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import update from 'immutability-helper';
 import PropTypes from 'prop-types';
 
 const type = 'DraggableBodyRow';
 
-const DraggableBodyRow = ({index, moveRow, className, style, ...restProps}) => {
+const DraggableBodyRow = ({ index, moveRow, className, style, ...restProps }) => {
   const ref = useRef();
-  const [{isOver, dropClassName}, drop] = useDrop({
+  const [{ isOver, dropClassName }, drop] = useDrop({
     accept: type,
     collect: (monitor) => {
-      const {index: dragIndex} = monitor.getItem() || {};
+      const { index: dragIndex } = monitor.getItem() || {};
       if (dragIndex === index) {
         return {};
       }
       return {
         isOver: monitor.isOver(),
-        dropClassName:
-          dragIndex < index ? ' drop-over-downward' : ' drop-over-upward',
+        dropClassName: dragIndex < index ? ' drop-over-downward' : ' drop-over-upward',
       };
     },
     drop: (item) => {
@@ -28,21 +27,14 @@ const DraggableBodyRow = ({index, moveRow, className, style, ...restProps}) => {
   });
   const [, drag] = useDrag({
     type,
-    item: {index},
+    item: { index },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
   });
   drop(drag(ref));
 
-  return (
-    <tr
-      ref={ref}
-      className={`${className}${isOver ? dropClassName : ''}`}
-      style={{cursor: 'move', ...style}}
-      {...restProps}
-    />
-  );
+  return <tr ref={ref} className={`${className}${isOver ? dropClassName : ''}`} style={{ cursor: 'move', ...style }} {...restProps} />;
 };
 
 const columns = [

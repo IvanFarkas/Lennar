@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -16,42 +16,19 @@ import CountdownDemoCardSource from '!raw-loader!./CountdownDemoCard';
 const Statistic = () => {
   return (
     <>
-      <ComponentHeader
-        title='Statistic'
-        refUrl='https://ant.design/components/statistic/'
-      />
+      <ComponentHeader title="Statistic" refUrl="https://ant.design/components/statistic/" />
       <AppRowContainer>
-        <Col xs={24} xl={12} key='tab-a'>
-          <AppComponentCard
-            title='Unit'
-            description='Add unit through prefix and suffix.'
-            component={Unit}
-            source={UnitSource}
-          />
+        <Col xs={24} xl={12} key="tab-a">
+          <AppComponentCard title="Unit" description="Add unit through prefix and suffix." component={Unit} source={UnitSource} />
         </Col>
-        <Col xs={24} xl={12} key='tab-a'>
-          <AppComponentCard
-            title='InCard'
-            description='Display statistic data in Card.'
-            component={InCard}
-            source={InCardSource}
-          />
+        <Col xs={24} xl={12} key="tab-a">
+          <AppComponentCard title="InCard" description="Display statistic data in Card." component={InCard} source={InCardSource} />
         </Col>
-        <Col xs={24} xl={12} key='tab-a'>
-          <AppComponentCard
-            title='Basic'
-            description='Simplest Usage.'
-            component={Basic}
-            source={BasicSource}
-          />
+        <Col xs={24} xl={12} key="tab-a">
+          <AppComponentCard title="Basic" description="Simplest Usage." component={Basic} source={BasicSource} />
         </Col>
-        <Col xs={24} xl={12} key='tab-a'>
-          <AppComponentCard
-            title='Count down Demo Card'
-            description='Countdown component.'
-            component={CountdownDemoCard}
-            source={CountdownDemoCardSource}
-          />
+        <Col xs={24} xl={12} key="tab-a">
+          <AppComponentCard title="Count down Demo Card" description="Countdown component." component={CountdownDemoCard} source={CountdownDemoCardSource} />
         </Col>
       </AppRowContainer>
     </>

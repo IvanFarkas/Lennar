@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Radio} from 'antd';
+import { Space, Radio } from 'antd';
 
 const StyleRadio = () => {
   function onChange(e) {
@@ -7,30 +7,26 @@ const StyleRadio = () => {
   }
 
   return (
-    <Space direction='vertical'>
-      <Radio.Group onChange={onChange} defaultValue='a'>
-        <Radio.Button value='a'>Hangzhou</Radio.Button>
-        <Radio.Button value='b'>Shanghai</Radio.Button>
-        <Radio.Button value='c'>Beijing</Radio.Button>
-        <Radio.Button value='d'>Chengdu</Radio.Button>
+    <Space direction="vertical">
+      <Radio.Group onChange={onChange} defaultValue="a">
+        <Radio.Button value="a">Hangzhou</Radio.Button>
+        <Radio.Button value="b">Shanghai</Radio.Button>
+        <Radio.Button value="c">Beijing</Radio.Button>
+        <Radio.Button value="d">Chengdu</Radio.Button>
       </Radio.Group>
-      <Radio.Group onChange={onChange} defaultValue='a' style={{marginTop: 16}}>
-        <Radio.Button value='a'>Hangzhou</Radio.Button>
-        <Radio.Button value='b' disabled>
+      <Radio.Group onChange={onChange} defaultValue="a" style={{ marginTop: 16 }}>
+        <Radio.Button value="a">Hangzhou</Radio.Button>
+        <Radio.Button value="b" disabled>
           Shanghai
         </Radio.Button>
-        <Radio.Button value='c'>Beijing</Radio.Button>
-        <Radio.Button value='d'>Chengdu</Radio.Button>
+        <Radio.Button value="c">Beijing</Radio.Button>
+        <Radio.Button value="d">Chengdu</Radio.Button>
       </Radio.Group>
-      <Radio.Group
-        disabled
-        onChange={onChange}
-        defaultValue='a'
-        style={{marginTop: 16}}>
-        <Radio.Button value='a'>Hangzhou</Radio.Button>
-        <Radio.Button value='b'>Shanghai</Radio.Button>
-        <Radio.Button value='c'>Beijing</Radio.Button>
-        <Radio.Button value='d'>Chengdu</Radio.Button>
+      <Radio.Group disabled onChange={onChange} defaultValue="a" style={{ marginTop: 16 }}>
+        <Radio.Button value="a">Hangzhou</Radio.Button>
+        <Radio.Button value="b">Shanghai</Radio.Button>
+        <Radio.Button value="c">Beijing</Radio.Button>
+        <Radio.Button value="d">Chengdu</Radio.Button>
       </Radio.Group>
     </Space>
   );

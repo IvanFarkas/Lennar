@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Button, Space, Checkbox} from 'antd';
+import React, { Component } from 'react';
+import { Button, Space, Checkbox } from 'antd';
 
 class ControlledCheckbox extends Component {
   state = {
@@ -7,10 +7,10 @@ class ControlledCheckbox extends Component {
     disabled: false,
   };
   toggleChecked = () => {
-    this.setState({checked: !this.state.checked});
+    this.setState({ checked: !this.state.checked });
   };
   toggleDisable = () => {
-    this.setState({disabled: !this.state.disabled});
+    this.setState({ disabled: !this.state.disabled });
   };
   onChange = (e) => {
     console.log('checked = ', e.target.checked);
@@ -20,28 +20,19 @@ class ControlledCheckbox extends Component {
   };
 
   render() {
-    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${
-      this.state.disabled ? 'Disabled' : 'Enabled'
-    }`;
+    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${this.state.disabled ? 'Disabled' : 'Enabled'}`;
     return (
       <Space wrap>
-        <p style={{marginBottom: '20px'}}>
-          <Checkbox
-            checked={this.state.checked}
-            disabled={this.state.disabled}
-            onChange={this.onChange}>
+        <p style={{ marginBottom: '20px' }}>
+          <Checkbox checked={this.state.checked} disabled={this.state.disabled} onChange={this.onChange}>
             {label}
           </Checkbox>
         </p>
         <p>
-          <Button type='primary' size='small' onClick={this.toggleChecked}>
+          <Button type="primary" size="small" onClick={this.toggleChecked}>
             {!this.state.checked ? 'Check' : 'Uncheck'}
           </Button>
-          <Button
-            style={{marginLeft: '10px'}}
-            type='primary'
-            size='small'
-            onClick={this.toggleDisable}>
+          <Button style={{ marginLeft: '10px' }} type="primary" size="small" onClick={this.toggleDisable}>
             {!this.state.disabled ? 'Disable' : 'Enable'}
           </Button>
         </p>

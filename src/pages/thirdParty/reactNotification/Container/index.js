@@ -1,10 +1,10 @@
 import React from 'react';
-import {store} from 'react-notifications-component';
-import {Button} from 'antd';
+import { store } from 'react-notifications-component';
+import { Button } from 'antd';
 import '../index.style.less';
 
 import notification from '../helpers/notification';
-import {getMessage, getTitle, getType} from '../helpers/randomize';
+import { getMessage, getTitle, getType } from '../helpers/randomize';
 
 export default class ContainerExample extends React.Component {
   add = (container) => {
@@ -22,34 +22,34 @@ export default class ContainerExample extends React.Component {
 
   render() {
     return (
-      <div className='react-notification'>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('top-left')}>
+      <div className="react-notification">
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('top-left')}>
             Top Left
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('top-right')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('top-right')}>
             Top Right
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('top-center')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('top-center')}>
             Top Center
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('bottom-left')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('bottom-left')}>
             Bottom Left
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('bottom-right')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('bottom-right')}>
             Bottom Right
           </Button>
         </div>
-        <div className='react-notification-item'>
-          <Button type='primary' onClick={() => this.add('bottom-center')}>
+        <div className="react-notification-item">
+          <Button type="primary" onClick={() => this.add('bottom-center')}>
             Bottom Center
           </Button>
         </div>

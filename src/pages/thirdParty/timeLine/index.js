@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 import ComponentCard from '@crema/core/AppComponentCard';
 import ComponentHeader from '@crema/core/AppComponentHeader';
@@ -14,28 +14,14 @@ import AppRowContainer from '../../../@crema/core/AppRowContainer/AppRowSimpleCo
 const Timeline = () => {
   return (
     <>
-      <ComponentHeader
-        title='Timeline'
-        description='A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.'
-        refUrl='https://cookpete.com/react-player/'
-      />
+      <ComponentHeader title="Timeline" description="A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion." refUrl="https://cookpete.com/react-player/" />
 
       <AppRowContainer>
         <Col span={24}>
-          <ComponentCard
-            title='Custom'
-            maxHeight={700}
-            component={Custom}
-            source={CustomSource}
-          />
+          <ComponentCard title="Custom" maxHeight={700} component={Custom} source={CustomSource} />
         </Col>
         <Col span={24}>
-          <ComponentCard
-            title='React Image Timeline'
-            maxHeight={700}
-            component={ReactImageTimeline}
-            source={ReactImageTimelineSource}
-          />
+          <ComponentCard title="React Image Timeline" maxHeight={700} component={ReactImageTimeline} source={ReactImageTimelineSource} />
         </Col>
       </AppRowContainer>
     </>

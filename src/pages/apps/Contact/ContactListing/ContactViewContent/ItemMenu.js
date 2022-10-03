@@ -1,17 +1,12 @@
 import React from 'react';
 import IntlMessages from '../../../../../@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
-import {Dropdown, Menu} from 'antd';
-import {MoreOutlined} from '@ant-design/icons';
+import { Dropdown, Menu } from 'antd';
+import { MoreOutlined } from '@ant-design/icons';
 import AppIconButton from '../../../../../@crema/core/AppIconButton';
 
 const ItemMenu = (props) => {
-  const {
-    onSelectContactsForDelete,
-    contact,
-    onChangeStarred,
-    onOpenEditContact,
-  } = props;
+  const { onSelectContactsForDelete, contact, onChangeStarred, onOpenEditContact } = props;
 
   const onDeleteContact = () => {
     onSelectContactsForDelete([contact.id]);
@@ -27,29 +22,20 @@ const ItemMenu = (props) => {
 
   const menuLabel = (
     <Menu>
-      <Menu.Item onClick={onChangeStarredStatus}>
-        {contact.isStarred ? (
-          <IntlMessages id='common.unstarred' />
-        ) : (
-          <IntlMessages id='common.starred' />
-        )}
-      </Menu.Item>
+      <Menu.Item onClick={onChangeStarredStatus}>{contact.isStarred ? <IntlMessages id="common.unstarred" /> : <IntlMessages id="common.starred" />}</Menu.Item>
 
       <Menu.Item onClick={onClickEditOption}>
-        <IntlMessages id='common.edit' />
+        <IntlMessages id="common.edit" />
       </Menu.Item>
       <Menu.Item onClick={onDeleteContact}>
-        <IntlMessages id='common.delete' />
+        <IntlMessages id="common.delete" />
       </Menu.Item>
     </Menu>
   );
 
   return (
     <Dropdown overlay={menuLabel} trigger={['click']}>
-      <AppIconButton
-        icon={<MoreOutlined />}
-        title={<IntlMessages id='common.more' />}
-      />
+      <AppIconButton icon={<MoreOutlined />} title={<IntlMessages id="common.more" />} />
     </Dropdown>
   );
 };

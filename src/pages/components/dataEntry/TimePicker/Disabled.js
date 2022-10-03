@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, TimePicker} from 'antd';
+import { Space, TimePicker } from 'antd';
 import moment from 'moment';
 
 const Disabled = () => {

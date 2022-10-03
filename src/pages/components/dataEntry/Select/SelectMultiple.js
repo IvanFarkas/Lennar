@@ -1,7 +1,7 @@
 import React from 'react';
-import {Space, Select} from 'antd';
+import { Space, Select } from 'antd';
 
-const {Option} = Select;
+const { Option } = Select;
 
 const children = [];
 for (let i = 10; i < 36; i++) {
@@ -15,23 +15,11 @@ function handleChange(value) {
 const SelectMultiple = () => {
   return (
     <Space>
-      <Select
-        mode='multiple'
-        allowClear
-        style={{width: '100%'}}
-        placeholder='Please select'
-        defaultValue={['a10', 'c12']}
-        onChange={handleChange}>
+      <Select mode="multiple" allowClear style={{ width: '100%' }} placeholder="Please select" defaultValue={['a10', 'c12']} onChange={handleChange}>
         {children}
       </Select>
       <br />
-      <Select
-        mode='multiple'
-        disabled
-        style={{width: '100%'}}
-        placeholder='Please select'
-        defaultValue={['a10', 'c12']}
-        onChange={handleChange}>
+      <Select mode="multiple" disabled style={{ width: '100%' }} placeholder="Please select" defaultValue={['a10', 'c12']} onChange={handleChange}>
         {children}
       </Select>
     </Space>

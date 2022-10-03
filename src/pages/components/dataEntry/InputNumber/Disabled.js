@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, InputNumber} from 'antd';
+import { Button, Space, InputNumber } from 'antd';
 
 class Disabled extends React.Component {
   state = {
@@ -14,13 +14,8 @@ class Disabled extends React.Component {
   render() {
     return (
       <Space>
-        <InputNumber
-          min={1}
-          max={10}
-          disabled={this.state.disabled}
-          defaultValue={3}
-        />
-        <Button onClick={this.toggle} type='primary'>
+        <InputNumber min={1} max={10} disabled={this.state.disabled} defaultValue={3} />
+        <Button onClick={this.toggle} type="primary">
           Toggle disabled
         </Button>
       </Space>

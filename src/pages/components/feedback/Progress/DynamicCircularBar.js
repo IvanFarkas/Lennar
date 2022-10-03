@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button, Space, Progress} from 'antd';
+import { Button, Space, Progress } from 'antd';
 
-import {PlusOutlined, MinusOutlined} from '@ant-design/icons';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 
 const ButtonGroup = Button.Group;
 
@@ -14,20 +14,20 @@ class DynamicCircularBar extends React.Component {
     if (percent > 100) {
       percent = 100;
     }
-    this.setState({percent});
+    this.setState({ percent });
   };
   decline = () => {
     let percent = this.state.percent - 10;
     if (percent < 0) {
       percent = 0;
     }
-    this.setState({percent});
+    this.setState({ percent });
   };
 
   render() {
     return (
       <Space>
-        <Progress type='circle' percent={this.state.percent} />
+        <Progress type="circle" percent={this.state.percent} />
         <ButtonGroup>
           <Button onClick={this.decline} icon={<MinusOutlined />} />
           <Button onClick={this.increase} icon={<PlusOutlined />} />

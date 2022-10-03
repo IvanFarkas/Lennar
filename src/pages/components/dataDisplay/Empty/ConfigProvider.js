@@ -1,25 +1,15 @@
 import React from 'react';
-import {
-  ConfigProvider,
-  Switch,
-  Divider,
-  TreeSelect,
-  Select,
-  Cascader,
-  Transfer,
-  Table,
-  List,
-} from 'antd';
-import {SmileOutlined} from '@ant-design/icons';
+import { ConfigProvider, Switch, Divider, TreeSelect, Select, Cascader, Transfer, Table, List } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
 
 const customizeRenderEmpty = () => (
-  <div style={{textAlign: 'center'}}>
-    <SmileOutlined style={{fontSize: 20}} />
+  <div style={{ textAlign: 'center' }}>
+    <SmileOutlined style={{ fontSize: 20 }} />
     <p>Data Not Found</p>
   </div>
 );
 
-const style = {width: 200};
+const style = { width: 200 };
 
 class ConfigProviderDemo extends React.Component {
   state = {
@@ -27,22 +17,22 @@ class ConfigProviderDemo extends React.Component {
   };
 
   render() {
-    const {customize} = this.state;
+    const { customize } = this.state;
     return (
       <div>
         <Switch
-          unCheckedChildren='default'
-          checkedChildren='customize'
+          unCheckedChildren="default"
+          checkedChildren="customize"
           checked={customize}
           onChange={(val) => {
-            this.setState({customize: val});
+            this.setState({ customize: val });
           }}
         />
 
         <Divider />
 
         <ConfigProvider renderEmpty={customize && customizeRenderEmpty}>
-          <div className='config-provider'>
+          <div className="config-provider">
             <h4>Select</h4>
             <Select style={style} />
 
@@ -57,7 +47,7 @@ class ConfigProviderDemo extends React.Component {
 
             <h4>Table</h4>
             <Table
-              style={{marginTop: 8}}
+              style={{ marginTop: 8 }}
               columns={[
                 {
                   title: 'Name',

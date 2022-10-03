@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {AutoComplete, Space} from 'antd';
+import { AutoComplete, Space } from 'antd';
 
 const mockVal = (str, repeat = 1) => ({
   value: str.repeat(repeat),
@@ -11,11 +11,7 @@ const Basic = () => {
   const [options, setOptions] = useState([]);
 
   const onSearch = (searchText) => {
-    setOptions(
-      !searchText
-        ? []
-        : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)],
-    );
+    setOptions(!searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)]);
   };
 
   const onSelect = (data) => {
@@ -27,7 +23,7 @@ const Basic = () => {
   };
 
   return (
-    <Space direction='vertical'>
+    <Space direction="vertical">
       <AutoComplete
         options={options}
         style={{
@@ -35,7 +31,7 @@ const Basic = () => {
         }}
         onSelect={onSelect}
         onSearch={onSearch}
-        placeholder='input here'
+        placeholder="input here"
       />
 
       <AutoComplete
@@ -47,7 +43,7 @@ const Basic = () => {
         onSelect={onSelect}
         onSearch={onSearch}
         onChange={onChange}
-        placeholder='control mode'
+        placeholder="control mode"
       />
     </Space>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, InputNumber} from 'antd';
+import { Space, InputNumber } from 'antd';
 
 const Size = () => {
   function onChange(value) {
@@ -8,21 +8,9 @@ const Size = () => {
 
   return (
     <Space>
-      <InputNumber
-        size='large'
-        min={1}
-        max={100000}
-        defaultValue={3}
-        onChange={onChange}
-      />
+      <InputNumber size="large" min={1} max={100000} defaultValue={3} onChange={onChange} />
       <InputNumber min={1} max={100000} defaultValue={3} onChange={onChange} />
-      <InputNumber
-        size='small'
-        min={1}
-        max={100000}
-        defaultValue={3}
-        onChange={onChange}
-      />
+      <InputNumber size="small" min={1} max={100000} defaultValue={3} onChange={onChange} />
     </Space>
   );
 };

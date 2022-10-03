@@ -1,17 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductsCategory from './ProductsCategory';
 import PriceSelector from './PriceSelector';
 import AppList from '../../../../@crema/core/AppList';
 import CheckedCell from './CheckedCell';
-import {
-  BrandData,
-  DiscountList,
-  IdealFor,
-  ProductColors,
-} from '../../../../@crema/services/db/ecommerce/ecommerceData';
+import { BrandData, DiscountList, IdealFor, ProductColors } from '../../../../@crema/services/db/ecommerce/ecommerceData';
 import RatingCell from './RatingCell';
-import {useDispatch, useSelector} from 'react-redux';
-import {setFilters} from '../../../../redux/actions/Ecommerce';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilters } from '../../../../redux/actions/Ecommerce';
 import AppScrollbar from '../../../../@crema/core/AppScrollbar';
 import AppGrid from '../../../../@crema/core/AppGrid';
 import ColorCell from './ColorCell';
@@ -19,7 +14,7 @@ import './index.style.less';
 
 const ProductSidebar = () => {
   const dispatch = useDispatch();
-  const {filterData} = useSelector(({ecommerce}) => ecommerce);
+  const { filterData } = useSelector(({ ecommerce }) => ecommerce);
   const [selectedBrand, setSelectedBrand] = useState(filterData.brand);
   const [selectedFor, setSelectedFor] = useState(filterData.ideaFor);
   const [selectedDiscount, setSelectedDiscount] = useState(filterData.discount);
@@ -37,15 +32,7 @@ const ProductSidebar = () => {
         rating: customerRating,
       }),
     );
-  }, [
-    dispatch,
-    filterData.title,
-    selectedBrand,
-    selectedFor,
-    selectedDiscount,
-    selectedColor,
-    customerRating,
-  ]);
+  }, [dispatch, filterData.title, selectedBrand, selectedFor, selectedDiscount, selectedColor, customerRating]);
 
   const onSelectBrand = (brandId) => {
     if (selectedBrand.some((brand) => brand === brandId)) {
@@ -89,63 +76,33 @@ const ProductSidebar = () => {
 
   return (
     <AppScrollbar>
-      <div className='product-sidebar'>
-        <h3 className='product-sidebar-title'>Filter By</h3>
+      <div className="product-sidebar">
+        <h3 className="product-sidebar-title">Filter By</h3>
 
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Categories</h5>
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Categories</h5>
           <ProductsCategory />
         </div>
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Price</h5>
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Price</h5>
           <PriceSelector />
         </div>
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Brand</h5>
-          <AppList
-            data={BrandData}
-            renderItem={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectBrand}
-                selected={selectedBrand}
-              />
-            )}
-          />
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Brand</h5>
+          <AppList data={BrandData} renderItem={(data) => <CheckedCell key={data.id} data={data} onChange={onSelectBrand} selected={selectedBrand} />} />
         </div>
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Ideal For</h5>
-          <AppList
-            data={IdealFor}
-            renderItem={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectFor}
-                selected={selectedFor}
-              />
-            )}
-          />
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Ideal For</h5>
+          <AppList data={IdealFor} renderItem={(data) => <CheckedCell key={data.id} data={data} onChange={onSelectFor} selected={selectedFor} />} />
         </div>
 
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Discount</h5>
-          <AppList
-            data={DiscountList}
-            renderItem={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectDiscount}
-                selected={selectedDiscount}
-              />
-            )}
-          />
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Discount</h5>
+          <AppList data={DiscountList} renderItem={(data) => <CheckedCell key={data.id} data={data} onChange={onSelectDiscount} selected={selectedDiscount} />} />
         </div>
 
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Color</h5>
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Color</h5>
           <AppGrid
             data={Object.values(ProductColors)}
             responsive={{
@@ -157,30 +114,13 @@ const ProductSidebar = () => {
               xxl: 5,
             }}
             itemPadding={1}
-            renderItem={(data, index) => (
-              <ColorCell
-                key={'color-' + index}
-                data={data}
-                selected={selectedColor}
-                onChange={onSelectColor}
-              />
-            )}
+            renderItem={(data, index) => <ColorCell key={'color-' + index} data={data} selected={selectedColor} onChange={onSelectColor} />}
           />
         </div>
 
-        <div className='product-sidebar-item'>
-          <h5 className='product-sidebar-item-title'>Customer Ratings</h5>
-          <AppList
-            data={[5, 4, 3, 2, 1]}
-            renderItem={(data) => (
-              <RatingCell
-                key={data}
-                data={data}
-                onChange={onSelectRating}
-                selected={customerRating}
-              />
-            )}
-          />
+        <div className="product-sidebar-item">
+          <h5 className="product-sidebar-item-title">Customer Ratings</h5>
+          <AppList data={[5, 4, 3, 2, 1]} renderItem={(data) => <RatingCell key={data} data={data} onChange={onSelectRating} selected={customerRating} />} />
         </div>
       </div>
     </AppScrollbar>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -36,111 +36,52 @@ import BorderedLessSource from '!raw-loader!./BorderedLess';
 const DatePicker = () => {
   return (
     <>
-      <ComponentHeader
-        title='Date Picker'
-        refUrl='https://ant.design/components/date-picker/'
-      />
+      <ComponentHeader title="Date Picker" refUrl="https://ant.design/components/date-picker/" />
       <AppRowContainer>
-        <Col xs={24} lg={12} key='datepicker-a'>
-          <AppComponentCard
-            title='Basic'
-            component={Basic}
-            source={BasicSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-a">
+          <AppComponentCard title="Basic" component={Basic} source={BasicSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-b'>
-          <AppComponentCard
-            title='Date Format'
-            component={DateFormat}
-            source={DateFormatSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-b">
+          <AppComponentCard title="Date Format" component={DateFormat} source={DateFormatSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-c'>
-          <AppComponentCard
-            title='Three Sizes'
-            component={ThreeSizes}
-            source={ThreeSizesSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-c">
+          <AppComponentCard title="Three Sizes" component={ThreeSizes} source={ThreeSizesSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-d'>
-          <AppComponentCard
-            title='Extra Footer'
-            component={ExtraFooter}
-            source={ExtraFooterSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-d">
+          <AppComponentCard title="Extra Footer" component={ExtraFooter} source={ExtraFooterSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-e'>
-          <AppComponentCard
-            title='Disabled'
-            component={Disabled}
-            source={DisabledSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-e">
+          <AppComponentCard title="Disabled" component={Disabled} source={DisabledSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-j'>
-          <AppComponentCard
-            title='Disabled Date Time'
-            component={DisabledDateTime}
-            source={DisabledDateTimeSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-j">
+          <AppComponentCard title="Disabled Date Time" component={DisabledDateTime} source={DisabledDateTimeSource} />
         </Col>
 
-        <Col xs={24} lg={12} key='datepicker-g'>
-          <AppComponentCard
-            title='Presetted Ranges'
-            component={PresettedRanges}
-            source={PresettedRangesSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-g">
+          <AppComponentCard title="Presetted Ranges" component={PresettedRanges} source={PresettedRangesSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-h'>
-          <AppComponentCard
-            title='Customized Date Rendering'
-            component={CustomizedDateRendering}
-            source={CustomizedDateRenderingSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-h">
+          <AppComponentCard title="Customized Date Rendering" component={CustomizedDateRendering} source={CustomizedDateRenderingSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-i'>
-          <AppComponentCard
-            title='Customized Range Picker'
-            component={CustomizedRangePicker}
-            source={CustomizedRangePickerSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-i">
+          <AppComponentCard title="Customized Range Picker" component={CustomizedRangePicker} source={CustomizedRangePickerSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-j'>
-          <AppComponentCard
-            title='Controlled Panels'
-            component={ControlledPanels}
-            source={ControlledPanelsSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-j">
+          <AppComponentCard title="Controlled Panels" component={ControlledPanels} source={ControlledPanelsSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-j'>
-          <AppComponentCard
-            title='Switchable Picker'
-            component={SwitchablePicker}
-            source={SwitchablePickerSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-j">
+          <AppComponentCard title="Switchable Picker" component={SwitchablePicker} source={SwitchablePickerSource} />
         </Col>
-        <Col xs={24} lg={12} key='datepicker-j'>
-          <AppComponentCard
-            title='Select Range Dates In7Days'
-            component={SelectRangeDatesIn7Days}
-            source={SelectRangeDatesIn7DaysSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-j">
+          <AppComponentCard title="Select Range Dates In7Days" component={SelectRangeDatesIn7Days} source={SelectRangeDatesIn7DaysSource} />
         </Col>
 
-        <Col xs={24} lg={12} key='datepicker-f'>
-          <AppComponentCard
-            title='Choose Time'
-            component={ChooseTime}
-            source={ChooseTimeSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-f">
+          <AppComponentCard title="Choose Time" component={ChooseTime} source={ChooseTimeSource} />
         </Col>
 
-        <Col xs={24} lg={12} key='datepicker-j'>
-          <AppComponentCard
-            title='Bordered Less'
-            component={BorderedLess}
-            source={BorderedLessSource}
-          />
+        <Col xs={24} lg={12} key="datepicker-j">
+          <AppComponentCard title="Bordered Less" component={BorderedLess} source={BorderedLessSource} />
         </Col>
       </AppRowContainer>
     </>

@@ -1,5 +1,5 @@
-import {Upload, Button} from 'antd';
-import {UploadOutlined} from '@ant-design/icons';
+import { Upload, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 const props = {
   action: '//jsonplaceholder.typicode.com/posts/',
@@ -12,7 +12,7 @@ const props = {
       body: file,
     })
       .then((res) => res.json())
-      .then(({thumbnail}) => thumbnail);
+      .then(({ thumbnail }) => thumbnail);
   },
 };
 

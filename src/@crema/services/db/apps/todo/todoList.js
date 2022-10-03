@@ -1,11 +1,11 @@
-import {blue, green, grey, red} from '@ant-design/colors';
+import { blue, green, grey, red } from '@ant-design/colors';
 import moment from 'moment';
 
 const todoList = [
   {
     id: 456753,
     title: 'Check the documents of audit',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -37,21 +37,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rohit Sharma',
         image: '/assets/images/avatar/A22.jpg',
         date: moment().format('MMM 30, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 435544534,
     title: 'Arrange a trip for best performing staff members',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -83,16 +81,14 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Narendra Kumar',
         image: '/assets/images/avatar/A11.jpg',
         date: 'Dec 21, 2021',
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 783232,
@@ -116,7 +112,7 @@ const todoList = [
         color: blue[5],
       },
     ],
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isAttachment: false,
     sentAt: '10.30am',
     folderValue: 121,
@@ -136,15 +132,13 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'The Task is very important, try to complete it so that we have time for testing.',
+        comment: 'The Task is very important, try to complete it so that we have time for testing.',
         name: 'K L Sharma',
         image: '/assets/images/avatar/A21.jpg',
         date: moment().format('MMM 20, YYYY'),
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 32432435,
@@ -168,7 +162,7 @@ const todoList = [
         color: blue[5],
       },
     ],
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isAttachment: false,
     sentAt: '10.30am',
     folderValue: 121,
@@ -188,21 +182,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'The Task is very important, try to complete it so that we have time for testing.',
+        comment: 'The Task is very important, try to complete it so that we have time for testing.',
         name: 'K L Sharma',
         image: '/assets/images/avatar/A21.jpg',
         date: moment().format('MMM 28, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 454553,
     title: 'Check the documents of audit',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -242,21 +234,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'M S Dhoni',
         image: '/assets/images/avatar/A1.jpg',
         date: moment().format('MMM 25, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 5467454354,
     title: 'Check the documents of audit',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -296,21 +286,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'M S Dhoni',
         image: '/assets/images/avatar/A1.jpg',
         date: moment().format('MMM 28, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 345655,
     title: 'Arrange birthday party for the staff',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: false,
     isReplied: false,
     label: [
@@ -343,21 +331,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Nikit Sharma',
         image: '/assets/images/avatar/A2.jpg',
         date: moment().format('MMM 21, YYYY'),
         time: '2:15am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 5432356454,
     title: 'Arrange birthday party for the staff',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: false,
     isReplied: false,
     label: [
@@ -390,21 +376,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Nikit Sharma',
         image: '/assets/images/avatar/A2.jpg',
         date: moment().format('MMM 27, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 765645,
     title: 'Go to marketing section for diwali gifts',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -444,21 +428,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Ravindra Jadeja',
         image: '/assets/images/avatar/A4.jpg',
         date: moment().format('MMM 22, YYYY'),
         time: '2:35am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 4324543234,
     title: 'Go to marketing section for diwali gifts',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -498,21 +480,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Ravindra Jadeja',
         image: '/assets/images/avatar/A4.jpg',
         date: moment().format('MMM 28, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 765635,
     title: 'Ask secretary for meeting minutes',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -552,21 +532,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Krishna Kumar',
         image: '/assets/images/avatar/A5.jpg',
         date: moment().format('MMM 19, YYYY'),
         time: '2:45am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 345536,
     title: 'To arrange a meeting with React team',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -606,21 +584,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rehan Kant',
         image: '/assets/images/avatar/A6.jpg',
         date: moment().format('MMM 18, YYYY'),
         time: '10:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 654343443,
     title: 'Ask secretary for meeting minutes',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -660,21 +636,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Krishna Kumar',
         image: '/assets/images/avatar/A5.jpg',
         date: moment().format('MMM 26, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 785655,
     title: 'Arrange a trip for best performing staff members',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -714,21 +688,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rahul Rajan',
         image: '/assets/images/avatar/A7.jpg',
         date: moment().format('MMM 21, YYYY'),
         time: '7:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 234554,
     title: 'Schedule an interview for hiring React developer',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: false,
     isReplied: false,
     label: [
@@ -760,21 +732,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Shikhar Dhawan',
         image: '/assets/images/avatar/A8.jpg',
         date: moment().format('MMM 22, YYYY'),
         time: '2:12am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 86764543,
     title: 'To arrange a meeting with React team',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -814,21 +784,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rehan Kant',
         image: '/assets/images/avatar/A6.jpg',
         date: moment().format('MMM 18, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 907645,
     title: 'Check the documents of audit',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -868,21 +836,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'shreyas Iyer',
         image: '/assets/images/avatar/A9.jpg',
         date: moment().format('MMM 18, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 678434,
     title: 'Download freebie Hello Tune plugin',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -922,21 +888,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Bhuvneshwar Kumar',
         image: '/assets/images/avatar/A10.jpg',
         date: moment().format('MMM 18, YYYY'),
         time: '2:55am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 2344344334,
     title: 'Arrange a trip for best performing staff members',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -976,21 +940,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rahul Rajan',
         image: '/assets/images/avatar/A7.jpg',
         date: moment().format('MMM 24, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 789754,
     title: 'Arrange a trip for best performing staff members',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -1022,21 +984,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Narendra Kumar',
         image: '/assets/images/avatar/A11.jpg',
         date: moment().format('MMM 18, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 345656,
     title: 'Check the documents of audit',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: false,
     isReplied: false,
     label: [],
@@ -1059,21 +1019,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Baichang Bhutia',
         image: '/assets/images/avatar/A13.jpg',
         date: moment().format('MMM 22, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 767643433,
     title: 'Schedule an interview for hiring React developer',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: false,
     isReplied: false,
     label: [
@@ -1105,21 +1063,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Shikhar Dhawan',
         image: '/assets/images/avatar/A8.jpg',
         date: moment().format('MMM 25, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 856787,
     title: 'Arrange birthday party for the staff',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -1159,21 +1115,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rameshwar Sharma',
         image: '/assets/images/avatar/A13.jpg',
         date: moment().format('MMM 17, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 234546,
     title: 'Arrange a trip for best performing staff members',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: true,
     isReplied: false,
     label: [],
@@ -1196,21 +1150,19 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Tushar Sharma',
         image: '/assets/images/avatar/A15.jpg',
         date: moment().format('MMM 24, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 432445554,
     title: 'Check the documents of audit',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -1250,21 +1202,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'shreyas Iyer',
         image: '/assets/images/avatar/A9.jpg',
         date: moment().format('MMM 22, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 455643,
     title: 'Check the documents of audit',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -1296,21 +1246,19 @@ const todoList = [
     status: 3,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rohit Sharma',
         image: '/assets/images/avatar/A22.jpg',
         date: moment().format('MMM 25, YYYY'),
         time: '4:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 856121,
     title: 'Arrange birthday party for the staff',
-    priority: {id: 9384234, name: 'Medium', type: 2, color: blue[5]},
+    priority: { id: 9384234, name: 'Medium', type: 2, color: blue[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -1350,21 +1298,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Rameshwar Sharma',
         image: '/assets/images/avatar/A13.jpg',
         date: moment().format('MMM 17, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 2344354334,
     title: 'Download freebie Hello Tune plugin',
-    priority: {id: 4545554, name: 'High', type: 1, color: red[5]},
+    priority: { id: 4545554, name: 'High', type: 1, color: red[5] },
     isStarred: true,
     isReplied: false,
     label: [
@@ -1404,21 +1350,19 @@ const todoList = [
     status: 1,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Bhuvneshwar Kumar',
         image: '/assets/images/avatar/A10.jpg',
         date: moment().format('MMM 18, YYYY'),
         time: '4:18am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
   {
     id: 233346,
     title: 'Arrange a trip for best performing staff members',
-    priority: {id: 4354454, name: 'Low', type: 3, color: green[5]},
+    priority: { id: 4354454, name: 'Low', type: 3, color: green[5] },
     isStarred: true,
     isReplied: false,
     label: [],
@@ -1441,16 +1385,14 @@ const todoList = [
     status: 2,
     comments: [
       {
-        comment:
-          'Call John at 8:00 PM to cross check the things and get a feedback too.',
+        comment: 'Call John at 8:00 PM to cross check the things and get a feedback too.',
         name: 'Tushar Sharma',
         image: '/assets/images/avatar/A15.jpg',
         date: moment().format('MMM 24, YYYY'),
         time: '2:05am',
       },
     ],
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
   },
 ];
 export default todoList;

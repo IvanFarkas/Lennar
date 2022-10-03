@@ -1,4 +1,4 @@
-import {Descriptions, Radio, Button} from 'antd';
+import { Descriptions, Radio, Button } from 'antd';
 import React from 'react';
 class CustomSize extends React.Component {
   state = {
@@ -16,24 +16,20 @@ class CustomSize extends React.Component {
     return (
       <div>
         <Radio.Group onChange={this.onChange} value={this.state.size}>
-          <Radio value='default'>default</Radio>
-          <Radio value='middle'>middle</Radio>
-          <Radio value='small'>small</Radio>
+          <Radio value="default">default</Radio>
+          <Radio value="middle">middle</Radio>
+          <Radio value="small">small</Radio>
         </Radio.Group>
         <br />
         <br />
-        <Descriptions
-          bordered
-          title='Custom Size'
-          size={this.state.size}
-          extra={<Button type='primary'>Edit</Button>}>
-          <Descriptions.Item label='Product'>Cloud Database</Descriptions.Item>
-          <Descriptions.Item label='Billing'>Prepaid</Descriptions.Item>
-          <Descriptions.Item label='time'>18:00:00</Descriptions.Item>
-          <Descriptions.Item label='Amount'>$80.00</Descriptions.Item>
-          <Descriptions.Item label='Discount'>$20.00</Descriptions.Item>
-          <Descriptions.Item label='Official'>$60.00</Descriptions.Item>
-          <Descriptions.Item label='Config Info'>
+        <Descriptions bordered title="Custom Size" size={this.state.size} extra={<Button type="primary">Edit</Button>}>
+          <Descriptions.Item label="Product">Cloud Database</Descriptions.Item>
+          <Descriptions.Item label="Billing">Prepaid</Descriptions.Item>
+          <Descriptions.Item label="time">18:00:00</Descriptions.Item>
+          <Descriptions.Item label="Amount">$80.00</Descriptions.Item>
+          <Descriptions.Item label="Discount">$20.00</Descriptions.Item>
+          <Descriptions.Item label="Official">$60.00</Descriptions.Item>
+          <Descriptions.Item label="Config Info">
             Data disk type: MongoDB
             <br />
             Database version: 3.4
@@ -49,16 +45,13 @@ class CustomSize extends React.Component {
         </Descriptions>
         <br />
         <br />
-        <Descriptions
-          title='Custom Size'
-          size={this.state.size}
-          extra={<Button type='primary'>Edit</Button>}>
-          <Descriptions.Item label='Product'>Cloud Database</Descriptions.Item>
-          <Descriptions.Item label='Billing'>Prepaid</Descriptions.Item>
-          <Descriptions.Item label='time'>18:00:00</Descriptions.Item>
-          <Descriptions.Item label='Amount'>$80.00</Descriptions.Item>
-          <Descriptions.Item label='Discount'>$20.00</Descriptions.Item>
-          <Descriptions.Item label='Official'>$60.00</Descriptions.Item>
+        <Descriptions title="Custom Size" size={this.state.size} extra={<Button type="primary">Edit</Button>}>
+          <Descriptions.Item label="Product">Cloud Database</Descriptions.Item>
+          <Descriptions.Item label="Billing">Prepaid</Descriptions.Item>
+          <Descriptions.Item label="time">18:00:00</Descriptions.Item>
+          <Descriptions.Item label="Amount">$80.00</Descriptions.Item>
+          <Descriptions.Item label="Discount">$20.00</Descriptions.Item>
+          <Descriptions.Item label="Official">$60.00</Descriptions.Item>
         </Descriptions>
       </div>
     );

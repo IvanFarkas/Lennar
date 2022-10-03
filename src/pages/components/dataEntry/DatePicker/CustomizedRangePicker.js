@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Space, DatePicker} from 'antd';
+import React, { Component } from 'react';
+import { Space, DatePicker } from 'antd';
 
 class CustomizedRangePicker extends Component {
   state = {
@@ -40,39 +40,20 @@ class CustomizedRangePicker extends Component {
 
   handleStartOpenChange = (open) => {
     if (!open) {
-      this.setState({endOpen: true});
+      this.setState({ endOpen: true });
     }
   };
 
   handleEndOpenChange = (open) => {
-    this.setState({endOpen: open});
+    this.setState({ endOpen: open });
   };
 
   render() {
-    const {startValue, endValue, endOpen} = this.state;
+    const { startValue, endValue, endOpen } = this.state;
     return (
       <Space>
-        <DatePicker
-          className='gx-mb-3 gx-w-100'
-          disabledDate={this.disabledStartDate}
-          showTime
-          format='YYYY-MM-DD HH:mm:ss'
-          value={startValue}
-          placeholder='Start'
-          onChange={this.onStartChange}
-          onOpenChange={this.handleStartOpenChange}
-        />
-        <DatePicker
-          className='gx-w-100'
-          disabledDate={this.disabledEndDate}
-          showTime
-          format='YYYY-MM-DD HH:mm:ss'
-          value={endValue}
-          placeholder='End'
-          onChange={this.onEndChange}
-          open={endOpen}
-          onOpenChange={this.handleEndOpenChange}
-        />
+        <DatePicker className="gx-mb-3 gx-w-100" disabledDate={this.disabledStartDate} showTime format="YYYY-MM-DD HH:mm:ss" value={startValue} placeholder="Start" onChange={this.onStartChange} onOpenChange={this.handleStartOpenChange} />
+        <DatePicker className="gx-w-100" disabledDate={this.disabledEndDate} showTime format="YYYY-MM-DD HH:mm:ss" value={endValue} placeholder="End" onChange={this.onEndChange} open={endOpen} onOpenChange={this.handleEndOpenChange} />
       </Space>
     );
   }

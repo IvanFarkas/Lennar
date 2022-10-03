@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Table, Radio, Divider, Space} from 'antd';
+import React, { useState } from 'react';
+import { Table, Radio, Divider, Space } from 'antd';
 const columns = [
   {
     title: 'Name',
@@ -44,11 +44,7 @@ const data = [
 
 const rowSelection = {
   onChange: (selectedRowKeys, selectedRows) => {
-    console.log(
-      `selectedRowKeys: ${selectedRowKeys}`,
-      'selectedRows: ',
-      selectedRows,
-    );
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
   },
   getCheckboxProps: (record) => ({
     disabled: record.name === 'Disabled user',
@@ -60,14 +56,15 @@ const rowSelection = {
 const Selection = () => {
   const [selectionType, setSelectionType] = useState('checkbox');
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <Radio.Group
-        onChange={({target: {value}}) => {
+        onChange={({ target: { value } }) => {
           setSelectionType(value);
         }}
-        value={selectionType}>
-        <Radio value='checkbox'>Checkbox</Radio>
-        <Radio value='radio'>radio</Radio>
+        value={selectionType}
+      >
+        <Radio value="checkbox">Checkbox</Radio>
+        <Radio value="radio">radio</Radio>
       </Radio.Group>
 
       <Divider />

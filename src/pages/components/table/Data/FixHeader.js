@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Table} from 'antd';
+import { Space, Table } from 'antd';
 
 const columns = [
   {
@@ -30,13 +30,8 @@ for (let i = 0; i < 100; i++) {
 
 const FixHeader = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={{pageSize: 50}}
-        scroll={{y: 240}}
-      />
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Table columns={columns} dataSource={data} pagination={{ pageSize: 50 }} scroll={{ y: 240 }} />
     </Space>
   );
 };

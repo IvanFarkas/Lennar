@@ -1,4 +1,4 @@
-import {TimePicker} from 'antd';
+import { TimePicker } from 'antd';
 
 import React from 'react';
 

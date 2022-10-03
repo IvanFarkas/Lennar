@@ -4,7 +4,7 @@ import './index.style.less';
 import clsx from 'clsx';
 
 const AppsFooter = (props) => {
-  const {children, className, ...rest} = props;
+  const { children, className, ...rest } = props;
 
   return (
     <div className={clsx('apps-footer', className)} {...rest}>

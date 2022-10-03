@@ -1,7 +1,7 @@
 import React from 'react';
-import {Tabs, Button} from 'antd';
+import { Tabs, Button } from 'antd';
 
-const {TabPane} = Tabs;
+const { TabPane } = Tabs;
 
 class CustomizedTrigger extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class CustomizedTrigger extends React.Component {
   }
 
   onChange = (activeKey) => {
-    this.setState({activeKey});
+    this.setState({ activeKey });
   };
 
   onEdit = (targetKey, action) => {
@@ -30,14 +30,14 @@ class CustomizedTrigger extends React.Component {
   };
 
   add = () => {
-    const {panes} = this.state;
+    const { panes } = this.state;
     const activeKey = `newTab${this.newTabIndex++}`;
-    panes.push({title: 'New Tab', content: 'New Tab Pane', key: activeKey});
-    this.setState({panes, activeKey});
+    panes.push({ title: 'New Tab', content: 'New Tab Pane', key: activeKey });
+    this.setState({ panes, activeKey });
   };
 
   remove = (targetKey) => {
-    let {activeKey} = this.state;
+    let { activeKey } = this.state;
     let lastIndex;
     this.state.panes.forEach((pane, i) => {
       if (pane.key === targetKey) {
@@ -52,21 +52,16 @@ class CustomizedTrigger extends React.Component {
         activeKey = panes[0].key;
       }
     }
-    this.setState({panes, activeKey});
+    this.setState({ panes, activeKey });
   };
 
   render() {
     return (
       <div>
-        <div style={{marginBottom: 16}}>
+        <div style={{ marginBottom: 16 }}>
           <Button onClick={this.add}>ADD</Button>
         </div>
-        <Tabs
-          hideAdd
-          onChange={this.onChange}
-          activeKey={this.state.activeKey}
-          type='editable-card'
-          onEdit={this.onEdit}>
+        <Tabs hideAdd onChange={this.onChange} activeKey={this.state.activeKey} type="editable-card" onEdit={this.onEdit}>
           {this.state.panes.map((pane) => (
             <TabPane tab={pane.title} key={pane.key}>
               {pane.content}

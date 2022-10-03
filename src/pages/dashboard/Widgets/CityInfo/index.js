@@ -15,23 +15,19 @@ const settings = {
 };
 
 const CityInfo = (props) => {
-  const {cityData} = props;
+  const { cityData } = props;
 
   return (
-    <AppCard heightFull className='no-card-space'>
-      <Slider className='city-info-slide-card' {...settings}>
+    <AppCard heightFull className="no-card-space">
+      <Slider className="city-info-slide-card" {...settings}>
         {cityData.map((city) => {
           return (
-            <div key={city.id} className='city-info-slide'>
-              <img
-                className='city-info-slide-img'
-                src={city.image}
-                alt='building'
-              />
-              <div className='city-info-slide-img-content'>
+            <div key={city.id} className="city-info-slide">
+              <img className="city-info-slide-img" src={city.image} alt="building" />
+              <div className="city-info-slide-img-content">
                 <h3>{city.name}</h3>
 
-                <div className='city-info-slide-img-content-action'>
+                <div className="city-info-slide-img-content-action">
                   <p>{city.desc}</p>
                 </div>
               </div>

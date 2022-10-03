@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Table} from 'antd';
+import { Space, Table } from 'antd';
 // In the fifth row, other columns are merged into first column
 // by setting it's colSpan to be 0
 const renderContent = (value, row, index) => {
@@ -19,10 +19,10 @@ const columns = [
     dataIndex: 'name',
     render: (text, row, index) => {
       if (index < 4) {
-        return <span className='gx-link'>{text}</span>;
+        return <span className="gx-link">{text}</span>;
       }
       return {
-        children: <span className='gx-link'>{text}</span>,
+        children: <span className="gx-link">{text}</span>,
         props: {
           colSpan: 5,
         },
@@ -114,13 +114,8 @@ const data = [
 
 const ColRowSpan = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Table
-        className='gx-table-responsive'
-        columns={columns}
-        dataSource={data}
-        bordered
-      />
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Table className="gx-table-responsive" columns={columns} dataSource={data} bordered />
     </Space>
   );
 };

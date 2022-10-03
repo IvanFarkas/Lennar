@@ -1,19 +1,20 @@
-import {Empty, Button} from 'antd';
+import { Empty, Button } from 'antd';
 import React from 'react';
 
 const Customize = () => {
   return (
     <Empty
-      image='https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg'
+      image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
       imageStyle={{
         height: 60,
       }}
       description={
         <span>
-          Customize <a href='#API'>Description</a>
+          Customize <a href="#API">Description</a>
         </span>
-      }>
-      <Button type='primary'>Create Now</Button>
+      }
+    >
+      <Button type="primary">Create Now</Button>
     </Empty>
   );
 };

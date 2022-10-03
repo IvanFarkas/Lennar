@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -21,58 +21,25 @@ class Message extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Message'
-          refUrl='https://ant.design/components/message/'
-        />
+        <ComponentHeader title="Message" refUrl="https://ant.design/components/message/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='message-a'>
-            <AppComponentCard
-              title='Basic'
-              description='Use message.useMessage to get contextHolder with context accessible issue.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="message-a">
+            <AppComponentCard title="Basic" description="Use message.useMessage to get contextHolder with context accessible issue." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-b'>
-            <AppComponentCard
-              title='Other Type'
-              description='Messages of success, error and warning types.'
-              component={OtherType}
-              source={OtherTypeSource}
-            />
+          <Col xs={24} lg={12} key="message-b">
+            <AppComponentCard title="Other Type" description="Messages of success, error and warning types." component={OtherType} source={OtherTypeSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-c'>
-            <AppComponentCard
-              title='Customize'
-              description='The style and className are available to customize Message.'
-              component={Customize}
-              source={CustomizeSource}
-            />
+          <Col xs={24} lg={12} key="message-c">
+            <AppComponentCard title="Customize" description="The style and className are available to customize Message." component={Customize} source={CustomizeSource} />
           </Col>
-          <Col xs={24} lg={12} key='message-d'>
-            <AppComponentCard
-              title='Loading'
-              description='Display a global loading indicator, which is dismissed by itself asynchronously.'
-              component={Loading}
-              source={LoadingSource}
-            />
+          <Col xs={24} lg={12} key="message-d">
+            <AppComponentCard title="Loading" description="Display a global loading indicator, which is dismissed by itself asynchronously." component={Loading} source={LoadingSource} />
           </Col>
-          <Col xs={24} lg={12} key='alert-g'>
-            <AppComponentCard
-              title='Customized Style'
-              description='The style and className are available to customize Message.'
-              component={CustomizedStyle}
-              source={CustomizedStyleSource}
-            />
+          <Col xs={24} lg={12} key="alert-g">
+            <AppComponentCard title="Customized Style" description="The style and className are available to customize Message." component={CustomizedStyle} source={CustomizedStyleSource} />
           </Col>
-          <Col xs={24} lg={12} key='alert-g'>
-            <AppComponentCard
-              title='Update Message'
-              description='Update message content with unique key.'
-              component={UpdateMessage}
-              source={UpdateMessageSource}
-            />
+          <Col xs={24} lg={12} key="alert-g">
+            <AppComponentCard title="Update Message" description="Update message content with unique key." component={UpdateMessage} source={UpdateMessageSource} />
           </Col>
         </AppRowContainer>
       </>

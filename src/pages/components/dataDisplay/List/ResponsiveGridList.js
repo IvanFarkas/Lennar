@@ -1,4 +1,4 @@
-import {List, Card} from 'antd';
+import { List, Card } from 'antd';
 
 const data = [
   {

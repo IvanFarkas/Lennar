@@ -2,41 +2,33 @@ import React from 'react';
 import GraphFile from './GraphFile';
 import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
-import {ArrowDownOutlined, ArrowUpOutlined} from '@ant-design/icons';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import './index.style.less';
 
-const FloatingGraphs = ({data, title}) => {
+const FloatingGraphs = ({ data, title }) => {
   return (
-    <AppCard className='floating-graph-card' heightFull>
+    <AppCard className="floating-graph-card" heightFull>
       <p>{title}</p>
-      <h3 className='floating-graph-card-title'>
-        <span className='floating-graph-card-title-value'>{data.value}</span>
+      <h3 className="floating-graph-card-title">
+        <span className="floating-graph-card-title-value">{data.value}</span>
         {data.change > 0 ? (
-          <span className='floating-graph-card-title-growth'>
-            <span className='floating-graph-card-title-growth-arrow'>
+          <span className="floating-graph-card-title-growth">
+            <span className="floating-graph-card-title-growth-arrow">
               <ArrowUpOutlined />
             </span>
-            <span className='floating-graph-card-title-growth-value'>
-              {data.change}
-            </span>
+            <span className="floating-graph-card-title-growth-value">{data.change}</span>
           </span>
         ) : (
-          <span className='floating-graph-card-title-growth down'>
-            <span className='floating-graph-card-title-growth-arrow'>
+          <span className="floating-graph-card-title-growth down">
+            <span className="floating-graph-card-title-growth-arrow">
               <ArrowDownOutlined />
             </span>
-            <span className='floating-graph-card-title-growth-value'>
-              {data.change}
-            </span>
+            <span className="floating-graph-card-title-growth-value">{data.change}</span>
           </span>
         )}
       </h3>
-      <div className='floating-graph'>
-        <GraphFile
-          data={data.graphData}
-          strokeColor={data.strokeColor}
-          areaColor={data.areaColor}
-        />
+      <div className="floating-graph">
+        <GraphFile data={data.graphData} strokeColor={data.strokeColor} areaColor={data.areaColor} />
       </div>
     </AppCard>
   );

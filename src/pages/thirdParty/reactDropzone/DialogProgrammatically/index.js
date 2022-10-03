@@ -1,10 +1,10 @@
 import React from 'react';
-import {useDropzone} from 'react-dropzone';
-import {Button} from 'antd';
+import { useDropzone } from 'react-dropzone';
+import { Button } from 'antd';
 import './index.style.less';
 
 const DialogProgrammatically = () => {
-  const {getRootProps, getInputProps, open, acceptedFiles} = useDropzone({
+  const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
     // Disable click and keydown behavior
     noClick: true,
     noKeyboard: true,
@@ -17,13 +17,11 @@ const DialogProgrammatically = () => {
   ));
 
   return (
-    <div className='container'>
-      <div
-        className='dialog-dropzone'
-        {...getRootProps({className: 'dropzone'})}>
+    <div className="container">
+      <div className="dialog-dropzone" {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <p>Drag n drop some files here</p>
-        <Button type='primary' onClick={open}>
+        <Button type="primary" onClick={open}>
           Open File Dialog
         </Button>
       </div>

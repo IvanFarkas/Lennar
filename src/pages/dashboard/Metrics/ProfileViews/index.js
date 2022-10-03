@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import AppCard from '../../../../@crema/core/AppCard';
 import './index.style.less';
 
-const ProfileViews = ({data}) => {
+const ProfileViews = ({ data }) => {
   return (
-    <AppCard className='profile-view-card' heightFull>
+    <AppCard className="profile-view-card" heightFull>
       <h3>{data.views}</h3>
       <p>
-        <IntlMessages id='dashboard.profileViews' />
+        <IntlMessages id="dashboard.profileViews" />
       </p>
-      <div className='profile-view-graph-view'>
+      <div className="profile-view-graph-view">
         <ProfileViewsGraph data={data.graphData} />
       </div>
     </AppCard>

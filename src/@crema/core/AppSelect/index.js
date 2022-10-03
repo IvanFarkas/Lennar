@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {Select} from 'antd';
+import React, { useState } from 'react';
+import { Select } from 'antd';
 import PropTypes from 'prop-types';
 import './index.style.less';
 
-const AppSelect = ({menus, onChange, defaultValue, selectionKey}) => {
+const AppSelect = ({ menus, onChange, defaultValue, selectionKey }) => {
   const [selectionType, setSelectionType] = useState(defaultValue);
 
   const handleSelectionType = (value) => {
@@ -11,19 +11,12 @@ const AppSelect = ({menus, onChange, defaultValue, selectionKey}) => {
     onChange(value);
   };
 
-  const {Option} = Select;
+  const { Option } = Select;
 
   return (
-    <Select
-      defaultValue={defaultValue}
-      value={selectionType}
-      onChange={handleSelectionType}
-      className='select-box'>
+    <Select defaultValue={defaultValue} value={selectionType} onChange={handleSelectionType} className="select-box">
       {menus.map((menu, index) => (
-        <Option
-          key={index}
-          value={selectionKey ? menu[selectionKey] : menu}
-          className='select-option'>
+        <Option key={index} value={selectionKey ? menu[selectionKey] : menu} className="select-option">
           {selectionKey ? menu[selectionKey] : menu}
         </Option>
       ))}

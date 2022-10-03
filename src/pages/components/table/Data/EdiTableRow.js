@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Form, Input, InputNumber, Popconfirm, Table, Typography} from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, InputNumber, Popconfirm, Table, Typography } from 'antd';
 import PropTypes from 'prop-types';
 
 const originData = [];
@@ -13,14 +13,7 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-const EditableCell = ({
-  editing,
-  dataIndex,
-  title,
-  inputType,
-  children,
-  ...restProps
-}) => {
+const EditableCell = ({ editing, dataIndex, title, inputType, children, ...restProps }) => {
   const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
   return (
     <td {...restProps}>
@@ -35,7 +28,8 @@ const EditableCell = ({
               required: true,
               message: `Please Input ${title}!`,
             },
-          ]}>
+          ]}
+        >
           {inputNode}
         </Form.Item>
       ) : (
@@ -74,7 +68,7 @@ const EditableTable = () => {
 
       if (index > -1) {
         const item = newData[index];
-        newData.splice(index, 1, {...item, ...row});
+        newData.splice(index, 1, { ...item, ...row });
         setData(newData);
         setEditingKey('');
       } else {
@@ -117,17 +111,16 @@ const EditableTable = () => {
               onClick={() => save(record.key)}
               style={{
                 marginRight: 8,
-              }}>
+              }}
+            >
               Save
             </Typography.Link>
-            <Popconfirm title='Sure to cancel?' onConfirm={cancel}>
+            <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
               <a>Cancel</a>
             </Popconfirm>
           </span>
         ) : (
-          <Typography.Link
-            disabled={editingKey !== ''}
-            onClick={() => edit(record)}>
+          <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
             Edit
           </Typography.Link>
         );
@@ -161,7 +154,7 @@ const EditableTable = () => {
         bordered
         dataSource={data}
         columns={mergedColumns}
-        rowClassName='editable-row'
+        rowClassName="editable-row"
         pagination={{
           onChange: cancel,
         }}

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 
-const SuggestionItem = ({item}) => {
+const SuggestionItem = ({ item }) => {
   return (
-    <div className='suggestion-item item-hover'>
-      <Avatar className='suggestion-avatar' src={item.thumb} alt={item.name} />
-      <div className='suggestion-item-content'>
+    <div className="suggestion-item item-hover">
+      <Avatar className="suggestion-avatar" src={item.thumb} alt={item.name} />
+      <div className="suggestion-item-content">
         <h4>{item.name}</h4>
         <p>{item.desc}</p>
       </div>

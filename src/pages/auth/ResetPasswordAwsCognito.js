@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactCodeInput from 'react-code-input';
-import {Button, Form, Input} from 'antd';
+import { Button, Form, Input } from 'antd';
 import IntlMessages from '../../@crema/utility/IntlMessages';
 import useIntl from 'react-intl/lib/src/components/useIntl';
 import './AuthWrapper.style.less';
@@ -11,7 +11,7 @@ import AppPageMetadata from '../../@crema/core/AppPageMetadata';
 import AuthWrapper from './AuthWrapper';
 
 const ResetPasswordAwsCognito = () => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   // const dispatch = useDispatch();
   //  const navigate = useNavigate();
   // const location = useLocation();
@@ -29,55 +29,43 @@ const ResetPasswordAwsCognito = () => {
 
   return (
     <AuthWrapper>
-      <AppPageMetadata title='Reset Password' />
+      <AppPageMetadata title="Reset Password" />
 
-      <div className='auth-recon-content'>
+      <div className="auth-recon-content">
         <Form
-          className='reset-form'
-          name='basic'
-          initialValues={{remember: true}}
+          className="reset-form"
+          name="basic"
+          initialValues={{ remember: true }}
           // onFinish={onFinish}
-          onFinishFailed={onFinishFailed}>
-          <Form.Item
-            name='pin'
-            className='form-field'
-            rules={[{required: true, message: 'Please input your Pin!'}]}>
+          onFinishFailed={onFinishFailed}
+        >
+          <Form.Item name="pin" className="form-field" rules={[{ required: true, message: 'Please input your Pin!' }]}>
             <p>
-              <IntlMessages id='common.verificationMessage' />
+              <IntlMessages id="common.verificationMessage" />
             </p>
 
-            <ReactCodeInput type='password' fields={6} />
+            <ReactCodeInput type="password" fields={6} />
+          </Form.Item>
+
+          <Form.Item name="newPassword" className="form-field" rules={[{ required: true, message: 'Please input your New Password!' }]}>
+            <Input type="password" placeholder={messages['common.newPassword']} />
           </Form.Item>
 
           <Form.Item
-            name='newPassword'
-            className='form-field'
-            rules={[
-              {required: true, message: 'Please input your New Password!'},
-            ]}>
-            <Input
-              type='password'
-              placeholder={messages['common.newPassword']}
-            />
-          </Form.Item>
-
-          <Form.Item
-            name='confirmPassword'
-            className='form-field'
+            name="confirmPassword"
+            className="form-field"
             rules={[
               {
                 required: true,
                 message: 'Please input your Retype Password!',
               },
-            ]}>
-            <Input
-              type='password'
-              placeholder={messages['common.retypePassword']}
-            />
+            ]}
+          >
+            <Input type="password" placeholder={messages['common.retypePassword']} />
           </Form.Item>
 
-          <Button type='primary' htmlType='submit' className='reset-btn'>
-            <IntlMessages id='common.resetMyPassword' />
+          <Button type="primary" htmlType="submit" className="reset-btn">
+            <IntlMessages id="common.resetMyPassword" />
           </Button>
         </Form>
       </div>

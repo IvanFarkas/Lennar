@@ -3,41 +3,26 @@ import IntlMessages from '../../../../../../@crema/utility/IntlMessages';
 import CardAttachments from './CardAttachments';
 import CardCheckedList from './CardCheckedList';
 import CardComments from './CardComments';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import {Avatar, Button, Col, DatePicker, Form, Input, Select} from 'antd';
+import { Avatar, Button, Col, DatePicker, Form, Input, Select } from 'antd';
 import AppRowContainer from '../../../../../../@crema/core/AppRowContainer';
-import {useDispatch, useSelector} from 'react-redux';
-import {onAddNewCard, onEditCardDetails} from '../../../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { onAddNewCard, onEditCardDetails } from '../../../../../../redux/actions';
 import AppScrollbar from '../../../../../../@crema/core/AppScrollbar';
 
-const {Option} = Select;
-const {TextArea} = Input;
+const { Option } = Select;
+const { TextArea } = Input;
 
 const AddCardForm = (props) => {
-  const {
-    board,
-    list,
-    checkedList,
-    setCheckedList,
-    comments,
-    setComments,
-    authUser,
-    attachments,
-    setAttachments,
-    selectedMembers,
-    setMembersList,
-    selectedCard,
-    onCloseAddCard,
-    isSubmitting,
-  } = props;
+  const { board, list, checkedList, setCheckedList, comments, setComments, authUser, attachments, setAttachments, selectedMembers, setMembersList, selectedCard, onCloseAddCard, isSubmitting } = props;
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
-  const labelList = useSelector(({scrumboardApp}) => scrumboardApp.labelList);
+  const labelList = useSelector(({ scrumboardApp }) => scrumboardApp.labelList);
 
-  const memberList = useSelector(({scrumboardApp}) => scrumboardApp.memberList);
+  const memberList = useSelector(({ scrumboardApp }) => scrumboardApp.memberList);
 
   const dispatch = useDispatch();
 
@@ -83,9 +68,7 @@ const AddCardForm = (props) => {
   };
 
   const onDeleteAttachment = (id) => {
-    const updatedAttachments = attachments.filter(
-      (attachment) => attachment.id !== id,
-    );
+    const updatedAttachments = attachments.filter((attachment) => attachment.id !== id);
     setAttachments(updatedAttachments);
   };
 
@@ -121,53 +104,42 @@ const AddCardForm = (props) => {
 
   return (
     <Form
-      className='scrum-board-add-card-form'
+      className="scrum-board-add-card-form"
       noValidate
-      autoComplete='off'
+      autoComplete="off"
       initialValues={{
         title: selectedCard?.title,
         desc: selectedCard?.desc,
-        date:
-          selectedCard && selectedCard.date
-            ? moment(selectedCard.date, 'DD-MM-YYYY')
-            : '',
+        date: selectedCard && selectedCard.date ? moment(selectedCard.date, 'DD-MM-YYYY') : '',
         label: selectedCard?.label.map((data) => data.id),
         members: selectedCard?.members.map((data) => data.id),
       }}
-      onFinish={onFinish}>
-      <AppScrollbar className='scrum-board-add-card-form-scroll'>
-        <div className='scrum-board-add-card-form-content'>
+      onFinish={onFinish}
+    >
+      <AppScrollbar className="scrum-board-add-card-form-scroll">
+        <div className="scrum-board-add-card-form-content">
           <AppRowContainer>
             <Col xs={24} md={16}>
-              <Form.Item name='title'>
+              <Form.Item name="title">
                 <Input placeholder={messages['common.title']} />
               </Form.Item>
             </Col>
 
             <Col xs={24} md={8}>
-              <Form.Item name='date'>
-                <DatePicker className='scrum-board-date-picker' />
+              <Form.Item name="date">
+                <DatePicker className="scrum-board-date-picker" />
               </Form.Item>
             </Col>
           </AppRowContainer>
 
-          <Form.Item name='desc'>
-            <TextArea
-              autoSize={{minRows: 3, maxRows: 5}}
-              placeholder={messages['common.description']}
-            />
+          <Form.Item name="desc">
+            <TextArea autoSize={{ minRows: 3, maxRows: 5 }} placeholder={messages['common.description']} />
           </Form.Item>
 
           <AppRowContainer>
             <Col xs={24} lg={12}>
-              <Form.Item name='label'>
-                <Select
-                  mode='multiple'
-                  allowClear
-                  maxTagCount={3}
-                  style={{width: '100%'}}
-                  placeholder='Please select Label'
-                  onChange={handleChange}>
+              <Form.Item name="label">
+                <Select mode="multiple" allowClear maxTagCount={3} style={{ width: '100%' }} placeholder="Please select Label" onChange={handleChange}>
                   {labelList.map((label) => (
                     <Option key={label.id} value={label.id}>
                       {label.name}
@@ -178,23 +150,13 @@ const AddCardForm = (props) => {
             </Col>
 
             <Col xs={24} lg={12}>
-              <Form.Item name='members'>
-                <Select
-                  mode='multiple'
-                  maxTagCount={2}
-                  placeholder='Please select Members'
-                  onChange={(value) => setMembersList(value)}>
+              <Form.Item name="members">
+                <Select mode="multiple" maxTagCount={2} placeholder="Please select Members" onChange={(value) => setMembersList(value)}>
                   {memberList.map((member) => (
                     <Option key={member.id} value={member.id}>
-                      <div className='multiple-select'>
-                        {member.image ? (
-                          <Avatar src={member.image} />
-                        ) : (
-                          <Avatar>{member.name.toUpperCase()}</Avatar>
-                        )}
-                        <span className='multiple-select-name'>
-                          {member.name}
-                        </span>
+                      <div className="multiple-select">
+                        {member.image ? <Avatar src={member.image} /> : <Avatar>{member.name.toUpperCase()}</Avatar>}
+                        <span className="multiple-select-name">{member.name}</span>
                       </div>
                     </Option>
                   ))}
@@ -203,29 +165,19 @@ const AddCardForm = (props) => {
             </Col>
           </AppRowContainer>
 
-          <CardAttachments
-            attachments={attachments}
-            onDeleteAttachment={onDeleteAttachment}
-          />
+          <CardAttachments attachments={attachments} onDeleteAttachment={onDeleteAttachment} />
 
-          {selectedCard ? (
-            <CardCheckedList
-              onAddNewCheckedItem={onAddNewCheckedItem}
-              checkedList={checkedList}
-              onDeleteCheckedItem={onDeleteCheckedItem}
-              onSetCheckedItemText={onSetCheckedItemText}
-            />
-          ) : null}
+          {selectedCard ? <CardCheckedList onAddNewCheckedItem={onAddNewCheckedItem} checkedList={checkedList} onDeleteCheckedItem={onDeleteCheckedItem} onSetCheckedItemText={onSetCheckedItemText} /> : null}
 
           <CardComments comments={comments} onAddNewComment={onAddNewComment} />
         </div>
       </AppScrollbar>
-      <div className='scrum-board-add-card-form-footer'>
-        <Button type='primary' ghost onClick={onCloseAddCard}>
-          <IntlMessages id='common.cancel' />
+      <div className="scrum-board-add-card-form-footer">
+        <Button type="primary" ghost onClick={onCloseAddCard}>
+          <IntlMessages id="common.cancel" />
         </Button>
-        <Button type='primary' disabled={isSubmitting}>
-          <IntlMessages id='common.done' />
+        <Button type="primary" disabled={isSubmitting}>
+          <IntlMessages id="common.done" />
         </Button>
       </div>
     </Form>

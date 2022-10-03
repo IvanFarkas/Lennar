@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
-import {GoogleMap, TrafficLayer, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import { GoogleMap, TrafficLayer, withGoogleMap } from 'react-google-maps';
 import '../../map.style.less';
 
 const TrafficLayerExampleGoogleMap = withGoogleMap(() => (
-  <GoogleMap
-    defaultZoom={15}
-    defaultCenter={{lat: 25.7824758, lng: -80.289328}}>
+  <GoogleMap defaultZoom={15} defaultCenter={{ lat: 25.7824758, lng: -80.289328 }}>
     <TrafficLayer autoUpdate />
   </GoogleMap>
 ));
@@ -15,13 +13,6 @@ const TrafficLayerExampleGoogleMap = withGoogleMap(() => (
  */
 export default class TrafficLayerEx extends Component {
   render() {
-    return (
-      <TrafficLayerExampleGoogleMap
-        containerElement={
-          <div className='cr-embed-responsive cr-embed-responsive-21by9' />
-        }
-        mapElement={<div className='cr-embed-responsive-item' />}
-      />
-    );
+    return <TrafficLayerExampleGoogleMap containerElement={<div className="cr-embed-responsive cr-embed-responsive-21by9" />} mapElement={<div className="cr-embed-responsive-item" />} />;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Carousel, Radio} from 'antd';
+import { Space, Carousel, Radio } from 'antd';
 
 const Vertical = () => {
   const contentStyle = {
@@ -11,19 +11,16 @@ const Vertical = () => {
   };
   const [dotPosition, setDotPosition] = React.useState('top');
 
-  const handlePositionChange = ({target: {value}}) => {
+  const handlePositionChange = ({ target: { value } }) => {
     setDotPosition(value);
   };
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Radio.Group
-        onChange={handlePositionChange}
-        value={dotPosition}
-        style={{marginBottom: 8}}>
-        <Radio.Button value='top'>Top</Radio.Button>
-        <Radio.Button value='bottom'>Bottom</Radio.Button>
-        <Radio.Button value='left'>Left</Radio.Button>
-        <Radio.Button value='right'>Right</Radio.Button>
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Radio.Group onChange={handlePositionChange} value={dotPosition} style={{ marginBottom: 8 }}>
+        <Radio.Button value="top">Top</Radio.Button>
+        <Radio.Button value="bottom">Bottom</Radio.Button>
+        <Radio.Button value="left">Left</Radio.Button>
+        <Radio.Button value="right">Right</Radio.Button>
       </Radio.Group>
       <Carousel dotPosition={dotPosition}>
         <div>

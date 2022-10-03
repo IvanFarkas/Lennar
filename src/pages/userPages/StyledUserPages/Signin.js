@@ -1,16 +1,16 @@
 import React from 'react';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppAnimateGroup from '../../../@crema/core/AppAnimateGroup';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Button, Card, Checkbox, Col, Form, Input} from 'antd';
-import {FaFacebookF} from 'react-icons/fa';
+import { Button, Card, Checkbox, Col, Form, Input } from 'antd';
+import { FaFacebookF } from 'react-icons/fa';
 
 import '../index.style.less';
 
-import {GithubOutlined, TwitterOutlined} from '@ant-design/icons';
+import { GithubOutlined, TwitterOutlined } from '@ant-design/icons';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
-import {ReactComponent as Logo} from '../../../assets/user/login.svg';
+import { ReactComponent as Logo } from '../../../assets/user/login.svg';
 
 const onFinish = (values) => {
   console.log('Success:', values);
@@ -21,80 +21,56 @@ const onFinishFailed = (errorInfo) => {
 };
 
 const Signin = () => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
-    <div className='user-pages'>
-      <AppAnimateGroup type='bottom'>
-        <AppPageMetadata title='Signin' />
-        <div className='user-container' key='a'>
-          <Card className='user-card user-card-lg'>
+    <div className="user-pages">
+      <AppAnimateGroup type="bottom">
+        <AppPageMetadata title="Signin" />
+        <div className="user-container" key="a">
+          <Card className="user-card user-card-lg">
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <div className='user-styled-img'>
+                <div className="user-styled-img">
                   <Logo />
                 </div>
               </Col>
               <Col xs={24} md={12}>
-                <div className='user-card-header'>
+                <div className="user-card-header">
                   <h3>
-                    <IntlMessages id='common.login' />
+                    <IntlMessages id="common.login" />
                   </h3>
                 </div>
 
-                <Form
-                  className='user-form'
-                  name='basic'
-                  initialValues={{remember: true}}
-                  onFinish={onFinish}
-                  onFinishFailed={onFinishFailed}>
-                  <Form.Item
-                    name='email'
-                    className='form-field'
-                    rules={[
-                      {required: true, message: 'Please input your Email!'},
-                    ]}>
+                <Form className="user-form" name="basic" initialValues={{ remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+                  <Form.Item name="email" className="form-field" rules={[{ required: true, message: 'Please input your Email!' }]}>
                     <Input placeholder={messages['common.email']} />
                   </Form.Item>
 
-                  <Form.Item
-                    name='password'
-                    className='form-field'
-                    rules={[
-                      {required: true, message: 'Please input your Password!'},
-                    ]}>
-                    <Input
-                      type='password'
-                      placeholder={messages['common.password']}
-                    />
+                  <Form.Item name="password" className="form-field" rules={[{ required: true, message: 'Please input your Password!' }]}>
+                    <Input type="password" placeholder={messages['common.password']} />
                   </Form.Item>
 
-                  <Form.Item
-                    className='user-field-action'
-                    name='remember'
-                    valuePropName='checked'>
+                  <Form.Item className="user-field-action" name="remember" valuePropName="checked">
                     <>
                       <Checkbox>
-                        <IntlMessages id='common.rememberMe' />
+                        <IntlMessages id="common.rememberMe" />
                       </Checkbox>
-                      <span className='user-field-action-link ml-auto'>
-                        <IntlMessages id='common.forgetPassword' />
+                      <span className="user-field-action-link ml-auto">
+                        <IntlMessages id="common.forgetPassword" />
                       </span>
                     </>
                   </Form.Item>
 
-                  <Button
-                    type='primary'
-                    htmlType='submit'
-                    className='user-form-btn'>
-                    <IntlMessages id='common.login' />
+                  <Button type="primary" htmlType="submit" className="user-form-btn">
+                    <IntlMessages id="common.login" />
                   </Button>
                 </Form>
 
-                <div className='user-card-footer-action'>
+                <div className="user-card-footer-action">
                   <span>
-                    <IntlMessages id='common.orLoginWith' />
+                    <IntlMessages id="common.orLoginWith" />
                   </span>
-                  <div className='user-social-link'>
+                  <div className="user-social-link">
                     <Button>
                       <FaFacebookF />
                     </Button>
@@ -107,12 +83,12 @@ const Signin = () => {
                   </div>
                 </div>
 
-                <div className='user-card-footer'>
+                <div className="user-card-footer">
                   <span>
-                    <IntlMessages id='common.dontHaveAccount' />
+                    <IntlMessages id="common.dontHaveAccount" />
                   </span>
-                  <span className='user-card-footer-link'>
-                    <IntlMessages id='common.signup' />
+                  <span className="user-card-footer-link">
+                    <IntlMessages id="common.signup" />
                   </span>
                 </div>
               </Col>

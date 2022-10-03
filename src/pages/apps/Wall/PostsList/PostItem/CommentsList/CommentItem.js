@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import '../../index.style.less';
 import clsx from 'clsx';
 
-const CommentItem = ({item}) => {
-  const {author, comment, liked} = item;
+const CommentItem = ({ item }) => {
+  const { author, comment, liked } = item;
   const [isLiked, setIsLiked] = useState(liked);
 
   const toggleLikeStatus = () => {
@@ -13,19 +13,17 @@ const CommentItem = ({item}) => {
   };
 
   return (
-    <div className='post-comment-item'>
-      <Avatar className='post-item-avatar' src={author.profilePic} />
-      <div className='post-comment-item-content'>
-        <div className='post-comment-item-content-area'>
-          <p className='mb-0'>{comment}</p>
+    <div className="post-comment-item">
+      <Avatar className="post-item-avatar" src={author.profilePic} />
+      <div className="post-comment-item-content">
+        <div className="post-comment-item-content-area">
+          <p className="mb-0">{comment}</p>
         </div>
-        <div className='post-comment-item-action'>
-          <span
-            className={clsx('pointer', {active: isLiked})}
-            onClick={toggleLikeStatus}>
+        <div className="post-comment-item-action">
+          <span className={clsx('pointer', { active: isLiked })} onClick={toggleLikeStatus}>
             Like
           </span>
-          <span className='pointer'>Reply</span>
+          <span className="pointer">Reply</span>
         </div>
       </div>
     </div>

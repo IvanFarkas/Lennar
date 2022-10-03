@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -23,66 +23,28 @@ class Rate extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Rate'
-          refUrl='https://ant.design/components/rate/'
-        />
+        <ComponentHeader title="Rate" refUrl="https://ant.design/components/rate/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='rate-a'>
-            <AppComponentCard
-              title='Basic'
-              description='The simplest usage.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="rate-a">
+            <AppComponentCard title="Basic" description="The simplest usage." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='rate-b'>
-            <AppComponentCard
-              title='Half Star'
-              description='Support select half star.'
-              component={HalfStar}
-              source={HalfStarSource}
-            />
+          <Col xs={24} lg={12} key="rate-b">
+            <AppComponentCard title="Half Star" description="Support select half star." component={HalfStar} source={HalfStarSource} />
           </Col>
-          <Col xs={24} lg={12} key='rate-c'>
-            <AppComponentCard
-              title='Other Charactor'
-              description='Replace the default star to other character like alphabet, digit, iconfont or even Chinese word.'
-              component={OtherCharactor}
-              source={OtherCharactorSource}
-            />
+          <Col xs={24} lg={12} key="rate-c">
+            <AppComponentCard title="Other Charactor" description="Replace the default star to other character like alphabet, digit, iconfont or even Chinese word." component={OtherCharactor} source={OtherCharactorSource} />
           </Col>
-          <Col xs={24} lg={12} key='rate-d'>
-            <AppComponentCard
-              title='Read Only'
-              description='Read only, cant use mouse to interact.'
-              component={ReadOnly}
-              source={ReadOnlySource}
-            />
+          <Col xs={24} lg={12} key="rate-d">
+            <AppComponentCard title="Read Only" description="Read only, cant use mouse to interact." component={ReadOnly} source={ReadOnlySource} />
           </Col>
-          <Col xs={24} lg={12} key='rate-e'>
-            <AppComponentCard
-              title='Clear Star'
-              description='Support set allow to clear star when click again.'
-              component={ClearStar}
-              source={ClearStarSource}
-            />
+          <Col xs={24} lg={12} key="rate-e">
+            <AppComponentCard title="Clear Star" description="Support set allow to clear star when click again." component={ClearStar} source={ClearStarSource} />
           </Col>
-          <Col xs={24} lg={12} key='rate-f'>
-            <AppComponentCard
-              title='Show Copy write'
-              description='Add copywriting in rate components.'
-              component={ShowCopywrite}
-              source={ShowCopywriteSource}
-            />
+          <Col xs={24} lg={12} key="rate-f">
+            <AppComponentCard title="Show Copy write" description="Add copywriting in rate components." component={ShowCopywrite} source={ShowCopywriteSource} />
           </Col>
-          <Col xs={24} lg={12} key='rate-f'>
-            <AppComponentCard
-              title='Customize Character'
-              description='Can customize each character using (RateProps) => ReactNode.'
-              component={CustomizeCharacter}
-              source={CustomizeCharacterSource}
-            />
+          <Col xs={24} lg={12} key="rate-f">
+            <AppComponentCard title="Customize Character" description="Can customize each character using (RateProps) => ReactNode." component={CustomizeCharacter} source={CustomizeCharacterSource} />
           </Col>
         </AppRowContainer>
       </>

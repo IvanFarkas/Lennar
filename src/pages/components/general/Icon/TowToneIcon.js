@@ -1,17 +1,13 @@
-import {
-  SmileTwoTone,
-  HeartTwoTone,
-  CheckCircleTwoTone,
-} from '@ant-design/icons';
+import { SmileTwoTone, HeartTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
 
 import React from 'react';
 
 const TowToneIcon = () => {
   return (
-    <div style={{display: 'flex', gap: 10}}>
+    <div style={{ display: 'flex', gap: 10 }}>
       <SmileTwoTone />
-      <HeartTwoTone twoToneColor='#eb2f96' />
-      <CheckCircleTwoTone twoToneColor='#52c41a' />
+      <HeartTwoTone twoToneColor="#eb2f96" />
+      <CheckCircleTwoTone twoToneColor="#52c41a" />
     </div>
   );
 };

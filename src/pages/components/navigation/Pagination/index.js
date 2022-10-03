@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -29,90 +29,37 @@ class Pagination extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Pagination'
-          refUrl='https://ant.design/components/pagination/'
-        />
+        <ComponentHeader title="Pagination" refUrl="https://ant.design/components/pagination/" />
         <AppRowContainer>
-          <Col xs={24} lg={12} key='pagination-a'>
-            <AppComponentCard
-              title='Basic'
-              description='The simplest usage.'
-              component={Basic}
-              source={BasicSource}
-            />
+          <Col xs={24} lg={12} key="pagination-a">
+            <AppComponentCard title="Basic" description="The simplest usage." component={Basic} source={BasicSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-b'>
-            <AppComponentCard
-              title='More'
-              description='More Pages.'
-              component={More}
-              source={MoreSource}
-            />
+          <Col xs={24} lg={12} key="pagination-b">
+            <AppComponentCard title="More" description="More Pages." component={More} source={MoreSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-c'>
-            <AppComponentCard
-              title='Changer'
-              description='Change pageSize.'
-              component={Changer}
-              source={ChangerSource}
-            />
+          <Col xs={24} lg={12} key="pagination-c">
+            <AppComponentCard title="Changer" description="Change pageSize." component={Changer} source={ChangerSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-d'>
-            <AppComponentCard
-              title='Jumper'
-              description='Jump to a page directly.'
-              component={Jumper}
-              source={JumperSource}
-            />
+          <Col xs={24} lg={12} key="pagination-d">
+            <AppComponentCard title="Jumper" description="Jump to a page directly." component={Jumper} source={JumperSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-e'>
-            <AppComponentCard
-              title='Mini Size'
-              description='Mini size pagination.'
-              component={MiniSize}
-              source={MiniSizeSource}
-            />
+          <Col xs={24} lg={12} key="pagination-e">
+            <AppComponentCard title="Mini Size" description="Mini size pagination." component={MiniSize} source={MiniSizeSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-f'>
-            <AppComponentCard
-              title='TotalNumber'
-              description='You can show the total number of data by setting showTotal.'
-              component={TotalNumber}
-              source={TotalNumberSource}
-            />
+          <Col xs={24} lg={12} key="pagination-f">
+            <AppComponentCard title="TotalNumber" description="You can show the total number of data by setting showTotal." component={TotalNumber} source={TotalNumberSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-g'>
-            <AppComponentCard
-              title='Simple Mode'
-              description='Simple mode'
-              component={SimpleMode}
-              source={SimpleModeSource}
-            />
+          <Col xs={24} lg={12} key="pagination-g">
+            <AppComponentCard title="Simple Mode" description="Simple mode" component={SimpleMode} source={SimpleModeSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-h'>
-            <AppComponentCard
-              title='Controlled'
-              description='Controlled page number.'
-              component={Controlled}
-              source={ControlledSource}
-            />
+          <Col xs={24} lg={12} key="pagination-h">
+            <AppComponentCard title="Controlled" description="Controlled page number." component={Controlled} source={ControlledSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-i'>
-            <AppComponentCard
-              title='PrevAndNext'
-              description='Use text link for prev and next button.'
-              component={PrevAndNext}
-              source={PrevAndNextSource}
-            />
+          <Col xs={24} lg={12} key="pagination-i">
+            <AppComponentCard title="PrevAndNext" description="Use text link for prev and next button." component={PrevAndNext} source={PrevAndNextSource} />
           </Col>
-          <Col xs={24} lg={12} key='pagination-i'>
-            <AppComponentCard
-              title='ShowAll'
-              description='Show all configured prop.'
-              component={ShowAll}
-              source={ShowAllSource}
-            />
+          <Col xs={24} lg={12} key="pagination-i">
+            <AppComponentCard title="ShowAll" description="Show all configured prop." component={ShowAll} source={ShowAllSource} />
           </Col>
         </AppRowContainer>
       </>

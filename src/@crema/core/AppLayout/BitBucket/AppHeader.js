@@ -1,26 +1,23 @@
 import React from 'react';
-import {Input, Layout} from 'antd';
+import { Input, Layout } from 'antd';
 import './index.style.less';
 import AppLogo from '../components/AppLogo';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import {AiOutlineMenu} from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
 
-const AppHeader = ({showDrawer}) => {
-  const {Header} = Layout;
-  const {Search} = Input;
-  const {messages} = useIntl();
+const AppHeader = ({ showDrawer }) => {
+  const { Header } = Layout;
+  const { Search } = Input;
+  const { messages } = useIntl();
 
   return (
-    <Header className='app-BitBucket-header'>
-      <a className='trigger' onClick={showDrawer}>
+    <Header className="app-BitBucket-header">
+      <a className="trigger" onClick={showDrawer}>
         <AiOutlineMenu />
       </a>
       <AppLogo />
-      <Search
-        className='bitBucket-header-search'
-        placeholder={messages['common.searchHere']}
-      />
+      <Search className="bitBucket-header-search" placeholder={messages['common.searchHere']} />
     </Header>
   );
 };

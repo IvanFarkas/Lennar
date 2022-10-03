@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Modal} from 'antd';
+import { Button, Space, Modal } from 'antd';
 
 const confirm = Modal.confirm;
 
@@ -36,7 +36,7 @@ const ConfirmationModal = () => {
   return (
     <Space>
       <Button onClick={showConfirm}>Confirm</Button>
-      <Button onClick={showDeleteConfirm} type='dashed'>
+      <Button onClick={showDeleteConfirm} type="dashed">
         Delete
       </Button>
     </Space>

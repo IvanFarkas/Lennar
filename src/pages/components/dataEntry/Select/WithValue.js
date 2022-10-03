@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Select} from 'antd';
+import { Space, Select } from 'antd';
 
 const Option = Select.Option;
 
@@ -10,13 +10,9 @@ const WithValue = () => {
 
   return (
     <Space>
-      <Select
-        labelInValue
-        defaultValue={{key: 'lucy'}}
-        style={{width: 120}}
-        onChange={handleChange}>
-        <Option value='jack'>Jack (100)</Option>
-        <Option value='lucy'>Lucy (101)</Option>
+      <Select labelInValue defaultValue={{ key: 'lucy' }} style={{ width: 120 }} onChange={handleChange}>
+        <Option value="jack">Jack (100)</Option>
+        <Option value="lucy">Lucy (101)</Option>
       </Select>
     </Space>
   );

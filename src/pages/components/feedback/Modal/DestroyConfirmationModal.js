@@ -1,11 +1,11 @@
-import {Modal, Button} from 'antd';
-import {ExclamationCircleOutlined} from '@ant-design/icons';
+import { Modal, Button } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 function destroyAll() {
   Modal.destroyAll();
 }
 
-const {confirm} = Modal;
+const { confirm } = Modal;
 
 function showConfirm() {
   for (let i = 0; i < 3; i += 1) {

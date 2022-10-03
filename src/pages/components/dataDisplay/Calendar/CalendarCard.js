@@ -1,5 +1,5 @@
 import React from 'react';
-import {Calendar, Space} from 'antd';
+import { Calendar, Space } from 'antd';
 
 const CalendarCard = () => {
   function onPanelChange(value, mode) {
@@ -7,7 +7,7 @@ const CalendarCard = () => {
   }
 
   return (
-    <Space direction='vertical'>
+    <Space direction="vertical">
       <Calendar fullscreen={false} onPanelChange={onPanelChange} />
     </Space>
   );

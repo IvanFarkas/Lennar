@@ -1,4 +1,4 @@
-import {getCustomDateTime} from '../../../utility/Utils';
+import { getCustomDateTime } from '../../../utility/Utils';
 
 export const wallData = {
   id: 123,
@@ -373,13 +373,13 @@ export const postsList = [
         id: 5445,
         path: '/assets/images/timeline/berlin.jpg',
         preview: '/assets/images/timeline/berlin.jpg',
-        metaData: {type: 'images/jpg', size: 2343},
+        metaData: { type: 'images/jpg', size: 2343 },
       },
       {
         id: 54546,
         path: '/assets/images/timeline/cairo.jpg',
         preview: '/assets/images/timeline/cairo.jpg',
-        metaData: {type: 'images/jpg', size: 2345},
+        metaData: { type: 'images/jpg', size: 2345 },
       },
     ],
     message: 'Beautiful cities of Europe...',
@@ -414,13 +414,13 @@ export const postsList = [
         id: 5445,
         path: '/assets/images/timeline/berlin.jpg',
         preview: '/assets/images/timeline/berlin.jpg',
-        metaData: {type: 'images/jpg', size: 2343},
+        metaData: { type: 'images/jpg', size: 2343 },
       },
       {
         id: 54546,
         path: '/assets/images/timeline/cairo.jpg',
         preview: '/assets/images/timeline/cairo.jpg',
-        metaData: {type: 'images/jpg', size: 2345},
+        metaData: { type: 'images/jpg', size: 2345 },
       },
     ],
     message: 'Amazing clicks from my camera!',
@@ -455,7 +455,7 @@ export const postsList = [
         id: 54546,
         path: '/assets/images/timeline/cairo.jpg',
         preview: '/assets/images/timeline/cairo.jpg',
-        metaData: {type: 'images/jpg', size: 2345},
+        metaData: { type: 'images/jpg', size: 2345 },
       },
     ],
     content: '',

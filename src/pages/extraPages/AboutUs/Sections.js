@@ -1,18 +1,19 @@
 import React from 'react';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
-import {Avatar, Button, Card} from 'antd';
+import { Avatar, Button, Card } from 'antd';
 import './index.style.less';
 
-const Sections = ({data}) => {
+const Sections = ({ data }) => {
   return (
-    <Card className='about-section-card'>
-      <div className='about-section-thumb'>
+    <Card className="about-section-card">
+      <div className="about-section-thumb">
         <Avatar
-          className='about-section-avatar'
+          className="about-section-avatar"
           style={{
             backgroundColor: data.avatarColor,
-          }}>
+          }}
+        >
           {data.icon}
         </Avatar>
       </div>
@@ -21,8 +22,8 @@ const Sections = ({data}) => {
 
       <p>{data.content}</p>
 
-      <Button className='btn-white read-btn'>
-        <IntlMessages id='dashboard.readMore' />
+      <Button className="btn-white read-btn">
+        <IntlMessages id="dashboard.readMore" />
       </Button>
     </Card>
   );

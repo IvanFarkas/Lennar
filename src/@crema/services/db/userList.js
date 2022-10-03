@@ -4,8 +4,7 @@ const userList = [
     name: 'Asantha Powel',
     image: '/assets/images/avatar/A5.jpg',
     skills: ['React', 'Javascript', 'Native', 'Drupal'],
-    information:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    information: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     email: 'asantha@example.com',
     phone: '+91324534563',
     website: 'www.asantha.com',
@@ -20,8 +19,7 @@ const userList = [
     name: 'Alastair Jordan',
     image: '/assets/images/avatar/A1.jpg',
     skills: ['Java', 'Javascript', 'Flutter', 'Drupal'],
-    information:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    information: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     email: 'alastair@example.com',
     phone: '+9145424363',
     website: 'www.alastair.com',
@@ -36,8 +34,7 @@ const userList = [
     name: 'Johnson Bravo',
     image: '/assets/images/avatar/A2.jpg',
     skills: ['PHP', 'HTML', 'Native', 'Drupal'],
-    information:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    information: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     email: 'johnson@example.com',
     phone: '+9135432445',
     website: 'www.johnson.com',
@@ -52,8 +49,7 @@ const userList = [
     name: 'Johana Peterson',
     image: '/assets/images/avatar/A3.jpg',
     skills: ['Wordpress', 'Laravel', 'Native', 'CMS'],
-    information:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    information: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     email: 'johana@example.com',
     phone: '+9134352343',
     website: 'www.johana.com',
@@ -68,8 +64,7 @@ const userList = [
     name: 'Heath Streak',
     image: '/assets/images/avatar/A4.jpg',
     skills: ['Angular', 'Javascript', 'Flutter', 'Android'],
-    information:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    information: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     email: 'heath@example.com',
     phone: '+91345542435',
     website: 'www.heath.com',
@@ -84,8 +79,7 @@ const userList = [
     name: 'Sunita Gough',
     image: '/assets/images/avatar/A6.jpg',
     skills: ['Vue', 'Java', 'Native', 'Swift'],
-    information:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    information: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     email: 'sunita@example.com',
     phone: '+1334534563',
     website: 'www.sunita.com',

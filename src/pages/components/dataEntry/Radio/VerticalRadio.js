@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Input, Radio} from 'antd';
+import { Space, Input, Radio } from 'antd';
 
 class VerticalRadio extends React.Component {
   state = {
@@ -18,7 +18,7 @@ class VerticalRadio extends React.Component {
       height: '30px',
       lineHeight: '30px',
     };
-    const {value} = this.state;
+    const { value } = this.state;
     return (
       <Space>
         <Radio.Group onChange={this.onChange} value={value}>
@@ -33,9 +33,7 @@ class VerticalRadio extends React.Component {
           </Radio>
           <Radio style={radioStyle} value={4}>
             More...
-            {value === 4 ? (
-              <Input style={{width: 100, marginLeft: 10}} />
-            ) : null}
+            {value === 4 ? <Input style={{ width: 100, marginLeft: 10 }} /> : null}
           </Radio>
         </Radio.Group>
       </Space>

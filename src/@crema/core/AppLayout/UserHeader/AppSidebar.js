@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import AppScrollbar from '../../AppScrollbar';
 import clsx from 'clsx';
 import AppVerticalMenu from '../components/AppVerticalNav';
-import {useSidebarContext} from '../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../utility/AppContextProvider/SidebarContextProvider';
 import MainSidebar from '../components/MainSidebar';
 
-const AppSidebar = ({isCollapsed}) => {
-  const {isSidebarBgImage} = useSidebarContext();
+const AppSidebar = ({ isCollapsed }) => {
+  const { isSidebarBgImage } = useSidebarContext();
 
   return (
     <MainSidebar
@@ -16,11 +16,10 @@ const AppSidebar = ({isCollapsed}) => {
         'userHeader-sidebar-img-background': isSidebarBgImage,
       })}
       collapsible
-      breakpoint='xl'
-      collapsed={isCollapsed}>
-      <AppScrollbar
-        className='app-userHeader-sidebar-scrollbar'
-        scrollToTop={false}>
+      breakpoint="xl"
+      collapsed={isCollapsed}
+    >
+      <AppScrollbar className="app-userHeader-sidebar-scrollbar" scrollToTop={false}>
         <AppVerticalMenu />
       </AppScrollbar>
     </MainSidebar>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Table} from 'antd';
+import { Space, Table } from 'antd';
 
 const columns = [
   {
@@ -32,11 +32,11 @@ class CustomSelection extends React.Component {
   };
   onSelectChange = (selectedRowKeys) => {
     console.log('selectedRowKeys changed: ', selectedRowKeys);
-    this.setState({selectedRowKeys});
+    this.setState({ selectedRowKeys });
   };
 
   render() {
-    const {selectedRowKeys} = this.state;
+    const { selectedRowKeys } = this.state;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange,
@@ -62,7 +62,7 @@ class CustomSelection extends React.Component {
               }
               return true;
             });
-            this.setState({selectedRowKeys: newSelectedRowKeys});
+            this.setState({ selectedRowKeys: newSelectedRowKeys });
           },
         },
         {
@@ -76,19 +76,15 @@ class CustomSelection extends React.Component {
               }
               return false;
             });
-            this.setState({selectedRowKeys: newSelectedRowKeys});
+            this.setState({ selectedRowKeys: newSelectedRowKeys });
           },
         },
       ],
       onSelection: this.onSelection,
     };
     return (
-      <Space direction='vertical' style={{width: '100%'}}>
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-        />
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
       </Space>
     );
   }

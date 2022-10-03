@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {
@@ -43,11 +43,7 @@ function onChange(value) {
 const Basic = () => {
   return (
     <Space>
-      <Cascader
-        options={options}
-        onChange={onChange}
-        placeholder='Please select'
-      />
+      <Cascader options={options} onChange={onChange} placeholder="Please select" />
     </Space>
   );
 };

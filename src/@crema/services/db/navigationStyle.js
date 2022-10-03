@@ -1,9 +1,4 @@
-import {
-  LayoutType,
-  MenuStyle,
-  NavStyle,
-  ThemeMode,
-} from '../../../shared/constants/AppEnums';
+import { LayoutType, MenuStyle, NavStyle, ThemeMode } from '../../../shared/constants/AppEnums';
 
 export const navStyles = [
   {

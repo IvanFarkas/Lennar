@@ -1,19 +1,15 @@
 import mock from '../../MockConfig';
-import ecommerceData, {
-  cartItems,
-  customersData,
-  recentOrders,
-} from '../../db/ecommerce/ecommerceData';
-import {multiPropsFilter} from '../../../utility/Utils';
+import ecommerceData, { cartItems, customersData, recentOrders } from '../../db/ecommerce/ecommerceData';
+import { multiPropsFilter } from '../../../utility/Utils';
 
 mock.onGet('/api/ecommerce/list').reply((request) => {
-  const {filterData} = request.params;
+  const { filterData } = request.params;
   const data = multiPropsFilter(ecommerceData, filterData);
   return [200, data];
 });
 
 mock.onGet('/api/ecommerce/get').reply((request) => {
-  const {id} = request.params;
+  const { id } = request.params;
   console.log('id: ', id);
   if (id >= 1 && id <= 12) {
     const data = ecommerceData.filter((item) => +item.id === +id);
@@ -24,16 +20,12 @@ mock.onGet('/api/ecommerce/get').reply((request) => {
 });
 
 mock.onGet('/api/ecommerce/orders').reply((request) => {
-  const {search, page} = request.params;
+  const { search, page } = request.params;
 
   let orders = [...recentOrders];
 
   if (search) {
-    orders = orders.filter(
-      (order) =>
-        order.customer.toLowerCase().includes(search.toLowerCase()) ||
-        order.product.toLowerCase().includes(search.toLowerCase()),
-    );
+    orders = orders.filter((order) => order.customer.toLowerCase().includes(search.toLowerCase()) || order.product.toLowerCase().includes(search.toLowerCase()));
   }
 
   console.log('(page - 1) ==>', search, page, orders.length);
@@ -47,16 +39,12 @@ mock.onGet('/api/ecommerce/orders').reply((request) => {
 });
 
 mock.onGet('/api/ecommerce/customers').reply((request) => {
-  const {search, page} = request.params;
+  const { search, page } = request.params;
 
   let customers = [...customersData];
 
   if (search) {
-    customers = customers.filter(
-      (customer) =>
-        customer.name.toLowerCase().includes(search.toLowerCase()) ||
-        customer.email.toLowerCase().includes(search.toLowerCase()),
-    );
+    customers = customers.filter((customer) => customer.name.toLowerCase().includes(search.toLowerCase()) || customer.email.toLowerCase().includes(search.toLowerCase()));
   }
 
   return [

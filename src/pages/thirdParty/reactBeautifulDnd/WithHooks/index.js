@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
+import React, { useState } from 'react';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import simpleListData from '../../../../@crema/services/db/extraPages/dndData/simpleListData';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import PropTypes from 'prop-types';
 import '../index.style.less';
 
@@ -14,7 +14,7 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-function Quote({quote, index}) {
+function Quote({ quote, index }) {
   return (
     <Draggable draggableId={quote.handle} index={index}>
       {(provided) => (
@@ -27,16 +27,13 @@ function Quote({quote, index}) {
           }}
           ref={provided.innerRef}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}>
-          <div className='hook-dnd-list-item'>
-            <Avatar
-              className='beautiful-dnd-avatar'
-              alt='Remy Sharp'
-              src={quote.image}
-            />
-            <div className='beautiful-dnd-content'>
+          {...provided.dragHandleProps}
+        >
+          <div className="hook-dnd-list-item">
+            <Avatar className="beautiful-dnd-avatar" alt="Remy Sharp" src={quote.image} />
+            <div className="beautiful-dnd-content">
               <h3>{quote.name}</h3>
-              <p className='text-truncate'>@{quote.handle}</p>
+              <p className="text-truncate">@{quote.handle}</p>
             </div>
           </div>
         </div>
@@ -50,10 +47,8 @@ Quote.propTypes = {
   index: PropTypes.number,
 };
 
-const QuoteList = React.memo(function QuoteList({quotes}) {
-  return quotes.map((quote, index) => (
-    <Quote quote={quote} index={index} key={quote.id} />
-  ));
+const QuoteList = React.memo(function QuoteList({ quotes }) {
+  return quotes.map((quote, index) => <Quote quote={quote} index={index} key={quote.id} />);
 });
 
 QuoteList.propTypes = {
@@ -61,7 +56,7 @@ QuoteList.propTypes = {
 };
 
 const WithHooks = () => {
-  const [state, setState] = useState({quotes: simpleListData});
+  const [state, setState] = useState({ quotes: simpleListData });
 
   function onDragEnd(result) {
     if (!result.destination) {
@@ -72,20 +67,16 @@ const WithHooks = () => {
       return;
     }
 
-    const quotes = reorder(
-      state.quotes,
-      result.source.index,
-      result.destination.index,
-    );
+    const quotes = reorder(state.quotes, result.source.index, result.destination.index);
 
-    setState({quotes});
+    setState({ quotes });
   }
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div className='with-hook'>
-        <div className='with-hook-root'>
-          <Droppable droppableId='list'>
+      <div className="with-hook">
+        <div className="with-hook-root">
+          <Droppable droppableId="list">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
                 <QuoteList quotes={state.quotes} />

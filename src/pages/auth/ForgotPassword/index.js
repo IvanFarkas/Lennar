@@ -6,8 +6,8 @@ import AuthWrapper from '../AuthWrapper';
 
 const ForgetPassword = () => {
   return (
-    <AuthWrapper type='bottom'>
-      <AppPageMetadata title='Forgot Password' />
+    <AuthWrapper type="bottom">
+      <AppPageMetadata title="Forgot Password" />
       <ForgetPasswordFirebase />
     </AuthWrapper>
   );

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {Button, Col, Form, Input, Row} from 'antd';
-import {DownOutlined, UpOutlined} from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Button, Col, Form, Input, Row } from 'antd';
+import { DownOutlined, UpOutlined } from '@ant-design/icons';
 
 const AdvancedSearch = () => {
   const [expand, setExpand] = useState(false);
@@ -20,8 +20,9 @@ const AdvancedSearch = () => {
                 required: true,
                 message: 'Input something!',
               },
-            ]}>
-            <Input placeholder='placeholder' />
+            ]}
+          >
+            <Input placeholder="placeholder" />
           </Form.Item>
         </Col>,
       );
@@ -34,29 +35,27 @@ const AdvancedSearch = () => {
   };
 
   return (
-    <Form
-      form={form}
-      name='advanced_search'
-      className='ant-advanced-search-form'
-      onFinish={onFinish}>
+    <Form form={form} name="advanced_search" className="ant-advanced-search-form" onFinish={onFinish}>
       <Row gutter={24}>{getFields()}</Row>
       <Row>
-        <Col span={24} style={{textAlign: 'right'}}>
-          <Button type='primary' htmlType='submit'>
+        <Col span={24} style={{ textAlign: 'right' }}>
+          <Button type="primary" htmlType="submit">
             Search
           </Button>
           <Button
-            style={{margin: '0 8px'}}
+            style={{ margin: '0 8px' }}
             onClick={() => {
               form.resetFields();
-            }}>
+            }}
+          >
             Clear
           </Button>
           <a
-            style={{fontSize: 12}}
+            style={{ fontSize: 12 }}
             onClick={() => {
               setExpand(!expand);
-            }}>
+            }}
+          >
             {expand ? <UpOutlined /> : <DownOutlined />} Collapse
           </a>
         </Col>

@@ -1,11 +1,11 @@
-import {Form, Input, Button, Space, Select} from 'antd';
-import {MinusCircleOutlined, PlusOutlined} from '@ant-design/icons';
+import { Form, Input, Button, Space, Select } from 'antd';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
-const {Option} = Select;
+const { Option } = Select;
 
 const areas = [
-  {label: 'Beijing', value: 'Beijing'},
-  {label: 'Shanghai', value: 'Shanghai'},
+  { label: 'Beijing', value: 'Beijing' },
+  { label: 'Shanghai', value: 'Shanghai' },
 ];
 
 const sights = {
@@ -21,59 +21,33 @@ const ComplexDynamicFormItem = () => {
   };
 
   const handleChange = () => {
-    form.setFieldsValue({sights: []});
+    form.setFieldsValue({ sights: [] });
   };
 
   return (
-    <Form
-      form={form}
-      name='dynamic_form_nest_item'
-      onFinish={onFinish}
-      autoComplete='off'>
-      <Form.Item
-        name='area'
-        label='Area'
-        rules={[{required: true, message: 'Missing area'}]}>
+    <Form form={form} name="dynamic_form_nest_item" onFinish={onFinish} autoComplete="off">
+      <Form.Item name="area" label="Area" rules={[{ required: true, message: 'Missing area' }]}>
         <Select options={areas} onChange={handleChange} />
       </Form.Item>
-      <Form.List name='sights'>
-        {(fields, {add, remove}) => (
+      <Form.List name="sights">
+        {(fields, { add, remove }) => (
           <>
             {fields.map((field) => (
-              <Space key={field.key} align='baseline'>
-                <Form.Item
-                  noStyle
-                  shouldUpdate={(prevValues, curValues) =>
-                    prevValues.area !== curValues.area ||
-                    prevValues.sights !== curValues.sights
-                  }>
+              <Space key={field.key} align="baseline">
+                <Form.Item noStyle shouldUpdate={(prevValues, curValues) => prevValues.area !== curValues.area || prevValues.sights !== curValues.sights}>
                   {() => (
-                    <Form.Item
-                      {...field}
-                      label='Sight'
-                      name={[field.name, 'sight']}
-                      fieldKey={[field.fieldKey, 'sight']}
-                      rules={[{required: true, message: 'Missing sight'}]}>
-                      <Select
-                        disabled={!form.getFieldValue('area')}
-                        style={{width: 130}}>
-                        {(sights[form.getFieldValue('area')] || []).map(
-                          (item) => (
-                            <Option key={item} value={item}>
-                              {item}
-                            </Option>
-                          ),
-                        )}
+                    <Form.Item {...field} label="Sight" name={[field.name, 'sight']} fieldKey={[field.fieldKey, 'sight']} rules={[{ required: true, message: 'Missing sight' }]}>
+                      <Select disabled={!form.getFieldValue('area')} style={{ width: 130 }}>
+                        {(sights[form.getFieldValue('area')] || []).map((item) => (
+                          <Option key={item} value={item}>
+                            {item}
+                          </Option>
+                        ))}
                       </Select>
                     </Form.Item>
                   )}
                 </Form.Item>
-                <Form.Item
-                  {...field}
-                  label='Price'
-                  name={[field.name, 'price']}
-                  fieldKey={[field.fieldKey, 'price']}
-                  rules={[{required: true, message: 'Missing price'}]}>
+                <Form.Item {...field} label="Price" name={[field.name, 'price']} fieldKey={[field.fieldKey, 'price']} rules={[{ required: true, message: 'Missing price' }]}>
                   <Input />
                 </Form.Item>
 
@@ -82,11 +56,7 @@ const ComplexDynamicFormItem = () => {
             ))}
 
             <Form.Item>
-              <Button
-                type='dashed'
-                onClick={() => add()}
-                block
-                icon={<PlusOutlined />}>
+              <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
                 Add sights
               </Button>
             </Form.Item>
@@ -94,7 +64,7 @@ const ComplexDynamicFormItem = () => {
         )}
       </Form.List>
       <Form.Item>
-        <Button type='primary' htmlType='submit'>
+        <Button type="primary" htmlType="submit">
           Submit
         </Button>
       </Form.Item>

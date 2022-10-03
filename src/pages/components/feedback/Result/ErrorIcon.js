@@ -1,38 +1,38 @@
-import {Result, Button, Typography} from 'antd';
-import {CloseCircleOutlined} from '@ant-design/icons';
+import { Result, Button, Typography } from 'antd';
+import { CloseCircleOutlined } from '@ant-design/icons';
 
-const {Paragraph, Text} = Typography;
+const { Paragraph, Text } = Typography;
 import React from 'react';
 
 const ErrorIcon = () => {
   return (
     <Result
-      status='error'
-      title='Submission Failed'
-      subTitle='Please check and modify the following information before resubmitting.'
+      status="error"
+      title="Submission Failed"
+      subTitle="Please check and modify the following information before resubmitting."
       extra={[
-        <Button type='primary' key='console'>
+        <Button type="primary" key="console">
           Go Console
         </Button>,
-        <Button key='buy'>Buy Again</Button>,
-      ]}>
-      <div className='desc'>
+        <Button key="buy">Buy Again</Button>,
+      ]}
+    >
+      <div className="desc">
         <Paragraph>
           <Text
             strong
             style={{
               fontSize: 16,
-            }}>
+            }}
+          >
             The content you submitted has the following error:
           </Text>
         </Paragraph>
         <Paragraph>
-          <CloseCircleOutlined className='site-result-demo-error-icon' /> Your
-          account has been frozen. <a>Thaw immediately &gt;</a>
+          <CloseCircleOutlined className="site-result-demo-error-icon" /> Your account has been frozen. <a>Thaw immediately &gt;</a>
         </Paragraph>
         <Paragraph>
-          <CloseCircleOutlined className='site-result-demo-error-icon' /> Your
-          account is not yet eligible to apply. <a>Apply Unlock &gt;</a>
+          <CloseCircleOutlined className="site-result-demo-error-icon" /> Your account is not yet eligible to apply. <a>Apply Unlock &gt;</a>
         </Paragraph>
       </div>
     </Result>

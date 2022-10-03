@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppTableContainer from '../../../../../@crema/core/AppTableContainer';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import '../index.style.less';
 
 const columns = [
@@ -16,9 +16,9 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (name) => (
-      <div className='ticket-support-user-info'>
+      <div className="ticket-support-user-info">
         <Avatar src={name.image} />
-        <div className='ticket-support-user-info-content'>
+        <div className="ticket-support-user-info-content">
           <h3>{name.name}</h3>
         </div>
       </div>
@@ -52,14 +52,7 @@ const columns = [
 const TicketSupportTable = (props) => {
   const ticketSupportData = props.ticketSupportData;
 
-  return (
-    <AppTableContainer
-      hoverColor
-      className='ticket-support-table'
-      data={ticketSupportData}
-      columns={columns}
-    />
-  );
+  return <AppTableContainer hoverColor className="ticket-support-table" data={ticketSupportData} columns={columns} />;
 };
 
 export default TicketSupportTable;

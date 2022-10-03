@@ -1,4 +1,4 @@
-import {authRole} from '../../../shared/constants/AppEnums';
+import { authRole } from '../../../shared/constants/AppEnums';
 
 export const getUserFromAuth0 = (user) => {
   if (user)

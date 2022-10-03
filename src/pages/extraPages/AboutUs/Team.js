@@ -3,8 +3,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
-import {teamData} from '../../../@crema/services/db/extraPages/aboutUs';
-import {Card} from 'antd';
+import { teamData } from '../../../@crema/services/db/extraPages/aboutUs';
+import { Card } from 'antd';
 import './index.style.less';
 
 const settings = {
@@ -42,21 +42,21 @@ const settings = {
 
 const Team = () => {
   return (
-    <Card className='team-card'>
+    <Card className="team-card">
       <h2>
-        <IntlMessages id='extra.team' />
+        <IntlMessages id="extra.team" />
       </h2>
 
-      <div className='team-slider-view'>
+      <div className="team-slider-view">
         <Slider {...settings}>
           {teamData.map((member) => {
             return (
-              <div className='team-slider-info' key={member.id}>
-                <div className='team-slider-thumb'>
-                  <img src={member.image} alt='about us' title='aboutUs' />
+              <div className="team-slider-info" key={member.id}>
+                <div className="team-slider-thumb">
+                  <img src={member.image} alt="about us" title="aboutUs" />
                 </div>
                 <h5>{member.name}</h5>
-                <p className='mb-0'>{member.position}</p>
+                <p className="mb-0">{member.position}</p>
               </div>
             );
           })}

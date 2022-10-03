@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Checkbox, Col, Row} from 'antd';
+import { Space, Checkbox, Col, Row } from 'antd';
 
 function onChange(checkedValues) {
   console.log('checked = ', checkedValues);
@@ -8,22 +8,22 @@ function onChange(checkedValues) {
 const UseWithGrid = () => {
   return (
     <Space>
-      <Checkbox.Group style={{width: '100%'}} onChange={onChange}>
+      <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
         <Row>
           <Col span={8}>
-            <Checkbox value='A'>A</Checkbox>
+            <Checkbox value="A">A</Checkbox>
           </Col>
           <Col span={8}>
-            <Checkbox value='B'>B</Checkbox>
+            <Checkbox value="B">B</Checkbox>
           </Col>
           <Col span={8}>
-            <Checkbox value='C'>C</Checkbox>
+            <Checkbox value="C">C</Checkbox>
           </Col>
           <Col span={8}>
-            <Checkbox value='D'>D</Checkbox>
+            <Checkbox value="D">D</Checkbox>
           </Col>
           <Col span={8}>
-            <Checkbox value='E'>E</Checkbox>
+            <Checkbox value="E">E</Checkbox>
           </Col>
         </Row>
       </Checkbox.Group>

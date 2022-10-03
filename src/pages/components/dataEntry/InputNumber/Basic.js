@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, InputNumber} from 'antd';
+import { Space, InputNumber } from 'antd';
 
 const Basic = () => {
   function onChange(value) {

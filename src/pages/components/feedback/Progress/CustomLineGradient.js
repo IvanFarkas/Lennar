@@ -1,8 +1,8 @@
 import React from 'react';
-import {Progress} from 'antd';
+import { Progress } from 'antd';
 
 const CustomLineGradient = () => (
-  <div style={{display: 'flex', flexDirection: 'column', gap: 14}}>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
     <Progress
       strokeColor={{
         '0%': '#108ee9',
@@ -16,10 +16,10 @@ const CustomLineGradient = () => (
         to: '#87d068',
       }}
       percent={99.9}
-      status='active'
+      status="active"
     />
     <Progress
-      type='circle'
+      type="circle"
       strokeColor={{
         '0%': '#108ee9',
         '100%': '#87d068',
@@ -27,7 +27,7 @@ const CustomLineGradient = () => (
       percent={90}
     />
     <Progress
-      type='circle'
+      type="circle"
       strokeColor={{
         '0%': '#108ee9',
         '100%': '#87d068',

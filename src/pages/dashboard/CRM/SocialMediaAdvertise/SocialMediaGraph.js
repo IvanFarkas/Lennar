@@ -1,17 +1,9 @@
 import React from 'react';
-import {
-  Bar,
-  BarChart,
-  Cell,
-  CartesianGrid,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-} from 'recharts';
+import { Bar, BarChart, Cell, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import PropTypes from 'prop-types';
 import './index.style.less';
 
-const SocialMediaGraph = ({socialMediaData}) => {
+const SocialMediaGraph = ({ socialMediaData }) => {
   /*const customizedLabel = (props) => {
     const {x, y, value} = props;
     return (
@@ -28,16 +20,13 @@ const SocialMediaGraph = ({socialMediaData}) => {
   };*/
 
   return (
-    <div className='social-media-graph'>
-      <ResponsiveContainer width='100%' height={370}>
-        <BarChart
-          barSize={10}
-          data={socialMediaData}
-          margin={{top: 35, right: 0, left: 0, bottom: 35}}>
-          <CartesianGrid strokeDasharray='3 3' />
+    <div className="social-media-graph">
+      <ResponsiveContainer width="100%" height={370}>
+        <BarChart barSize={10} data={socialMediaData} margin={{ top: 35, right: 0, left: 0, bottom: 35 }}>
+          <CartesianGrid strokeDasharray="3 3" />
           <XAxis hide />
           <YAxis hide />
-          <Bar dataKey='revenue'>
+          <Bar dataKey="revenue">
             {/*<LabelList
               dataKey='change'
               content={(x, y, value) => customizedLabel(x, y, value)}

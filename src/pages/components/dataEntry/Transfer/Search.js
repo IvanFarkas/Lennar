@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Transfer} from 'antd';
+import { Space, Transfer } from 'antd';
 import './index.style.less';
 
 class Search extends React.Component {
@@ -22,13 +22,13 @@ class Search extends React.Component {
       }
       mockData.push(data);
     }
-    this.setState({mockData, targetKeys});
+    this.setState({ mockData, targetKeys });
   };
   filterOption = (inputValue, option) => {
     return option.description.indexOf(inputValue) > -1;
   };
   handleChange = (targetKeys) => {
-    this.setState({targetKeys});
+    this.setState({ targetKeys });
   };
   handleSearch = (dir, value) => {
     console.log('search:', dir, value);
@@ -41,15 +41,7 @@ class Search extends React.Component {
   render() {
     return (
       <Space wrap>
-        <Transfer
-          dataSource={this.state.mockData}
-          showSearch
-          filterOption={this.filterOption}
-          targetKeys={this.state.targetKeys}
-          onChange={this.handleChange}
-          onSearch={this.handleSearch}
-          render={(item) => item.title}
-        />
+        <Transfer dataSource={this.state.mockData} showSearch filterOption={this.filterOption} targetKeys={this.state.targetKeys} onChange={this.handleChange} onSearch={this.handleSearch} render={(item) => item.title} />
       </Space>
     );
   }

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {Tabs} from 'antd';
-import {AppleOutlined, AndroidOutlined} from '@ant-design/icons';
+import { Tabs } from 'antd';
+import { AppleOutlined, AndroidOutlined } from '@ant-design/icons';
 
-const {TabPane} = Tabs;
+const { TabPane } = Tabs;
 
 const Icon = () => {
   return (
-    <Tabs defaultActiveKey='2'>
+    <Tabs defaultActiveKey="2">
       <TabPane
         tab={
           <span>
@@ -15,7 +15,8 @@ const Icon = () => {
             Tab 1
           </span>
         }
-        key='1'>
+        key="1"
+      >
         Tab 1
       </TabPane>
       <TabPane
@@ -25,7 +26,8 @@ const Icon = () => {
             Tab 2
           </span>
         }
-        key='2'>
+        key="2"
+      >
         Tab 2
       </TabPane>
     </Tabs>

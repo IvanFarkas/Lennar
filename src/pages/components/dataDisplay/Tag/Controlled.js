@@ -1,5 +1,5 @@
 import React from 'react';
-import {Tag, Button} from 'antd';
+import { Tag, Button } from 'antd';
 
 class Controlled extends React.Component {
   state = {
@@ -9,16 +9,11 @@ class Controlled extends React.Component {
   render() {
     return (
       <>
-        <Tag
-          closable
-          visible={this.state.visible}
-          onClose={() => this.setState({visible: false})}>
+        <Tag closable visible={this.state.visible} onClose={() => this.setState({ visible: false })}>
           Movies
         </Tag>
         <br />
-        <Button
-          size='small'
-          onClick={() => this.setState({visible: !this.state.visible})}>
+        <Button size="small" onClick={() => this.setState({ visible: !this.state.visible })}>
           Toggle
         </Button>
       </>

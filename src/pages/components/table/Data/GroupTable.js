@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Table} from 'antd';
+import { Space, Table } from 'antd';
 
 const columns = [
   {
@@ -101,14 +101,8 @@ for (let i = 0; i < 100; i++) {
 }
 const GroupTable = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Table
-        columns={columns}
-        dataSource={data}
-        bordered
-        size='middle'
-        scroll={{x: '130%', y: 240}}
-      />
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Table columns={columns} dataSource={data} bordered size="middle" scroll={{ x: '130%', y: 240 }} />
     </Space>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Table} from 'antd';
+import { Button, Space, Table } from 'antd';
 
 const columns = [
   {
@@ -32,7 +32,7 @@ class Operation extends React.Component {
     loading: false,
   };
   start = () => {
-    this.setState({loading: true});
+    this.setState({ loading: true });
     // ajax request after empty completing
     setTimeout(() => {
       this.setState({
@@ -43,35 +43,25 @@ class Operation extends React.Component {
   };
   onSelectChange = (selectedRowKeys) => {
     console.log('selectedRowKeys changed: ', selectedRowKeys);
-    this.setState({selectedRowKeys});
+    this.setState({ selectedRowKeys });
   };
 
   render() {
-    const {loading, selectedRowKeys} = this.state;
+    const { loading, selectedRowKeys } = this.state;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange,
     };
     const hasSelected = selectedRowKeys.length > 0;
     return (
-      <Space direction='vertical' style={{width: '100%'}}>
-        <div style={{marginBottom: 16}}>
-          <Button
-            type='primary'
-            onClick={this.start}
-            disabled={!hasSelected}
-            loading={loading}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <div style={{ marginBottom: 16 }}>
+          <Button type="primary" onClick={this.start} disabled={!hasSelected} loading={loading}>
             Reload
           </Button>
-          <span style={{marginLeft: 8}}>
-            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
-          </span>
+          <span style={{ marginLeft: 8 }}>{hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}</span>
         </div>
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-        />
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
       </Space>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Slider} from 'antd';
+import { Space, Slider } from 'antd';
 
 const SliderEvent = () => {
   function onChange(value) {
@@ -11,19 +11,9 @@ const SliderEvent = () => {
   }
 
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
-      <Slider
-        defaultValue={30}
-        onChange={onChange}
-        onAfterChange={onAfterChange}
-      />
-      <Slider
-        range
-        step={10}
-        defaultValue={[20, 50]}
-        onChange={onChange}
-        onAfterChange={onAfterChange}
-      />
+    <Space direction="vertical" style={{ width: '100%' }}>
+      <Slider defaultValue={30} onChange={onChange} onAfterChange={onAfterChange} />
+      <Slider range step={10} defaultValue={[20, 50]} onChange={onChange} onAfterChange={onAfterChange} />
     </Space>
   );
 };

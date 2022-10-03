@@ -1,16 +1,10 @@
-import {Table} from 'antd';
-import {
-  sortableContainer,
-  sortableElement,
-  sortableHandle,
-} from 'react-sortable-hoc';
-import {MenuOutlined} from '@ant-design/icons';
-import {arrayMoveImmutable} from 'array-move';
+import { Table } from 'antd';
+import { sortableContainer, sortableElement, sortableHandle } from 'react-sortable-hoc';
+import { MenuOutlined } from '@ant-design/icons';
+import { arrayMoveImmutable } from 'array-move';
 import React from 'react';
 
-const DragHandle = sortableHandle(() => (
-  <MenuOutlined style={{cursor: 'grab', color: '#999'}} />
-));
+const DragHandle = sortableHandle(() => <MenuOutlined style={{ cursor: 'grab', color: '#999' }} />);
 
 const columns = [
   {
@@ -67,47 +61,33 @@ class SortableTable extends React.Component {
     dataSource: data,
   };
 
-  onSortEnd = ({oldIndex, newIndex}) => {
-    const {dataSource} = this.state;
+  onSortEnd = ({ oldIndex, newIndex }) => {
+    const { dataSource } = this.state;
     if (oldIndex !== newIndex) {
-      const newData = arrayMoveImmutable(
-        [].concat(dataSource),
-        oldIndex,
-        newIndex,
-      ).filter((el) => !!el);
+      const newData = arrayMoveImmutable([].concat(dataSource), oldIndex, newIndex).filter((el) => !!el);
       console.log('Sorted items: ', newData);
-      this.setState({dataSource: newData});
+      this.setState({ dataSource: newData });
     }
   };
 
-  DraggableContainer = (props) => (
-    <SortableContainer
-      useDragHandle
-      disableAutoscroll
-      helperClass='row-dragging'
-      onSortEnd={this.onSortEnd}
-      {...props}
-    />
-  );
+  DraggableContainer = (props) => <SortableContainer useDragHandle disableAutoscroll helperClass="row-dragging" onSortEnd={this.onSortEnd} {...props} />;
 
-  DraggableBodyRow = ({...restProps}) => {
-    const {dataSource} = this.state;
+  DraggableBodyRow = ({ ...restProps }) => {
+    const { dataSource } = this.state;
     // function findIndex base on Table rowKey props and should always be a right array index
-    const index = dataSource.findIndex(
-      (x) => x.index === restProps['data-row-key'],
-    );
+    const index = dataSource.findIndex((x) => x.index === restProps['data-row-key']);
     return <SortableItem index={index} {...restProps} />;
   };
 
   render() {
-    const {dataSource} = this.state;
+    const { dataSource } = this.state;
 
     return (
       <Table
         pagination={false}
         dataSource={dataSource}
         columns={columns}
-        rowKey='index'
+        rowKey="index"
         components={{
           body: {
             wrapper: this.DraggableContainer,

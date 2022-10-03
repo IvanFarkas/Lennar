@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {Button, Space, Form, Input, Select} from 'antd';
+import { Button, Space, Form, Input, Select } from 'antd';
 import './customizedFormControls.style.less';
 
-const {Option} = Select;
+const { Option } = Select;
 
-const PriceInput = ({value = {}, onChange}) => {
+const PriceInput = ({ value = {}, onChange }) => {
   const [number, setNumber] = useState(0);
   const [currency, setCurrency] = useState('rmb');
 
@@ -49,7 +49,7 @@ const PriceInput = ({value = {}, onChange}) => {
   return (
     <span>
       <Input
-        type='text'
+        type="text"
         value={value.number || number}
         onChange={onNumberChange}
         style={{
@@ -62,9 +62,10 @@ const PriceInput = ({value = {}, onChange}) => {
         style={{
           width: '32%',
         }}
-        onChange={onCurrencyChange}>
-        <Option value='rmb'>RMB</Option>
-        <Option value='dollar'>Dollar</Option>
+        onChange={onCurrencyChange}
+      >
+        <Option value="rmb">RMB</Option>
+        <Option value="dollar">Dollar</Option>
       </Select>
     </span>
   );
@@ -90,28 +91,30 @@ const CustomizedFormControls = () => {
   return (
     <Space>
       <Form
-        className='customized-form-control'
-        name='customized_form_controls'
-        layout='inline'
+        className="customized-form-control"
+        name="customized_form_controls"
+        layout="inline"
         onFinish={onFinish}
         initialValues={{
           price: {
             number: 0,
             currency: 'rmb',
           },
-        }}>
+        }}
+      >
         <Form.Item
-          name='price'
-          label='Price'
+          name="price"
+          label="Price"
           rules={[
             {
               validator: checkPrice,
             },
-          ]}>
+          ]}
+        >
           <PriceInput />
         </Form.Item>
         <Form.Item>
-          <Button type='primary' htmlType='submit'>
+          <Button type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>

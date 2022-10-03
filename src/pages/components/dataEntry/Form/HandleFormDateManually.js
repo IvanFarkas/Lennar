@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Form, InputNumber} from 'antd';
+import React, { useState } from 'react';
+import { Form, InputNumber } from 'antd';
 
 function validatePrimeNumber(number) {
   if (number === 11) {
@@ -28,26 +28,16 @@ const HandleFormDateManually = () => {
   const [number, setNumber] = useState({
     value: 11,
   });
-  const tips =
-    'A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself.';
+  const tips = 'A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself.';
 
   const onNumberChange = (value) => {
-    setNumber({...validatePrimeNumber(value), value});
+    setNumber({ ...validatePrimeNumber(value), value });
   };
 
   return (
     <Form>
-      <Form.Item
-        {...formItemLayout}
-        label='Prime between 8 & 12'
-        validateStatus={number.validateStatus}
-        help={number.errorMsg || tips}>
-        <InputNumber
-          min={8}
-          max={12}
-          value={number.value}
-          onChange={onNumberChange}
-        />
+      <Form.Item {...formItemLayout} label="Prime between 8 & 12" validateStatus={number.validateStatus} help={number.errorMsg || tips}>
+        <InputNumber min={8} max={12} value={number.value} onChange={onNumberChange} />
       </Form.Item>
     </Form>
   );

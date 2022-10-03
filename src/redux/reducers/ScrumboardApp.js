@@ -1,18 +1,4 @@
-import {
-  ADD_BOARD_LIST,
-  ADD_LIST_CARD,
-  ADD_NEW_BOARD,
-  DELETE_BOARD,
-  DELETE_LIST,
-  DELETE_LIST_CARD,
-  EDIT_BOARD_DETAIL,
-  EDIT_BOARD_LIST,
-  EDIT_LIST_CARD,
-  GET_BOARD_DETAIL,
-  GET_BOARDS,
-  GET_MEMBER_LIST,
-  GET_SCRUM_LABEL_LIST,
-} from '../../shared/constants/ActionTypes';
+import { ADD_BOARD_LIST, ADD_LIST_CARD, ADD_NEW_BOARD, DELETE_BOARD, DELETE_LIST, DELETE_LIST_CARD, EDIT_BOARD_DETAIL, EDIT_BOARD_LIST, EDIT_LIST_CARD, GET_BOARD_DETAIL, GET_BOARDS, GET_MEMBER_LIST, GET_SCRUM_LABEL_LIST } from '../../shared/constants/ActionTypes';
 
 const initialState = {
   boardList: [],
@@ -56,18 +42,14 @@ const scrumBoardReducer = (state = initialState, action) => {
     case EDIT_BOARD_DETAIL: {
       return {
         ...state,
-        boardList: state.boardList.map((board) =>
-          board.id === action.payload.id ? action.payload : board,
-        ),
+        boardList: state.boardList.map((board) => (board.id === action.payload.id ? action.payload : board)),
       };
     }
 
     case DELETE_BOARD:
       return {
         ...state,
-        boardList: state.boardList.filter(
-          (board) => board.id !== action.payload,
-        ),
+        boardList: state.boardList.filter((board) => board.id !== action.payload),
       };
 
     case DELETE_LIST:

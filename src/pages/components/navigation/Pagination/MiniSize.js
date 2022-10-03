@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Pagination} from 'antd';
+import { Space, Pagination } from 'antd';
 
 const MiniSize = () => {
   function showTotal(total) {
@@ -7,18 +7,11 @@ const MiniSize = () => {
   }
 
   return (
-    <Space direction='vertical'>
-      <Pagination size='small' total={50} />
-      <Pagination size='small' total={50} showSizeChanger showQuickJumper />
-      <Pagination size='small' total={50} showTotal={showTotal} />
-      <Pagination
-        size='small'
-        total={50}
-        disabled
-        showTotal={showTotal}
-        showSizeChanger
-        showQuickJumper
-      />
+    <Space direction="vertical">
+      <Pagination size="small" total={50} />
+      <Pagination size="small" total={50} showSizeChanger showQuickJumper />
+      <Pagination size="small" total={50} showTotal={showTotal} />
+      <Pagination size="small" total={50} disabled showTotal={showTotal} showSizeChanger showQuickJumper />
     </Space>
   );
 };

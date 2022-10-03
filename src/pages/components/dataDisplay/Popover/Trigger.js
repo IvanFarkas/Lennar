@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Space, Popover} from 'antd';
+import { Button, Space, Popover } from 'antd';
 
 const content = (
   <div>
@@ -11,13 +11,13 @@ const content = (
 const Trigger = () => {
   return (
     <Space wrap>
-      <Popover content={content} title='Title' trigger='hover'>
+      <Popover content={content} title="Title" trigger="hover">
         <Button>Hover me</Button>
       </Popover>
-      <Popover content={content} title='Title' trigger='focus'>
+      <Popover content={content} title="Title" trigger="focus">
         <Button>Focus me</Button>
       </Popover>
-      <Popover content={content} title='Title' trigger='click'>
+      <Popover content={content} title="Title" trigger="click">
         <Button>Click me</Button>
       </Popover>
     </Space>

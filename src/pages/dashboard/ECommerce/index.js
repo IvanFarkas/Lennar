@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import SalesState from './SalesState';
 import SaleStatics from './SaleStatics';
 import Application from './Application';
@@ -13,9 +13,9 @@ import NewCustomers from './NewCustomers';
 import PopularProducts from './PopularProducts';
 import SiteVisitors from './SiteVisitors';
 import Browser from './Browser';
-import {AppInfoView} from '../../../@crema';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetECommerceData} from '../../../redux/actions/Dashboard';
+import { AppInfoView } from '../../../@crema';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetECommerceData } from '../../../redux/actions/Dashboard';
 import AppPageMetadata from '../../../@crema/core/AppPageMetadata';
 
 const ECommerce = () => {
@@ -25,11 +25,11 @@ const ECommerce = () => {
     dispatch(onGetECommerceData());
   }, [dispatch]);
 
-  const ecommerceData = useSelector(({dashboard}) => dashboard.ecommerceData);
+  const ecommerceData = useSelector(({ dashboard }) => dashboard.ecommerceData);
 
   return (
     <>
-      <AppPageMetadata title='Ecommerce Dashboard' />
+      <AppPageMetadata title="Ecommerce Dashboard" />
       {ecommerceData ? (
         <AppRowContainer>
           {ecommerceData.salesState.map((data) => (
@@ -59,9 +59,7 @@ const ECommerce = () => {
           </Col>
 
           <Col xs={24} lg={12} key={'g'}>
-            <MarketingCampaign
-              marketingCampaign={ecommerceData.marketingCampaign}
-            />
+            <MarketingCampaign marketingCampaign={ecommerceData.marketingCampaign} />
           </Col>
           <Col xs={24} lg={12} key={'h'}>
             <NotificationsEcom notifications={ecommerceData.notifications} />

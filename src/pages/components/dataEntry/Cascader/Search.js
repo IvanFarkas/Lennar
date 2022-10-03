@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {
@@ -46,21 +46,13 @@ function onChange(value, selectedOptions) {
 }
 
 function filter(inputValue, path) {
-  return path.some(
-    (option) =>
-      option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1,
-  );
+  return path.some((option) => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
 }
 
 const Search = () => {
   return (
     <Space>
-      <Cascader
-        options={options}
-        onChange={onChange}
-        placeholder='Please select'
-        showSearch={{filter}}
-      />
+      <Cascader options={options} onChange={onChange} placeholder="Please select" showSearch={{ filter }} />
     </Space>
   );
 };

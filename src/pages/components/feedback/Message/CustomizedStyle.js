@@ -1,4 +1,4 @@
-import {message, Button} from 'antd';
+import { message, Button } from 'antd';
 
 const success = () => {
   message.success({

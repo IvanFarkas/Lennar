@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
-import {Avatar} from 'antd';
+import React, { Component } from 'react';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { Avatar } from 'antd';
 import simpleListData from '../../../../@crema/services/db/extraPages/dndData/simpleListData';
 import PropTypes from 'prop-types';
 import '../index.style.less';
@@ -29,11 +29,7 @@ class Horizontal extends Component {
       return;
     }
 
-    const items = reorder(
-      this.state.items,
-      result.source.index,
-      result.destination.index,
-    );
+    const items = reorder(this.state.items, result.source.index, result.destination.index);
 
     this.setState({
       items,
@@ -45,7 +41,7 @@ class Horizontal extends Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Droppable droppableId='droppable' direction='horizontal'>
+        <Droppable droppableId="droppable" direction="horizontal">
           {(provided) => (
             <div
               ref={provided.innerRef}
@@ -55,27 +51,17 @@ class Horizontal extends Component {
                 padding: 8,
                 overflow: 'auto',
               }}
-              {...provided.droppableProps}>
+              {...provided.droppableProps}
+            >
               {this.state.items.map((item, index) => (
-                <Draggable
-                  key={item.id}
-                  draggableId={item.handle}
-                  index={index}>
+                <Draggable key={item.id} draggableId={item.handle} index={index}>
                   {(provided) => (
-                    <div
-                      className='beautiful-dnd'
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}>
-                      <div className='beautiful-dnd-list-item'>
-                        <Avatar
-                          className='beautiful-dnd-avatar'
-                          alt='Remy Sharp'
-                          src={item.image}
-                        />
-                        <div className='beautiful-dnd-content'>
+                    <div className="beautiful-dnd" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                      <div className="beautiful-dnd-list-item">
+                        <Avatar className="beautiful-dnd-avatar" alt="Remy Sharp" src={item.image} />
+                        <div className="beautiful-dnd-content">
                           <h3>{item.name}</h3>
-                          <p className='mb-0'>@{item.handle}</p>
+                          <p className="mb-0">@{item.handle}</p>
                         </div>
                       </div>
                     </div>

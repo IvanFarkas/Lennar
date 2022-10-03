@@ -3,7 +3,7 @@ import React from 'react';
 import QueueAnim from 'rc-queue-anim';
 
 const AppAnimateGroup = (props) => {
-  const {height, animateStyle, ...rest} = props;
+  const { height, animateStyle, ...rest } = props;
   return (
     <QueueAnim
       style={{
@@ -12,7 +12,8 @@ const AppAnimateGroup = (props) => {
         height: height,
         ...animateStyle,
       }}
-      {...rest}>
+      {...rest}
+    >
       {props.children}
     </QueueAnim>
   );

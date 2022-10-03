@@ -1,23 +1,23 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Gallery from 'react-photo-gallery';
-import Carousel, {Modal, ModalGateway} from 'react-images';
-import {useDispatch, useSelector} from 'react-redux';
+import Carousel, { Modal, ModalGateway } from 'react-images';
+import { useDispatch, useSelector } from 'react-redux';
 
-import {onGetGalleryPhotos} from '../../../../redux/actions/Gallery';
+import { onGetGalleryPhotos } from '../../../../redux/actions/Gallery';
 import AppInfoView from '@crema/core/AppInfoView';
 import '../index.style.less';
 
 const ReactPhotoGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const photos = useSelector(({gallery}) => gallery.photos);
+  const photos = useSelector(({ gallery }) => gallery.photos);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(onGetGalleryPhotos());
   }, [dispatch]);
 
-  const openLightBox = useCallback((event, {index}) => {
+  const openLightBox = useCallback((event, { index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
   }, []);
@@ -28,7 +28,7 @@ const ReactPhotoGallery = () => {
   };
 
   return (
-    <div className='react-gallery-photo'>
+    <div className="react-gallery-photo">
       <Gallery photos={photos} onClick={openLightBox} />
       <ModalGateway>
         {viewerIsOpen ? (

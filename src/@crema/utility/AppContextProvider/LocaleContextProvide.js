@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ export const useLocaleContext = () => useContext(LocaleContext);
 
 export const useLocaleActionsContext = () => useContext(LocaleActionsContext);
 
-const LocaleContextProvider = ({children}) => {
+const LocaleContextProvider = ({ children }) => {
   const [locale, updateLocale] = useState(defaultConfig.locale);
 
   return (
@@ -17,11 +17,13 @@ const LocaleContextProvider = ({children}) => {
       value={{
         locale,
         rtlLocale: defaultConfig.rtlLocale,
-      }}>
+      }}
+    >
       <LocaleActionsContext.Provider
         value={{
           updateLocale,
-        }}>
+        }}
+      >
         {children}
       </LocaleActionsContext.Provider>
     </LocaleContext.Provider>

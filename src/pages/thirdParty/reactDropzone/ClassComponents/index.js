@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 
 class ClassComponents extends Component {
   constructor() {
     super();
     this.onDrop = (files) => {
-      this.setState({files});
+      this.setState({ files });
     };
     this.state = {
       files: [],
@@ -21,9 +21,9 @@ class ClassComponents extends Component {
 
     return (
       <Dropzone onDrop={this.onDrop}>
-        {({getRootProps, getInputProps}) => (
-          <section className='container'>
-            <div {...getRootProps({className: 'dropzone'})}>
+        {({ getRootProps, getInputProps }) => (
+          <section className="container">
+            <div {...getRootProps({ className: 'dropzone' })}>
               <input {...getInputProps()} />
               <p>Drag n drop some files here, or click to select files</p>
             </div>

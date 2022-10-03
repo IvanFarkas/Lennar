@@ -1,30 +1,30 @@
 import React from 'react';
-import {Button, Space} from 'antd';
+import { Button, Space } from 'antd';
 import './index.style.less';
 
 const Disabled = () => {
   return (
     <Space wrap>
-      <Button type='primary'>Primary</Button>
-      <Button type='primary' disabled>
+      <Button type="primary">Primary</Button>
+      <Button type="primary" disabled>
         Primary(disabled)
       </Button>
       <br />
       <Button>Default</Button>
       <Button disabled>Default(disabled)</Button>
       <br />
-      <Button type='dashed'>Dashed</Button>
-      <Button type='dashed' disabled>
+      <Button type="dashed">Dashed</Button>
+      <Button type="dashed" disabled>
         Dashed(disabled)
       </Button>
       <br />
-      <Button type='text'>Text</Button>
-      <Button type='text' disabled>
+      <Button type="text">Text</Button>
+      <Button type="text" disabled>
         Text(disabled)
       </Button>
       <br />
-      <Button type='link'>Link</Button>
-      <Button type='link' disabled>
+      <Button type="link">Link</Button>
+      <Button type="link" disabled>
         Link(disabled)
       </Button>
       <br />
@@ -33,20 +33,20 @@ const Disabled = () => {
         Danger Default(disabled)
       </Button>
       <br />
-      <Button danger type='text'>
+      <Button danger type="text">
         Danger Text
       </Button>
-      <Button danger type='text' disabled>
+      <Button danger type="text" disabled>
         Danger Text(disabled)
       </Button>
       <br />
-      <Button type='link' danger>
+      <Button type="link" danger>
         Danger Link
       </Button>
-      <Button type='link' danger disabled>
+      <Button type="link" danger disabled>
         Danger Link(disabled)
       </Button>
-      <div className='site-button-ghost-wrapper'>
+      <div className="site-button-ghost-wrapper">
         <Button ghost>Ghost</Button>
         <Button ghost disabled>
           Ghost(disabled)

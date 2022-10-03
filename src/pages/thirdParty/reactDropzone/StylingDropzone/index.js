@@ -1,5 +1,5 @@
-import React, {useMemo} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { useMemo } from 'react';
+import { useDropzone } from 'react-dropzone';
 
 const baseStyle = {
   flex: 1,
@@ -30,13 +30,7 @@ const rejectStyle = {
 };
 
 const StyledDropzone = () => {
-  const {
-    getRootProps,
-    getInputProps,
-    isDragActive,
-    isDragAccept,
-    isDragReject,
-  } = useDropzone({accept: 'image/*'});
+  const { getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject } = useDropzone({ accept: 'image/*' });
 
   const style = useMemo(
     () => ({
@@ -49,8 +43,8 @@ const StyledDropzone = () => {
   );
 
   return (
-    <div className='container'>
-      <div {...getRootProps({style})}>
+    <div className="container">
+      <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
         <p>Drag n drop some files here, or click to select files</p>
       </div>

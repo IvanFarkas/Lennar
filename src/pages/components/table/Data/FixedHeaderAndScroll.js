@@ -1,4 +1,4 @@
-import {Switch, Table} from 'antd';
+import { Switch, Table } from 'antd';
 import React from 'react';
 
 const columns = [
@@ -58,7 +58,7 @@ const columns = [
     key: '7',
     width: 150,
   },
-  {title: 'Column 8', dataIndex: 'address', key: '8'},
+  { title: 'Column 8', dataIndex: 'address', key: '8' },
   {
     title: 'Action',
     key: 'operation',
@@ -85,14 +85,14 @@ const Demo = () => {
     <Table
       columns={columns}
       dataSource={data}
-      scroll={{x: 1500}}
+      scroll={{ x: 1500 }}
       summary={() => (
         <Table.Summary fixed={fixedTop ? 'top' : 'bottom'}>
           <Table.Summary.Row>
             <Table.Summary.Cell index={0} colSpan={2}>
               <Switch
-                checkedChildren='Fixed Top'
-                unCheckedChildren='Fixed Top'
+                checkedChildren="Fixed Top"
+                unCheckedChildren="Fixed Top"
                 checked={fixedTop}
                 onChange={() => {
                   setFixedTop(!fixedTop);

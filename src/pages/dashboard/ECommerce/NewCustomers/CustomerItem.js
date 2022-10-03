@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {List, Button, Avatar} from 'antd';
-import {MoreOutlined} from '@ant-design/icons';
+import { List, Button, Avatar } from 'antd';
+import { MoreOutlined } from '@ant-design/icons';
 import './index.style.less';
 
-const CustomerItem = ({item}) => {
+const CustomerItem = ({ item }) => {
   const getStatusColor = () => {
     if (item.orders === 0) {
       return '#F84E4E';
@@ -14,22 +14,23 @@ const CustomerItem = ({item}) => {
   };
 
   return (
-    <List.Item className='customItem item-hover'>
+    <List.Item className="customItem item-hover">
       <Avatar src={item.image} />
-      <div className='contentArea'>
+      <div className="contentArea">
         <h3>{item.name}</h3>
         <p>{item.message}</p>
       </div>
-      <div className='contentAction'>
+      <div className="contentAction">
         <span
-          className='badgeRoot'
+          className="badgeRoot"
           style={{
             color: getStatusColor(),
             backgroundColor: getStatusColor() + '44',
-          }}>
+          }}
+        >
           {item.orders} orders
         </span>
-        <Button onClick={null} shape='circle' icon={<MoreOutlined />} />
+        <Button onClick={null} shape="circle" icon={<MoreOutlined />} />
       </div>
     </List.Item>
   );

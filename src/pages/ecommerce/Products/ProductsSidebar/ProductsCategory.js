@@ -1,11 +1,11 @@
 import React from 'react';
-import {Tree} from 'antd';
-import {DownOutlined} from '@ant-design/icons';
+import { Tree } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 
 const ProductsCategory = () => {
   return (
     <Tree
-      className='product-sidebar-tree'
+      className="product-sidebar-tree"
       showLine
       switcherIcon={<DownOutlined />}
       defaultExpandedKeys={['1']}

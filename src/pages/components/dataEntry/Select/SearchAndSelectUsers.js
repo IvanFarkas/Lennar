@@ -1,9 +1,9 @@
-import {Select, Spin} from 'antd';
+import { Select, Spin } from 'antd';
 import React from 'react';
 import debounce from 'lodash/debounce';
 import PropTypes from 'prop-types';
 
-function DebounceSelect({fetchOptions, debounceTimeout = 800, ...props}) {
+function DebounceSelect({ fetchOptions, debounceTimeout = 800, ...props }) {
   const [fetching, setFetching] = React.useState(false);
   const [options, setOptions] = React.useState([]);
   const fetchRef = React.useRef(0);
@@ -26,16 +26,7 @@ function DebounceSelect({fetchOptions, debounceTimeout = 800, ...props}) {
 
     return debounce(loadOptions, debounceTimeout);
   }, [fetchOptions, debounceTimeout]);
-  return (
-    <Select
-      labelInValue
-      filterOption={false}
-      onSearch={debounceFetcher}
-      notFoundContent={fetching ? <Spin size='small' /> : null}
-      {...props}
-      options={options}
-    />
-  );
+  return <Select labelInValue filterOption={false} onSearch={debounceFetcher} notFoundContent={fetching ? <Spin size="small" /> : null} {...props} options={options} />;
 } // Usage of DebounceSelect
 
 async function fetchUserList(username) {
@@ -54,9 +45,9 @@ const SearchAndSelectUsers = () => {
   const [value, setValue] = React.useState([]);
   return (
     <DebounceSelect
-      mode='multiple'
+      mode="multiple"
       value={value}
-      placeholder='Select users'
+      placeholder="Select users"
       fetchOptions={fetchUserList}
       onChange={(newValue) => {
         setValue(newValue);

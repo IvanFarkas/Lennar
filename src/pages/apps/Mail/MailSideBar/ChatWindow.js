@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {Launcher} from 'react-chat-window';
+import React, { useState } from 'react';
+import { Launcher } from 'react-chat-window';
 import PropTypes from 'prop-types';
 import './chat-window.less';
 
-const ChatWindow = ({isOpenChat, setOpenChat, connection}) => {
+const ChatWindow = ({ isOpenChat, setOpenChat, connection }) => {
   const [messageList, setMessageList] = useState([]);
 
   const onMessageWasSent = (message) => {

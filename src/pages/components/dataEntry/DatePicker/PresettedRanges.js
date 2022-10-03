@@ -1,8 +1,8 @@
 import React from 'react';
-import {Space, DatePicker} from 'antd';
+import { Space, DatePicker } from 'antd';
 import moment from 'moment';
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 function onChange(dates, dateStrings) {
   console.log('From: ', dates[0], ', to: ', dates[1]);
@@ -11,7 +11,7 @@ function onChange(dates, dateStrings) {
 
 const PresettedRanges = () => {
   return (
-    <Space direction='vertical' size={12}>
+    <Space direction="vertical" size={12}>
       <RangePicker
         ranges={{
           Today: [moment(), moment()],
@@ -25,7 +25,7 @@ const PresettedRanges = () => {
           'This Month': [moment().startOf('month'), moment().endOf('month')],
         }}
         showTime
-        format='YYYY/MM/DD HH:mm:ss'
+        format="YYYY/MM/DD HH:mm:ss"
         onChange={onChange}
       />
     </Space>

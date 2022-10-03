@@ -1,12 +1,10 @@
-import {Cascader} from 'antd';
+import { Cascader } from 'antd';
 
 const options = [
   {
     label: 'Light',
     value: 'light',
-    children: new Array(20)
-      .fill(null)
-      .map((_, index) => ({label: `Number ${index}`, value: index})),
+    children: new Array(20).fill(null).map((_, index) => ({ label: `Number ${index}`, value: index })),
   },
   {
     label: 'Bamboo',
@@ -41,15 +39,7 @@ function onChange(value) {
 import React from 'react';
 
 const Multiple = () => {
-  return (
-    <Cascader
-      style={{width: 233}}
-      options={options}
-      onChange={onChange}
-      multiple
-      maxTagCount='responsive'
-    />
-  );
+  return <Cascader style={{ width: 233 }} options={options} onChange={onChange} multiple maxTagCount="responsive" />;
 };
 
 export default Multiple;

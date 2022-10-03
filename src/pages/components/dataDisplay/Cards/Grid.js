@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from 'antd';
+import { Card } from 'antd';
 import './grid.style.less';
 
 const gridStyle = {
@@ -9,7 +9,7 @@ const gridStyle = {
 
 const Grid = () => {
   return (
-    <Card className='grid-card' title='Card Title'>
+    <Card className="grid-card" title="Card Title">
       <Card.Grid style={gridStyle}>Content</Card.Grid>
       <Card.Grid hoverable={false} style={gridStyle}>
         Content

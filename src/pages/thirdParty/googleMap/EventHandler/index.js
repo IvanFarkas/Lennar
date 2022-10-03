@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 
 import ComponentCard from '@crema/core/AppComponentCard';
 import ComponentHeader from '@crema/core/AppComponentHeader';
@@ -11,18 +11,11 @@ import EventHandlerSource from '!raw-loader!./Components/EventHandler';
 const EventHandlerEx = () => {
   return (
     <>
-      <ComponentHeader
-        title='Event Handler Google Map'
-        refUrl='http://google-map-react.github.io/google-map-react/map/balderdash/'
-      />
+      <ComponentHeader title="Event Handler Google Map" refUrl="http://google-map-react.github.io/google-map-react/map/balderdash/" />
 
       <AppRowSimpleContainer>
         <Col span={24}>
-          <ComponentCard
-            title='Event Handler Map'
-            component={EventHandler}
-            source={EventHandlerSource}
-          />
+          <ComponentCard title="Event Handler Map" component={EventHandler} source={EventHandlerSource} />
         </Col>
       </AppRowSimpleContainer>
     </>

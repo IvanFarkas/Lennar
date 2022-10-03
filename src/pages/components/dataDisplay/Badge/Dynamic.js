@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {Badge, Button, Space, Switch} from 'antd';
-import {PlusOutlined, MinusOutlined} from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Badge, Button, Space, Switch } from 'antd';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 import './index.style.less';
 
 const ButtonGroup = Button.Group;
@@ -26,10 +26,10 @@ const Dynamic = () => {
   };
 
   return (
-    <Space direction='vertical'>
-      <div className='ant-badge-group'>
+    <Space direction="vertical">
+      <div className="ant-badge-group">
         <Badge count={count}>
-          <div className='head-example' />
+          <div className="head-example" />
         </Badge>
         <ButtonGroup>
           <Button onClick={decline}>
@@ -40,9 +40,9 @@ const Dynamic = () => {
           </Button>
         </ButtonGroup>
       </div>
-      <div className='ant-badge-group' style={{marginTop: 10}}>
+      <div className="ant-badge-group" style={{ marginTop: 10 }}>
         <Badge dot={show}>
-          <div className='head-example' />
+          <div className="head-example" />
         </Badge>
         <Switch onChange={onChange} checked={show} />
       </div>

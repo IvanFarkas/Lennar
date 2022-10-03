@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, message, Button, Space} from 'antd';
+import { Form, Input, message, Button, Space } from 'antd';
 
 const NoBlockRule = () => {
   const [form] = Form.useForm();
@@ -19,15 +19,10 @@ const NoBlockRule = () => {
   };
 
   return (
-    <Form
-      form={form}
-      layout='vertical'
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete='off'>
+    <Form form={form} layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
       <Form.Item
-        name='url'
-        label='URL'
+        name="url"
+        label="URL"
         rules={[
           {
             required: true,
@@ -40,15 +35,16 @@ const NoBlockRule = () => {
             type: 'string',
             min: 6,
           },
-        ]}>
-        <Input placeholder='input placeholder' />
+        ]}
+      >
+        <Input placeholder="input placeholder" />
       </Form.Item>
       <Form.Item>
         <Space>
-          <Button type='primary' htmlType='submit'>
+          <Button type="primary" htmlType="submit">
             Submit
           </Button>
-          <Button htmlType='button' onClick={onFill}>
+          <Button htmlType="button" onClick={onFill}>
             Fill
           </Button>
         </Space>

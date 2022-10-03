@@ -1,11 +1,11 @@
 import React from 'react';
-import {Tabs} from 'antd';
+import { Tabs } from 'antd';
 
-const {TabPane} = Tabs;
+const { TabPane } = Tabs;
 
 const initialPanes = [
-  {title: 'Tab 1', content: 'Content of Tab 1', key: '1'},
-  {title: 'Tab 2', content: 'Content of Tab 2', key: '2'},
+  { title: 'Tab 1', content: 'Content of Tab 1', key: '1' },
+  { title: 'Tab 2', content: 'Content of Tab 2', key: '2' },
   {
     title: 'Tab 3',
     content: 'Content of Tab 3',
@@ -23,7 +23,7 @@ class AddCloseTab extends React.Component {
   };
 
   onChange = (activeKey) => {
-    this.setState({activeKey});
+    this.setState({ activeKey });
   };
 
   onEdit = (targetKey, action) => {
@@ -31,7 +31,7 @@ class AddCloseTab extends React.Component {
   };
 
   add = () => {
-    const {panes} = this.state;
+    const { panes } = this.state;
     const activeKey = `newTab${this.newTabIndex++}`;
     const newPanes = [...panes];
     newPanes.push({
@@ -46,7 +46,7 @@ class AddCloseTab extends React.Component {
   };
 
   remove = (targetKey) => {
-    const {panes, activeKey} = this.state;
+    const { panes, activeKey } = this.state;
     let newActiveKey = activeKey;
     let lastIndex;
     panes.forEach((pane, i) => {
@@ -69,13 +69,9 @@ class AddCloseTab extends React.Component {
   };
 
   render() {
-    const {panes, activeKey} = this.state;
+    const { panes, activeKey } = this.state;
     return (
-      <Tabs
-        type='editable-card'
-        onChange={this.onChange}
-        activeKey={activeKey}
-        onEdit={this.onEdit}>
+      <Tabs type="editable-card" onChange={this.onChange} activeKey={activeKey} onEdit={this.onEdit}>
         {panes.map((pane) => (
           <TabPane tab={pane.title} key={pane.key} closable={pane.closable}>
             {pane.content}

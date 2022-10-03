@@ -5,19 +5,19 @@ import AppCard from '../../../../@crema/core/AppCard';
 import './index.style.less';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 
-const Reviews = ({reviewGraphData}) => {
+const Reviews = ({ reviewGraphData }) => {
   return (
-    <AppCard className='reviews-card'>
-      <div className='reviews-content'>
+    <AppCard className="reviews-card">
+      <div className="reviews-content">
         <h3>
-          <IntlMessages id='common.reviews' />
+          <IntlMessages id="common.reviews" />
         </h3>
         <h4>34,042</h4>
         <p>
-          <IntlMessages id='dashboard.reviewText' />
+          <IntlMessages id="dashboard.reviewText" />
         </p>
       </div>
-      <div className='reviews-graph'>
+      <div className="reviews-graph">
         <ReviewsGraph reviewGraphData={reviewGraphData} />
       </div>
     </AppCard>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, Space} from 'antd';
+import { Badge, Space } from 'antd';
 import NotificationOutlined from '@ant-design/icons/lib/icons/NotificationOutlined';
 
 const RedBadge = () => {
@@ -12,7 +12,7 @@ const RedBadge = () => {
         <NotificationOutlined />
       </Badge>
       <Badge dot>
-        <a href='/'>Link something</a>
+        <a href="/">Link something</a>
       </Badge>
     </Space>
   );

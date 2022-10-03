@@ -1,5 +1,5 @@
-import {Tree} from 'antd';
-const {DirectoryTree} = Tree;
+import { Tree } from 'antd';
+const { DirectoryTree } = Tree;
 const treeData = [
   {
     title: 'parent 0',
@@ -44,14 +44,6 @@ const Directory = () => {
     console.log('Trigger Expand');
   };
 
-  return (
-    <DirectoryTree
-      multiple
-      defaultExpandAll
-      onSelect={onSelect}
-      onExpand={onExpand}
-      treeData={treeData}
-    />
-  );
+  return <DirectoryTree multiple defaultExpandAll onSelect={onSelect} onExpand={onExpand} treeData={treeData} />;
 };
 export default Directory;

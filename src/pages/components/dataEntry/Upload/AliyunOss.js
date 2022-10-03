@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button, Form, message, Upload} from 'antd';
-import {UploadOutlined} from '@ant-design/icons';
+import { Button, Form, message, Upload } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 
 class AliyunOss extends React.Component {
@@ -35,8 +35,8 @@ class AliyunOss extends React.Component {
     signature: 'ZGFob25nc2hhbw==',
   });
 
-  onChange = ({fileList}) => {
-    const {onChange} = this.props;
+  onChange = ({ fileList }) => {
+    const { onChange } = this.props;
     console.log('Aliyun OSS:', fileList);
     if (onChange) {
       onChange([...fileList]);
@@ -44,7 +44,7 @@ class AliyunOss extends React.Component {
   };
 
   onRemove = (file) => {
-    const {value, onChange} = this.props;
+    const { value, onChange } = this.props;
 
     const files = value.filter((v) => v.url !== file.url);
 
@@ -54,7 +54,7 @@ class AliyunOss extends React.Component {
   };
 
   getExtraData = (file) => {
-    const {OSSData} = this.state;
+    const { OSSData } = this.state;
 
     return {
       key: file.url,
@@ -65,7 +65,7 @@ class AliyunOss extends React.Component {
   };
 
   beforeUpload = async (file) => {
-    const {OSSData} = this.state;
+    const { OSSData } = this.state;
     const expire = OSSData.expire * 1000;
 
     if (expire < Date.now()) {
@@ -80,7 +80,7 @@ class AliyunOss extends React.Component {
   };
 
   render() {
-    const {value} = this.props;
+    const { value } = this.props;
     const props = {
       name: 'file',
       fileList: value,
@@ -99,8 +99,8 @@ class AliyunOss extends React.Component {
 }
 
 const FormPage = () => (
-  <Form labelCol={{span: 4}}>
-    <Form.Item label='Photos' name='photos'>
+  <Form labelCol={{ span: 4 }}>
+    <Form.Item label="Photos" name="photos">
       <AliyunOss />
     </Form.Item>
   </Form>

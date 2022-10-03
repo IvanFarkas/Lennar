@@ -1,4 +1,4 @@
-import {Cascader} from 'antd';
+import { Cascader } from 'antd';
 
 const options = [
   {
@@ -42,14 +42,7 @@ function onChange(value) {
 import React from 'react';
 
 const CustomFieldNames = () => {
-  return (
-    <Cascader
-      fieldNames={{label: 'name', value: 'code', children: 'items'}}
-      options={options}
-      onChange={onChange}
-      placeholder='Please select'
-    />
-  );
+  return <Cascader fieldNames={{ label: 'name', value: 'code', children: 'items' }} options={options} onChange={onChange} placeholder="Please select" />;
 };
 
 export default CustomFieldNames;

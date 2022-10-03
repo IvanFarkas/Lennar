@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Radio} from 'antd';
+import { Space, Radio } from 'antd';
 
 const RadioGroup = Radio.Group;
 

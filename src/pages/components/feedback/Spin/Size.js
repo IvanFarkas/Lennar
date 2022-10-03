@@ -1,12 +1,12 @@
 import React from 'react';
-import {Space, Spin} from 'antd';
+import { Space, Spin } from 'antd';
 
 const Size = () => {
   return (
     <Space>
-      <Spin size='small' />
+      <Spin size="small" />
       <Spin />
-      <Spin size='large' />
+      <Spin size="large" />
     </Space>
   );
 };

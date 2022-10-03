@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Carousel} from 'antd';
+import { Space, Carousel } from 'antd';
 
 const Basic = () => {
   const onChange = (a, b, c) => {
@@ -13,7 +13,7 @@ const Basic = () => {
     background: '#364d79',
   };
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <Carousel afterChange={onChange}>
         <div>
           <h3 style={contentStyle}>1</h3>

@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ export const useLayoutContext = () => useContext(LayoutContext);
 
 export const useLayoutActionsContext = () => useContext(LayoutActionsContext);
 
-const LayoutContextProvider = ({children}) => {
+const LayoutContextProvider = ({ children }) => {
   const [layoutType, updateLayoutType] = useState(defaultConfig.layoutType);
   const [navStyle, updateNavStyle] = useState(defaultConfig.navStyle);
   const [direction, updateDirection] = useState(defaultConfig.direction);
@@ -25,7 +25,8 @@ const LayoutContextProvider = ({children}) => {
         footer,
         layoutType,
         rtlLocale: defaultConfig.rtlLocale,
-      }}>
+      }}
+    >
       <LayoutActionsContext.Provider
         value={{
           setFooter,
@@ -33,7 +34,8 @@ const LayoutContextProvider = ({children}) => {
           updateDirection,
           updateNavStyle,
           updateLayoutType,
-        }}>
+        }}
+      >
         {children}
       </LayoutActionsContext.Provider>
     </LayoutContext.Provider>

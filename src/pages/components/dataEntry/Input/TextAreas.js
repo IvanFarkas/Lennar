@@ -1,7 +1,7 @@
 import React from 'react';
-import {Space, Input} from 'antd';
+import { Space, Input } from 'antd';
 
-const {TextArea} = Input;
+const { TextArea } = Input;
 
 const TextAreas = () => {
   return (

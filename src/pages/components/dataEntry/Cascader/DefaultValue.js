@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Cascader} from 'antd';
+import { Space, Cascader } from 'antd';
 
 const options = [
   {
@@ -43,11 +43,7 @@ function onChange(value) {
 const DefaultValue = () => {
   return (
     <Space>
-      <Cascader
-        defaultValue={['zhejiang', 'hangzhou', 'xihu']}
-        options={options}
-        onChange={onChange}
-      />
+      <Cascader defaultValue={['zhejiang', 'hangzhou', 'xihu']} options={options} onChange={onChange} />
     </Space>
   );
 };

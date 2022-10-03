@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import AppRowContainer from '../../../@crema/core/AppRowContainer';
 import './index.style.less';
 
-const Installation = ({installationQueries}) => {
+const Installation = ({ installationQueries }) => {
   return (
-    <div className='know-section'>
+    <div className="know-section">
       <h3>
-        <IntlMessages id='knowledge.installation' />
+        <IntlMessages id="knowledge.installation" />
       </h3>
       <AppRowContainer>
         {installationQueries.map((data) => (

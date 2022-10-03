@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Slider} from 'antd';
+import { Space, Slider } from 'antd';
 
 const marks = {
   0: '0°C',
@@ -15,7 +15,7 @@ const marks = {
 
 const SliderGarduated = () => {
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <h4>included=true</h4>
       <Slider marks={marks} defaultValue={37} />
       <Slider range marks={marks} defaultValue={[26, 37]} />

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {Avatar, Space} from 'antd';
-import {Mention} from '@ant-design/compatible';
+import React, { useState } from 'react';
+import { Avatar, Space } from 'antd';
+import { Mention } from '@ant-design/compatible';
 
 const Nav = Mention.Nav;
 
@@ -32,18 +32,12 @@ const IconImage = () => {
 
   const onSearchChange = (value) => {
     const searchValue = value.toLowerCase();
-    const filtered = webFrameworks.filter(
-      (item) => item.name.toLowerCase().indexOf(searchValue) !== -1,
-    );
+    const filtered = webFrameworks.filter((item) => item.name.toLowerCase().indexOf(searchValue) !== -1);
     const suggestions = filtered.map((suggestion) => (
-      <Nav
-        key={suggestion.name}
-        value={suggestion.name}
-        data={suggestion}
-        disabled={suggestion.disabled}>
+      <Nav key={suggestion.name} value={suggestion.name} data={suggestion} disabled={suggestion.disabled}>
         <Avatar
           src={suggestion.icon}
-          size='small'
+          size="small"
           style={{
             width: 14,
             height: 14,
@@ -60,11 +54,7 @@ const IconImage = () => {
 
   return (
     <Space>
-      <Mention
-        style={{width: '100%'}}
-        suggestions={suggestions}
-        onSearchChange={onSearchChange}
-      />
+      <Mention style={{ width: '100%' }} suggestions={suggestions} onSearchChange={onSearchChange} />
     </Space>
   );
 };

@@ -1,14 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import {AppstoreOutlined, BarsOutlined} from '@ant-design/icons';
+import { AppstoreOutlined, BarsOutlined } from '@ant-design/icons';
 import AppIconButton from '../../../../../@crema/core/AppIconButton';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
-const ViewSelectButtons = ({pageView, onChangePageView}) => {
-  const {messages} = useIntl();
+const ViewSelectButtons = ({ pageView, onChangePageView }) => {
+  const { messages } = useIntl();
   return (
-    <div className='contact-view-select'>
+    <div className="contact-view-select">
       <AppIconButton
         title={messages['sidebar.ecommerce.gridView']}
         className={clsx({

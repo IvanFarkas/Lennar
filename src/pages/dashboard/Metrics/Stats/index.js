@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import StatsGraph from './StatsGraph';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import AppSelect from '../../../../@crema/core/AppSelect';
 import AppCard from '../../../../@crema/core/AppCard';
 
-const Stats = ({data}) => {
+const Stats = ({ data }) => {
   const [graphData, setGraphData] = useState(data.dataOne);
 
   const handleYearChange = (value) => {
@@ -40,7 +40,7 @@ const Stats = ({data}) => {
     }
   };
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <AppCard
@@ -48,22 +48,11 @@ const Stats = ({data}) => {
       title={messages['dashboard.companyProduction']}
       extra={
         <>
-          <AppSelect
-            menus={[2021, 2018, 2017]}
-            defaultValue={2021}
-            onChange={handleYearChange}
-          />
-          <AppSelect
-            menus={[
-              messages['common.june'],
-              messages['common.july'],
-              messages['common.august'],
-            ]}
-            defaultValue={messages['common.june']}
-            onChange={handleMonthChange}
-          />
+          <AppSelect menus={[2021, 2018, 2017]} defaultValue={2021} onChange={handleYearChange} />
+          <AppSelect menus={[messages['common.june'], messages['common.july'], messages['common.august']]} defaultValue={messages['common.june']} onChange={handleMonthChange} />
         </>
-      }>
+      }
+    >
       <StatsGraph data={graphData} />
     </AppCard>
   );

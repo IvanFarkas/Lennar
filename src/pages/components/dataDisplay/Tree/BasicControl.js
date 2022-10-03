@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Tree} from 'antd';
+import { Space, Tree } from 'antd';
 
 const TreeNode = Tree.TreeNode;
 
@@ -12,18 +12,18 @@ const treeData = [
         title: '0-0-0',
         key: '0-0-0',
         children: [
-          {title: '0-0-0-0', key: '0-0-0-0'},
-          {title: '0-0-0-1', key: '0-0-0-1'},
-          {title: '0-0-0-2', key: '0-0-0-2'},
+          { title: '0-0-0-0', key: '0-0-0-0' },
+          { title: '0-0-0-1', key: '0-0-0-1' },
+          { title: '0-0-0-2', key: '0-0-0-2' },
         ],
       },
       {
         title: '0-0-1',
         key: '0-0-1',
         children: [
-          {title: '0-0-1-0', key: '0-0-1-0'},
-          {title: '0-0-1-1', key: '0-0-1-1'},
-          {title: '0-0-1-2', key: '0-0-1-2'},
+          { title: '0-0-1-0', key: '0-0-1-0' },
+          { title: '0-0-1-1', key: '0-0-1-1' },
+          { title: '0-0-1-2', key: '0-0-1-2' },
         ],
       },
       {
@@ -36,9 +36,9 @@ const treeData = [
     title: '0-1',
     key: '0-1',
     children: [
-      {title: '0-1-0-0', key: '0-1-0-0'},
-      {title: '0-1-0-1', key: '0-1-0-1'},
-      {title: '0-1-0-2', key: '0-1-0-2'},
+      { title: '0-1-0-0', key: '0-1-0-0' },
+      { title: '0-1-0-1', key: '0-1-0-1' },
+      { title: '0-1-0-2', key: '0-1-0-2' },
     ],
   },
   {
@@ -64,11 +64,11 @@ class BasicControl extends React.Component {
   };
   onCheck = (checkedKeys) => {
     console.log('onCheck', checkedKeys);
-    this.setState({checkedKeys});
+    this.setState({ checkedKeys });
   };
   onSelect = (selectedKeys, info) => {
     console.log('onSelect', info);
-    this.setState({selectedKeys});
+    this.setState({ selectedKeys });
   };
   renderTreeNodes = (data) => {
     return data.map((item) => {
@@ -85,16 +85,8 @@ class BasicControl extends React.Component {
 
   render() {
     return (
-      <Space direction='vertical' style={{width: '100%'}}>
-        <Tree
-          checkable
-          onExpand={this.onExpand}
-          expandedKeys={this.state.expandedKeys}
-          autoExpandParent={this.state.autoExpandParent}
-          onCheck={this.onCheck}
-          checkedKeys={this.state.checkedKeys}
-          onSelect={this.onSelect}
-          selectedKeys={this.state.selectedKeys}>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <Tree checkable onExpand={this.onExpand} expandedKeys={this.state.expandedKeys} autoExpandParent={this.state.autoExpandParent} onCheck={this.onCheck} checkedKeys={this.state.checkedKeys} onSelect={this.onSelect} selectedKeys={this.state.selectedKeys}>
           {this.renderTreeNodes(treeData)}
         </Tree>
       </Space>

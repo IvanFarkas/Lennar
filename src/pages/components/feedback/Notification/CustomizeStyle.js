@@ -1,11 +1,10 @@
 import React from 'react';
-import {Button, Space, notification} from 'antd';
+import { Button, Space, notification } from 'antd';
 
 const openNotification = () => {
   notification.open({
     message: 'Notification Title',
-    description:
-      'This is the content of the Notification. This is the content of the Notification. This is the content of the Notification.',
+    description: 'This is the content of the Notification. This is the content of the Notification. This is the content of the Notification.',
     style: {
       width: 600,
       marginLeft: 335 - 600,
@@ -16,7 +15,7 @@ const openNotification = () => {
 const CustomizeStyle = () => {
   return (
     <Space>
-      <Button type='primary' onClick={openNotification}>
+      <Button type="primary" onClick={openNotification}>
         Open the notification box
       </Button>
     </Space>

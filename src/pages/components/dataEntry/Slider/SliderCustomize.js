@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space, Slider} from 'antd';
+import { Space, Slider } from 'antd';
 
 const SliderCustomize = () => {
   function formatter(value) {
@@ -7,7 +7,7 @@ const SliderCustomize = () => {
   }
 
   return (
-    <Space direction='vertical' style={{width: '100%'}}>
+    <Space direction="vertical" style={{ width: '100%' }}>
       <Slider tipFormatter={formatter} />
       <Slider tipFormatter={null} />
     </Space>

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Drawer, Button, Radio, Space} from 'antd';
+import { Drawer, Button, Radio, Space } from 'antd';
 
 class CustomPlacement extends React.Component {
-  state = {visible: false, placement: 'left'};
+  state = { visible: false, placement: 'left' };
 
   showDrawer = () => {
     this.setState({
@@ -23,27 +23,21 @@ class CustomPlacement extends React.Component {
   };
 
   render() {
-    const {placement, visible} = this.state;
+    const { placement, visible } = this.state;
     return (
       <>
         <Space>
           <Radio.Group value={placement} onChange={this.onChange}>
-            <Radio value='top'>top</Radio>
-            <Radio value='right'>right</Radio>
-            <Radio value='bottom'>bottom</Radio>
-            <Radio value='left'>left</Radio>
+            <Radio value="top">top</Radio>
+            <Radio value="right">right</Radio>
+            <Radio value="bottom">bottom</Radio>
+            <Radio value="left">left</Radio>
           </Radio.Group>
-          <Button type='primary' onClick={this.showDrawer}>
+          <Button type="primary" onClick={this.showDrawer}>
             Open
           </Button>
         </Space>
-        <Drawer
-          title='Basic Drawer'
-          placement={placement}
-          closable={false}
-          onClose={this.onClose}
-          visible={visible}
-          key={placement}>
+        <Drawer title="Basic Drawer" placement={placement} closable={false} onClose={this.onClose} visible={visible} key={placement}>
           <p>Some contents...</p>
           <p>Some contents...</p>
           <p>Some contents...</p>

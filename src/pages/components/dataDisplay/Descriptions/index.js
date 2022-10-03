@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'antd';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -20,59 +20,26 @@ import VerticalBorderSource from '!raw-loader!./VerticalBorder';
 const Descriptions = () => {
   return (
     <>
-      <ComponentHeader
-        title='Descriptions'
-        refUrl='https://ant.design/components/comment/'
-      />
+      <ComponentHeader title="Descriptions" refUrl="https://ant.design/components/comment/" />
       <AppRowContainer>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Basic'
-            description='Simplest Usage.'
-            component={Basic}
-            source={BasicSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Basic" description="Simplest Usage." component={Basic} source={BasicSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Vertical'
-            description='Simplest Usage.'
-            component={Vertical}
-            source={VerticalSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Vertical" description="Simplest Usage." component={Vertical} source={VerticalSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Border'
-            description='Descriptions with border and background color.'
-            component={Border}
-            source={BorderSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Border" description="Descriptions with border and background color." component={Border} source={BorderSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Custom Size'
-            description='Custom sizes to fit in a variety of containers.'
-            component={CustomSize}
-            source={CustomSizeSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Custom Size" description="Custom sizes to fit in a variety of containers." component={CustomSize} source={CustomSizeSource} />
         </Col>
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Responsive'
-            description='Responsive configuration enables perfect presentation on small screen devices.'
-            component={Responsive}
-            source={ResponsiveSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Responsive" description="Responsive configuration enables perfect presentation on small screen devices." component={Responsive} source={ResponsiveSource} />
         </Col>
 
-        <Col xs={24} lg={12} key='collapse-a'>
-          <AppComponentCard
-            title='Vertical Border'
-            description='Descriptions with border and background color.'
-            component={VerticalBorder}
-            source={VerticalBorderSource}
-          />
+        <Col xs={24} lg={12} key="collapse-a">
+          <AppComponentCard title="Vertical Border" description="Descriptions with border and background color." component={VerticalBorder} source={VerticalBorderSource} />
         </Col>
       </AppRowContainer>
     </>

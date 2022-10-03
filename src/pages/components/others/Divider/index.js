@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col} from 'antd';
+import React, { Component } from 'react';
+import { Col } from 'antd';
 import AppComponentCard from '../../../../@crema/core/AppComponentCard';
 import ComponentHeader from '../../../../@crema/core/AppComponentHeader';
 import AppRowContainer from '../../../../@crema/core/AppRowContainer/AppRowSimpleContainer';
@@ -15,33 +15,17 @@ class Divider extends Component {
   render() {
     return (
       <>
-        <ComponentHeader
-          title='Divider'
-          refUrl='https://ant.design/components/divider/'
-        />
+        <ComponentHeader title="Divider" refUrl="https://ant.design/components/divider/" />
         <AppRowContainer>
-          <Col xs={24} key='divider-b'>
-            <AppComponentCard
-              title='Vertical'
-              component={Vertical}
-              source={VerticalSource}
-            />
+          <Col xs={24} key="divider-b">
+            <AppComponentCard title="Vertical" component={Vertical} source={VerticalSource} />
           </Col>
-          <Col xs={24} lg={12} key='divider-a'>
-            <AppComponentCard
-              title='Horizontal'
-              component={Horizontal}
-              source={HorizontalSource}
-            />
+          <Col xs={24} lg={12} key="divider-a">
+            <AppComponentCard title="Horizontal" component={Horizontal} source={HorizontalSource} />
           </Col>
 
-          <Col xs={24} lg={12} key='divider-b'>
-            <AppComponentCard
-              title='DividerWithTitle'
-              description='Divider with inner title, set orientation="left/right" to align it.'
-              component={DividerWithTitle}
-              source={DividerWithTitleSource}
-            />
+          <Col xs={24} lg={12} key="divider-b">
+            <AppComponentCard title="DividerWithTitle" description='Divider with inner title, set orientation="left/right" to align it.' component={DividerWithTitle} source={DividerWithTitleSource} />
           </Col>
         </AppRowContainer>
       </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppTableContainer from '../../../../../@crema/core/AppTableContainer';
-import {Avatar} from 'antd';
+import { Avatar } from 'antd';
 import '../index.style.less';
 
 const columns = [
@@ -16,9 +16,9 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (name) => (
-      <div className='deals-user-info'>
+      <div className="deals-user-info">
         <Avatar src={name.logo} />
-        <div className='deals-user-info-content'>
+        <div className="deals-user-info-content">
           <h3>{name.name}</h3>
         </div>
       </div>
@@ -46,16 +46,9 @@ const columns = [
   },
 ];
 const DealsTable = (props) => {
-  const {dealsTableData} = props;
+  const { dealsTableData } = props;
 
-  return (
-    <AppTableContainer
-      hoverColor
-      className='deals-table'
-      data={dealsTableData}
-      columns={columns}
-    />
-  );
+  return <AppTableContainer hoverColor className="deals-table" data={dealsTableData} columns={columns} />;
 };
 
 export default DealsTable;

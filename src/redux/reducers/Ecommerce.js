@@ -1,18 +1,7 @@
-import {
-  ADD_CART_ITEM,
-  GET_CUSTOMERS,
-  GET_ECOMMERCE_LIST,
-  GET_RECENT_ORDER,
-  REMOVE_CART_ITEM,
-  SET_CART_ITEMS,
-  SET_FILTER_DATA,
-  SET_PRODUCT_DATA,
-  SET_PRODUCT_VIEW_TYPE,
-  UPDATE_CART_ITEM,
-} from '../../shared/constants/ActionTypes';
-import {cartItems} from '../../@crema/services/db/ecommerce/ecommerceData';
+import { ADD_CART_ITEM, GET_CUSTOMERS, GET_ECOMMERCE_LIST, GET_RECENT_ORDER, REMOVE_CART_ITEM, SET_CART_ITEMS, SET_FILTER_DATA, SET_PRODUCT_DATA, SET_PRODUCT_VIEW_TYPE, UPDATE_CART_ITEM } from '../../shared/constants/ActionTypes';
+import { cartItems } from '../../@crema/services/db/ecommerce/ecommerceData';
 
-export const VIEW_TYPE = Object.freeze({LIST: 1, GRID: 2});
+export const VIEW_TYPE = Object.freeze({ LIST: 1, GRID: 2 });
 const initialState = {
   ecommerceList: [],
   viewType: VIEW_TYPE.LIST,
@@ -73,9 +62,7 @@ const ecommerceReducer = (state = initialState, action) => {
     case UPDATE_CART_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.map((item) =>
-          item.id === action.payload.id ? action.payload : item,
-        ),
+        cartItems: state.cartItems.map((item) => (item.id === action.payload.id ? action.payload : item)),
       };
 
     case ADD_CART_ITEM: {
@@ -120,9 +107,7 @@ const ecommerceReducer = (state = initialState, action) => {
     case REMOVE_CART_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.filter(
-          (item) => item.id !== action.payload.id,
-        ),
+        cartItems: state.cartItems.filter((item) => item.id !== action.payload.id),
       };
 
     case GET_CUSTOMERS:
